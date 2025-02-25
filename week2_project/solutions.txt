@@ -1,0 +1,147 @@
+import java.util.Scanner;
+
+/**
+ * TransmissionRate class demonstrates use of Math.pow and casting
+ * to calculate viral spread based on user input for R0.
+ * @author First Last
+ */
+public class TransmissionRate {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter r0: ") ;
+		int r0 = input.nextInt();
+		int spread = (int)Math.pow(r0, 4);
+		System.out.println("New cases on 4th iteration: " + spread);
+	}
+
+}
+
+
+import java.util.Scanner;
+
+/**
+ * Nearest class demonstrates numeric conversion, casting and rounding.
+ * @author First Last
+ */
+public class NearestInt {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter numerator and denominator: ");
+		int numerator = input.nextInt();
+		int denominator = input.nextInt();
+		double number = 1.0*numerator/denominator;
+		int nearestInt = (int)(number + 0.5);
+		System.out.println("Fraction: " + numerator+"/"+denominator);
+		System.out.println("Double Value: " + number);
+		System.out.println("Cast as Int: " + (int)number );
+		System.out.println("Rounded to nearest int: " + nearestInt);
+		double negNumber = -number;
+		int nearestNegInt = (int)(negNumber - 0.5);
+		System.out.println("Negative Value: " + negNumber);
+		System.out.println("Negative Value rounded to nearest int: " + nearestNegInt);	
+	}
+}
+
+
+import java.util.Scanner;
+
+/**
+ * SeafoodMarket class demonstrates user I/O
+ * along with rounding to 2 digits after decimal point. 
+ * @author First Last
+ */
+
+public class SeafoodMarket {
+	
+	public static void main(String[] args) {
+		//Declare and initialize Scanner to read user input
+		Scanner input = new Scanner(System.in);
+		
+		//Prompt for pounds of fish and price per pound
+		System.out.print("Enter pounds of fish and price per pound: ");
+		double lbsFish = input.nextDouble();
+		double pricePerPound = input.nextDouble();
+		
+		//Calculate cost
+		double totalCost = lbsFish * pricePerPound;
+		//Round to 2 digits after decimal point
+		totalCost = (int)(totalCost * 100 + 0.5) / 100.0;
+		
+		//Output cost
+		System.out.println(lbsFish + " lbs at $" + pricePerPound + " per lb = $" + totalCost );
+	
+	}
+
+}
+
+
+import java.util.Scanner;
+
+/**
+ * BasketballGame class demonstrates augmented assignment, 
+ * increment and decrement operators
+ * @author First Last
+ */
+public class BasketballGame {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int homeScore, awayScore, home1stQtr, away1stQtr;
+		
+		System.out.print("Home and away points for 1st quarter: ");	
+		home1stQtr = input.nextInt();
+		away1stQtr = input.nextInt();
+		
+		//Initialize scores for 1st quarter 
+		homeScore = home1stQtr;
+		awayScore = away1stQtr;
+		System.out.println("1st quarter scores: home " + homeScore + " away " + awayScore);
+		
+		//2nd quarter
+		//TODO: Home team doubles their score. Use multiplication assignment operator.
+		homeScore *= 2;
+				
+		//TODO: Away team ties the game.
+		awayScore = homeScore;
+		
+		//Print 2nd quarter scores
+		System.out.println("2nd quarter scores: home " + homeScore + " away " + awayScore);	
+				
+		//Away team challenges last play by home team.  
+		//TODO: Use subtraction assignment operator to decrease home team score by 3
+		homeScore -= 3;
+				
+		//Print scores after challenge
+		System.out.println("After challenge: home " + homeScore + " away " + awayScore);
+							
+		//TODO: Use addition assignment to increase home team score by 10 points 
+		homeScore += 10;
+		
+		//TODO: Away team leads the game by 5 points
+		awayScore = homeScore + 5;
+		
+		//Print 3rd quarter scores
+		System.out.println("3rd quarter scores: home " + homeScore + " away " + awayScore);
+		
+		//Home team challenge results in free throw.  
+		//TODO: Use increment operator to increase home team score by 1
+		homeScore++;
+		
+		//Print scores after challenge
+		System.out.println("After challenge: home " + homeScore + " away " + awayScore);
+		
+		//Home team scores 1 fewer point in 4th quarter than they did in 1st quarter
+		//TODO: Use the addition assignment operator and the decrement operator
+		homeScore += --home1stQtr;
+		
+		//TODO: Away team wins loses the game by 1 point.
+		awayScore = homeScore - 1;
+		
+		//Print 4th quarter scores
+		System.out.println("4th quarter scores: home " + homeScore + " away " + awayScore);
+			
+	}
+
+}
