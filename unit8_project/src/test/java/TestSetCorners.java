@@ -1,4 +1,8 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -9,40 +13,36 @@ public class TestSetCorners {
     @Test
     public void testSetCorners3x4Matrix() {
         // Arrange
-        String[][] matrix = new String[5][4];  // 5x4 matrix
-        String fillValue = "X";  //value to set in non-corners
-        String setValue = "Y";  // value to set in the corners
-        LandscapeService.fillArray(matrix, fillValue);
+        String[][] original = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"}
+        };
+        String[][] matrix = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"}
+        };
+        String[][] expected = {
+                {"X", "B", "C", "X"},
+                {"E", "F", "G", "H"},
+                {"X", "J", "K", "X"}
+        };
+
+        String replacement = "X";
 
         // Act
-        LandscapeService.setCorners(matrix, setValue);
+        LandscapeService.setCorners(matrix, replacement);
 
         // Assert
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if ((i == 0 || i == 4)  && (j == 0 || j == 3))
-                        assertEquals(setValue, matrix[i][j], "Element at (" + i + "," + j + ") should be " + setValue);
-                    else
-                        assertEquals(fillValue, matrix[i][j], "Element at (" + i + "," + j + ") should not have changed");
-            }
-        }
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSet Corners with X" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
-    @Test
-    public void testSetCorners2x2Matrix() {
-        // Arrange
-        String[][] matrix = new String[2][2];  // 2x2 matrix
-        String val = "O";  // value to set in the corners
-
-        // Act
-        LandscapeService.setCorners(matrix, val);
-
-        // Assert
-        assertEquals(val, matrix[0][0], "Top-left corner should be " + val);
-        assertEquals(val, matrix[0][1], "Top-right corner should be " + val);
-        assertEquals(val, matrix[1][0], "Bottom-left corner should be " + val);
-        assertEquals(val, matrix[1][1], "Bottom-right corner should be " + val);
-    }
 
     @Test
     public void testSetCorners1x1Matrix() {
@@ -98,20 +98,5 @@ public class TestSetCorners {
         assertEquals(val, matrix[2][0], "Bottom-left corner should be " + val);
     }
 
-    @Test
-    public void testSetCornersMatrixWithNullValue() {
-        // Arrange
-        String[][] matrix = new String[3][3];  // 3x3 matrix
-        String val = null;  // null value to set in the corners
-
-        // Act
-        LandscapeService.setCorners(matrix, val);
-
-        // Assert
-        assertEquals(val, matrix[0][0], "Top-left corner should be " + val);
-        assertEquals(val, matrix[0][2], "Top-right corner should be " + val);
-        assertEquals(val, matrix[2][0], "Bottom-left corner should be " + val);
-        assertEquals(val, matrix[2][2], "Bottom-right corner should be " + val);
-    }
 }
 

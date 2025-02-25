@@ -42,13 +42,13 @@ public class TestSetMiddle {
         LandscapeService.setMiddle(matrix, setValue);
 
         // Assert: Check that the middle element is set
-        assertEquals(setValue, matrix[2][5], "Middle element of the 4x10 matrix should be set to " + setValue);
+        assertEquals(setValue, matrix[2][5], "Middle element at (2,5) of the 4x10 matrix should be set to " + setValue);
 
         // Assert: Ensure all other elements are unchanged
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i != 2 || j != 5) {
-                    assertEquals(fillValue, matrix[i][j], "Element at (" + i + "," + j + ") should not have changed");
+                    assertEquals(fillValue, matrix[i][j], "Element at (" + i + "," + j + ") in 4x10 should not have changed");
                 }
             }
         }

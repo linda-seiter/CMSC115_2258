@@ -11,35 +11,56 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestSurroundTarget {
 
     @Test
-    public void testSurroundTargetFoundInMatrix() {
+    public void testSurroundMultipleTargetFoundInMatrix() {
         // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
+        String[][] original = {
+                {"B", "B", "B", "B", "B"},
+                {"A", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "A", "B"}
         };
-        String target = "E";  // target value to search for
-        String s = "X";  // value to set in surrounding cells
+        String[][] matrix = {
+                {"B", "B", "B", "B", "B"},
+                {"A", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "A", "B"}
+        };
+        String[][] expected = {
+                {"Z", "Z", "B", "B", "B"},
+                {"A", "Z", "B", "B", "B"},
+                {"Z", "Z", "Z", "Z", "Z"},
+                {"B", "B", "Z", "A", "Z"}
+        };
+
+        String target = "A";  // target value to search for
+        String s = "Z";  // value to set in surrounding cells
 
         // Act
         LandscapeService.surroundTarget(matrix, target, s);
 
-        // Assert: Check that surrounding cells of 'E' are updated
-        assertEquals("X", matrix[0][0], "Top-left should be X");
-        assertEquals("X", matrix[0][1], "Top should be X");
-        assertEquals("X", matrix[0][2], "Top-right should be X");
-        assertEquals("X", matrix[1][0], "Left should be X");
-        assertEquals("E", matrix[1][1], "Center should be E"); // target 'E' remains unchanged
-        assertEquals("X", matrix[1][2], "Right should be X");
-        assertEquals("X", matrix[2][0], "Bottom-left should be X");
-        assertEquals("X", matrix[2][1], "Bottom should be X");
-        assertEquals("X", matrix[2][2], "Bottom-right should be X");
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround A with Z" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
     public void testSurroundTargetNotFound() {
         // Arrange
+        String[][] original = {
+                {"A", "B", "C"},
+                {"D", "E", "F"},
+                {"G", "H", "I"}
+        };
         String[][] matrix = {
+                {"A", "B", "C"},
+                {"D", "E", "F"},
+                {"G", "H", "I"}
+        };
+        String[][] expected = {
                 {"A", "B", "C"},
                 {"D", "E", "F"},
                 {"G", "H", "I"}
@@ -51,66 +72,14 @@ public class TestSurroundTarget {
         LandscapeService.surroundTarget(matrix, target, s);
 
         // Assert: No changes should occur as 'Z' is not found
-        assertEquals("A", matrix[0][0], "Top-left should remain A");
-        assertEquals("B", matrix[0][1], "Top should remain B");
-        assertEquals("C", matrix[0][2], "Top-right should remain C");
-        assertEquals("D", matrix[1][0], "Left should remain D");
-        assertEquals("E", matrix[1][1], "Center should remain E");
-        assertEquals("F", matrix[1][2], "Right should remain F");
-        assertEquals("G", matrix[2][0], "Bottom-left should remain G");
-        assertEquals("H", matrix[2][1], "Bottom should remain H");
-        assertEquals("I", matrix[2][2], "Bottom-right should remain I");
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround Z with X should result in no replacement." +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
-    @Test
-    public void testSurroundTargetOnEdge() {
-        // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
-        };
-        String[][] expected = {
-                {"X", "B", "X"},
-                {"X", "X", "X"},
-                {"G", "H", "I"}
-        };
-
-        String target = "B";  // target value located at (0,1)
-        String s = "X";  // value to set in surrounding cells
-
-        // Act
-        LandscapeService.surroundTarget(matrix, target, s);
-
-        // Assert: Check the surrounding cells of 'B' at (0, 1)
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix), "The two 2D arrays are not equal");
-
-    }
-
-    @Test
-    public void testSurroundTargetMultipleOccurrences() {
-        // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"},
-                {"C", "J", "K"}
-        };
-        String[][] expected = {
-                {"A", "X", "C"},
-                {"D", "X", "X"},
-                {"X", "X", "I"},
-                {"C", "X", "K"}
-        };
-        String target = "C";  // target value to search for
-        String s = "X";  // value to set in surrounding cells
-
-        // Act
-        LandscapeService.surroundTarget(matrix, target, s);
-
-        // Assert: Check that both occurrences of 'C' are surrounded
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix), "The two 2D arrays are not equal");
-    }
 
     @Test
     public void testSurroundTargetEmptyMatrix() {

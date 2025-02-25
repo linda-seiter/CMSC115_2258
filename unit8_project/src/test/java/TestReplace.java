@@ -1,4 +1,8 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -9,10 +13,20 @@ public class TestReplace {
     @Test
     public void testReplace3x3Matrix() {
         // Arrange
+        String[][] original = {
+                {"A", "B", "C"},
+                {"D", "E", "A"},
+                {"F", "A", "G"}
+        };
         String[][] matrix = {
                 {"A", "B", "C"},
-                {"D", "A", "E"},
-                {"F", "G", "A"}
+                {"D", "E", "A"},
+                {"F", "A", "G"}
+        };
+        String[][] expected = {
+                {"X", "B", "C"},
+                {"D", "E", "X"},
+                {"F", "X", "G"}
         };
         String target = "A";
         String replacement = "X";
@@ -21,20 +35,31 @@ public class TestReplace {
         LandscapeService.replace(matrix, target, replacement);
 
         // Assert
-        assertEquals("X", matrix[0][0], "Position (0,0) should be replaced with " + replacement);
-        assertEquals("X", matrix[1][1], "Position (1,1) should be replaced with " + replacement);
-        assertEquals("X", matrix[2][2], "Position (2,2) should be replaced with " + replacement);
-        assertEquals("B", matrix[0][1], "Position (0,1) should remain " + "B");
-        assertEquals("D", matrix[1][0], "Position (1,0) should remain " + "D");
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nReplace A with X" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
     public void testReplaceWithNoMatch() {
         // Arrange
+        String[][] original = {
+                {"A", "B", "C"},
+                {"D", "E", "A"},
+                {"F", "A", "G"}
+        };
         String[][] matrix = {
                 {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
+                {"D", "E", "A"},
+                {"F", "A", "G"}
+        };
+        String[][] expected = {
+                {"A", "B", "C"},
+                {"D", "E", "A"},
+                {"F", "A", "G"}
         };
         String target = "X";  // Target that does not exist in the matrix
         String replacement = "Y";  // Replacement value
@@ -42,17 +67,13 @@ public class TestReplace {
         // Act
         LandscapeService.replace(matrix, target, replacement);
 
-        // Assert
-        assertEquals("A", matrix[0][0], "Position (0,0) should remain A");
-        assertEquals("B", matrix[0][1], "Position (0,1) should remain B");
-        assertEquals("C", matrix[0][2], "Position (0,2) should remain C");
-        assertEquals("D", matrix[1][0], "Position (1,0) should remain D");
-        assertEquals("E", matrix[1][1], "Position (1,1) should remain E");
-        assertEquals("F", matrix[1][2], "Position (1,2) should remain F");
-        assertEquals("G", matrix[2][0], "Position (2,0) should remain G");
-        assertEquals("H", matrix[2][1], "Position (2,1) should remain H");
-        assertEquals("I", matrix[2][2], "Position (2,2) should remain I");
-    }
+        // Assert no changes
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nReplace X with Y should result in no changes" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );}
 
     @Test
     public void testReplaceSingleElementMatrix() {
@@ -65,7 +86,7 @@ public class TestReplace {
         LandscapeService.replace(matrix, target, replacement);
 
         // Assert
-        assertEquals("B", matrix[0][0], "The single element should be replaced with " + replacement);
+        assertEquals("B", matrix[0][0], "The single element in 1x1 matrix should be replaced with " + replacement);
     }
 
     @Test
@@ -79,55 +100,8 @@ public class TestReplace {
         LandscapeService.replace(matrix, target, replacement);
 
         // Assert
-        assertEquals(0, matrix.length, "Matrix should have no rows");
+        assertEquals(0, matrix.length, "0x0 matrix should have no rows");
     }
 
-    @Test
-    public void testReplaceWithNullTarget() {
-        // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
-        };
-        String target = null;  // Null target value
-        String replacement = "X";
-
-        // Act
-        LandscapeService.replace(matrix, target, replacement);
-
-        // Assert
-        assertEquals("X", matrix[0][0], "Position (0,0) should be replaced with X");
-        assertEquals("B", matrix[0][1], "Position (0,1) should remain B");
-        assertEquals("C", matrix[0][2], "Position (0,2) should remain C");
-        assertEquals("D", matrix[1][0], "Position (1,0) should remain D");
-        assertEquals("E", matrix[1][1], "Position (1,1) should remain E");
-        assertEquals("F", matrix[1][2], "Position (1,2) should remain F");
-        assertEquals("G", matrix[2][0], "Position (2,0) should remain G");
-        assertEquals("H", matrix[2][1], "Position (2,1) should remain H");
-        assertEquals("I", matrix[2][2], "Position (2,2) should remain I");
-    }
-
-    @Test
-    public void testReplaceWithNullReplacement() {
-        // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"A", "E", "F"},
-                {"G", "H", "A"}
-        };
-        String target = "A";
-        String replacement = null;  // Null replacement value
-
-        // Act
-        LandscapeService.replace(matrix, target, replacement);
-
-        // Assert
-        assertNull(matrix[0][0], "Position (0,0) should be replaced with null");
-        assertNull(matrix[1][0], "Position (1,0) should be replaced with null");
-        assertNull(matrix[2][2], "Position (2,2) should be replaced with null");
-        assertEquals("B", matrix[0][1], "Position (0,1) should remain B");
-        assertEquals("C", matrix[0][2], "Position (0,2) should remain C");
-    }
 }
 

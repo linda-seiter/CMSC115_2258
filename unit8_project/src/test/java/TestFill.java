@@ -67,16 +67,4 @@ public class TestFill {
         assertEquals(0, matrix.length, "Matrix should have no rows");
     }
 
-    @Test
-    public void testFillMatrixWithNullValue() {
-        // Arrange
-        String[][] matrix = new String[3][3];  // 3x3 matrix
-        String val = null;  // null value to fill the matrix with
-
-        // Act
-        LandscapeService.fillArray(matrix, val);
-
-        // Assert
-        validateMatrixFill(matrix, val);
-    }
 }

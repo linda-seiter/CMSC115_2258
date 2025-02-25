@@ -1,4 +1,8 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -6,51 +10,66 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TestSurround {
 
-    // Helper method to print the matrix for debugging
-    private void printMatrix(String[][] matrix) {
-        for (String[] row : matrix) {
-            for (String cell : row) {
-                System.out.print(cell + " ");
-            }
-            System.out.println();
-        }
-    }
-
     @Test
     public void testSurroundWithValidPosition() {
         // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
+        String[][] original = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
         };
-        int row = 1;
-        int col = 1;
-        String s = "X";  // value to set in surrounding cells
+        String[][] matrix = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
+        };
+        String[][] expected = {
+                {"A", "B", "C", "D"},
+                {"X", "X", "X", "H"},
+                {"X", "J", "X", "L"},
+                {"X", "X", "X", "P"}
+        };
+
+
+        String replacement = "X";
 
         // Act
-        LandscapeService.surround(matrix, row, col, s);
+        LandscapeService.surround(matrix, 2, 1, replacement);
 
-        // Assert: Check the surrounding cells
-        assertEquals("X", matrix[0][0], "Top-left should be X");
-        assertEquals("X", matrix[0][1], "Top should be X");
-        assertEquals("X", matrix[0][2], "Top-right should be X");
-        assertEquals("X", matrix[1][0], "Left should be X");
-        assertEquals("E", matrix[1][1], "Center (should remain unchanged) should be E");
-        assertEquals("X", matrix[1][2], "Right should be X");
-        assertEquals("X", matrix[2][0], "Bottom-left should be X");
-        assertEquals("X", matrix[2][1], "Bottom should be X");
-        assertEquals("X", matrix[2][2], "Bottom-right should be X");
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround (2,1) with X" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
     public void testSurroundTopLeftCorner() {
         // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
+        // Arrange
+        String[][] original = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
         };
+        String[][] matrix = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
+        };
+        String[][] expected = {
+                {"A", "X", "C", "D"},
+                {"X", "X", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
+        };
+
         int row = 0;
         int col = 0;
         String s = "X";  // value to set in surrounding cells
@@ -58,101 +77,94 @@ public class TestSurround {
         // Act
         LandscapeService.surround(matrix, row, col, s);
 
-        // Assert: Check the surrounding cells of the top-left corner
-        assertEquals("X", matrix[0][1], "Top should be X");
-        assertEquals("X", matrix[1][0], "Left should be X");
-        assertEquals("X", matrix[1][1], "Bottom-right should be X");
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround top left corner with X" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
-    public void testSurroundBottomRightCorner() {
+    public void testSurroundBottomLeftCorner() {
         // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
+        // Arrange
+        String[][] original = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
         };
-        int row = 2;
-        int col = 2;
+        String[][] matrix = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
+        };
+        String[][] expected = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"X", "X", "K", "L"},
+                {"M", "X", "O", "P"}
+        };
+
+        int row = 3;
+        int col = 0;
         String s = "X";  // value to set in surrounding cells
 
         // Act
         LandscapeService.surround(matrix, row, col, s);
 
-        // Assert: Check the surrounding cells of the bottom-right corner
-        assertEquals("X", matrix[1][1], "Top-left should be X");
-        assertEquals("X", matrix[1][2], "Top should be X");
-        assertEquals("X", matrix[2][1], "Left should be X");
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround bottom left corner with X" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
+
     @Test
-    public void testSurroundEdgeCaseFirstRow() {
+    public void testSurroundTopRight() {
         // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
+        // Arrange
+        String[][] original = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
         };
+        String[][] matrix = {
+                {"A", "B", "C", "D"},
+                {"E", "F", "G", "H"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
+        };
+        String[][] expected = {
+                {"A", "B", "X", "D"},
+                {"E", "F", "X", "X"},
+                {"I", "J", "K", "L"},
+                {"M", "N", "O", "P"}
+        };
+
         int row = 0;
-        int col = 1;  // Second column of the first row
+        int col = 3;
         String s = "X";  // value to set in surrounding cells
 
         // Act
         LandscapeService.surround(matrix, row, col, s);
 
-        // Assert: Check surrounding cells for first row, second column
-        assertEquals("X", matrix[0][0], "Top-left should be X");
-        assertEquals("B", matrix[0][1], "Top should be B");
-        assertEquals("X", matrix[0][2], "Top-right should be X");
-        assertEquals("X", matrix[1][0], "Left should be X");
-        assertEquals("X", matrix[1][2], "Right should be X");
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround top right corner with X" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
-    @Test
-    public void testSurroundEdgeCaseLastRow() {
-        // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
-        };
-        int row = 2;
-        int col = 1;  // Second column of the last row
-        String s = "X";  // value to set in surrounding cells
-
-        // Act
-        LandscapeService.surround(matrix, row, col, s);
-
-        // Assert: Check surrounding cells for last row, second column
-        assertEquals("X", matrix[1][0], "Left should be X");
-        assertEquals("X", matrix[1][1], "Center should be X");
-        assertEquals("X", matrix[1][2], "Right should be X");
-        assertEquals("X", matrix[2][0], "Bottom-left should be X");
-        assertEquals("X", matrix[2][2], "Bottom-right should be X");
-    }
-
-    @Test
-    public void testSurroundEdgeCaseFirstColumn() {
-        // Arrange
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
-        };
-        int row = 1;
-        int col = 0;  // First column, middle row
-        String s = "X";  // value to set in surrounding cells
-
-        // Act
-        LandscapeService.surround(matrix, row, col, s);
-
-        // Assert: Check surrounding cells for first column
-        assertEquals("X", matrix[0][0], "Top-left should be X");
-        assertEquals("X", matrix[0][1], "Top should be X");
-        assertEquals("X", matrix[1][1], "Right should be X");
-        assertEquals("X", matrix[2][0], "Bottom-left should be X");
-        assertEquals("X", matrix[2][1], "Bottom-right should be X");
-    }
 
     @Test
     public void testSurroundEmptyMatrix() {
