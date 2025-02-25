@@ -11,18 +11,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestReplace {
 
     @Test
-    public void testReplace3x3Matrix() {
+    public void testReplaceMultipleOccurrencesMatrix() {
         // Arrange
         String[][] original = {
                 {"A", "B", "C"},
                 {"D", "E", "A"},
                 {"F", "A", "G"}
         };
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "A"},
-                {"F", "A", "G"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"X", "B", "C"},
                 {"D", "E", "X"},
@@ -51,11 +47,7 @@ public class TestReplace {
                 {"D", "E", "A"},
                 {"F", "A", "G"}
         };
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "A"},
-                {"F", "A", "G"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"A", "B", "C"},
                 {"D", "E", "A"},
@@ -73,7 +65,8 @@ public class TestReplace {
                         "\nOriginal:" + Arrays.deepToString(original) +
                         "\nExpected:" + Arrays.deepToString(expected) +
                         "\nActual:" + Arrays.deepToString(matrix)
-        );}
+        );
+    }
 
     @Test
     public void testReplaceSingleElementMatrix() {

@@ -1,4 +1,8 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -6,39 +10,46 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TestFill {
 
-    // Helper method to validate matrix filling
-    private void validateMatrixFill(String[][] matrix, String val) {
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                assertEquals(val, matrix[row][col], "Matrix value at position (" + row + "," + col + ") should be " + val);
-            }
-        }
-    }
-
     @Test
     public void testFill3x4Matrix() {
         // Arrange
         String[][] matrix = new String[3][4];  // 3x4 matrix
         String val = "A";  // value to fill the matrix with
-
+        String[][] expected = {
+                {"A", "A", "A", "A"},
+                {"A", "A", "A", "A"},
+                {"A", "A", "A", "A"}
+        };
         // Act
         LandscapeService.fillArray(matrix, val);
 
         // Assert
-        validateMatrixFill(matrix, val);
+        // Assert no changes
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nFill 3x4 with A" +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
     public void testFill2x2Matrix() {
         // Arrange
         String[][] matrix = new String[2][2];  // 2x2 matrix
-        String val = "B";  // value to fill the matrix with
-
+        String[][] expected = {
+                {"B", "B"},
+                {"B", "B"}
+        };
         // Act
-        LandscapeService.fillArray(matrix, val);
+        LandscapeService.fillArray(matrix, "B");
 
         // Assert
-        validateMatrixFill(matrix, val);
+        // Assert no changes
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nFill 2x2 with B" +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test

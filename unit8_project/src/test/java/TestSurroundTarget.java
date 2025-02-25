@@ -9,9 +9,44 @@ import static org.junit.jupiter.api.Assertions.*;
  * Unit tests for the surroundTarget method in the LandscapeService class.
  */
 public class TestSurroundTarget {
+    @Test
+    public void testSurroundSingleTargetFoundInMatrix() {
+        // Arrange
+        String[][] original = {
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "A", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"}
+        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
+        String[][] expected = {
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "X", "X", "X", "B"},
+                {"B", "X", "A", "X", "B"},
+                {"B", "X", "X", "X", "B"},
+                {"B", "B", "B", "B", "B"}
+        };
+
+        String target = "A";  // target value to search for
+        String s = "X";  // value to set in surrounding cells
+
+        // Act
+        LandscapeService.surroundTarget(matrix, target, s);
+
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround A with Z" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
+    }
 
     @Test
-    public void testSurroundMultipleTargetFoundInMatrix() {
+    public void testSurroundMultipleTargetsEdgeCasesInMatrix() {
         // Arrange
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
@@ -19,12 +54,7 @@ public class TestSurroundTarget {
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "A", "B"}
         };
-        String[][] matrix = {
-                {"B", "B", "B", "B", "B"},
-                {"A", "B", "B", "B", "B"},
-                {"B", "B", "B", "B", "B"},
-                {"B", "B", "B", "A", "B"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"Z", "Z", "B", "B", "B"},
                 {"A", "Z", "B", "B", "B"},
@@ -55,11 +85,8 @@ public class TestSurroundTarget {
                 {"D", "E", "F"},
                 {"G", "H", "I"}
         };
-        String[][] matrix = {
-                {"A", "B", "C"},
-                {"D", "E", "F"},
-                {"G", "H", "I"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
+
         String[][] expected = {
                 {"A", "B", "C"},
                 {"D", "E", "F"},

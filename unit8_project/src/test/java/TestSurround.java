@@ -19,19 +19,13 @@ public class TestSurround {
                 {"I", "J", "K", "L"},
                 {"M", "N", "O", "P"}
         };
-        String[][] matrix = {
-                {"A", "B", "C", "D"},
-                {"E", "F", "G", "H"},
-                {"I", "J", "K", "L"},
-                {"M", "N", "O", "P"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"A", "B", "C", "D"},
                 {"X", "X", "X", "H"},
                 {"X", "J", "X", "L"},
                 {"X", "X", "X", "P"}
         };
-
 
         String replacement = "X";
 
@@ -57,12 +51,7 @@ public class TestSurround {
                 {"I", "J", "K", "L"},
                 {"M", "N", "O", "P"}
         };
-        String[][] matrix = {
-                {"A", "B", "C", "D"},
-                {"E", "F", "G", "H"},
-                {"I", "J", "K", "L"},
-                {"M", "N", "O", "P"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"A", "X", "C", "D"},
                 {"X", "X", "G", "H"},
@@ -96,12 +85,7 @@ public class TestSurround {
                 {"I", "J", "K", "L"},
                 {"M", "N", "O", "P"}
         };
-        String[][] matrix = {
-                {"A", "B", "C", "D"},
-                {"E", "F", "G", "H"},
-                {"I", "J", "K", "L"},
-                {"M", "N", "O", "P"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"A", "B", "C", "D"},
                 {"E", "F", "G", "H"},
@@ -136,12 +120,7 @@ public class TestSurround {
                 {"I", "J", "K", "L"},
                 {"M", "N", "O", "P"}
         };
-        String[][] matrix = {
-                {"A", "B", "C", "D"},
-                {"E", "F", "G", "H"},
-                {"I", "J", "K", "L"},
-                {"M", "N", "O", "P"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"A", "B", "X", "D"},
                 {"E", "F", "X", "X"},

@@ -18,11 +18,7 @@ public class TestSetCorners {
                 {"E", "F", "G", "H"},
                 {"I", "J", "K", "L"}
         };
-        String[][] matrix = {
-                {"A", "B", "C", "D"},
-                {"E", "F", "G", "H"},
-                {"I", "J", "K", "L"}
-        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"X", "B", "C", "X"},
                 {"E", "F", "G", "H"},

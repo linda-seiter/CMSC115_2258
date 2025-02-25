@@ -1,4 +1,8 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -9,49 +13,68 @@ public class TestSetMiddle {
     @Test
     public void testSetMiddleOddDimensions() {
         // Arrange
-        String[][] matrix = new String[5][7]; // 5x7 matrix
-        String fillValue = "A";
-        String setValue = "B";  // value to set in the middle
-        LandscapeService.fillArray(matrix, fillValue);
+        String[][] original = {
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"}
+        };  //5x7
+        String[][] matrix = Arrays.copyOf(original, original.length);
+        String[][] expected = {
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "Z", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"}
+        };  //5x7
 
         // Act
-        LandscapeService.setMiddle(matrix, setValue);
+        LandscapeService.setMiddle(matrix, "Z");
 
         // Assert: Check that the middle element is set
-        assertEquals(setValue, matrix[2][3], "Middle element of the 5x7 matrix should be set to " + setValue);
-
-        // Assert: Ensure all other elements are unchanged
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i != 2 || j != 3) {
-                    assertEquals(fillValue, matrix[i][j], "Element at (" + i + "," + j + ") should not have changed");
-                }
-            }
-        }
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nsetMiddle 5x7 assigns element (2,3) with Z" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
     public void testSetMiddleEvenDimensions() {
         // Arrange
-        String[][] matrix = new String[4][10];  // 4x10 matrix
-        String fillValue = "C";
-        String setValue = "D";  // value to set in the middle
-        LandscapeService.fillArray(matrix, fillValue);
-
+        String[][] original = {
+                {"A", "A", "A", "A", "A", "A", "A", "A"},
+                {"A", "A", "A", "A", "A", "A", "A", "A"},
+                {"A", "A", "A", "A", "A", "A", "A", "A",},
+                {"A", "A", "A", "A", "A", "A", "A", "A",},
+                {"A", "A", "A", "A", "A", "A", "A", "A",},
+                {"A", "A", "A", "A", "A", "A", "A", "A",}
+        };  //6x8
+        String[][] matrix = Arrays.copyOf(original, original.length);
+        String[][] expected = {
+                {"A", "A", "A", "A", "A", "A", "A", "A"},
+                {"A", "A", "A", "A", "A", "A", "A", "A"},
+                {"A", "A", "A", "A", "A", "A", "A", "A",},
+                {"A", "A", "A", "A", "Y", "A", "A", "A",},
+                {"A", "A", "A", "A", "A", "A", "A", "A",},
+                {"A", "A", "A", "A", "A", "A", "A", "A",}
+        };
         // Act
-        LandscapeService.setMiddle(matrix, setValue);
+        LandscapeService.setMiddle(matrix, "D");
 
-        // Assert: Check that the middle element is set
-        assertEquals(setValue, matrix[2][5], "Middle element at (2,5) of the 4x10 matrix should be set to " + setValue);
-
-        // Assert: Ensure all other elements are unchanged
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i != 2 || j != 5) {
-                    assertEquals(fillValue, matrix[i][j], "Element at (" + i + "," + j + ") in 4x10 should not have changed");
-                }
-            }
-        }
+        // Assert: Check that the bottom right middle element is set
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nsetMiddle 6x8 assigns element (3,4) with Y" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
     }
 
     @Test
