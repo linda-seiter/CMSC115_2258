@@ -2,58 +2,55 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the LandscapeService class, specifically the isValidIndex method.
+ * Unit tests for the isValidIndex method in the LandscapeService class.
  */
 public class TestIsValidIndex {
 
     @Test
-    public void testValidIndexWithinBounds() {
+    public void testValidIndex3x5() {
         // Arrange
-        String[][] matrix = new String[3][5];  // 3x5 matrix
+        String[][] matrix = new String[3][5];  // 3 rows 5 columns
 
-        // Act & Assert
-        // Corners
-        assertTrue(LandscapeService.isValidIndex(matrix, 0, 0), "Index (0,0) should be valid in a 3x5 matrix");
-        assertTrue(LandscapeService.isValidIndex(matrix, 0, 4), "Index (0,4) should be valid in a 3x5 matrix");
-        assertTrue(LandscapeService.isValidIndex(matrix, 2, 0), "Index (2,0) should be valid in a 3x5 matrix");
-        assertTrue(LandscapeService.isValidIndex(matrix, 2, 4), "Index (2,4) should be valid in a 3x5 matrix");
-        // Non-corner
-        assertTrue(LandscapeService.isValidIndex(matrix, 1, 2), "Index (1,2) should be valid in a 3x5 matrix");
+        // Act & Assert for 4 corners
+        assertTrue(LandscapeService.isValidIndex(matrix, 0, 0), "Index (0,0) should be valid in 3x5");
+        assertTrue(LandscapeService.isValidIndex(matrix, 0, 4), "Index (0,4) should be valid in 3x5");
+        assertTrue(LandscapeService.isValidIndex(matrix, 2, 0), "Index (2,0) should be valid in 3x5");
+        assertTrue(LandscapeService.isValidIndex(matrix, 2, 4), "Index (2,4) should be valid in 3x5");
+        // Act and Assert for non-corner
+        assertTrue(LandscapeService.isValidIndex(matrix, 1, 2), "Index (1,2) should be valid in 3x5");
     }
 
     @Test
-    public void testInvalidIndexOutOfBounds() {
+    public void testInvalidIndex5x7() {
         // Arrange
-        String[][] matrix = new String[3][5];  // 3x5 matrix
+        String[][] matrix = new String[5][7];  //5 rows 7 columns
 
-        // Act & Assert
-        assertFalse(LandscapeService.isValidIndex(matrix, -1, 0), "Index (-1,0) should be invalid in a 3x5 matrix");
-        assertFalse(LandscapeService.isValidIndex(matrix, 3, 0), "Index (3,0) should be invalid in a 3x5 matrix");
-        assertFalse(LandscapeService.isValidIndex(matrix, 0, -1), "Index (0,-1) should be invalid in a 3x5 matrix");
-        assertFalse(LandscapeService.isValidIndex(matrix, 0, 5), "Index (0,5) should be invalid in a 3x5 matrix");
+        // Act & Assert out of bounds
+        assertFalse(LandscapeService.isValidIndex(matrix, -1, 0), "Index (-1,0) should be invalid in 5x7");
+        assertFalse(LandscapeService.isValidIndex(matrix, 5, 0), "Index (5,0) should be invalid in 5x7");
+        assertFalse(LandscapeService.isValidIndex(matrix, 0, -1), "Index (0,-1) should be invalid in 5x7");
+        assertFalse(LandscapeService.isValidIndex(matrix, 0, 7), "Index (0,7) should be invalid in 5x7");
     }
 
     @Test
-    public void test1x1Matrix() {
+    public void test1x1() {
         // Arrange
-        String[][] matrix = new String[1][1];  // 1x1 matrix
+        String[][] matrix = new String[1][1];
 
         // Act & Assert
-        assertTrue(LandscapeService.isValidIndex(matrix, 0, 0), "Index (0,0) should be valid in a 1x1 matrix");
-        assertFalse(LandscapeService.isValidIndex(matrix, -1, 0), "Index (-1,0) should be invalid in a 1x1 matrix");
-        assertFalse(LandscapeService.isValidIndex(matrix, 1, 0), "Index (1,0) should be invalid in a 1x1 matrix");
-        assertFalse(LandscapeService.isValidIndex(matrix, 0, -1), "Index (0,-1) should be invalid in a 1x1 matrix");
+        assertTrue(LandscapeService.isValidIndex(matrix, 0, 0), "Index (0,0) should be valid in 1x1");
+        assertFalse(LandscapeService.isValidIndex(matrix, -1, 0), "Index (-1,0) should be invalid in 1x1");
+        assertFalse(LandscapeService.isValidIndex(matrix, 1, 0), "Index (1,0) should be invalid in 1x1");
+        assertFalse(LandscapeService.isValidIndex(matrix, 0, -1), "Index (0,-1) should be invalid in 1x1");
     }
 
     @Test
-    public void testEmptyMatrix() {
+    public void test0x0() {
         // Arrange
-        String[][] matrix = new String[0][0];  // Empty matrix
-        String val = "";  // value to fill the matrix with
+        String[][] matrix = new String[0][0];
 
         // Act & Assert
         assertFalse(LandscapeService.isValidIndex(matrix, 0,0), "Empty matrix has no valid indices");
-
     }
 
 }

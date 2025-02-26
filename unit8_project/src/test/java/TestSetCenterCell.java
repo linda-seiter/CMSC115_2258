@@ -1,18 +1,16 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the LandscapeService class, specifically the setMiddle method.
+ * Unit tests for the setCenterCell method in the LandscapeService class.
  */
-public class TestSetMiddle {
+public class TestSetCenterCell {
 
     @Test
-    public void testSetMiddleOddDimensions() {
-        // Arrange
+    public void testSetCenterOddDimensions() {
+        // Arrange 7x5
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"},
@@ -21,24 +19,25 @@ public class TestSetMiddle {
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"}
-        };  //5x7
+        };
         String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"},
-                {"B", "B", "Z", "B", "B"},
+                {"B", "B", "C", "B", "B"},
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"}
-        };  //5x7
+        };
+        String replacement = "C";
 
         // Act
-        LandscapeService.setMiddle(matrix, "Z");
+        LandscapeService.setCenterCell(matrix, replacement);
 
-        // Assert: Check that the middle element is set
+        // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nsetMiddle 5x7 assigns element (2,3) with Z" +
+                "\nsetMiddleCell 7x5 assigns cell at (3, 2) to " + replacement +
                         "\nOriginal:" + Arrays.deepToString(original) +
                         "\nExpected:" + Arrays.deepToString(expected) +
                         "\nActual:" + Arrays.deepToString(matrix)
@@ -46,31 +45,29 @@ public class TestSetMiddle {
     }
 
     @Test
-    public void testSetMiddleEvenDimensions() {
-        // Arrange
+    public void testSetCenterEvenDimensions() {
+        // Arrange 4x8
         String[][] original = {
                 {"A", "A", "A", "A", "A", "A", "A", "A"},
                 {"A", "A", "A", "A", "A", "A", "A", "A"},
-                {"A", "A", "A", "A", "A", "A", "A", "A",},
-                {"A", "A", "A", "A", "A", "A", "A", "A",},
-                {"A", "A", "A", "A", "A", "A", "A", "A",},
-                {"A", "A", "A", "A", "A", "A", "A", "A",}
-        };  //6x8
-        String[][] matrix = Arrays.copyOf(original, original.length);
-        String[][] expected = {
-                {"A", "A", "A", "A", "A", "A", "A", "A"},
-                {"A", "A", "A", "A", "A", "A", "A", "A"},
-                {"A", "A", "A", "A", "A", "A", "A", "A",},
-                {"A", "A", "A", "A", "Y", "A", "A", "A",},
                 {"A", "A", "A", "A", "A", "A", "A", "A",},
                 {"A", "A", "A", "A", "A", "A", "A", "A",}
         };
-        // Act
-        LandscapeService.setMiddle(matrix, "D");
+        String[][] matrix = Arrays.copyOf(original, original.length);
+        String[][] expected = {
+                {"A", "A", "A", "A", "A", "A", "A", "A"},
+                {"A", "A", "A", "A", "A", "A", "A", "A"},
+                {"A", "A", "A", "A", "D", "A", "A", "A",},
+                {"A", "A", "A", "A", "A", "A", "A", "A",}
+        };
+        String replacement = "D";
 
-        // Assert: Check that the bottom right middle element is set
+        // Act
+        LandscapeService.setCenterCell(matrix, replacement);
+
+        // Assert: Check that the bottom right center element is set
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nsetMiddle 6x8 assigns element (3,4) with Y" +
+                "\nsetMiddleCell 4 rows 8 cols assigns cell at (2, 4) to " + replacement +
                         "\nOriginal:" + Arrays.deepToString(original) +
                         "\nExpected:" + Arrays.deepToString(expected) +
                         "\nActual:" + Arrays.deepToString(matrix)
@@ -78,28 +75,28 @@ public class TestSetMiddle {
     }
 
     @Test
-    public void testSetMiddleSingleElement() {
+    public void testSetCenter1x1() {
         // Arrange
-        String[][] matrix = new String[1][1];  // 1x1 matrix
-        String value = "E";  // value to set in the middle
+        String[][] matrix = new String[1][1];
+        String replacement = "E";
 
         // Act
-        LandscapeService.setMiddle(matrix, value);
+        LandscapeService.setCenterCell(matrix, replacement);
 
         // Assert
-        assertEquals(value, matrix[0][0], "Middle element of the 1x1 matrix should be set to " + value);
+        assertEquals(replacement, matrix[0][0], "Center element of 1x1 should be set to " + replacement);
     }
 
     @Test
-    public void testSetMiddleEmpty() {
+    public void testSetCenter0x0() {
         // Arrange
         String[][] matrix = new String[0][0];  // 0x0 matrix
-        String value = "E";  // value to set in the middle
+        String replacement = "E";  // value to set in the middle
 
         // Act & Assert
         // No middle element should be set, matrix has no elements, so nothing happens
         try {
-            LandscapeService.setMiddle(matrix, value);
+            LandscapeService.setCenterCell(matrix, replacement);
             // Nothing should happen, no exception should be thrown
             assertTrue(true);
         } catch (ArrayIndexOutOfBoundsException e) {

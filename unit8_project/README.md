@@ -18,7 +18,7 @@ Download starter.
 NOTE: Do not use methods from the Java `Array` or `Arrays` classes.
 
 
-## Task #1 - Implment the `fill()` method
+## Task #1 - Implement the `fillArray()` method
 .
 
 

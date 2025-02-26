@@ -1,20 +1,19 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the LandscapeService class, specifically the fillArray method.
+ * Unit tests for the fillMatrix method in the LandscapeService class.
  */
 
-public class TestFill {
+public class TestFillMatrix {
 
     @Test
-    public void testFill3x4Matrix() {
+    public void testFill3x5() {
         // Arrange
-        String[][] matrix = new String[3][4];  // 3x4 matrix
+        String[][] matrix = new String[3][4]; //null values
         String val = "A";  // value to fill the matrix with
         String[][] expected = {
                 {"A", "A", "A", "A"},
@@ -22,39 +21,40 @@ public class TestFill {
                 {"A", "A", "A", "A"}
         };
         // Act
-        LandscapeService.fillArray(matrix, val);
-        //Testing reflection
+        LandscapeService.fillMatrix(matrix, val);
+
+        //Testing reflection approach
         /*
         try {
             final Class<?> clazz = LandscapeService.class;
-            final Method method = clazz.getMethod("fillArray", String[][].class, String.class);
+            final Method method = clazz.getMethod("fillMatrix", String[][].class, String.class);
             final Object[] args =  {matrix,val};
             method.invoke(null, args);
         } catch (Exception e) { e.printStackTrace();}
          */
 
         // Assert
-        // Assert no changes
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nFill 3x4 with A" +
+                "\nFill 3x5 with A" +
                         "\nExpected:" + Arrays.deepToString(expected) +
                         "\nActual:" + Arrays.deepToString(matrix)
         );
     }
 
     @Test
-    public void testFill2x2Matrix() {
+    public void testFill2x2() {
         // Arrange
-        String[][] matrix = new String[2][2];  // 2x2 matrix
+        String[][] matrix = new String[2][2];
         String[][] expected = {
                 {"B", "B"},
                 {"B", "B"}
         };
+        String val = "B";
+
         // Act
-        LandscapeService.fillArray(matrix, "B");
+        LandscapeService.fillMatrix(matrix, val);
 
         // Assert
-        // Assert no changes
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
                 "\nFill 2x2 with B" +
                         "\nExpected:" + Arrays.deepToString(expected) +
@@ -63,29 +63,29 @@ public class TestFill {
     }
 
     @Test
-    public void testFill1x1Matrix() {
+    public void testFill1x1() {
         // Arrange
-        String[][] matrix = new String[1][1];  // 1x1 matrix
-        String val = "C";  // value to fill the matrix with
+        String[][] matrix = new String[1][1];
+        String val = "C";
 
         // Act
-        LandscapeService.fillArray(matrix, val);
+        LandscapeService.fillMatrix(matrix, val);
 
         // Assert
-        assertEquals(val, matrix[0][0], "Matrix value at position (0,0) should be " + val);
+        assertEquals(val, matrix[0][0], "1x1 value at position (0,0) should be " + val);
     }
 
     @Test
-    public void testFillEmptyMatrix() {
+    public void testFill0x0() {
         // Arrange
         String[][] matrix = new String[0][0];  // Empty matrix
-        String val = "";  // value to fill the matrix with
+        String val = "";
 
         // Act
-        LandscapeService.fillArray(matrix, val);
+        LandscapeService.fillMatrix(matrix, val);
 
         // Assert
-        assertEquals(0, matrix.length, "Matrix should have no rows");
+        assertEquals(0, matrix.length, "0x0 matrix should have no rows");
     }
 
 }

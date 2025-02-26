@@ -6,11 +6,11 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the surroundTarget method in the LandscapeService class.
+ * Unit tests for the surroundMatchingCells method in the LandscapeService class.
  */
-public class TestSurroundTarget {
+public class TestSurroundMatchingCells {
     @Test
-    public void testSurroundSingleTargetFoundInMatrix() {
+    public void testSurround1Match() {
         // Arrange
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
@@ -30,11 +30,11 @@ public class TestSurroundTarget {
                 {"B", "B", "B", "B", "B"}
         };
 
-        String target = "A";  // target value to search for
-        String s = "X";  // value to set in surrounding cells
+        String targetValue = "A";  // target value to search for
+        String surroundValue = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundTarget(matrix, target, s);
+        LandscapeService.surroundMatchingCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -46,31 +46,68 @@ public class TestSurroundTarget {
     }
 
     @Test
-    public void testSurroundMultipleTargetsEdgeCasesInMatrix() {
+    public void testSurround2Matches() {
         // Arrange
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
-                {"A", "B", "B", "B", "B"},
+                {"B", "A", "B", "B", "B"},
                 {"B", "B", "B", "B", "B"},
-                {"B", "B", "B", "A", "B"}
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "A", "B"},
+                {"B", "B", "B", "B", "B"}
+        };
+        String[][] matrix = Arrays.copyOf(original, original.length);
+        String[][] expected = {
+                {"Z", "Z", "Z", "B", "B"},
+                {"Z", "A", "Z", "B", "B"},
+                {"Z", "Z", "Z", "B", "B"},
+                {"B", "B", "Z", "Z", "Z"},
+                {"B", "B", "Z", "A", "Z"},
+                {"B", "B", "Z", "Z", "Z"}
+        };
+
+        String targetValue = "A";  // target value to search for
+        String surroundValue = "Z";  // value to set in surrounding cells
+
+        // Act
+        LandscapeService.surroundMatchingCells(matrix, targetValue, surroundValue);
+
+        // Assert
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
+                "\nSurround every A with Z" +
+                        "\nOriginal:" + Arrays.deepToString(original) +
+                        "\nExpected:" + Arrays.deepToString(expected) +
+                        "\nActual:" + Arrays.deepToString(matrix)
+        );
+    }
+
+
+    @Test
+    public void testSurroundEdgeCases() {
+        // Arrange
+        String[][] original = {
+                {"B", "B", "B", "B", "B"},
+                {"C", "B", "B", "B", "B"},
+                {"B", "B", "B", "B", "B"},
+                {"B", "B", "B", "C", "B"}
         };
         String[][] matrix = Arrays.copyOf(original, original.length);
         String[][] expected = {
                 {"Z", "Z", "B", "B", "B"},
-                {"A", "Z", "B", "B", "B"},
+                {"C", "Z", "B", "B", "B"},
                 {"Z", "Z", "Z", "Z", "Z"},
-                {"B", "B", "Z", "A", "Z"}
+                {"B", "B", "Z", "C", "Z"}
         };
 
-        String target = "A";  // target value to search for
-        String s = "Z";  // value to set in surrounding cells
+        String targetValue = "C";  // target value to search for
+        String surroundValue = "Z";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundTarget(matrix, target, s);
+        LandscapeService.surroundMatchingCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nSurround A with Z" +
+                "\nSurround C with Z" +
                         "\nOriginal:" + Arrays.deepToString(original) +
                         "\nExpected:" + Arrays.deepToString(expected) +
                         "\nActual:" + Arrays.deepToString(matrix)
@@ -96,7 +133,7 @@ public class TestSurroundTarget {
         String s = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundTarget(matrix, target, s);
+        LandscapeService.surroundMatchingCells(matrix, target, s);
 
         // Assert: No changes should occur as 'Z' is not found
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -109,30 +146,30 @@ public class TestSurroundTarget {
 
 
     @Test
-    public void testSurroundTargetEmptyMatrix() {
+    public void testSurroundTarget0x0() {
         // Arrange
         String[][] matrix = new String[0][0];  // Empty matrix
         String target = "E";  // target to search for
         String s = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundTarget(matrix, target, s);
+        LandscapeService.surroundMatchingCells(matrix, target, s);
 
         // Assert: No changes should occur as the matrix is empty
-        assertEquals(0, matrix.length, "Matrix should have no rows");
+        assertEquals(0, matrix.length, "0x0 should have no rows");
     }
 
     @Test
-    public void testSurroundTargetSingleElement() {
+    public void testSurroundTargetSingleCell() {
         // Arrange
-        String[][] matrix = {{"E"}};  // Matrix with a single element
+        String[][] matrix = {{"E"}};  // Matrix with a single cell
         String target = "E";  // target value located at (0, 0)
-        String s = "X";  // value to set in surrounding cells
+        String surroundValue = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundTarget(matrix, target, s);
+        LandscapeService.surroundMatchingCells(matrix, target, surroundValue);
 
         // Assert: Since there's only one element, no surrounding cells should exist
-        assertEquals("E", matrix[0][0], "Center should remain E");
+        assertEquals(target, matrix[0][0], "Cell should remain " + target);
     }
 }
