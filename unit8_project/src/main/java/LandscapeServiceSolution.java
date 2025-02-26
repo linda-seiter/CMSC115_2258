@@ -4,7 +4,7 @@ import java.util.Scanner;
  * The LandscapeService class provides functionality to manipulate a 2D array that represents a rectangular yard.
  * The allows for adding elements like houses, trees, squirrels, flowers, and grass to a yard.
  */
-public class LandscapeService {
+public class LandscapeServiceSolution {
     static final String TREE = "🌳";      // \uD83C\uDF33
     static final String HOUSE = "🏠";     // \uD83C\uDFE0
     static final String FLOWER = "🌸";    // \uD83C\uDF38
@@ -151,8 +151,15 @@ public class LandscapeService {
         }
     }
 
+
+
+
+
+
+
     /**
-     * The main method creates a yard based on the user specified height and width.
+     * The main method where the program starts.
+     * It creates a yard based on the user specified height and width, adds objects to it, and prints the changes.
      *
      * @param args Command-line arguments (not used).
      */
@@ -161,8 +168,6 @@ public class LandscapeService {
         System.out.println("Enter yard height and width:");
         int height = in.nextInt();
         int width = in.nextInt();
-
-        /*
 
         System.out.println("Creating yard filled with dirt");
         String[][] myYard = new String[height][width];
@@ -188,7 +193,5 @@ public class LandscapeService {
         System.out.println("Replace dirt with grass");
         replace(myYard, BROWN_SQUARE, GREEN_SQUARE);
         printArray(myYard);
-
-        */
     }
 }

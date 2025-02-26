@@ -1,13 +1,14 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the LandscapeService class, specifically the fillArray method.
  */
+
 public class TestFill {
 
     @Test
@@ -22,6 +23,15 @@ public class TestFill {
         };
         // Act
         LandscapeService.fillArray(matrix, val);
+        //Testing reflection
+        /*
+        try {
+            final Class<?> clazz = LandscapeService.class;
+            final Method method = clazz.getMethod("fillArray", String[][].class, String.class);
+            final Object[] args =  {matrix,val};
+            method.invoke(null, args);
+        } catch (Exception e) { e.printStackTrace();}
+         */
 
         // Assert
         // Assert no changes

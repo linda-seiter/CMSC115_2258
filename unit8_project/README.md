@@ -11,8 +11,16 @@ A 1-2 sentence summary of what will be covered.
 
 ## Instructions
 
-Walk the student through any setup required to run the lesson (i.e.
-`npm install` and `npm start`).
+Download starter.
+
+2D array with 
+
+NOTE: Do not use methods from the Java `Array` or `Arrays` classes.
+
+
+## Task #1 - Implment the `fill()` method
+.
+
 
 ## Deliverables
 
