@@ -44,13 +44,4 @@ public class TestIsValidIndex {
         assertFalse(LandscapeService.isValidIndex(matrix, 0, -1), "Index (0,-1) should be invalid in 1x1");
     }
 
-    @Test
-    public void test0x0() {
-        // Arrange
-        String[][] matrix = new String[0][0];
-
-        // Act & Assert
-        assertFalse(LandscapeService.isValidIndex(matrix, 0,0), "Empty matrix has no valid indices");
-    }
-
 }

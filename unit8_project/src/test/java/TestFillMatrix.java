@@ -75,17 +75,5 @@ public class TestFillMatrix {
         assertEquals(val, matrix[0][0], "1x1 value at position (0,0) should be " + val);
     }
 
-    @Test
-    public void testFill0x0() {
-        // Arrange
-        String[][] matrix = new String[0][0];  // Empty matrix
-        String val = "";
-
-        // Act
-        LandscapeService.fillMatrix(matrix, val);
-
-        // Assert
-        assertEquals(0, matrix.length, "0x0 matrix should have no rows");
-    }
 
 }

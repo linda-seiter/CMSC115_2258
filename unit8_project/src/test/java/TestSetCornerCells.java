@@ -51,18 +51,6 @@ public class TestSetCornerCells {
         assertEquals(replacement, matrix[0][0], "1x1 cell (0,0) should be " + replacement);
     }
 
-    @Test
-    public void testSetCorners0x0() {
-        // Arrange
-        String[][] matrix = new String[0][0];  // Empty matrix
-        String replacement = "X";
-
-        // Act
-        LandscapeService.setCornerCells(matrix, replacement);
-
-        // Assert
-        assertEquals(0, matrix.length, "0x0 matrix should have no rows");
-    }
 
     @Test
     public void testSetCornersOneRow() {

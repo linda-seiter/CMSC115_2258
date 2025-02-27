@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the surroundMatchingCells method in the LandscapeService class.
  */
-public class TestSurroundMatchingCells {
+public class TestFindAndUpdateAdjacentCells {
     @Test
-    public void testSurround1Match() {
+    public void testFind1Match() {
         // Arrange
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
@@ -34,7 +34,7 @@ public class TestSurroundMatchingCells {
         String surroundValue = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundMatchingCells(matrix, targetValue, surroundValue);
+        LandscapeService.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -46,7 +46,7 @@ public class TestSurroundMatchingCells {
     }
 
     @Test
-    public void testSurround2Matches() {
+    public void testFind2Matches() {
         // Arrange
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
@@ -70,7 +70,7 @@ public class TestSurroundMatchingCells {
         String surroundValue = "Z";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundMatchingCells(matrix, targetValue, surroundValue);
+        LandscapeService.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -83,7 +83,7 @@ public class TestSurroundMatchingCells {
 
 
     @Test
-    public void testSurroundEdgeCases() {
+    public void testFindEdgeCases() {
         // Arrange
         String[][] original = {
                 {"B", "B", "B", "B", "B"},
@@ -103,7 +103,7 @@ public class TestSurroundMatchingCells {
         String surroundValue = "Z";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundMatchingCells(matrix, targetValue, surroundValue);
+        LandscapeService.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -115,7 +115,7 @@ public class TestSurroundMatchingCells {
     }
 
     @Test
-    public void testSurroundTargetNotFound() {
+    public void testFindNoMatch() {
         // Arrange
         String[][] original = {
                 {"A", "B", "C"},
@@ -133,7 +133,7 @@ public class TestSurroundMatchingCells {
         String s = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundMatchingCells(matrix, target, s);
+        LandscapeService.findAndUpdateAdjacentCells(matrix, target, s);
 
         // Assert: No changes should occur as 'Z' is not found
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -146,28 +146,14 @@ public class TestSurroundMatchingCells {
 
 
     @Test
-    public void testSurroundTarget0x0() {
-        // Arrange
-        String[][] matrix = new String[0][0];  // Empty matrix
-        String target = "E";  // target to search for
-        String s = "X";  // value to set in surrounding cells
-
-        // Act
-        LandscapeService.surroundMatchingCells(matrix, target, s);
-
-        // Assert: No changes should occur as the matrix is empty
-        assertEquals(0, matrix.length, "0x0 should have no rows");
-    }
-
-    @Test
-    public void testSurroundTargetSingleCell() {
+    public void test1x1() {
         // Arrange
         String[][] matrix = {{"E"}};  // Matrix with a single cell
         String target = "E";  // target value located at (0, 0)
         String surroundValue = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.surroundMatchingCells(matrix, target, surroundValue);
+        LandscapeService.findAndUpdateAdjacentCells(matrix, target, surroundValue);
 
         // Assert: Since there's only one element, no surrounding cells should exist
         assertEquals(target, matrix[0][0], "Cell should remain " + target);

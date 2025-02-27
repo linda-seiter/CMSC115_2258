@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the setCenterCell method in the LandscapeService class.
  */
-public class TestSetCenterCell {
+public class TestSetMiddleCell {
 
     @Test
     public void testSetCenterOddDimensions() {
@@ -33,7 +33,7 @@ public class TestSetCenterCell {
         String replacement = "C";
 
         // Act
-        LandscapeService.setCenterCell(matrix, replacement);
+        LandscapeService.setMiddleCell(matrix, replacement);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -63,7 +63,7 @@ public class TestSetCenterCell {
         String replacement = "D";
 
         // Act
-        LandscapeService.setCenterCell(matrix, replacement);
+        LandscapeService.setMiddleCell(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -81,27 +81,10 @@ public class TestSetCenterCell {
         String replacement = "E";
 
         // Act
-        LandscapeService.setCenterCell(matrix, replacement);
+        LandscapeService.setMiddleCell(matrix, replacement);
 
         // Assert
         assertEquals(replacement, matrix[0][0], "Center element of 1x1 should be set to " + replacement);
-    }
-
-    @Test
-    public void testSetCenter0x0() {
-        // Arrange
-        String[][] matrix = new String[0][0];  // 0x0 matrix
-        String replacement = "E";  // value to set in the middle
-
-        // Act & Assert
-        // No middle element should be set, matrix has no elements, so nothing happens
-        try {
-            LandscapeService.setCenterCell(matrix, replacement);
-            // Nothing should happen, no exception should be thrown
-            assertTrue(true);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            fail("Exception should not be thrown for an empty matrix");
-        }
     }
 
 }
