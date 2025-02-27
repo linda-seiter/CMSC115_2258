@@ -3,6 +3,7 @@ import java.util.Scanner;
 /**
  * The LandscapeService class provides functionality to manipulate a 2D array that represents a rectangular yard.
  * The allows for adding elements like houses, trees, squirrels, flowers, and grass to a yard.
+ * 2D array dimensions are given as rows x columns
  */
 public class LandscapeServiceSolution {
     static final String TREE = "🌳";      // \uD83C\uDF33
@@ -17,7 +18,7 @@ public class LandscapeServiceSolution {
      *
      * @param matrix The 2D array to be printed.
      */
-    public static void printArray(String[][] matrix) {
+    public static void printMatrix(String[][] matrix) {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
                 System.out.print(matrix[row][col]);
@@ -30,12 +31,12 @@ public class LandscapeServiceSolution {
      * Fills a 2D array with a given value.
      *
      * @param matrix The 2D array to be filled.
-     * @param val The value to fill the array with.
+     * @param fillValue The value to fill the array with.
      */
-    public static void fillArray(String[][] matrix, String val) {
+    public static void fillMatrix(String[][] matrix, String fillValue) {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                matrix[row][col] = val;
+                matrix[row][col] = fillValue;
             }
         }
     }
@@ -53,57 +54,58 @@ public class LandscapeServiceSolution {
     }
 
     /**
-     * Sets the middle cell of the array to a given string.
-     * For even dimensions, it sets the lower-right middle element.
+     * Assign the central cell to a given string.
+     * For even dimensions, it sets the lower-right central element.
      *
      * @param matrix The 2D array.
-     * @param s The string to set in the middle.
+     * @param value The string to assign the central cell to.
      */
-    public static void setMiddle(String[][] matrix, String s) {
-        //Check for empty array
+    public static void setCenterCell(String[][] matrix, String value) {
+        // Check for empty matrix
         if (matrix.length == 0 || matrix[0].length == 0)
             return;
-        // Calculate middle indices. For even dimensions, set lower-right middle element
-        int middleRow = matrix.length / 2;
-        int middleCol = matrix[0].length / 2;
-        // Guard for non-rectangular shape
-        if (isValidIndex(matrix, middleRow, middleCol)) {
-            matrix[middleRow][middleCol] = s;
-        }
+
+        // Calculate center indices. For even dimensions, set lower-right center element
+        int row = matrix.length / 2;
+        int col = matrix[0].length / 2;
+
+        // Assuming a rectangular shape, directly assign the center value
+        matrix[row][col] = value;
     }
 
     /**
      * Sets the four corners of the array to a given string.
      *
      * @param matrix The 2D array.
-     * @param s The string to set in the corners.
+     * @paramvalue The string to set in the corners.
      */
-    public static void setCorners(String[][] matrix, String s) {
-        //Check for empty array
+    public static void setCornerCells(String[][] matrix, String value) {
+        // Check for empty array
         if (matrix.length == 0 || matrix[0].length == 0)
             return;
 
         int rows = matrix.length;
         int cols = matrix[0].length;
 
-        matrix[0][0] = s;  //Top-left
-        matrix[0][cols - 1] = s;  //Top-right
-        matrix[rows - 1][0] = s;  //Bottom-left
-        matrix[rows - 1][cols - 1] = s;  //Bottom-right
+        matrix[0][0] = value;  // Top-left
+        matrix[0][cols - 1] = value;  // Top-right
+        matrix[rows - 1][0] = value;  // Bottom-left
+        matrix[rows - 1][cols - 1] = value;  // Bottom-right
     }
 
+
     /**
-     * Replaces all occurrences of a target string in the array with a replacement string.
+     * Replaces all occurrences of the oldValue string in the matrix with the newValue string.
      *
      * @param matrix The 2D array.
-     * @param target The string to replace.
-     * @param replacement The string to replace the target with.
+     * @param oldValue The string to replace.
+     * @param newValue The string to replace the oldValue with.
      */
-    public static void replace(String[][] matrix, String target, String replacement) {
+    public static void replaceValue(String[][] matrix, String oldValue, String newValue) {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                if (target.equals(matrix[row][col])){
-                    matrix[row][col]  = replacement;
+                if (oldValue.equals(matrix[row][col])){
+                    matrix[row][col]  = newValue;
                 }
             }
         }
@@ -115,9 +117,9 @@ public class LandscapeServiceSolution {
      * @param matrix The 2D array.
      * @param row The row index of the target cell.
      * @param col The column index of the target cell.
-     * @param s The string to surround the target cell with.
+     * @param surroundingValue The string to surround the target cell with.
      */
-    public static void surround(String[][] matrix, int row, int col, String s) {
+    public static void setSurroundingCells(String[][] matrix, int row, int col, String surroundingValue) {
         // Directions for surrounding cells (row and column offsets)
         int[] rowOffsets = {-1, -1, -1, 0, 0, 1, 1, 1};
         int[] colOffsets = {-1, 0, 1, -1, 1, -1, 0, 1};
@@ -128,7 +130,7 @@ public class LandscapeServiceSolution {
             int newCol = col + colOffsets[i];
 
             if (isValidIndex(matrix, newRow, newCol)) {
-                matrix[newRow][newCol] = s;
+                matrix[newRow][newCol] = surroundingValue;
             }
         }
     }
@@ -137,61 +139,57 @@ public class LandscapeServiceSolution {
      * Loops through the entire array and surrounds all occurrences of a target string with a specified string.
      *
      * @param matrix The 2D array.
-     * @param target The string to find and surround.
-     * @param s The string to surround the target with.
+     * @param targetValue The string to find and surround.
+     * @param newValue The string to surround the target with.
      */
-    public static void surroundTarget(String[][] matrix, String target, String s) {
-        // Loop through the entire array and find the target, then surround
+    public static void surroundMatchingCells(String[][] matrix, String targetValue, String newValue) {
+        // Find each cell matching the target value and update the surrounding cells
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                if (target.equals(matrix[row][col])) {
-                    surround(matrix, row, col, s);
+                if (targetValue.equals(matrix[row][col])) {
+                    setSurroundingCells(matrix, row, col, newValue);
                 }
             }
         }
     }
 
-
-
-
-
-
-
     /**
-     * The main method where the program starts.
-     * It creates a yard based on the user specified height and width, adds objects to it, and prints the changes.
+     * The main method creates a landscaped yard based on the specified rows and columns.
      *
      * @param args Command-line arguments (not used).
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter yard height and width:");
-        int height = in.nextInt();
-        int width = in.nextInt();
+        System.out.println("Enter rows and columns:");
+        int rows = in.nextInt();
+        int cols = in.nextInt();
 
-        System.out.println("Creating yard filled with dirt");
-        String[][] myYard = new String[height][width];
-        fillArray(myYard, BROWN_SQUARE);
-        printArray(myYard);
+        System.out.println(String.format("Creating new %dx%d yard", rows, cols));
+        String[][] myYard = new String[rows][cols];  //rows x cols
+        printMatrix(myYard);
+
+        System.out.println("Filling the yard with dirt");
+        fillMatrix(myYard, BROWN_SQUARE);
+        printMatrix(myYard);
 
         System.out.println("Adding a house in the middle of the yard");
-        setMiddle(myYard, HOUSE);
-        printArray(myYard);
+        setCenterCell(myYard, HOUSE);
+        printMatrix(myYard);
 
         System.out.println("Add trees in corners");
-        setCorners(myYard, TREE);
-        printArray(myYard);
+        setCornerCells(myYard, TREE);
+        printMatrix(myYard);
 
         System.out.println("Surround house with flowers");
-        surroundTarget(myYard, HOUSE, FLOWER);
-        printArray(myYard);
+        surroundMatchingCells(myYard, HOUSE, FLOWER);
+        printMatrix(myYard);
 
         System.out.println("Surround trees with squirrels");
-        surroundTarget(myYard, TREE, SQUIRREL);
-        printArray(myYard);
+        surroundMatchingCells(myYard, TREE, SQUIRREL);
+        printMatrix(myYard);
 
         System.out.println("Replace dirt with grass");
-        replace(myYard, BROWN_SQUARE, GREEN_SQUARE);
-        printArray(myYard);
+        replaceValue(myYard, BROWN_SQUARE, GREEN_SQUARE);
+        printMatrix(myYard);
     }
 }

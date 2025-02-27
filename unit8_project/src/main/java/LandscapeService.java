@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 /**
  * The LandscapeService class provides functionality to manipulate a 2D array that represents a rectangular yard.
- * The allows for adding elements like houses, trees, squirrels, flowers, and grass to a yard.
- * 2D array dimensions are given as rows x columns
+ * The main method simulates adding a house, trees, squirrels, flowers, and grass to a yard.
+ * Array dimensions are given as rows x columns.
+ * All methods assume a rectangular 2D array is passed as a parameter.
  */
 public class LandscapeService {
     static final String TREE = "🌳";      // \uD83C\uDF33
@@ -30,8 +31,8 @@ public class LandscapeService {
     /**
      * Fills a 2D array with a given value.
      *
-     * @param matrix The 2D array to be filled.
-     * @param fillValue The value to fill the array with.
+     * @param matrix The 2D array to be filled with new values.
+     * @param fillValue A string that will replace the current value of each cell in the matrix.
      */
     public static void fillMatrix(String[][] matrix, String fillValue) {
         for (int row = 0; row < matrix.length; row++) {
@@ -69,7 +70,7 @@ public class LandscapeService {
         int row = matrix.length / 2;
         int col = matrix[0].length / 2;
 
-        // Assuming a rectangular shape, directly assign the center value
+        // Assuming rectangular, assign the center value
         matrix[row][col] = value;
     }
 
