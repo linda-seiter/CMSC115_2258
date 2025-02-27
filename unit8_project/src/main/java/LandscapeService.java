@@ -35,11 +35,7 @@ public class LandscapeService {
      * @param fillValue A string that will replace the current value of each cell in the matrix.
      */
     public static void fillMatrix(String[][] matrix, String fillValue) {
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                matrix[row][col] = fillValue;
-            }
-        }
+        //TODO
     }
 
 
@@ -53,13 +49,7 @@ public class LandscapeService {
      * @param value The string to assign the middle cell to.
      */
     public static void setMiddleCell(String[][] matrix, String value) {
-
-        // Calculate center indices. For even dimensions, set lower-right center element
-        int row = matrix.length / 2;
-        int col = matrix[0].length / 2;
-
-        // Assuming rectangular, assign the center value
-        matrix[row][col] = value;
+        //TODO
     }
 
     /**
@@ -69,14 +59,7 @@ public class LandscapeService {
      * @paramvalue The string to set in the corners.
      */
     public static void setCornerCells(String[][] matrix, String value) {
-
-        int rows = matrix.length;
-        int cols = matrix[0].length;
-
-        matrix[0][0] = value;  // Top-left
-        matrix[0][cols - 1] = value;  // Top-right
-        matrix[rows - 1][0] = value;  // Bottom-left
-        matrix[rows - 1][cols - 1] = value;  // Bottom-right
+        //TODO
     }
 
 
@@ -88,13 +71,7 @@ public class LandscapeService {
      * @param newValue The string to replace the target with.
      */
     public static void replaceTargetValue(String[][] matrix, String targetValue, String newValue) {
-         for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                if (targetValue.equals(matrix[row][col])){
-                    matrix[row][col]  = newValue;
-                }
-            }
-        }
+         //TODO
     }
 
     /**
@@ -106,7 +83,8 @@ public class LandscapeService {
      * @return True if the indices are valid, false otherwise.
      */
     public static boolean isValidIndex(String[][] matrix, int row, int col) {
-        return (row >= 0 && row < matrix.length && col >= 0 && col < matrix[row].length);
+        //TODO
+        return false;
     }
 
     /**
@@ -120,19 +98,7 @@ public class LandscapeService {
      * @param newValue The string value to assign to the adjacent cells.
      */
     public static void setAdjacentCells(String[][] matrix, int row, int col, String newValue) {
-        // Directions for adjacent cells (row and column offsets)
-        int[] rowOffsets = {-1, -1, -1, 0, 0, 1, 1, 1};
-        int[] colOffsets = {-1, 0, 1, -1, 1, -1, 0, 1};
-
-        // Loop through all 8 adjacent directions
-        for (int i = 0; i < rowOffsets.length; i++) {
-            int newRow = row + rowOffsets[i];
-            int newCol = col + colOffsets[i];
-
-            if (isValidIndex(matrix, newRow, newCol)) {
-                matrix[newRow][newCol] = newValue;
-            }
-        }
+        //TODO
     }
 
     /**
@@ -148,16 +114,7 @@ public class LandscapeService {
      * @param newValue The string value to assign to the adjacent cells of the matching target cells.
      */
     public static void findAndUpdateAdjacentCells(String[][] matrix, String targetValue, String newValue) {
-        // Loop through the entire matrix to find cells that match the target value
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                // If the current cell matches the target value, update the adjacent cells
-                if (targetValue.equals(matrix[row][col])) {
-                    // Call the existing method to update adjacent cells
-                    setAdjacentCells(matrix, row, col, newValue);
-                }
-            }
-        }
+        //TODO
     }
 
     /**
@@ -174,24 +131,17 @@ public class LandscapeService {
         //Create rows X cols sized yard
         String[][] myYard = new String[rows][cols];
 
-
         //Fill the yard with dirt
-        fillMatrix(myYard, BROWN_SQUARE);
 
         //Add a house in the middle
-        setMiddleCell(myYard, HOUSE);
 
         //Add trees in corners
-        setCornerCells(myYard, TREE);
 
         //Replace dirt with grass
-        replaceTargetValue(myYard, BROWN_SQUARE, GREEN_SQUARE);
 
         //Surround house with flowers
-        findAndUpdateAdjacentCells(myYard, HOUSE, FLOWER);
 
         //Surround trees with squirrels
-        findAndUpdateAdjacentCells(myYard, TREE, SQUIRREL);
 
         //Print final result
         printMatrix(myYard);
