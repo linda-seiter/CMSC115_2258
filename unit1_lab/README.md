@@ -2,8 +2,7 @@
 
 ## Learning Objectives
 
-- Run a Java class
-- Edit a Java class
+- Run, test, and edit a Java class
 - Use single-line and multi-line (block) comments
 - Declare, initialize, and update a variable.
 - Use numeric operators in calculations.
@@ -12,75 +11,88 @@
 
 ## Setup
 
-NOTE: Instructions for accessing VS Code on Mars and/or installing VS Code on
-local machine will be provided in a separate document.
+**Note:** Instructions for accessing IntelliJ on Mars and installing IntelliJ on your local machine can be found in a separate document.
 
-VS Code is a powerful interactive development environment (IDE) whose primary
-purpose is to serve as a code editor. The basic user interface includes a
-explorer on the left that lists files and folders, and an editor on the right
-that displays the content of opened files.
+IntelliJ is a robust interactive development environment (IDE). The user interface consists of a project view on the left that lists files and folders, and an editor on the right where the contents of opened files are displayed. When you run a program, the output appears in the run view at the bottom of the window.
 
-![user interface explorer and editor views](images/vscode_ui.png)
+<img alt="IntelliJ IDE project, editor, and run views" src="images/IDE_views.png" width="500">
 
-If the explorer view is not displayed, click the top button in the activity
-sidebar, or select View > Explorer from the top menu bar.
+You can adjust the size of the various views as needed. For instance, if you need more space for the editor, you can close the project view. To toggle the visibility of the project view, click the folder button in the activity sidebar, or navigate to View > Tool Windows > Project from the top menu.
 
-<img alt="explorer top button in activity sidebar" src="images/explorer_button.png" width="200" >
+<img alt="project folder button in activity sidebar" src="images/project_folder.png" width="150">
 
-Expand the `week1_lab/src/main` folders to list the Java files in the default
-package:
+For now, ensure the project view is visible. The CMSC 115 Unit#1 lab files are located in the `src > main > java` folder.
 
-<img alt="expand week1_lab/src/main folders" src="images/week1_lab.png" width="200" >
+For additional information about IntelliJ, including how to customize the appearance and accessibility settings, refer to the links in the resources section at the bottom of this lab.
 
-## Task 1 - CourseWelcome.java
+## Task 1 - CourseWelcome
 
-Click on `CourseWelcome.java` to open the file in the editor window.
+Let's examine a simple Java program that prints a greeting.
+Double-click on **CourseWelcome** in the project view to open the file in the editor.
 
-![open file from Explorer](images/open_file.png)
+A Java class with a `main` method represents an executable program. 
+- The `main` method is automatically called when you run the program.  
+- The `main` method contains two print statements, each outputting the text enclosed in double quotes.
 
-A Java class with a `main` method represents an executable program. The `main`
-method is automatically called when you run the program.
+<img alt="Output shown in run view" src="images/run_output.png" width="400" >
 
-```java
-public class CourseWelcome {
-    public static void main(String[] args) {
-        System.out.println("Welcome to CMCS 115.");
-        System.out.println("Let's learn Java!");
-    }
-}
-```
+### Run CourseWelcome
 
 There are several ways to run the `main` method.
 
-|                                                                                               | Alternative ways to run `main`                              |
-| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| <img alt="click run button above main signature" src="images/run_main.png" width="400" >      | Click `Run` above the main method signature.                |
-| <img alt="right-click class, Run Java" src="images/run_java.png" width="400" >                | Right-click on the Java file, then select `Run Java`.       |
-| <img alt="Run, Run without Debugging main menubar" src="images/run_menubar.png" width="400" > | Select `Run > Run Without Debugging` from the main menubar. |
+1. Click the green run arrow to the left of the class header or the main method.
+2. Right-click in the editor window and select **Run CourseWelcome.main()**.
+3. Right-click on  **CourseWelcome** in the project view and select **Run CourseWelcome.main()**.
+4. Select **Current File** and then click the green run arrow in the project toolbar.
+5. Select **Run > Run CourseWelcome** from the top menubar.
 
-VS Code displays the console output in a terminal window, which is usually
-located at the bottom of the user interface. Click on the "TERMINAL" tab if you
-don't see the output.
+<img alt="ways to run a main method" src="images/run.png" width="500" >
 
-![terminal output](images/terminal_output.png)
+Experiment with the different ways to run the CourseWelcome class. Confirm the following two lines of output are produced.
 
-Many of the labs involve writing a program to produce some expected output. The
-current code produces the text shown in the **Actual Output** column below.
+```text
+Welcome.
+Let's learn Java!
+```
+
+
+### Run CourseWelcomeTest
+
+The current code produces the text shown in the **Actual Output** column below.
 However, assume the code should produce the text in the **Expected Output**
 column.
 
-| Expected Output                                                      | Actual Output                             |
-| -------------------------------------------------------------------- | ----------------------------------------- |
-| Welcome to CMCS 115 - Introductory Programming.<br>Let's learn Java! | Welcome to CMCS 115.<br>Let's learn Java! |
+| Expected Output           | Actual Output |
+| ------------------------ |---------------|
+| Welcome to CMCS 115.<br>Let's learn Java! | Welcome.<br>Let's learn Java!|
 
-We need to fix the code when the actual output does not match the expected
-output.
 
-1. Edit the first statement in the `main` method to print the character string
-   "Welcome to CMCS 115 - Introductory Programming.".
-2. Save your changes by selecting File > Save from the menu bar, or type Ctrl-S
-   (Windows/Linux) or Command-S (Mac).
-3. Run `CourseWelcome` and confirm the code produces the expected output.
+Many of the tasks you'll do will involve writing
+a program to produce some expected output. For each task, 
+you need to test the program to check the output.
+
+We'll use a very popular testing framework named Junit.
+Expand the test folder in the project view as shown in the screenshot below.
+The test folder contains a Junit test class for each regular Java class.  For example, CourseWelcomeTest is the Junit test for the CourseWelcome class.
+
+<img alt="CourseWelcomeTest junit test class" src="images/junit.png" width="400" >
+
+Don't worry about understanding the code in CourseWelcomeTest. 
+For now, you'll just run the test to check the result.
+
+1. Right-click on **CourseWelcomeTest** in the project view, then select **Run CourseWelcomeTest**.<br>
+<img alt="Run junit test class" src="images/run_test.png" width="300" >
+2. You should see a message in the run view indicating the test failed.  Click on "Click to see difference". A side-by-side comparison is displayed with the differences highlighted.<br>
+<img alt="Test failed message in run view" src="images/test_failed.png" width="400" >
+3. Close the comparison failure tab. You can click on the CourseWelcome tab in the editor if you don't see the code.
+4. Update the CourseWelcome class to produce the expected output. The first print statement in the `main` method should print the character string
+   "Welcome to CMCS 115.".<br>
+<img alt="Task1 print statement corrected" src="images/task1_solution.png" width="400" >
+4. Re-run the Junit **CourseWelcomeTest** class and confirm the test passed.<br>
+<img alt="Test passed message in run view" src="images/test_passed.png" width="400" >
+
+
+Congratulations!  
 
 ## Task 2 - Comments.java
 
@@ -164,11 +176,11 @@ Click on `Fixit.java` to open the file in the editor.
 
 ```java
 public class Fixit {
-   public static void main(String[] args) {
-      System.out.println("ship");
-      //System.out.println("airplane")
-      System.out.println("tank");
-   }
+    public static void main(String[] args) {
+        System.out.println("ship");
+        //System.out.println("airplane")
+        System.out.println("tank");
+    }
 }
 ```
 
@@ -279,27 +291,27 @@ Click on `Paycheck.java` to open the file in the editor.
  * @author First Last
  */
 public class Paycheck {
-	public static void main(String[] args) {
-		//Declare and initialize variables
-		double hourlyRate = 18.25;
-		int hoursWorked = 35;
-		double pay = hoursWorked * hourlyRate;
+    public static void main(String[] args) {
+        //Declare and initialize variables
+        double hourlyRate = 18.25;
+        int hoursWorked = 35;
+        double pay = hoursWorked * hourlyRate;
 
-		//Print initial values
-		System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
+        //Print initial values
+        System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
 
-		//Assign hoursWorked to 39, recalculate pay
-		hoursWorked = 39;
-		pay = hoursWorked * hourlyRate;
+        //Assign hoursWorked to 39, recalculate pay
+        hoursWorked = 39;
+        pay = hoursWorked * hourlyRate;
 
-		//Print updated values
-		System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
+        //Print updated values
+        System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
 
-		//TODO: Week 3 - Assign hoursWorked to 27, increase hourlyRate by 0.50, recalculate pay
+        //TODO: Week 3 - Assign hoursWorked to 27, increase hourlyRate by 0.50, recalculate pay
 
-		//TODO: Print updated values
+        //TODO: Print updated values
 
-	}
+    }
 }
 ```
 

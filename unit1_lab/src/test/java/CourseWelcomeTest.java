@@ -1,19 +1,32 @@
 import org.junit.jupiter.api.*;
+import java.io.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 class CourseWelcomeTest {
+
+    private final PrintStream standardOut = System.out;
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(outputStreamCaptor));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.setOut(standardOut);
+    }
 
     @Test
     @DisplayName("CourseWelcome.main prints correct output")
     void courseWelcomeOutput() throws Exception {
-        String expectedOutput = "Welcome to CMCS 115 - Introductory Programming.\n" +
+        //Arrange
+        String expectedOutput = "Welcome to CMSC 115.\n" +
                 "Let's learn Java!\n";
-        // Capture the output from CourseWelcome.main
-        String actualOutput = tapSystemOutNormalized(() -> {
-            CourseWelcome.main(new String[] {});
-        });
-        // Compare expected vs actual output
+        // Act
+        CourseWelcome.main(new String[]{});
+        String actualOutput = outputStreamCaptor.toString();
+        //Assert
         assertEquals(expectedOutput, actualOutput);
     }
 
