@@ -4,7 +4,7 @@
 
 - Manipulate 2D arrays in Java, including accessing, modifying, and iterating over rows and columns.
 - Use conditional logic and validation to ensure safe array access, preventing `ArrayIndexOutOfBoundsException`.
-- Represent and manipulate strings and use emojis.
+- Handle and process strings containing Unicode characters.
 - Use a 2D array to visually represent data in a grid-like structure.
 - Create modular, clean, and well-organized code using reusable methods to achieve a final outcome (such as landscaping a yard).
 
