@@ -35,8 +35,8 @@ TBD
 
 ## Task #0 - Run the `main()` method with sample user input
 
-- The `LandscapeService` class contains a method `printMatrix` to print the contents of a 2D String array.
-- The `main` method creates a 2D array with the dimensions given by the user, then calls `printMatrix`.
+The `LandscapeService` class contains a method `printMatrix` to print the contents of a 2D array of strings.
+The `main` method creates a 2D array of strings with the dimensions given by the user, then calls `printMatrix`.
 
 Run the `main()` method to confirm the matrix with the specified dimensions is created and printed:
 
@@ -407,7 +407,7 @@ Enter rows and columns:
 
 ## Task #5 - Implement the `isValidIndex()` method
 
-The purpose of the `isValidIndex` method check is a given index is valid within the bounds
+The purpose of the `isValidIndex` method is to check if a given index is valid within the bounds
 of a 2D array.
 
 ```java
@@ -449,10 +449,10 @@ Run the JUnit tests in the `TestIsValidIndex` class to verify your solution.
 ## Task #6 - Implement the `setAdjacentCells()` method
 
 The `setAdjacentCells` method assigns a new value to the cells that are adjacent
-to a specified cell, including those horizontally, vertically, and diagonally.
+to a specified cell, including those horizontally, vertically, and diagonally adjacent.
 To handle edge cases where the specified cell is located in the first or last
 row, or the first or last column, the method should check the validity of the indices
-before updating any adjacent cells.
+before attempting to update an adjacent cell.
 
 ```java
 /**
