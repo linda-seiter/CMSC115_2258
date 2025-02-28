@@ -10,9 +10,12 @@
 
 ## Introduction
 
-In this project, you will develop several methods within the `LandscapeService` class to manipulate a 2D array that represents a rectangular yard, with the array dimensions specified as `rows x columns`. It can be assumed that the methods will receive a non-empty, rectangular 2D array as a parameter.
+In this project, you will develop several methods within the `LandscapeService` class
+to manipulate a 2D array that represents a rectangular yard.
+The `main` method will add elements to the yard such as green grass,
+a house surrounded by flowers, and trees surrounded by squirrels. 
 
-The `main` method will invoke these methods to add elements such as a house, trees, squirrels, flowers, and grass to the yard. For example:
+For example:
 
 ```text
 🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
@@ -23,6 +26,9 @@ The `main` method will invoke these methods to add elements such as a house, tre
 🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
 🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
 ```
+
+Array dimensions will be
+specified as `rows X columns`. You may assume the methods to implement receive a non-empty, rectangular 2D array as a parameter.
 
 ## Restrictions
 
