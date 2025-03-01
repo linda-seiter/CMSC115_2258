@@ -30,7 +30,8 @@ class FixitTest {
         String actualOutput = outputStreamCaptor.toString();
 
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "Fixit.main fails to print expected outout.");
     }
 
 }

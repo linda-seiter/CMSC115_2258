@@ -31,7 +31,8 @@ public class PaycheckTest {
         String actualOutput = outputStreamCaptor.toString();
 
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "Paycheck.main fails to print expected outout.");
     }
 
 }

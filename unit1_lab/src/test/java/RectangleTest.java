@@ -44,7 +44,8 @@ public class RectangleTest {
 
         // Assert: Check the captured output
         String actualOutput = outputStreamCaptor.toString();
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "Rectangle.main fails for input: 4.5 3.0");
     }
 
     @Test
@@ -63,6 +64,7 @@ public class RectangleTest {
 
         // Assert: Check the captured output
         String actualOutput = outputStreamCaptor.toString();
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "Rectangle.main fails for input: 10.25 2.5");
     }
 }

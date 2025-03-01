@@ -29,7 +29,8 @@ class CommentsTest {
         Comments.main(new String[]{});
         String actualOutput = outputStreamCaptor.toString();
         //Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "Comments.main fails to print expected outout.");
     }
 
 }

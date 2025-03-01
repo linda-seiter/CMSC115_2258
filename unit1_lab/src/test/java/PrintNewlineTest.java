@@ -32,7 +32,8 @@ class PrintNewlineTest {
         String actualOutput = outputStreamCaptor.toString();
 
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "PrintNewline.main fails to print expected outout.");
     }
 
 }

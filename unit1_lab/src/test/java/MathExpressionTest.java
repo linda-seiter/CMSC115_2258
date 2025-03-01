@@ -29,7 +29,8 @@ class MathExpressionTest {
         String actualOutput = outputStreamCaptor.toString();
 
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput,
+                "MathExpression.main fails to print expected outout.");
     }
 
 }
