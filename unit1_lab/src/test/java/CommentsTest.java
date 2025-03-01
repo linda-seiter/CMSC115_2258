@@ -1,22 +1,7 @@
 import org.junit.jupiter.api.*;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CommentsTest {
-
-    private final PrintStream standardOut = System.out;
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-
-    @BeforeEach
-    public void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor));
-    }
-
-    @AfterEach
-    public void tearDown() {
-        System.setOut(standardOut);
-    }
+class CommentsTest extends IOTest {
 
     @Test
     @DisplayName("Comments.main prints correct output")
@@ -25,9 +10,9 @@ class CommentsTest {
         String expectedOutput = "apple\n"
                 + "pear\n"
                 + "watermelon\n";
-        // Act
+        // Act: Call the main method of the Comments class and capture the output
         Comments.main(new String[]{});
-        String actualOutput = outputStreamCaptor.toString();
+        String actualOutput = getOutput();
         //Assert
         assertEquals(expectedOutput, actualOutput,
                 "Comments.main fails to print expected outout.");

@@ -1,25 +1,9 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class VariablesTest {
-
-    private final PrintStream standardOut = System.out;
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-
-    @BeforeEach
-    public void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor));
-    }
-
-    @AfterEach
-    public void tearDown() {
-        System.setOut(standardOut);
-    }
+class VariablesTest extends IOTest {
 
     @Test
     @DisplayName("Variables.main prints correct output")
@@ -28,11 +12,9 @@ class VariablesTest {
         String expectedOutput = "Hello Silas\n" +
                 "You are 28 years old.\n" +
                 "Your gpa is 3.8\n";
-
-        // Act
+        // Act: Call the main method of the Variables class and capture the output
         Variables.main(new String[]{});
-        String actualOutput = outputStreamCaptor.toString();
-
+        String actualOutput = getOutput();
         // Assert
         assertEquals(expectedOutput, actualOutput,
                 "Variables.main fails to print expected outout.");

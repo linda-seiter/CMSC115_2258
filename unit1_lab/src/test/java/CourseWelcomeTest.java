@@ -1,21 +1,7 @@
 import org.junit.jupiter.api.*;
-import java.io.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CourseWelcomeTest {
-
-    private final PrintStream standardOut = System.out;
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-
-    @BeforeEach
-    public void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor));
-    }
-
-    @AfterEach
-    public void tearDown() {
-        System.setOut(standardOut);
-    }
+class CourseWelcomeTest extends IOTest {
 
     @Test
     @DisplayName("CourseWelcome.main prints correct output")
@@ -23,9 +9,9 @@ class CourseWelcomeTest {
         //Arrange
         String expectedOutput = "Welcome to CMSC 115.\n" +
                 "Let's learn Java!\n";
-        // Act
+        // Act: Call the main method of the CourseWelcome class and capture the output
         CourseWelcome.main(new String[]{});
-        String actualOutput = outputStreamCaptor.toString();
+        String actualOutput = getOutput();
         //Assert
         assertEquals(expectedOutput, actualOutput,
                 "CourseWelcome.main fails to print expected outout.");

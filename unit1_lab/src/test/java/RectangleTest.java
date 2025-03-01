@@ -1,32 +1,7 @@
 import org.junit.jupiter.api.*;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RectangleTest {
-
-    private final InputStream standardIn = System.in;
-    private final PrintStream standardOut = System.out;
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-
-    // Utility to provide simulated input
-    private void provideInput(String data) {
-        System.setIn(new ByteArrayInputStream(data.getBytes()));
-    }
-
-    @BeforeEach
-    public void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor)); // Capture the output
-    }
-
-    @AfterEach
-    public void tearDown() {
-        System.setIn(standardIn); // Restore standard input
-        System.setOut(standardOut); // Restore standard output
-    }
+public class RectangleTest extends IOTest {
 
     @Test
     @DisplayName("Rectangle.main prints correct output for input: 4.5 3.0")
@@ -35,15 +10,11 @@ public class RectangleTest {
         String input = "4.5 3.0";
         String expectedOutput = "Enter length and width: " +
                 "length=4.5 width=3.0 area=13.5\n";
-
-        // Simulate the user input
+        // Act: Call the main method of the Rectangle class with the input and capture the output
         provideInput(input);
-
-        // Act: Call the main method of the Rectangle class
         Rectangle.main(new String[]{});
-
-        // Assert: Check the captured output
-        String actualOutput = outputStreamCaptor.toString();
+        String actualOutput = getOutput();
+        // Assert
         assertEquals(expectedOutput, actualOutput,
                 "Rectangle.main fails for input: 4.5 3.0");
     }
@@ -55,15 +26,11 @@ public class RectangleTest {
         String input = "10.25 2.5";
         String expectedOutput = "Enter length and width: " +
                 "length=10.25 width=2.5 area=25.625\n";
-
-        // Simulate the user input
+        // Act: Call the main method of the Rectangle class with the input and capture the output
         provideInput(input);
-
-        // Act: Call the main method of the Rectangle class
         Rectangle.main(new String[]{});
-
-        // Assert: Check the captured output
-        String actualOutput = outputStreamCaptor.toString();
+        String actualOutput = getOutput();
+        // Assert
         assertEquals(expectedOutput, actualOutput,
                 "Rectangle.main fails for input: 10.25 2.5");
     }
