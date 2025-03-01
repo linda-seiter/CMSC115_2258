@@ -12,53 +12,57 @@ public class RectangleTest {
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
-    private static void provideInput(String data) {
+    // Utility to provide simulated input
+    private void provideInput(String data) {
         System.setIn(new ByteArrayInputStream(data.getBytes()));
     }
 
     @BeforeEach
     public void setUp() {
-        System.setOut(new PrintStream(outputStreamCaptor));
+        System.setOut(new PrintStream(outputStreamCaptor)); // Capture the output
     }
 
     @AfterEach
     public void tearDown() {
-        System.setIn(standardIn);
-        System.setOut(standardOut);
+        System.setIn(standardIn); // Restore standard input
+        System.setOut(standardOut); // Restore standard output
     }
 
     @Test
     @DisplayName("Rectangle.main prints correct output for input: 4.5 3.0")
-    public void length_4pt5_width_3() throws Exception {
-        //Arrange
+    public void testRectangleWithInput1() throws Exception {
+        // Arrange
         String input = "4.5 3.0";
-        String expectedOutput = "Enter length and width: \n" +
+        String expectedOutput = "Enter length and width: " +
                 "length=4.5 width=3.0 area=13.5\n";
 
-        //Act
+        // Simulate the user input
         provideInput(input);
-        Rectangle.main(new String[]{});
-        String actualOutput = outputStreamCaptor.toString();
 
-        //Assert
+        // Act: Call the main method of the Rectangle class
+        Rectangle.main(new String[]{});
+
+        // Assert: Check the captured output
+        String actualOutput = outputStreamCaptor.toString();
         assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     @DisplayName("Rectangle.main prints correct output for input: 10.25 2.5")
-    public void length_10pt25_width_2pt5() throws Exception {
-        //Arrange
+    public void testRectangleWithInput2() throws Exception {
+        // Arrange
         String input = "10.25 2.5";
-        String expectedOutput = "Enter length and width: \n" +
+        String expectedOutput = "Enter length and width: " +
                 "length=10.25 width=2.5 area=25.625\n";
 
-        //Act
+        // Simulate the user input
         provideInput(input);
-        Rectangle.main(new String[]{});
-        String actualOutput = outputStreamCaptor.toString();
 
-        //Assert
+        // Act: Call the main method of the Rectangle class
+        Rectangle.main(new String[]{});
+
+        // Assert: Check the captured output
+        String actualOutput = outputStreamCaptor.toString();
         assertEquals(expectedOutput, actualOutput);
     }
-
 }

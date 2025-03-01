@@ -22,6 +22,6 @@ public class Rectangle {
         // TODO: Declare area and initialize using width and height
 
         // TODO: Update to print area
-
+        System.out.println("length=" + length + " width=" + width);
     }
 }
