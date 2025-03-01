@@ -1,21 +1,34 @@
 import org.junit.jupiter.api.*;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 class MathExpressionTest {
 
+    private final PrintStream standardOut = System.out;
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(outputStreamCaptor));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.setOut(standardOut);
+    }
+
     @Test
     @DisplayName("MathExpression.main prints correct output")
-    void mathExpressionOutput() throws Exception {
-        // Define the expected output
+    void main_prints_correct_output() {
+        //Arrange
         String expectedOutput = "(2 + 3) * 8 = 40\n";
 
-        // Capture the actual output from MathExpression.main
-        String actualOutput = tapSystemOutNormalized(() -> {
-            MathExpression.main(new String[] {});
-        });
+        // Act
+        MathExpression.main(new String[]{});
+        String actualOutput = outputStreamCaptor.toString();
 
-        // Compare expected vs actual output
+        // Assert
         assertEquals(expectedOutput, actualOutput);
     }
 

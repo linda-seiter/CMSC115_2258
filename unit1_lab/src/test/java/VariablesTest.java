@@ -1,9 +1,14 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class PaycheckTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class VariablesTest {
 
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
@@ -19,15 +24,15 @@ public class PaycheckTest {
     }
 
     @Test
-    @DisplayName("Paycheck.main prints correct output")
+    @DisplayName("Variables.main prints correct output")
     void main_prints_correct_output() {
         //Arrange
-        String expectedOutput = "Week#1 hours: 35 rate: $18.25 pay: $638.75\n"
-                + "Week#2 hours: 39 rate: $18.25 pay: $711.75\n"
-                + "Week#3 hours: 27 rate: $18.75 pay: $506.25\n";
+        String expectedOutput = "Hello Silas\n" +
+                "You are 28 years old.\n" +
+                "Your gpa is 3.8\n";
 
         // Act
-        Paycheck.main(new String[]{});
+        Variables.main(new String[]{});
         String actualOutput = outputStreamCaptor.toString();
 
         // Assert

@@ -20,8 +20,7 @@ public class Paycheck {
 		// Print updated values
 		System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);
 
-		// TODO: Week 3 - Assign hoursWorked to 27, increase hourlyRate by 0.50,
-		// recalculate pay
+		// TODO: Week 3 - Assign hoursWorked to 27, increase hourlyRate by 0.50, recalculate pay
 
 		// TODO: Print updated values
 

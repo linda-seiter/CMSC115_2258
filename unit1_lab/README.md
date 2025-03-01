@@ -6,6 +6,8 @@
 - Use single-line and multi-line (block) comments
 - Declare, initialize, and update a variable.
 - Use numeric operators in calculations.
+- Use the debugger to step through a program one line at a time.
+- Use the debugger to visualize variable initialization and reassignment in memory.
 - Use a `Scanner` to read user input.
 - Identify and fix common syntax errors
 
@@ -27,12 +29,19 @@ For additional information about IntelliJ, including how to customize the appear
 
 ## Task 1 - CourseWelcome
 
-Let's examine a simple Java program that prints a greeting.
-Double-click on **CourseWelcome** in the project view to open the file in the editor.
+Let's examine a simple Java program that prints a greeting. A Java class with a `main` method represents an executable program.
 
-A Java class with a `main` method represents an executable program. 
-- The `main` method is automatically called when you run the program.  
-- The `main` method contains two print statements, each outputting the text enclosed in double quotes.
+```java
+public class CourseWelcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome to CMSC 115.");
+        System.out.println("Let's learn Java!");
+    }
+}
+```
+
+Double-click on **CourseWelcome** in the project view to open the file in the editor.
+The `main` method contains two print statements, each outputting the text enclosed in double quotes.
 
 <img alt="Output shown in run view" src="images/run_output.png" width="400" >
 
@@ -92,9 +101,9 @@ For now, you'll just run the test to check the result.
 <img alt="Test passed message in run view" src="images/test_passed.png" width="400" >
 
 
-Congratulations!  
+Congratulations on successfully passing your first Java coding task!  
 
-## Task 2 - Comments.java
+## Task 2 - Comments
 
 Java comments can be used to help explain the code. A comment can also prevent
 one or more lines of code from executing.
@@ -102,7 +111,7 @@ one or more lines of code from executing.
 - Line comment: Text following `//` is ignored on the current line.
 - Block or multi-line comment: Text between `/*` and `*/` is ignored.
 
-Click on `Comments.java` to open the file in the editor, then run the program to
+Double-click on the Java class named **Comments** to open the file in the editor, then run the program to
 view the output.
 
 ```java
@@ -130,27 +139,28 @@ public class Comments {
         System.out.println("peach");
     }
 }
-
 ```
+
+- A line comment `//` prevents the statement that prints "orange" from executing.
+- A block comment `/* */` prevents the two statements that print "lemon" and "banana"
+  from executing.
+- The print statement for "pear" executes because `//` appears _after_ the statement, which ends with a semicolon.
 
 | Expected Output                     | Actual Output                        |
 | ----------------------------------- | ------------------------------------ |
 | apple<br>pear<br>watermelon<br><br> | apple<br>pear<br>watermelon<br>peach |
 
-- A line comment `//` prevents the print statement for "orange" from executing.
-- A block comment `/* */` prevents the print statements for "lemon" and "banana"
-  from executing.
-- The print statement for "pear" executes since `//` is placed _after_ the
-  statement.
 
-Notice the expected output does not include "peach". Let's fix the program to
-produce the expected output:
+Notice the expected output does not include "peach".
 
-1. Add `//` to comment out the last print statement (don't delete it!). Save the
-   file.
-2. Run `Comments` to confirm the expected output is produced.
+1. Right-click on the Junit class **CommentsTest** in the project view, then select **Run CommentsTest**. You should see a message in the run view indicating the test failed.  Click to see the difference between the expected and actual output.<br>
+<img alt="Task2 test fails" src="images/task2_fail.png" width="400" >
+2. Update the **Comments** class to produce the expected output by adding `//` to comment out the last print statement (don't delete it!). 
+```text
+     //System.out.println("peach");
+```
+3. Re-run the Junit class **CommentsTest** to confirm the test passed.
 
-Save and close any open files.
 
 ### JavaDoc
 
@@ -170,9 +180,9 @@ JavaDoc is used to generate documentation in HTML format from Java source code.
 We'll learn more about JavaDoc in a later lesson, but it is a good idea to
 comment each class and method, and use special tags such as `@Author`.
 
-## Task 3 - Fixit.java
+## Task 3 - Fixit
 
-Click on `Fixit.java` to open the file in the editor.
+Open the Java class named `Fixit` in the editor. 
 
 ```java
 public class Fixit {
@@ -188,34 +198,27 @@ public class Fixit {
 | ------------------------ | -------------------- |
 | ship<br>airplane<br>tank | ship<br>tank<br><br> |
 
-Run the program to view the output. The second print statement is commented out
-so the program does not produce the expected output.
+Run the program to see the output. The second print statement is commented out, so the program doesn’t produce the expected result.
 
-1. Remove the comment characters `//` from the second print statement.
-2. Notice the editor window displays red warning symbol at the end of the line.
-   Hover the mouse over the warning symbol to view the error message. The popup
-   window shows a syntax error due to a missing semicolon.<br>
-   ![compiler displays warning symbol near syntax error](images/compiler_warning.png)
-3. Try to run the program **without** fixing the error. A warning message
-   appears indicating the build failed. Click "Continue" to execute the code
-   anyway. The program crashes and an error message about the missing semicolon
-   is displayed in the terminal window.
+In Java, every statement must end with a semicolon. Notice that the first and third print statements have a semicolon at the end of the line, but the commented-out second print statement does not.
 
-Every statement in the `main` method must end with a semicolon. Let's fix the
-syntax error so the program can execute.
+1. Remove the comment characters `//` from the second print statement.  If you run the program, you'll see an error message displayed in the run view.  The program can't run because of the missing semicolon.
+2. Notice the editor window displays a red warning symbol at the end of the line where the semicolon should be. You may also see a red warning icon at the beginning of the line of code.  If you click the warning or hover over the error , you'll see a message about the missing semicolon.<br>
+<img alt="Compiler warning for missing semicolon" src="images/error.png" width="400" >
+
+Let's fix the syntax error so the program can execute.
 
 1. Add a semicolon to the end of the print statement to fix the syntax error.
-   Save the file.
-2. Run `Fixit` to confirm the expected output.
+2. Run **Fixit** to see the output.
+3. Run the Junit class **FixitTest** and confirm the test passes.
 
-Close any open files.
 
-## Task 4 - Printing.java
+## Task 4 - PrintNewline
 
-Click on `Printing.java` to open the file in the editor.
+Open the Java class named `PrintNewline`.
 
 ```java
-public class Printing {
+public class PrintNewline {
 
     public static void main(String[] args) {
         System.out.println("red ");
@@ -237,18 +240,17 @@ public class Printing {
 | -------------------------------------- | ------------------------------------------ |
 | red <br>green blue <br>pink <br>yellow | red <br>green blue <br>pink yellow<br><br> |
 
-Run the program to view the output. In the expected output, "yellow" appears on
+Run **PrintNewline** to view the output. In the expected output, "yellow" appears on
 a separate line from "pink". Let's fix the program to produce the expected
 output:
 
-1. Adjust the code so a newline character is appended after printing "pink".
-2. Run `Printing` to confirm the expected output.
+1. Edit the code so a newline character is appended after printing "pink".
+2. Run **PrintNewline** to view the output.
+3. Run **PrintNewlineTest** to confirm the test passes.
 
-Save and close any open files.
+## Task 5 - MathExpression
 
-## Task 5 - MathExpression.java
-
-Click on `MathExpression.java` to open it in the editor.
+Open the class named **MathExpression**.
 
 ```java
 public class MathExpression {
@@ -267,7 +269,7 @@ arithmetic expression evaluates to a numeric value.
 | "2 + 3 \* 8 = " | "2 + 3 \* 8 = " |
 | 2 + 3 \* 8      | 26              |
 
-Run `MathExpression` to view the output. Assume we would like to evolve the
+Run **MathExpression** to view the output. Assume we would like to evolve the
 program to produce the expected output shown below:
 
 | Expected Output   | Actual Output   |
@@ -277,13 +279,68 @@ program to produce the expected output shown below:
 1. Adjust the 2 print statements to produce the expected output. You need to add
    parenthesis in both the string and the math expression to force `+` to be
    performed before `*`.
-2. Run `MathExpression` to confirm the expected output.
+2. Run **MathExpression** to confirm the expected output.
+3. Run **MathExpressionTest** to confirm the test passes.
 
-Save and close any open files.
+## Task 6 - Variables
 
-## Task 6 - Paycheck.java
+Open the class named **Variables**.
 
-Click on `Paycheck.java` to open the file in the editor.
+```java
+public class Variables {
+    public static void main(String[] args) {
+        String name = "Silas";
+        System.out.println("Hello " + name);
+
+        int age = 28;
+        System.out.println("You are " + age + " years old.");
+    }
+}
+```
+
+Run the program to view the output. 
+
+```text
+Hello Silas
+You are 28 years old.
+```
+
+- A **variable** is a name associated with a memory location.
+- A **variable declaration** allocates memory to store a value of a specified type.
+- A **variable assignment** stores a value in the variable's memory location.
+
+Java requires a variable to be declared **before** it can be assigned a value. A
+variable declaration must specify a data type such as `int` or `double` or `String`, along
+with the name of the variable. Once a variable is declared, it can be assigned an
+initial value. The declaration and initialization can be done in one statement
+or two as shown below.
+
+| One Statement                        | Two Statements                                            |
+|--------------------------------------|-----------------------------------------------------------|
+| int age = 28; //declare & initialize | int age; &nbsp; &nbsp;//declare<br>age = 28; //initialize |
+
+If you look carefully at the output, you'll see each print statement displays the text contained in the double quotes, followed by
+the value assigned to the corresponding variable.  The plus character `+` is used to concatenate the quoted string and the variable value.
+
+
+<img alt="String concatenation in print statement" src="images/concatenation.png" width="300" >
+
+1. Update the **Variables** class to declare a third variable named `gpa` whose type is double and value is 3.5. Add a print statement to display the value. <br>
+```java
+        double gpa = 3.8;
+        System.out.println("Your gpa is " + gpa);
+```
+2. Run **Variables** to confirm the output.<br>
+```text
+Hello Silas
+You are 28 years old.
+Your gpa is 3.5
+```
+3. Run **VariablesTest** to confirm the test passes.
+
+## Task 7 - Paycheck
+
+Open the class named **Paycheck**.
 
 ```java
 /**
@@ -322,19 +379,6 @@ Week#1 hours: 35 rate: $18.25 pay: $638.75
 Week#2 hours: 39 rate: $18.25 pay: $711.75
 ```
 
-- A **variable** is a name associated with a memory location.
-- A **variable declaration** allocates memory to store a value.
-
-Java requires a variable to be declared **before** it can be assigned a value. A
-variable declaration must specify a data type such as `int` or `double`, along
-with the variable name. Once a variable is declared, it can be assigned an
-initial value. The declaration and initialization can be done in one statement
-or two as shown below.
-
-| One Statement                                | Two Statements                                                            |
-| -------------------------------------------- | ------------------------------------------------------------------------- |
-| int hoursWorked = 35; //declare & initialize | int hoursWorked; &nbsp; &nbsp;//declare<br>hoursWorked = 35; //initialize |
-
 A variable is declared only once within a block such as a method body. However,
 it can be assigned a value several times.
 
@@ -345,22 +389,23 @@ Debugging shows how variables are declared, initialized, and updated in memory.
 
 <tr>
 <td>
-<img src = "images/set_breakpoint.png" alt="click in line 9 gutter to set breakpoint" width=300>
+<img src = "images/breakpoint.png" alt="click in line 9 gutter to set breakpoint" width=300>
 </td>
 <td>
-Set a breakpoint at line 9 by clicking in the gutter to the left of the line number.  A breakpoint is indicated by a small circle.  You can remove a breakpoint by clicking on it again.
+Set a breakpoint at line 9 by clicking in the gutter to the left of the line number.  A breakpoint is indicated by a red circle.  You can remove a breakpoint by clicking on it again.
 </td>
 </tr>
 
 <tr>
 <td>
-<img src = "images/debug_button.png" alt="debug button on menubar" width=200>
+<img src = "images/start_debugger.png" alt="debug button on menubar" width=200>
 </td>
 <td>
 There are several ways to start the debugger:<br>
-- Click the "Debug" button above the class header. <br>
-- Right-click Paycheck.java, then select "Debug Java".<br>
-- Select "Run > Start Debugging" from the main menubar.
+- Click the "green" arrow by the class header, then select **Debug Paycheck.main()**.<br> 
+- Right-click in the code editor, then select "Debug Paycheck.main()".<br>
+- Select "Current File" and then press the Debug icon in the toolbar.<br>
+- Select "Run > Debug Paycheck.main" from the main menubar.<br>
 </td>
 </tr>
 </table>
@@ -370,24 +415,20 @@ the program doesn't stop at line 9, you might not have set the breakpoint.
 
 <img src = "images/debug_perspective.png" alt="debug perspective" width=600>
 
-- Line 9 is highlighted and there is a red arrow in the gutter, indicating the
-  current line of execution.
-- The **variables view** will display the variables stored in memory for the
-  current method.
-- The menubar displays new buttons to control the debugging session.
+- Line 9 is highlighted, indicating the current line of execution.
+- The **variables view** will display variables stored in memory.
+- The run view displays new buttons to control the debugging session.
 
-<img src = "images/debug_controls.png" alt="debug perspective" width=300>
+<img src = "images/debug_controls.png" alt="debug perspective" width=200>
 
 Let's use the "Step Over" button to execute one line of code at a time and
-observe how each statement impacts the variables stored in memory. The "Step
-Over" button is second in the menubar. You can also press F10 to execute the
-current line of code.
+observe how each statement impacts the variables stored in memory. 
 
 <table>
 
 <tr>
 <th>
-Step Over or F5
+Step Over or F8
 </th>
 <th>
 Line Of Execution
@@ -405,7 +446,7 @@ Variables View
 <code>double hourlyRate = 18.25;</code>
 </td>
 <td>
-<code>hourlyRate</code> allocated and initialized in memory
+Memory for <code>hourlyRate</code> is allocated and initialized.<br>
 <img src = "images/stepover_line9.png" alt="line 9 variable state" width=200>
 </td>
 </tr>
@@ -416,7 +457,7 @@ Variables View
 <td>
 <code>int hoursWorked = 35;</code></td>
 <td>
-<code>hoursWorked</code> allocated and initialized in memory
+Memory for <code>hoursWorked</code> is allocated and initialized. <br>
 <img src = "images/stepover_line10.png" alt="line 10 variable state" width=200>
 </td>
 </tr>
@@ -427,7 +468,7 @@ Variables View
 <td>
 <code>double pay = hoursWorked * hourlyRate;</code></td>
 <td>
-<code>pay</code> allocated and initialized in memory<br>
+Memory for <code>pay</code> is allocated and calculated using the values stored in <code>hoursWorked</code> and <code>hourlyRate</code>.<br>
 <img src = "images/stepover_line11.png" alt="line 11 variable state" width=200>
 </td>
 </tr>
@@ -438,7 +479,7 @@ Variables View
 <td>
 <code>System.out.println("Week#1 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);</code></td>
 <td>
-variables are accessed from memory
+Click the console tab to view the printed output.
 <img src = "images/stepover_line14.png" alt="line 14 variable state" width=200>
 </td>
 </tr>
@@ -449,7 +490,7 @@ variables are accessed from memory
 <td>
 <code>hoursWorked = 39;</code></td>
 <td>
-<code>hoursWorked</code> updated in memory
+<code>hoursWorked</code> is reassigned to a new value.
 <img src = "images/stepover_line17.png" alt="line 17 variable state" width=200>
 </td>
 </tr>
@@ -460,7 +501,7 @@ variables are accessed from memory
 <td>
 <code>pay = hoursWorked * hourlyRate;</code></td>
 <td>
-<code>pay</code> updated in memory
+<code>pay</code> is recalculated.
 <img src = "images/stepover_line18.png" alt="line 18 variable state" width=200>
 </td>
 </tr>
@@ -472,7 +513,7 @@ variables are accessed from memory
 <code>
 System.out.println("Week#2 hours: " + hoursWorked + " rate: $" + hourlyRate + " pay: $" + pay);</code></td>
 <td>
-variables accessed from memory 
+Click the console tab to view the output. 
 <img src = "images/stepover_line21.png" alt="line 21 variable state" width=200>
 </td>
 </tr>
@@ -482,16 +523,7 @@ variables accessed from memory
 <img src = "images/terminate.png" alt="step over" width=50>
 </td>
 <td colspan="2">
-We've reached the end of the main method.  Press the red square to stop the debug session, or press Shift-F5.
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/explorer.png" alt="step over" width=50>
-</td>
-<td colspan="2">
-If you don't see the Explorer view with your lab files, click the Explorer icon in the activity bar.
+You've reached the end of the main method.  Press the red square to terminate the debug session.
 </td>
 </tr>
 
@@ -510,18 +542,17 @@ Week#2 hours: 39 rate: $18.25 pay: $711.75
 Week#3 hours: 27 rate: $18.75 pay: $506.25
 ```
 
-Run `Paycheck` and confirm the expected output. Use the debugger to find and fix
+- Run **Paycheck** and confirm the expected output. Use the debugger to find and fix
 any errors.
-
-Save and close any open files.
+- Run **PaycheckTest** to confirm the tests passed.
 
 NOTE: Aside from visualizing variables in memory, you can use the debugger to
 step through your code to find logic errors. Debugging is **one of the most
 useful skills** you can acquire as a software developer!
 
-## Task 7 - Rectangle.java
+## Task 8 - Rectangle
 
-Click on `Rectangle.java` to open the file in the editor.
+Open the class named **Rectangle**.
 
 ```java
 import java.util.Scanner;
@@ -557,11 +588,11 @@ public class Rectangle {
 The program uses a `Scanner` to read user input and initialize the `length` and
 `width` variables of a rectangle.
 
-When you run the `Rectangle` class, the program displays the prompt "Enter
+When you run the **Rectangle** class, the program displays the prompt "Enter
 length and width: " and then waits until you enter two double values in the
 terminal window.
 
-<img src="images/console_input.png" alt="enter user input in the terminal window">
+<img src="images/console_input.png" alt="enter user input in the terminal window" width="200">
 
 The program should calculate and print the length, width, and area of the
 rectangle. However, it only prints the length and width.
@@ -570,23 +601,31 @@ rectangle. However, it only prints the length and width.
 | ------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 |
 
-1. Update the `main` method to declare a variable named `area`. Calculate the
+1. Update the `main` method to declare a double variable named `area`. Calculate the
    area using the given width and length. Update the print statement to display
-   the length, width, and area as shown in the expected output.
-2. Run `Rectangle` several times, passing different input values for length and
+   the length, width, and area as shown in the expected output.<br>
+```java
+        // TODO: Declare area and initialize using width and height
+        double area = length * width;
+        // TODO: Update to print area
+        System.out.println("length=" + length + " width=" + width + " area=" + area);
+```
+2. Run **Rectangle** several times, passing different input values for length and
    width.
+3. Run the Junit **RectangleTest** class to confirm the tests pass.
 
 | Sample Run#1                                                             | Sample Run#2                                                                   |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>10.25 2.5</b><br>length=10.25 width=2.5 area=25.625 |
 
-## Submit Your Solution
 
-If there are any open files in the editor window, right-click on one of the tabs
-and select "Close All". You will be prompted if there are unsaved changes.
-**Save your changes before submitting.**
+## Submission Requirements
 
-TODO: Instructions on submitting
+TBD
+
+## Resources
+
+TBD
 
 <style>
       th,td {

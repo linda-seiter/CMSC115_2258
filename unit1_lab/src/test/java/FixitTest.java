@@ -1,20 +1,35 @@
 import org.junit.jupiter.api.*;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 class FixitTest {
 
+    private final PrintStream standardOut = System.out;
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(outputStreamCaptor));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.setOut(standardOut);
+    }
+
     @Test
     @DisplayName("Fixit.main prints correct output")
-    void fixitOutput() throws Exception {
+    void main_prints_correct_output() {
+        //Arrange
         String expectedOutput = "ship\n"
                 + "airplane\n"
                 + "tank\n";
-        // Capture the output from Fixit.main
-        String actualOutput = tapSystemOutNormalized(() -> {
-            Fixit.main(new String[] {});
-        });
-        // Compare expected vs actual output
+        // Act
+        Fixit.main(new String[]{});
+        String actualOutput = outputStreamCaptor.toString();
+
+        // Assert
         assertEquals(expectedOutput, actualOutput);
     }
 

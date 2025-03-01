@@ -19,7 +19,7 @@ class CourseWelcomeTest {
 
     @Test
     @DisplayName("CourseWelcome.main prints correct output")
-    void courseWelcomeOutput() throws Exception {
+    void main_prints_correct_output() {
         //Arrange
         String expectedOutput = "Welcome to CMSC 115.\n" +
                 "Let's learn Java!\n";
