@@ -9,20 +9,20 @@
 - Use the debugger to step through a program one line at a time.
 - Use the debugger to visualize variable initialization and reassignment in memory.
 - Use a `Scanner` to read user input.
-- Identify and fix common syntax errors
+- Identify and fix syntax and logic errors
 
 ## Introduction
 
 In this lab, you will learn how to effectively run, test, and edit
 a Java class while mastering a variety of core programming concepts.
 You'll explore how to use both single-line and multi-line comments
-for documentation and clarity. The guide will show you how to declare,
+for documentation and clarity. The lab will show you how to declare,
 initialize, and update variables, as well as apply numeric operators
 in calculations. You'll also gain hands-on experience with using the
 debugger to step through a program, visualize variable changes in memory,
 and track variable initialization and reassignment. Additionally,
 you'll discover how to use the `Scanner` class to read user input,
-and learn how to identify and fix common syntax errors. By the end
+and learn how to identify and fix common syntax and logic errors. By the end
 of this lab, you'll have a deeper understanding of Java programming
 fundamentals and debugging techniques. 
 

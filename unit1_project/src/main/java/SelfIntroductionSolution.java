@@ -5,9 +5,11 @@
  *
  * @author First Last
  */
-public class SelfIntroduction {
+public class SelfIntroductionSolution {
     public static void main(String[] args) {
-        // TODO: Add 4+ print statements to introduce yourself
-
+        System.out.println("1");
+        System.out.println("2");
+        System.out.println("3");
+        System.out.println("4");
     }
 }

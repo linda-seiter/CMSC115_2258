@@ -9,9 +9,7 @@ class SelfIntroductionTest extends IOTest {
         // Act: Call the main method of the SelfIntroduction class and capture the output
         SelfIntroduction.main(new String[]{});
         String actualOutput = getOutput();
-
-        // Split output on newline character
-        String[] lines = actualOutput.split("\n");
+        String[] lines = actualOutput.split("\n"); //split at newline
 
         //Assert: At least 4 lines of output
         assertTrue(lines.length >= 4, "SelfIntroduction produces at least 4 lines of output");
