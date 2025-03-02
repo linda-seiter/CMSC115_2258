@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>umgc.edu</groupId>
-    <artifactId>week1_lab</artifactId>
+    <artifactId>unit1_lab</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>

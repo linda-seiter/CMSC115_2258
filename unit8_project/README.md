@@ -10,21 +10,21 @@
 
 ## Introduction
 
-In this project, you will develop several methods within the `LandscapeService` class
+In this project, you will develop several methods within the **LandscapeService** class
 to manipulate a 2D array that represents a rectangular yard.
 The `main` method will add elements to the yard such as green grass,
-a house surrounded by flowers, and trees surrounded by squirrels. 
+a house, and trees surrounded by squirrels. 
 
 For example:
 
 ```text
-🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
-🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
-🟩🟩🟩🌸🌸🌸🟩🟩🟩
-🟩🟩🟩🌸🏠🌸🟩🟩🟩
-🟩🟩🟩🌸🌸🌸🟩🟩🟩
-🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
-🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
+Enter rows and columns:
+5 7
+🌳🐿️🟩🟩🟩🐿️🌳
+🐿️🐿️🟩🟩🟩🐿️🐿️
+🟩🟩🟩🏠🟩🟩🟩
+🐿️🐿️🟩🟩🟩🐿️🐿️
+🌳🐿️🟩🟩🟩🐿️🌳
 ```
 
 Array dimensions will be
@@ -41,7 +41,7 @@ TBD
 
 ## Task #0 - Run the `main()` method with sample user input
 
-The `LandscapeService` class contains a method `printMatrix` to print the contents of a 2D array of strings.
+The **LandscapeService** class contains a method `printMatrix` to print the contents of a 2D array of strings.
 The `main` method creates a 2D array of strings with the dimensions given by the user, then calls `printMatrix`.
 
 Run the `main()` method to confirm the matrix with the specified dimensions is created and printed:
@@ -139,29 +139,33 @@ Enter rows and columns:
 ```
 
 
-## Task #2 - Implement the `setMiddleCell()` method
+## Task #2 - Implement the `setMiddleCells()` method
 
-The purpose of the `setMiddleCell` method is to assign a value 
-to the middle cell in a 2D array.
+The purpose of the setMiddleCells method is to assign a value to the middle cell(s) in a 2D array.
 
-If both the number of rows and columns are odd, the method should set
-the cell at the exact center. If either the number of rows
-or columns is even, there is no precise 'middle' cell. In these cases,
-the method should select the cell closest to the center, favoring the
-larger row and/or column index (bottom-central or right-central).
-This can be accomplished by dividing the row or column size by 2
-using integer division.
+If both the number of rows and columns are odd, the method will set the cell at the exact center of the array.
+If either the number of rows or columns is even, there is no single middle cell. Instead:
+
+- If the number of rows is even, the method sets the two cells that are closest to the center vertically.
+- Similarly, if the number of columns is even, the method sets the two cells closest to the center horizontally.
+
+Note the method will set 4 middle cells when the number of rows and columns are both even.
 
 ```java
 /**
- * Assign the middle cell to a given string.
- * For even columns, set the cell with the larger column index in the central region.
- * For even rows, set the cell with the larger row index in the central region.
+ * Sets the middle cell(s) of a given 2D matrix to a specified value.
  *
- * @param matrix The 2D array.
- * @param value The string to assign the middle cell to.
+ * This method calculates the center of the matrix. If the matrix has even dimensions, it sets
+ * the two middle cells (horizontally and vertically) in the center. For odd dimensions,
+ * it sets the single middle cell in the center.
+ *
+ * @param matrix The 2D array (matrix) in which to set the middle cell(s).
+ *               It must be a non-empty matrix with at least one row and one column.
+ * @param value The value to set the middle cell(s) to. This value will be placed in the calculated
+ *              middle(s) of the matrix.
+ *
  */
-public static void setMiddleCell(String[][] matrix, String value) {
+public static void setMiddleCells(String[][] matrix, String value) {
     //TODO
 }
 ```
@@ -170,51 +174,103 @@ public static void setMiddleCell(String[][] matrix, String value) {
 
 ```java
 String[][] matrix = {
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"}
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"}
 };
 
-// Set middle cell to "O"
-setMiddleCell(matrix, "O");
+// Set middle cell to "X"
+setMiddleCells(matrix, "X");
 
-/* Middle cell (2,3) contains "O" 
+/* Middle cell (2,3) contains "X" 
 {
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "O", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B", "B"}
-}
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "X", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O", "O"}
+};
 */
 ```
 
-**Example 2**: 4x6: even rows, even columns
+**Example 2**: 5x6: odd rows, even columns
 
 ```java
 String[][] matrix = {
-    {"B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B"}
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"}
 };
 
-// Set middle cell to "O"
-setMiddleCell(matrix, "O");
+// Set middle cells to "X"
+setMiddleCells(matrix, "X");
 
-/* Middle cell (2,3) contains "O". 
+/* Middle cells (2,2) and (2,3) contains "X" 
 {
-    {"B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "B", "B", "B"},
-    {"B", "B", "B", "O", "B", "B"},
-    {"B", "B", "B", "B", "B", "B"}
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "X", "X", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"}
+};
+*/
+```
+
+**Example 3**: 6x5: even rows, odd columns
+
+```java
+String[][] matrix = {
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"}
+};
+
+// Set middle cells to "X"
+setMiddleCells(matrix, "X");
+
+/* Middle cells (2,2) and (3,2) contains "X" 
+{
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "X", "O", "O"},
+    {"O", "O", "X", "O", "O"},
+    {"O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O"}
+};
+*/
+```
+
+**Example 4**: 4x6: even rows, even columns
+
+```java
+String[][] matrix = {
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"}
+};
+
+// Set middle cells to "X"
+setMiddleCells(matrix, "X");
+
+/* Middle cells (1,2), (1,3), (2,2), (2,3) contains "X". 
+{
+    {"O", "O", "O", "O", "O", "O"},
+    {"O", "O", "X", "X", "O", "O"},
+    {"O", "O", "X", "X", "O", "O"},
+    {"O", "O", "O", "O", "O", "O"}
 }
 */
 ```
 
-Run the JUnit tests in the `TestSetMiddleCell` class to verify your solution.
+Run the JUnit tests in the **TestSetMiddleCells** class to verify your solution.
 
 Once the tests pass, update the `main()` method to add a house in the middle of the yard.
 
@@ -234,11 +290,32 @@ Enter rows and columns:
 
 ```text
 Enter rows and columns:
-4 6
-🟫🟫🟫🟫🟫🟫
-🟫🟫🟫🟫🟫🟫
-🟫🟫🟫🏠🟫🟫
-🟫🟫🟫🟫🟫🟫
+4 7
+🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🏠🟫🟫🟫
+🟫🟫🟫🏠🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫
+```
+
+```text
+Enter rows and columns:
+7 8
+🟫🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🏠🏠🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫🟫
+```
+
+```text
+Enter rows and columns:
+4 10
+🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫
+🟫🟫🟫🟫🏠🏠🟫🟫🟫🟫
+🟫🟫🟫🟫🏠🏠🟫🟫🟫🟫
+🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫
 ```
 
 ## Task #3 - Implement the `setCornerCells()` method
@@ -414,7 +491,7 @@ Enter rows and columns:
 ## Task #5 - Implement the `isValidIndex()` method
 
 The purpose of the `isValidIndex` method is to check if a given index is valid within the bounds
-of a 2D array.
+of a 2D array.  Replace the current return statement to test the index.
 
 ```java
 /**
@@ -427,6 +504,7 @@ of a 2D array.
  */
 public static boolean isValidIndex(String[][] matrix, int row, int col) {
     //TODO
+    return false;
 }
 ```
 
@@ -607,20 +685,30 @@ findAndUpdateAdjacentCells(matrix, "A", "Z");
 
 Run the JUnit tests in the `TestFindAndUpdateAdjacentCells` class to verify your solution.
 
-Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` twice:
-- Surround the house with flowers 
-- Surround the trees with squirrels
+Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` to surround trees with squirrels.
 
 ```text
 Enter rows and columns:
 7 9
 🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
 🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
-🟩🟩🟩🌸🌸🌸🟩🟩🟩
-🟩🟩🟩🌸🏠🌸🟩🟩🟩
-🟩🟩🟩🌸🌸🌸🟩🟩🟩
+🟩🟩🟩🟩🟩🟩🟩🟩🟩
+🟩🟩🟩🟩🏠🟩🟩🟩🟩
+🟩🟩🟩🟩🟩🟩🟩🟩🟩
 🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
 🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
+```
+
+
+```text
+Enter rows and columns:
+6 8
+🌳🐿️🟩🟩🟩🟩🐿️🌳
+🐿️🐿️🟩🟩🟩🟩🐿️🐿️
+🟩🟩🟩🏠🏠🟩🟩🟩
+🟩🟩🟩🏠🏠🟩🟩🟩
+🐿️🐿️🟩🟩🟩🟩🐿️🐿️
+🌳🐿️🟩🟩🟩🟩🐿️🌳
 ```
 
 ## Submission Instructions

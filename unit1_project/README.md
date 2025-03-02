@@ -2,9 +2,9 @@
 
 ## Setup
 
-Expand the `week1_project/src/main` folder to list the Java classes.
+Expand the `unit1_project > src` folder to view the Java classes and associated Junit tests.
 
-<img alt="expand week1_project, src, main folders" src="images/week1_project_files.png" width="200" >
+<img alt="expand unit1_project folders" src="images/unit1_project_files.png" width="200" >
 
 ## Task 1 - SelfIntroduction.java
 

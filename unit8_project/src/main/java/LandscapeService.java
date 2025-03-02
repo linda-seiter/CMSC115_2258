@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 /**
  * The LandscapeService class provides functionality to manipulate a 2D array that represents a rectangular yard.
- * The main method simulates adding a house, trees, squirrels, flowers, and grass to a yard.
+ * The main method simulates adding a house, trees, squirrels, and grass to a yard.
  * Array dimensions are given as rows x columns.
  * All methods assume a non-empty, rectangular 2D array is passed as a parameter.
  */
 public class LandscapeService {
     static final String TREE = "🌳";      // \uD83C\uDF33
     static final String HOUSE = "🏠";     // \uD83C\uDFE0
-    static final String FLOWER = "🌸";    // \uD83C\uDF38
     static final String SQUIRREL = "🐿️";    // \uD83E\uDDBF
     static final String GREEN_SQUARE =  "🟩"; //\uD83D\uDFE9
     static final String BROWN_SQUARE = "🟫"; //\uD83D\uDFAB
@@ -41,21 +40,28 @@ public class LandscapeService {
 
 
     /**
-     * Assign the middle cell to a given string.
-     * For even columns, set the cell with the larger column index in the central region.
-     * For even rows, set the cell with the larger row index in the central region.
+     * Sets the middle cell(s) of a given 2D matrix to a specified value.
      *
-     * @param matrix The 2D array.
-     * @param value The string to assign the middle cell to.
+     * This method calculates the center of the matrix. If the matrix has even dimensions, it sets
+     * the two middle cells (horizontally and vertically) in the center. For odd dimensions,
+     * it sets the single middle cell in the center.
+     *
+     * @param matrix The 2D array (matrix) in which to set the middle cell(s).
+     *               It must be a non-empty matrix with at least one row and one column.
+     * @param value The value to set the middle cell(s) to. This value will be placed in the calculated
+     *              middle(s) of the matrix.
+     *
      */
-    public static void setMiddleCell(String[][] matrix, String value) {
+    public static void setMiddleCells(String[][] matrix, String value) {
         //TODO
     }
+
 
     /**
      * Sets the four corners of the array to a given string.
      *
-     * @param matrix The 2D array.
+     * @param matrix The 2D array (matrix) in which to set the middle cell(s).
+     *               It must be a non-empty matrix with at least one row and one column.
      * @paramvalue The string to set in the corners.
      */
     public static void setCornerCells(String[][] matrix, String value) {
@@ -71,7 +77,7 @@ public class LandscapeService {
      * @param newValue The string to replace the target with.
      */
     public static void replaceTargetValue(String[][] matrix, String targetValue, String newValue) {
-         //TODO
+        //TODO
     }
 
     /**
@@ -98,7 +104,7 @@ public class LandscapeService {
      * @param newValue The string value to assign to the adjacent cells.
      */
     public static void setAdjacentCells(String[][] matrix, int row, int col, String newValue) {
-        //TODO
+        // TODO
     }
 
     /**
@@ -114,7 +120,7 @@ public class LandscapeService {
      * @param newValue The string value to assign to the adjacent cells of the matching target cells.
      */
     public static void findAndUpdateAdjacentCells(String[][] matrix, String targetValue, String newValue) {
-        //TODO
+        // TODO
     }
 
     /**
@@ -133,15 +139,18 @@ public class LandscapeService {
 
         //Fill the yard with dirt
 
-        //Add a house in the middle
+
+        //Add a house
+
 
         //Add trees in corners
 
+
         //Replace dirt with grass
 
-        //Surround house with flowers
 
         //Surround trees with squirrels
+
 
         //Print final result
         printMatrix(myYard);

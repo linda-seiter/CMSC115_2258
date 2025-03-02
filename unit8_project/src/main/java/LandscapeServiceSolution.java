@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 /**
  * The LandscapeService class provides functionality to manipulate a 2D array that represents a rectangular yard.
- * The main method simulates adding a house, trees, squirrels, flowers, and grass to a yard.
+ * The main method simulates adding a house, trees, squirrels, and grass to a yard.
  * Array dimensions are given as rows x columns.
  * All methods assume a non-empty, rectangular 2D array is passed as a parameter.
  */
 public class LandscapeServiceSolution {
     static final String TREE = "🌳";      // \uD83C\uDF33
     static final String HOUSE = "🏠";     // \uD83C\uDFE0
-    static final String FLOWER = "🌸";    // \uD83C\uDF38
     static final String SQUIRREL = "🐿️";    // \uD83E\uDDBF
     static final String GREEN_SQUARE =  "🟩"; //\uD83D\uDFE9
     static final String BROWN_SQUARE = "🟫"; //\uD83D\uDFAB
@@ -45,27 +44,52 @@ public class LandscapeServiceSolution {
 
 
     /**
-     * Assign the middle cell to a given string.
-     * For even columns, set the cell with the larger column index in the central region.
-     * For even rows, set the cell with the larger row index in the central region.
+     * Sets the middle cell(s) of a given 2D matrix to a specified value.
      *
-     * @param matrix The 2D array.
-     * @param value The string to assign the middle cell to.
+     * This method calculates the center of the matrix. If the matrix has even dimensions, it sets
+     * the two middle cells (horizontally and vertically) in the center. For odd dimensions,
+     * it sets the single middle cell in the center.
+     *
+     * @param matrix The 2D array (matrix) in which to set the middle cell(s).
+     *               It must be a non-empty matrix with at least one row and one column.
+     * @param value The value to set the middle cell(s) to. This value will be placed in the calculated
+     *              middle(s) of the matrix.
+     *
      */
-    public static void setMiddleCell(String[][] matrix, String value) {
+    public static void setMiddleCells(String[][] matrix, String value) {
 
-        // Calculate center indices. For even dimensions, set lower-right center element
+        // Calculate center indices.
         int row = matrix.length / 2;
         int col = matrix[0].length / 2;
 
-        // Assuming rectangular, assign the center value
-        matrix[row][col] = value;
+        //Determine which cells in a matrix should be considered the "middle" cells
+        //based on whether the dimensions of the matrix are odd or even.
+        int[] rowOffsets, colOffsets;
+        if (matrix.length % 2 == 0) {
+            rowOffsets = new int[] {-1, 0}; // Two vertical middle cells
+        } else {
+            rowOffsets = new int[] {0}; // Single vertical middle cell
+        }
+        if (matrix[0].length % 2 == 0) {
+            colOffsets = new int[] {-1, 0}; // Two horizontal middle cells
+        } else {
+            colOffsets = new int[] {0}; // Single horizontal middle cell
+        }
+
+        // Assign 1, 2, or 4 center cells based on matrix dimensions
+        for (int r : rowOffsets) {
+            for (int c : colOffsets) {
+                matrix[row + r][col + c] = value;
+            }
+        }
     }
+
 
     /**
      * Sets the four corners of the array to a given string.
      *
-     * @param matrix The 2D array.
+     * @param matrix The 2D array (matrix) in which to set the middle cell(s).
+     *               It must be a non-empty matrix with at least one row and one column.
      * @paramvalue The string to set in the corners.
      */
     public static void setCornerCells(String[][] matrix, String value) {
@@ -174,21 +198,17 @@ public class LandscapeServiceSolution {
         //Create rows X cols sized yard
         String[][] myYard = new String[rows][cols];
 
-
         //Fill the yard with dirt
         fillMatrix(myYard, BROWN_SQUARE);
 
-        //Add a house in the middle
-        setMiddleCell(myYard, HOUSE);
+        //Add a house
+        setMiddleCells(myYard, HOUSE);
 
         //Add trees in corners
         setCornerCells(myYard, TREE);
 
         //Replace dirt with grass
         replaceTargetValue(myYard, BROWN_SQUARE, GREEN_SQUARE);
-
-        //Surround house with flowers
-        findAndUpdateAdjacentCells(myYard, HOUSE, FLOWER);
 
         //Surround trees with squirrels
         findAndUpdateAdjacentCells(myYard, TREE, SQUIRREL);
