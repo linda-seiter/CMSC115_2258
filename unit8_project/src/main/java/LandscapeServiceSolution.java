@@ -191,7 +191,7 @@ public class LandscapeServiceSolution {
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter rows and columns:");
+        System.out.print("Enter rows and columns: ");
         int rows = in.nextInt();
         int cols = in.nextInt();
 

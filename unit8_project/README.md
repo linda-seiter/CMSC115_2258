@@ -18,8 +18,7 @@ a house, and trees surrounded by squirrels.
 For example:
 
 ```text
-Enter rows and columns:
-5 7
+Enter rows and columns: 5 7
 🌳🐿️🟩🟩🟩🐿️🌳
 🐿️🐿️🟩🟩🟩🐿️🐿️
 🟩🟩🟩🏠🟩🟩🟩
@@ -47,8 +46,7 @@ The `main` method creates a 2D array of strings with the dimensions given by the
 Run the `main()` method to confirm the matrix with the specified dimensions is created and printed:
 
 ```text
-Enter rows and columns:
-7 9
+Enter rows and columns: 7 9
 nullnullnullnullnullnullnullnullnull
 nullnullnullnullnullnullnullnullnull
 nullnullnullnullnullnullnullnullnull
@@ -127,8 +125,7 @@ Run the JUnit tests in the `TestFillMatrix` class to verify your solution.
 Once the tests pass, update the `main()` method to fill the yard with dirt (brown squares).
 
 ```text
-Enter rows and columns:
-7 9
+Enter rows and columns: 7 9
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
@@ -277,8 +274,7 @@ Once the tests pass, update the `main()` method to add a house in the middle of 
 Test with various even and odd sized yards as shown.
 
 ```text
-Enter rows and columns:
-7 9
+Enter rows and columns: 7 9
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
@@ -289,8 +285,7 @@ Enter rows and columns:
 ```
 
 ```text
-Enter rows and columns:
-4 7
+Enter rows and columns: 4 7
 🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🏠🟫🟫🟫
 🟫🟫🟫🏠🟫🟫🟫
@@ -298,8 +293,7 @@ Enter rows and columns:
 ```
 
 ```text
-Enter rows and columns:
-7 8
+Enter rows and columns: 7 8
 🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫
@@ -310,8 +304,7 @@ Enter rows and columns:
 ```
 
 ```text
-Enter rows and columns:
-4 10
+Enter rows and columns: 4 10
 🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🏠🏠🟫🟫🟫🟫
 🟫🟫🟫🟫🏠🏠🟫🟫🟫🟫
@@ -419,8 +412,7 @@ Run the JUnit tests in the `TestSetCornerCells` class to verify your solution.
 Once the tests pass, update the `main()` to add trees in the corners of the yard.
 
 ```text
-Enter rows and columns:
-7 9
+Enter rows and columns: 7 9
 🌳🟫🟫🟫🟫🟫🟫🟫🌳
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
@@ -477,8 +469,7 @@ Run the JUnit tests in the `TestReplaceTargetValue` class to verify your solutio
 Once the tests pass, update the `main()` to replace the dirt (brown square) with grass (green square).
 
 ```text
-Enter rows and columns:
-7 9
+Enter rows and columns: 7 9
 🌳🟩🟩🟩🟩🟩🟩🟩🌳
 🟩🟩🟩🟩🟩🟩🟩🟩🟩
 🟩🟩🟩🟩🟩🟩🟩🟩🟩
@@ -688,8 +679,7 @@ Run the JUnit tests in the `TestFindAndUpdateAdjacentCells` class to verify your
 Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` to surround trees with squirrels.
 
 ```text
-Enter rows and columns:
-7 9
+Enter rows and columns: 7 9
 🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
 🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
 🟩🟩🟩🟩🟩🟩🟩🟩🟩
@@ -701,8 +691,7 @@ Enter rows and columns:
 
 
 ```text
-Enter rows and columns:
-6 8
+Enter rows and columns: 6 8
 🌳🐿️🟩🟩🟩🟩🐿️🌳
 🐿️🐿️🟩🟩🟩🟩🐿️🐿️
 🟩🟩🟩🏠🏠🟩🟩🟩
@@ -710,6 +699,9 @@ Enter rows and columns:
 🐿️🐿️🟩🟩🟩🟩🐿️🐿️
 🌳🐿️🟩🟩🟩🟩🐿️🌳
 ```
+
+Finally, run the Junit tests in **TestMain** to confirm the `main` method produces the correct output for the given input.
+
 
 ## Submission Instructions
 

@@ -34,7 +34,7 @@ public class LandscapeService {
      * @param fillValue A string that will replace the current value of each cell in the matrix.
      */
     public static void fillMatrix(String[][] matrix, String fillValue) {
-        //TODO
+        // TODO
     }
 
 
@@ -53,7 +53,7 @@ public class LandscapeService {
      *
      */
     public static void setMiddleCells(String[][] matrix, String value) {
-        //TODO
+        // TODO
     }
 
 
@@ -65,7 +65,7 @@ public class LandscapeService {
      * @paramvalue The string to set in the corners.
      */
     public static void setCornerCells(String[][] matrix, String value) {
-        //TODO
+        // TODO
     }
 
 
@@ -77,7 +77,7 @@ public class LandscapeService {
      * @param newValue The string to replace the target with.
      */
     public static void replaceTargetValue(String[][] matrix, String targetValue, String newValue) {
-        //TODO
+        // TODO
     }
 
     /**
@@ -89,7 +89,6 @@ public class LandscapeService {
      * @return True if the indices are valid, false otherwise.
      */
     public static boolean isValidIndex(String[][] matrix, int row, int col) {
-        //TODO
         return false;
     }
 
@@ -130,7 +129,7 @@ public class LandscapeService {
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter rows and columns:");
+        System.out.print("Enter rows and columns: ");
         int rows = in.nextInt();
         int cols = in.nextInt();
 
@@ -138,7 +137,7 @@ public class LandscapeService {
         String[][] myYard = new String[rows][cols];
 
         //Fill the yard with dirt
-
+        ;
 
         //Add a house
 
