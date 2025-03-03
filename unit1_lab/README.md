@@ -34,11 +34,11 @@ IntelliJ is a robust interactive development environment (IDE). The user interfa
 
 <img alt="IntelliJ IDE project, editor, and run views" src="images/IDE_views.png" width="500">
 
-You can adjust the size of the various views as needed. For instance, if you need more space for the editor, you can close the project view. To toggle the visibility of the project view, click the folder button in the activity sidebar, or navigate to View > Tool Windows > Project from the top menu.
+You can adjust the size of the various views as needed. For instance, if you need more space for the editor, you can close the project view. To toggle the visibility of the project view, click the folder button in the activity sidebar, or navigate to *View > Tool Windows > Project* from the top menu.
 
 <img alt="project folder button in activity sidebar" src="images/project_folder.png" width="150">
 
-For now, ensure the project view is visible. The CMSC 115 Unit#1 lab files are located in the `src > main > java` folder.
+For now, ensure the project view is visible. The CMSC 115 Unit#1 lab files are located in the *src > main >* java folder.
 
 For additional information about IntelliJ, including how to customize the appearance and accessibility settings, refer to the links in the resources section at the bottom of this lab.
 
@@ -56,9 +56,17 @@ public class CourseWelcome {
 ```
 
 Double-click on `CourseWelcome` in the project view to open the file in the editor.
-The `main` method contains two print statements, each outputting the text enclosed in double quotes.
 
-<img alt="Output shown in run view" src="images/run_output.png" width="400" >
+<img alt="double click in project view to open a Java file in editor" src="images/open_java_in_editor.png" width="400" >
+
+This code defines a Java class called `CourseWelcome`. Inside the class, the `main` method is implemented, which is the entry point of a Java program. The `main` method contains two `System.out.println` statements that print the following text to the console:
+
+```text
+Welcome.
+Let's learn Java!
+```
+
+When the program is executed, these two lines of text will be displayed on the screen.
 
 ### Run CourseWelcome
 
@@ -95,9 +103,7 @@ Many of the tasks you'll do will involve writing
 a program to produce some expected output. For each task, 
 you need to test the program to check the output.
 
-We'll use a very popular testing framework named Junit.
-
-Junit is a popular Java testing framework. For each regular Java class,
+We'll use a very popular testing framework named Junit. For each regular Java class,
 we use a separate Junit class to test the functionality.
 
 - Java class `CourseWelcome`
