@@ -2,11 +2,10 @@
 
 ### Learning Objectives
 
-1. Apply arithmetic operations, such as multiplication, division, and addition, in real-world programming scenarios.
-2. Use built-in Java methods, like `Math.pow()`, to perform mathematical calculations and how to cast between data types (e.g., `double` to `int`).
-3. Use the `Scanner` class to read input from the user and printing formatted output to the console.
-4. Gain experience in handling and processing user input for real-world applications, including working with both integers and floating-point numbers.
-5. Enhance problem-solving and debugging skills by working through various tasks that require logic and the use of appropriate operators for different types of computations.
+1. Solve tasks that require logic and the use of appropriate operators for different types of computations.
+2. Use built-in Java methods, like `Math.pow()`, to perform mathematical calculations.
+3. Cast between data types (e.g., `double` to `int`) and perform different types of numeric rounding.
+4. Use the `Scanner` class to read input, including working with both integers and floating-point numbers.
 
 ### Introduction
 
@@ -22,7 +21,7 @@ Throughout this assignment, you will use a variety of operators to solve each ta
 
 R<sub>0</sub> (pronounced R-naught) is a number that refers to the transmission
 rate of a given virus. If R<sub>0</sub> is 5, then 1 person is capable of
-spreading to 5 other persons on average.
+spreading to 5 other people on average.
 
 The table below shows the number of new cases after various iterations of viral
 spread:
@@ -53,7 +52,7 @@ spread:
 </tr>
 
 <tr>
-<td>Chickpox: 10</td>
+<td>Chickenpox: 10</td>
 <td>10</td>
 <td>100</td>
 <td>1000</td>
@@ -71,6 +70,7 @@ Update the `main` method in the `TransmissionRate` class to implement the follow
 4. Use casting to convert the `double` value returned from `Math.pow` to an
    `int`.
 5. Print the number of new cases as shown in the sample runs.
+6. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
 
 <table>
 <tr>
@@ -88,7 +88,6 @@ New cases on 4th iteration: 104976
 </tr>
 </table>
 
-Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
 
 ## Task 2 - SeafoodMarket
 
@@ -102,6 +101,8 @@ Update the `main` method in the `SeafoodMarket` class to implement the following
    the decimal point.
 4. Print the pounds, price per pound, and total cost as shown in the sample runs
    below.
+5. Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
+
 
 <table>
 <tr>
@@ -119,7 +120,6 @@ Update the `main` method in the `SeafoodMarket` class to implement the following
 </tr>
 </table>
 
-Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
 
 # Task 3 - NearestInt
 
@@ -128,9 +128,11 @@ Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
 Update the `main` method in the `NearestInt` class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
-2. Prompt for and read two ints: (1) numerator and (2) denominator.
+2. Prompt for and read two ints: a numerator and a denominator.
 3. Print the numeric conversions displayed in the sample runs. Hint: subtract
    0.5 when rounding to the nearest negative int.
+4. Run `NearestIntTest` to confirm your solution passes the Junit tests.
+
 
 <table>
 <tr>
@@ -158,7 +160,6 @@ Negative Value rounded to nearest int: -1<br>
 </tr>
 </table>
 
-Run `NearestIntTest` to confirm your solution passes the Junit tests.
 
 ## Task 4 - BasketBallGame
 
@@ -205,7 +206,7 @@ Run `BasketballGameTest` to confirm your solution passes the Junit tests.
 TBD
 
 <style>
-table, th, td {
+ th, td {
   border: 1px solid black;
   padding: 4px;
   border-collapse: collapse;
