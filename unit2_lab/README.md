@@ -2,20 +2,11 @@
 
 ## Learning Objectives
 
-#### **1. Mathematical and Augmented Assignment Operators**
-- Learn how to use operators to perform operations on variables in a more concise way.
-
-#### **2. Numeric Conversion**
-- Understand how to convert between different numeric types, such as casting a `double` to an `int`, and applying rounding methods to numeric values.
-
-#### **3. Using JUnit for Testing**
+- Use mathematical and augmented assignment operators to perform operations on variables.
+- Convert between different numeric types, such as casting a `double` to an `int`, and applying rounding methods to numeric values.
 - Run JUnit tests to verify the correctness of a Java program.
-
-#### **4. Fixing Syntax Errors**
-- Practice identifying and fixing syntax errors in code, such as incorrect variable declarations or operator usage.
-
-#### **5. Debugging Logic Errors**
-- Learn how to use a debugger to step through code and identify logic errors in programs.
+- Identify and fix syntax errors in code, such as incorrect variable declarations or operator usage.
+- Use a debugger to step through code and identify logic errors in programs.
 
 
 ## Introduction
