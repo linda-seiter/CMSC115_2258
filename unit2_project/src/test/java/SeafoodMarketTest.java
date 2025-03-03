@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
-
 public class SeafoodMarketTest {
 
     @Test
@@ -10,16 +8,10 @@ public class SeafoodMarketTest {
         String input = "5 8.99";
         String expectedOutput = "Enter pounds of fish and price per pound: "
                 + "5.0 lbs at $8.99 per lb = $44.95\n";
-
-        // Capture the output from SeafoodMarket.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                SeafoodMarket.main(new String[] {});
-            });
-
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        //Act
+        String actualOutput = JunitHelper.executeClassWithInput("SeafoodMarket", input);
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
@@ -28,16 +20,9 @@ public class SeafoodMarketTest {
         String input = "3.25 15.99";
         String expectedOutput = "Enter pounds of fish and price per pound: "
                 + "3.25 lbs at $15.99 per lb = $51.97\n";
-
-        // Capture the output from SeafoodMarket.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                SeafoodMarket.main(new String[] {});
-            });
-
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        //Act
+        String actualOutput = JunitHelper.executeClassWithInput("SeafoodMarket", input);
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
-
 }

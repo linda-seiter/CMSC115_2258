@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 public class BasketballGameTest {
 
 	@Test
 	@DisplayName("BasketballGame.main prints correct output for input: 25 20")
-	public void mainInput_25_20() throws Exception {
+	public void mainInput_25_20() {
+		// Arrange
 		String input = "25 20";
 		String expectedOutput = "Home and away points for 1st quarter: "
 				+ "1st quarter scores: home 25 away 20\n"
@@ -15,21 +15,16 @@ public class BasketballGameTest {
 				+ "3rd quarter scores: home 57 away 62\n"
 				+ "After challenge: home 58 away 62\n"
 				+ "4th quarter scores: home 82 away 81\n";
-
-		// Capture the output from BasketballGame.main using the provided input.
-		withTextFromSystemIn(input).execute(() -> {
-			String actualOutput = tapSystemOutNormalized(() -> {
-				BasketballGame.main(new String[] {});
-			});
-
-			// Compare expected vs actual output
-			assertEquals(expectedOutput, actualOutput);
-		});
+		//Act
+		String actualOutput = JunitHelper.executeClassWithInput("BasketballGame", input);
+		// Assert
+		assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	@DisplayName("BasketballGame.main prints correct output for input: 30 22")
-	public void mainInput_30_22() throws Exception {
+	public void mainInput_30_22()  {
+		//Arrange
 		String input = "30 22";
 		String expectedOutput = "Home and away points for 1st quarter: "
 				+ "1st quarter scores: home 30 away 22\n"
@@ -38,16 +33,10 @@ public class BasketballGameTest {
 				+ "3rd quarter scores: home 67 away 72\n"
 				+ "After challenge: home 68 away 72\n"
 				+ "4th quarter scores: home 97 away 96\n";
-
-		// Capture the output from BasketballGame.main using the provided input.
-		withTextFromSystemIn(input).execute(() -> {
-			String actualOutput = tapSystemOutNormalized(() -> {
-				BasketballGame.main(new String[] {});
-			});
-
-			// Compare expected vs actual output
-			assertEquals(expectedOutput, actualOutput);
-		});
+		//Act
+		String actualOutput = JunitHelper.executeClassWithInput("BasketballGame", input);
+		// Assert
+		assertEquals(expectedOutput, actualOutput);
 	}
 
 	// @Test

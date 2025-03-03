@@ -1,60 +1,44 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 public class TransmissionRateTest {
 
     @Test
     @DisplayName("TransmissionRate.main prints correct output for input: 2")
-    public void commonCold() throws Exception {
+    public void commonCold() {
         String input = "2";
         String expectedOutput = "Enter r0: "
                 + "New cases on 4th iteration: 16\n";
-        // Capture the output from TransmissionRate.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                TransmissionRate.main(new String[] {});
-            });
-
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        //Act
+        String actualOutput = JunitHelper.executeClassWithInput("TransmissionRate", input);
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     @DisplayName("TransmissionRate.main prints correct output for input: 10")
     public void chickenPox() throws Exception {
+        //Arrange
         String input = "10";
         String expectedOutput = "Enter r0: "
                 + "New cases on 4th iteration: 10000\n";
-
-        // Capture the output from TransmissionRate.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                TransmissionRate.main(new String[] {});
-            });
-
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        //Act
+        String actualOutput = JunitHelper.executeClassWithInput("TransmissionRate", input);
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     @DisplayName("TransmissionRate.main prints correct output for input: 18")
     public void measles() throws Exception {
+        //Arrange
         String input = "18";
         String expectedOutput = "Enter r0: "
                 + "New cases on 4th iteration: 104976\n";
-
-        // Capture the output from TransmissionRate.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                TransmissionRate.main(new String[] {});
-            });
-
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        //Act
+        String actualOutput = JunitHelper.executeClassWithInput("TransmissionRate", input);
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
 
     // @Test
