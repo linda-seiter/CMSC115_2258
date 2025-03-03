@@ -71,8 +71,6 @@ import java.util.Scanner;
  */
 public class PizzaShares {
    public static void main(String[] args) {
-      // Declare local variables
-
       // Declare and initialize Scanner to read user input
       Scanner input = new Scanner(System.in);
 
@@ -146,6 +144,13 @@ There are 0 slices remaining.</td>
 
 **Objective**: Fix an error where a variable is redeclared.
 
+In Java, when you declare a variable, you define its type and assign it a name.
+After the variable is declared, its value can be changed multiple times within
+the same scope, such as inside a method, loop, or block of code. We'll explore
+loops and blocks in more detail later. For now, let's look at an example where
+a variable is declared and initialized in the `main` method, and then mistakenly
+declared a second time within the same method.
+
 Open `StudentInfo` in the editor and run the program. 
 
 ```java
@@ -208,7 +213,7 @@ reassign `gpa` to 4.0 is currently commented out.
 
 3. Try to run the program. It crashes due to the duplicate variable declaration.
 
-Let's fix the error. Line 24 should assign `gpa` to 4.0 **without** redeclaring the variable.
+Let's fix the error. Line 24 should assign `gpa` to 4.0 **without** re-declaring the variable.
 
 1. Remove the type `double` to prevent a duplicate variable
    declaration. The compiler error should go away.
@@ -217,6 +222,10 @@ Let's fix the error. Line 24 should assign `gpa` to 4.0 **without** redeclaring 
    ```
 2. Run `StudentInfo` to view the output.
 3. Run `StudentInfoTest` to confirm your solution passes the Junit test.
+
+To summarize, you declare a variable only once in the `main` method by specifying
+its name and type. If you want to assign a new value to the variable later,
+you don’t need to specify the type again.
 
 ## Task 4
 

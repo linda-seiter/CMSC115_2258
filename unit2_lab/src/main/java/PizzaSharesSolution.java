@@ -8,8 +8,6 @@ import java.util.Scanner;
  */
 public class PizzaSharesSolution {
     public static void main(String[] args) {
-        // Declare local variables
-
         // Declare and initialize Scanner to read user input
         Scanner input = new Scanner(System.in);
 
