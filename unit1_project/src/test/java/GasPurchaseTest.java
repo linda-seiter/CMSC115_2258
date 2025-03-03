@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GasPurchaseTest extends IOTest {
+public class GasPurchaseTest {
 
     @Test
     @DisplayName("GasPurchase.main prints correct output for input: 12.5 3.50")
@@ -10,9 +10,7 @@ public class GasPurchaseTest extends IOTest {
         String expectedOutput = "Enter gallons and price per gallon: " +
                 "You owe $43.75\n";
         // Act: Call the main method of the GasPurchase class with the input and capture the output
-        provideInput(input);
-        GasPurchase.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.executeClassWithInput("GasPurchase", input);
         // Assert
         assertEquals(expectedOutput, actualOutput,
                 "GasPurchase.main fails for input: 12.5 3.50");
@@ -26,9 +24,7 @@ public class GasPurchaseTest extends IOTest {
         String expectedOutput = "Enter gallons and price per gallon: " +
                 "You owe $30.0\n";
         // Act: Call the main method of the GasPurchase class with the input and capture the output
-        provideInput(input);
-        GasPurchase.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.executeClassWithInput("GasPurchase", input);
         // Assert
         assertEquals(expectedOutput, actualOutput,
                 "GasPurchase.main fails for input: 8.0 3.75");

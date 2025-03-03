@@ -5,19 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.umgc</groupId>
-    <artifactId>week2-lab</artifactId>
+    <artifactId>unit2-lab</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-         <dependency>
-            <groupId>com.github.stefanbirkner</groupId>
-            <artifactId>system-lambda</artifactId>
-            <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

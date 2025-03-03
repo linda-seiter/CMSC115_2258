@@ -22,11 +22,9 @@ public class BusRoute {
 		System.out.println("Departing stop#" + busStop + " with " + passengers + " passengers");
 		
 		//TODO: next stop, half the passengers get off (use division assignment operator)
-		//next stop, 2 get off (subtraction assignment operator)
-				
+
 		//TODO: next stop, the number of passengers triples (use multiplication assignment operator)
-		//next stop, 2 get off (subtraction assignment operator)
-								
+
 	}
 
 }

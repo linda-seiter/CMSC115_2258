@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CommentsTest extends IOTest {
+class CommentsTest  {
 
     @Test
     @DisplayName("Comments.main prints correct output")
@@ -11,8 +11,7 @@ class CommentsTest extends IOTest {
                 + "pear\n"
                 + "watermelon\n";
         // Act: Call the main method of the Comments class and capture the output
-        Comments.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.captureClassOutput("Comments");
         //Assert
         assertEquals(expectedOutput, actualOutput,
                 "Comments.main fails to print expected outout.");

@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PaycheckTest extends IOTest {
+public class PaycheckTest {
 
     @Test
     @DisplayName("Paycheck.main prints correct output")
@@ -11,8 +11,7 @@ public class PaycheckTest extends IOTest {
                 + "Week#2 hours: 39 rate: $18.25 pay: $711.75\n"
                 + "Week#3 hours: 27 rate: $18.75 pay: $506.25\n";
         // Act: Call the main method of the Paycheck class and capture the output
-        Paycheck.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.captureClassOutput("Paycheck");
         // Assert
         assertEquals(expectedOutput, actualOutput,
                 "Paycheck.main fails to print expected outout.");

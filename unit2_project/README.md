@@ -1,15 +1,24 @@
-# CMSC 115 Week 2 Programming Projects
+# CMSC 115 Unit 2 Programming Projects
 
-## Setup
+### Learning Objectives
 
-TODO: ...
+1. Apply arithmetic operations, such as multiplication, division, and addition, in real-world programming scenarios.
+2. Use built-in Java methods, like `Math.pow()`, to perform mathematical calculations and how to cast between data types (e.g., `double` to `int`).
+3. Use the `Scanner` class to read input from the user and printing formatted output to the console.
+4. Gain experience in handling and processing user input for real-world applications, including working with both integers and floating-point numbers.
+5. Enhance problem-solving and debugging skills by working through various tasks that require logic and the use of appropriate operators for different types of computations.
 
-NOTE: You may need to click on the "TEST RESULTS" tab to see the Junit test run
-result.
+### Introduction
 
-## Task 1 - TransmissionRate.java
+In this unit's programming assignment, you will complete several tasks that involve practical Java programming concepts such as mathematical operations, input/output handling, and working with variables. These tasks are designed to improve your understanding of Java fundamentals and enhance your problem-solving abilities.
 
-Click on `TransmissionRate.java` to open the file in the editor.
+The tasks will also help you apply mathematical functions and work with both integer and floating-point numbers in real-world scenarios. By the end of this assignment, you will have experience in implementing basic calculations, formatting output, and running unit tests to verify your solutions.
+
+Throughout this assignment, you will use a variety of operators to solve each task. You will also practice running unit tests to ensure the correctness of your code.
+
+## Task 1 - TransmissionRate
+
+**Objective**: Simulate the spread of a virus using the concept of the transmission rate (R₀) and calculate the number of new cases after several iterations.
 
 R<sub>0</sub> (pronounced R-naught) is a number that refers to the transmission
 rate of a given virus. If R<sub>0</sub> is 5, then 1 person is capable of
@@ -53,7 +62,7 @@ spread:
 
 </table>
 
-Update the `main` method to implement the following functionality:
+Update the `main` method in the **TransmissionRate* class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read the transmission rate R<sub>0</sub> as an integer.
@@ -79,20 +88,13 @@ New cases on 4th iteration: 104976
 </tr>
 </table>
 
-Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
+Run **TransmissionRateTest** to confirm your solution passes the Junit tests.
 
-NOTE: You may need to click on the "TEST RESULTS" tab to see the Junit test run
-result.
+## Task 2 - SeafoodMarket
 
-<img src="images/transmissionRateTests.png" alt="successful junit test results" width="200">
+**Objective**: Calculate the total cost of fish purchased based on the weight and price per pound, rounding the total to two decimal places.
 
-Save and close any open files.
-
-## Task 2 - SeafoodMarket.java
-
-Click on `SeafoodMarket.java` to open the file in the editor.
-
-Update the `main` method to implement the following functionality:
+Update the `main` method in the **SeafoodMarket* class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read two doubles: (1) pounds of fish and (2) price per pound.
@@ -117,16 +119,13 @@ Update the `main` method to implement the following functionality:
 </tr>
 </table>
 
-Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
+Run **SeafoodMarketTest** to confirm your solution passes the Junit tests.
 
-Save and close any open files.
+# Task 3 - NearestInt
 
-# Task 3 - NearestInt.java
+**Objective**: Demonstrate how to convert a fraction into a double and round it to the nearest integer, including handling negative values.
 
-Double click on `NearestInt.java` in the Package Explorer to open the file in
-the editor.
-
-Update the `main` method to implement the following functionality:
+Update the `main` method in the **NearestInt** class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read two ints: (1) numerator and (2) denominator.
@@ -159,15 +158,13 @@ Negative Value rounded to nearest int: -1<br>
 </tr>
 </table>
 
-Run `NearestIntTest` to confirm your solution passes the Junit tests.
+Run **NearestIntTest** to confirm your solution passes the Junit tests.
 
-Save and close any open files.
+## Task 4 - BasketBallGame
 
-## Task 4 - Operators
+**Objective**: Simulate the progression of a basketball game by updating scores after each quarter based on specific instructions.
 
-Click on `BasketballGame.java` to open the file in the editor.
-
-The program prompts for the home and away scores for the first quarter,
+The `main` method in the **BasketBallGame** class prompts for the home and away scores for the first quarter,
 initializes variables to store each team's score, and prints the scores for the
 1st quarter.
 
@@ -200,9 +197,12 @@ After challenge: home 68 away 72<br>
 </tr>
 </table>
 
-Run `BasketballGameTest` to confirm your solution passes the Junit tests.
+Run **BasketballGameTest** to confirm your solution passes the Junit tests.
 
-Save and close any open files.
+
+## Submitting your project
+
+TBD
 
 <style>
 table, th, td {

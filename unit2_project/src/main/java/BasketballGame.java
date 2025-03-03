@@ -1,10 +1,20 @@
 import java.util.Scanner;
 
 /**
- * BasketballGame class demonstrates augmented assignment,
- * increment and decrement operators
- * 
- * @author First Last
+ * The {@code BasketballGameSolution} class simulates the scoring of a basketball game
+ * through four quarters, demonstrating the use of various arithmetic operations on
+ * the scores of both the home and away teams.
+ *
+ * <p>The program prompts the user to input the scores for the home and away teams in the
+ * first quarter and then updates and prints the scores after each of the subsequent quarters.
+ * The game progresses through several events including score updates, challenges, and
+ * free throws.</p>
+ *
+ * <p>Each quarter uses different arithmetic operations such as multiplication, addition,
+ * subtraction, and increment/decrement operators to simulate the game events.</p>
+ *
+ * @author [Your Name]
+ * @version 1.0
  */
 public class BasketballGame {
 
@@ -24,7 +34,7 @@ public class BasketballGame {
 		// 2nd quarter
 		// TODO: Home team doubles their score. Use multiplication assignment operator.
 
-		// TODO: Away team ties the game.
+		// TODO: Away team ties the game. Use assignment operator.
 
 		// Print 2nd quarter scores
 		System.out.println("2nd quarter scores: home " + homeScore + " away " + awayScore);

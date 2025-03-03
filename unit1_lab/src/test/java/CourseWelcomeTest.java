@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CourseWelcomeTest extends IOTest {
+class CourseWelcomeTest {
 
     @Test
     @DisplayName("CourseWelcome.main prints correct output")
@@ -10,8 +10,7 @@ class CourseWelcomeTest extends IOTest {
         String expectedOutput = "Welcome to CMSC 115.\n" +
                 "Let's learn Java!\n";
         // Act: Call the main method of the CourseWelcome class and capture the output
-        CourseWelcome.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.captureClassOutput("CourseWelcome");
         //Assert
         assertEquals(expectedOutput, actualOutput,
                 "CourseWelcome.main fails to print expected outout.");

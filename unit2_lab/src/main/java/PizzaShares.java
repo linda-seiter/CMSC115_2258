@@ -9,18 +9,17 @@ import java.util.Scanner;
 public class PizzaShares {
 	public static void main(String[] args) {
 		// Declare local variables
-		int people, totalSlices, slicesPerPerson, slicesRemaining;
 
 		// Declare and initialize Scanner to read user input
 		Scanner input = new Scanner(System.in);
 
 		// Prompt for number of pizza slices and number of people
 		System.out.print("Enter #slices and #people: ");
-		totalSlices = input.nextInt();
-		people = input.nextInt();
+		int totalSlices = input.nextInt();
+		int people = input.nextInt();
 
 		// Compute number of slices per person
-		slicesPerPerson = totalSlices / people;
+		int slicesPerPerson = totalSlices / people;
 
 		System.out.println("Each person gets " + slicesPerPerson + " slices.");
 

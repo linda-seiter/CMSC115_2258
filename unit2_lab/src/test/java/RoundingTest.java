@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 public class RoundingTest {
 
@@ -19,24 +18,20 @@ public class RoundingTest {
 				+ "Truncate to 3 digits after the decimal point\n"
 				+ "Original:		1.9247\n"
 				+ "Move . 3 digits right:	1924.7\n"
-				+ "Cast as int		1924\n"
+				+ "Cast as int:		1924\n"
 				+ "Move . 3 digits left:	1.924\n"
 				+ "\n"
 				+ "Round to 3 digits after the decimal point\n"
 				+ "Original:		1.9247\n"
 				+ "Move . 3 digits right:	1924.7\n"
 				+ "Add 0.5:		1925.2\n"
-				+ "Cast as int		1925\n"
+				+ "Cast as int:		1925\n"
 				+ "Move . 3 digits left:	1.925\n";
-		// Capture the output from Rounding.main using the provided input.
-		withTextFromSystemIn(input).execute(() -> {
-			String actualOutput = tapSystemOutNormalized(() -> {
-				Rounding.main(new String[] {});
-			});
-
-			// Compare expected vs actual output
-			assertEquals(expectedOutput, actualOutput);
-		});
+		// Act: Call the main method of the Rounding class with the input and capture the output
+		String actualOutput = JunitHelper.executeClassWithInput("Rounding", input);
+		// Assert
+		assertEquals(expectedOutput, actualOutput,
+				"Rounding.main fails for input: " + input);
 	}
 
 	public void mainIOTest2() throws Exception {
@@ -52,24 +47,21 @@ public class RoundingTest {
 				+ "Truncate to 3 digits after the decimal point\n"
 				+ "Original:		3.2984\n"
 				+ "Move . 3 digits right:	3298.4\n"
-				+ "Cast as int		3298\n"
+				+ "Cast as int:		3298\n"
 				+ "Move . 3 digits left:	3.298\n"
 				+ "\n"
 				+ "Round to 3 digits after the decimal point\n"
 				+ "Original:		3.2984\n"
 				+ "Move . 3 digits right:	3298.4\n"
 				+ "Add 0.5:		3298.9\n"
-				+ "Cast as int		3298\n"
+				+ "Cast as int:		3298\n"
 				+ "Move . 3 digits left:	3.298\n";
-		// Capture the output from Rounding.main using the provided input.
-		withTextFromSystemIn(input).execute(() -> {
-			String actualOutput = tapSystemOutNormalized(() -> {
-				Rounding.main(new String[] {});
-			});
+		// Act: Call the main method of the Rounding class with the input and capture the output
+		String actualOutput = JunitHelper.executeClassWithInput("Rounding", input);
+		// Assert
+		assertEquals(expectedOutput, actualOutput,
+				"Rounding.main fails for input: " + input);
 
-			// Compare expected vs actual output
-			assertEquals(expectedOutput, actualOutput);
-		});
 	}
 
 }

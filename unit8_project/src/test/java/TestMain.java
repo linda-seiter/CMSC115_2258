@@ -2,7 +2,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestMain extends IOTest {
+public class TestMain {
 
         @Test
         @DisplayName("LandscapeService.main prints correct output for input: 7 9")
@@ -17,9 +17,7 @@ public class TestMain extends IOTest {
                     "\uD83D\uDC3F\uFE0F\uD83D\uDC3F\uFE0F\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDC3F\uFE0F\uD83D\uDC3F\uFE0F\n" +
                     "\uD83C\uDF33\uD83D\uDC3F\uFE0F\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDC3F\uFE0F\uD83C\uDF33\n";
             // Act: Call the main method of the LandscapeService class with the input and capture the output
-            provideInput(input);
-            LandscapeService.main(new String[]{});
-            String actualOutput = getOutput();
+            String actualOutput = JunitHelper.executeClassWithInput("LandscapeService", input);
             // Assert
             assertEquals(expectedOutput, actualOutput,
                     "LandscapeService.main fails for input: 7 9");
@@ -42,9 +40,7 @@ public class TestMain extends IOTest {
                 "\uD83D\uDC3F\uFE0F\uD83D\uDC3F\uFE0F\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDC3F\uFE0F\uD83D\uDC3F\uFE0F\n" +
                 "\uD83C\uDF33\uD83D\uDC3F\uFE0F\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDFE9\uD83D\uDC3F\uFE0F\uD83C\uDF33\n";
         // Act: Call the main method of the LandscapeService class with the input and capture the output
-        provideInput(input);
-        LandscapeService.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.executeClassWithInput("LandscapeService", input);
         // Assert
         assertEquals(expectedOutput, actualOutput,
                 "LandscapeService.main fails for input: 10 8");

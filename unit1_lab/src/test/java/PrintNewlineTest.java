@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class PrintNewlineTest extends IOTest {
+class PrintNewlineTest {
 
     @Test
     @DisplayName("PrintNewline.main prints correct output")
@@ -12,8 +12,7 @@ class PrintNewlineTest extends IOTest {
                 + "pink \n"
                 + "yellow\n";
         // Act: Call the main method of the PrintNewline class and capture the output
-        PrintNewline.main(new String[]{});
-        String actualOutput = getOutput();
+        String actualOutput = JunitHelper.captureClassOutput("PrintNewline");
         // Assert
         assertEquals(expectedOutput, actualOutput,
                 "PrintNewline.main fails to print expected outout.");

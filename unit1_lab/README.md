@@ -96,20 +96,29 @@ a program to produce some expected output. For each task,
 you need to test the program to check the output.
 
 We'll use a very popular testing framework named Junit.
+
+Junit is a popular Java testing framework. For each regular Java class,
+we use a separate Junit class to test the functionality.
+
+- Java class **CourseWelcome**
+- Junit test class **CourseWelcomeTest**
+
 Expand the test folder in the project view as shown in the screenshot below.
-The test folder contains a Junit test class for each regular Java class.  For example, CourseWelcomeTest is the Junit test for the CourseWelcome class.
+The test folder contains a Junit test class for each regular Java class.
 
 <img alt="CourseWelcomeTest junit test class" src="images/junit.png" width="400" >
 
-Don't worry about understanding the code in CourseWelcomeTest. 
-For now, you'll just run the test to check the result.
+The **CourseWelcomeTest** Junit class has a method that checks the output
+produced when the **CourseWelcome** class is executed. Don't worry about
+understanding the code in the Junit test class. We'll learn how to write
+Junit tests in a later lesson.  For now, you'll just run the test to check the result.
 
 1. Right-click on **CourseWelcomeTest** in the project view, then select **Run CourseWelcomeTest**.<br>
 <img alt="Run junit test class" src="images/run_test.png" width="300" >
 2. You should see a message in the run view indicating the test failed.  Click on "Click to see difference". A side-by-side comparison is displayed with the differences highlighted.<br>
 <img alt="Test failed message in run view" src="images/test_failed.png" width="400" >
-3. Close the comparison failure tab. You can click on the CourseWelcome tab in the editor if you don't see the code.
-4. Update the CourseWelcome class to produce the expected output. The first print statement in the `main` method should print the character string
+3. Close the comparison failure tab. You can click on the **CourseWelcome** tab in the editor if you don't see the code.
+4. Update the **CourseWelcome** class to produce the expected output. The first print statement in the `main` method should print the character string
    "Welcome to CMCS 115.".<br>
 <img alt="Task1 print statement corrected" src="images/task1_solution.png" width="400" >
 4. Re-run the Junit **CourseWelcomeTest** class and confirm the test passed.<br>

@@ -1,103 +1,45 @@
-# CMSC 115 Week 2 Lab
+# CMSC 115 Unit 2 Lab
 
 ## Learning Objectives
 
-- Use Junit to test a class
-- Use augmented assignment operators.
-- Perform numeric conversion.
-- Fix a program that contains syntax errors.
-- Use the debugger to identify and fix logic errors.
+#### **1. Mathematical and Augmented Assignment Operators**
+- Learn how to use operators to perform operations on variables in a more concise way.
+
+#### **2. Numeric Conversion**
+- Understand how to convert between different numeric types, such as casting a `double` to an `int`, and applying rounding methods to numeric values.
+
+#### **3. Using JUnit for Testing**
+- Run JUnit tests to verify the correctness of a Java program.
+
+#### **4. Fixing Syntax Errors**
+- Practice identifying and fixing syntax errors in code, such as incorrect variable declarations or operator usage.
+
+#### **5. Debugging Logic Errors**
+- Learn how to use a debugger to step through code and identify logic errors in programs.
+
+
+## Introduction
+
+In this unit, we will explore some of the fundamental concepts in Java programming
+that will help you improve the readability, efficiency, and correctness
+of your code. These include augmented assignment operators, numeric conversions,
+and debugging techniques. You will also learn how to use JUnit for testing,
+which is essential for ensuring your code performs as expected. By the end of this lab,
+you should have a solid understanding of these concepts and be able to apply them
+to your Java programs effectively.
 
 ## Setup
 
 TODO: Instructions on how to configure debugger to prevent stepping into java.\*
 methods, etc.
 
-### Task 1 - Hello.java
+## Task 1 - JavaFacts
 
-Expand the `week2/src/main/java` folder to view the Java files for the week2
-lab.
+**Objective**: Review how to use JUnit to check if the code produces the correct output.
 
-Click on `Hello.java` to open the file in the editor.
+Let's review how to run a Junit test to check code functionality.
 
-```java
-public class Hello {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-}
-```
-
-Sometimes a program has an error and fails to produce the expected output. It is
-important to thoroughly test every Java class to find and fix bugs.
-
-[Junit](https://junit.org/junit5/) is a popular Java testing framework. For each
-regular Java class, we use a separate Junit class to test the functionality.
-
-- Java class `Hello`
-- Junit test class `HelloTest`
-
-Expand the `week2_lab/src/test/java` folders to list the Junit test files:
-
-<img alt="expand week2_lab, src, test folders" src="images/week2_lab_files.png" width="150" >
-
-The `HelloTest` Junit class has a method that checks the output produced when
-the `Hello` class is executed. Don't worry about understanding the code in the
-Junit test class. We'll learn how to write Junit tests in a later lesson.
-
-```java
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
-
-class HelloTest {
-
-    @Test
-    @DisplayName("Hello.main prints correct output")
-    void helloOutput() throws Exception {
-
-        String expectedOutput = "Hello World!\n";
-
-        // Capture the output from Hello.main
-        String actualOutput = tapSystemOutNormalized(() -> {
-            Hello.main(new String[] {});
-        });
-
-        // Compare expected vs actual output
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-}
-```
-
-NOTE: The `\n` in the expected output is a newline character. When your code
-calls `System.out.println`, the newline character is automatically appended to
-the contents.
-
-Let's practice running a Junit test. There are several different ways to run a
-Junit test class.
-
-- Option 1: In the Explorer, right-click on `HelloTest.java`, then select
-  `Run Java`.
-- Option 2: In the Editor, click the green arrow run button displayed next to
-  the class header.
-- Option 3: In the main menubar, select `Run > Run Without Debugging`.
-
-![run junit test](images/run_test.png)
-
-Junit displays the test result in a new view at the bottom of the window. A
-green checkmark indicates the test was successful. If you don't see the test run
-view, click the "TEST RESULTS" tab.
-
-![junit successful test result](images/test_success.png)
-
-Congratulations, you just ran your first successful Junit test!
-
-Close any open files.
-
-## Task 2 - JavaFacts.java
-
-Click on `JavaFacts.java` to open the file in the editor.
+Open the **JavaFacts** class in the editor.
 
 ```java
 public class JavaFacts {
@@ -117,76 +59,54 @@ actual output produced by the current code differs from the expected output.
 | --------------------------------------------------------------------- | ---------------------------------------------------- |
 | Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
 
-1. Run the `JavaFacts` class. Notice the actual output does not match the
-   expected output.
-2. Run the `JavaFactsTest` Junit class. The test fails as indicated by the red X
-   next to the test run, along with the error messages displayed in the "TEST
-   RESULTS" window (scroll through the error messages). A popup window shows the
-   difference between the expected and actual output.
+1. Run the Junit **JavaFactsTest** class and confirm the test fails.  Recall you can view the differences between the expected and actual output.
+2. Edit the second print statement in the `main` method in **JavaFacts** to produce the expected output.
+3. Re-run the **JavaFactsTest** class and confirm your solution passes the Junit test.
 
-![test fails](images/test_fail.png)
+## Task 2 - PizzaShares
 
-Let's fix `JavaFacts` to produce the expected output.
+**Objective**: Use division and remainder operators to compute the number of slices per person and remaining slices.
 
-1. Edit the second statement in the `main` method to print the character string
-   "Java is an object-oriented language". Save your changes.
-2. Run `JavaFacts` and view the output in the terminal window.
-3. Run `JavaFactsTest` and confirm your solution passes the Junit test. You
-   should see a green checkmark next to the test method.
-
-   <img alt="clear test history" src="images/fixed_test_success.png" >
-
-NOTE: VS Code displays a history of all test runs. The most recent successful
-test run is displayed on top, but you'll also see the old failed test run below
-it. You can clear the test history so you don't see older test runs by clicking
-the `Clear All Results` button.
-
-<img alt="clear test history" src="images/clear_test_runs.png"  width="200">
-
-Close any open files.
-
-## Task 3 - PizzaShares.java
-
-Click on `PizzaShares.java` to open the file in the editor.
+Open the **PizzaShares** class in the editor.
 
 ```java
 import java.util.Scanner;
 
 /**
- * PizzaShares class demonstrates user input, along with division and remainder operators
+ * PizzaShares class demonstrates user input, along with division and remainder
+ * operators
+ *
  * @author First Last
  */
 public class PizzaShares {
+   public static void main(String[] args) {
+      // Declare local variables
 
-	public static void main(String[] args) {
-		//Declare local variables
-		int people, totalSlices, slicesPerPerson, slicesRemaining;
+      // Declare and initialize Scanner to read user input
+      Scanner input = new Scanner(System.in);
 
-		//Declare and initialize Scanner to read user input
-		Scanner input = new Scanner(System.in);
+      // Prompt for number of pizza slices and number of people
+      System.out.print("Enter #slices and #people: ");
+      int totalSlices = input.nextInt();
+      int people = input.nextInt();
 
-		//Prompt for number of pizza slices and number of people
-		System.out.print("Enter #slices and #people: ");
-		totalSlices = input.nextInt();
-		people = input.nextInt();
+      // Compute number of slices per person
+      int slicesPerPerson = totalSlices / people;
 
-		//Compute number of slices per person
-		slicesPerPerson = totalSlices / people;
+      System.out.println("Each person gets " + slicesPerPerson + " slices.");
 
-		System.out.println("Each person gets " + slicesPerPerson + " slices.");
+      // TODO: Compute and print number of slices remaining
 
-		//TODO: Compute and print number of slices remaining
-
-	}
+   }
 
 }
 ```
 
 The program uses a `Scanner` to read user input and initialize the `totalSlices`
-and `people` variables. The `slicesPerPerson` variable stores the number of
-whole slices per person.
+and `people` variables. The number of whole slices per person is then computed and stored in 
+`slicesPerPerson`.
 
-Run `PizzaShares`, entering the sample input displayed in bold:
+Run the **PizzaShares** class and enter the sample input:
 
 <table>
 <tr>
@@ -210,13 +130,9 @@ leftover?
 <tr><td>%</td><td>remainder</td><td>17%3</td><td>2</td> </tr>
 </table>
 
- </tr>
-</table>
+1. Modify the `main` method to use Java's modulo (remainder) operator to compute the remaining slices, storing the result in a new variable called `slicesRemaining`. Then, print the value as shown in the sample runs below.
+2. Run **PizzaShares** multiple times with different input values and verify that the output matches the expected results.
 
-1. Update the program to use Java's modulo (remainder) operator to calculate and
-   print the leftover slices as shown in the sample runs below.
-2. Run `PizzaShares` several times, passing different input values and
-confirming the expected output.
 <table>
 <tr>
 <th>Sample Run#1</th><th>Sample Run#2</th>
@@ -231,46 +147,46 @@ There are 0 slices remaining.</td>
 </tr>
 </table>
 
-3. Run `PizzaSharesTest` to confirm your solution passes the Junit tests. Note
+3. Run the **PizzaSharesTest** class to confirm your solution passes the Junit tests. Note
    there are two test methods, each checking a different set of inputs. You'll
    should see multiple test results displayed.
 
-<img src="images/multiple_test_results.png" alt="test results list multiple test methods" width="300">
+## Task 3 - StudentInfo
 
-## Task 4 - StudentInfo.java
+**Objective**: Fix an error where a variable is redeclared.
 
-Double click on `StudentInfo.java` in the Package Explorer to open the file in
-the editor, then run the program to view the output.
+Open **StudentInfo** in the editor and run the program. 
 
 ```java
 /**
- * StudentIfno class demonstrates an error in redeclaring a variable.
+ * StudentInfo class demonstrates an error in redeclaring a variable.
+ *
  * @author First Last
  */
 public class StudentInfo {
 
-	public static void main(String[] args) {
-		//Variable declaration and initialization
-		double gpa = 3.8;
+   public static void main(String[] args) {
+      // Variable declaration and initialization
+      double gpa = 3.8;
 
-		//Variable declaration
-		int age;
-		//Variable initialization
-		age = 28;
+      // Variable declaration
+      int age;
+      // Variable initialization
+      age = 28;
 
-		//Print initial values
-		System.out.println("Age: " + age + " gpa: " + gpa);
+      // Print initial values
+      System.out.println("Age: " + age + " gpa: " + gpa);
 
-		//Update age to 29
-		age = 29;
+      // Update age to 29
+      age = 29;
 
-		//TODO: Fix the error and update gpa to 4.0.
-		//double gpa = 4.0;
+      // TODO: Fix the error and update gpa to 4.0.
+      // double gpa = 4.0;
 
-		//Print updated values
-		System.out.println("Age: " + age + " gpa: " + gpa);
+      // Print updated values
+      System.out.println("Age: " + age + " gpa: " + gpa);
 
-	}
+   }
 
 }
 ```
@@ -290,58 +206,30 @@ Age: 29 gpa: 3.8</td>
 
 After updating `age` to 29, the code should update `gpa` to 4.0. The line to
 reassign `gpa` to 4.0 is currently commented out.
+```java
+// double gpa = 4.0;
+```
 
-<table>
+1. Remove the comment character before `double gpa = 4.0;`
+2. The variable <code>gpa</code> is now underlined in red to indicate an error. Hover the mouse over the error to see a message indicating the variable was already declared (see line 10).
 
-<tr>
-<td>
-<img src = "images/remove_comment_line23.png" alt="remove comment on line 23" width=500>
-</td>
-<td>
-Remove the comment character on line 23. 
-</td>
-</tr>
+<img src = "images/error_gpa.png" alt="error redeclared gpa" width=300>
 
-<tr>
-<td>
-<img src = "images/error_gpa.png" alt="error redeclared gpa" width=500>
-</td>
-<td>
-The variable <code>gpa</code> is underlined in red to indicate an error. Hover the mouse over the error.
+3. Try to run the program. It crashes due to the duplicate variable declaration.
 
-A message "Duplicate local variable gpa" is displayed.
+Let's fix the error. Line 24 should assign `gpa` to 4.0 **without** redeclaring the variable.
 
-The variable `gpa` was previously declared on line 9.
-
-</td>
-</tr>
-
-<tr>
-<td>
-<img src = "images/run_error_gpa.png" alt="run exception message" width=500>
-</td>
-<td>
-Try to run the program.
-
-It crashes due to the duplicate variable declaration.
-
-</td>
-</tr>
-
-</table>
-
-Let's fix the error.
-
-Line 23 should assign `gpa` to 4.0 **without** redeclaring the variable.
-
-1. Remove the type `double` on line 23 to prevent a duplicate variable
+1. Remove the type `double` to prevent a duplicate variable
    declaration. The compiler error should go away.
+   ```java
+   gpa = 4.0;
+   ```
 2. Run `StudentInfo` to view the output.
 3. Run `StudentInfoTest` to confirm your solution passes the Junit test.
 
-Save and close any open files.
+## Task 4
 
-## Task 5 - BusRoute.java
+**Objective**: Demonstrate the use of augmented assignment operators to update passenger counts at various bus stops.
 
 Java has increment and decrement operators:
 
@@ -362,7 +250,7 @@ Java also supports augmented assignment operators:
 <tr><td>%=</td><td>x %= 5</td><td>x = x % 5</td> </tr>
 </table>
 
-Click on `BusRoute.java` to open the file in the editor, then run the program to
+Open  **BusRoute** in the editor, then run the program to
 view the output.
 
 ```java
@@ -404,42 +292,39 @@ operators `+=` and `-=` to update `busStop` and `passengers`.
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bus begins its route<br>8 passengers get on at stop#1<br>Departing stop#1 with 8 passengers<br>2 passengers get off at stop#2<br>Departing stop#2 with 6 passengers<br>Half the passengers get off at stop#3<br>Departing stop#3 with 3 passengers<br>The number of passengers triples at stop#4<br>Departing stop#4 with 9 passengers | Bus begins its route<br>8 passengers get on at stop#1<br>Departing stop#1 with 8 passengers<br>2 passengers get off at stop#2<br>Departing stop#2 with 6 passengers<br> <br> <br> <br> <br> |
 
-1. Update `BusRoute.java` to add two more bus stops. Use the appropriate
+1. Update **BusRoute** to add two more bus stops. Use the appropriate
    augmented assignment operators to adjust the passenger count.
    - Half the passengers get off at the 3rd stop.
    - The number of passengers triples at the 4th stop.
-2. Run `BusRoute` to view the output.
-3. Run `BusRouteTest` to confirm your solution passes the Junit tests. Aside
-   from checking the output, there are tests that check for the presence of the
-   division assignment and multiplication assignment operators.
+2. Run **BusRoute** to view the output.
+3. Run **BusRouteTest** to confirm your solution passes the Junit tests.
 
-## Task 6 - DebugIt.java
+## Task 5 - DebugIt
 
-Click on `DebugIt.java` to open the file in the editor, then run the program to
+**Objective**: Use the debugger to identify and fix logic errors involving assignment operators.
+
+Open the **DebugIt** class in the editor, then run the program to
 view the output.
-
-- Line 12 should increase `planesOnRunway` by 5.
-- Line 14 should decrease `planesOnRunway` by 3.
 
 ```java
 /**
  * DebugIt class demonstrates common operator errors.
+ *
  * @author First Last
  */
 public class DebugIt {
 
-	//TODO: Fix the operator errors
-	public static void main(String[] args) {
-		int planesOnRunway = 2;
+   // TODO: Fix the operator errors
+   public static void main(String[] args) {
+      int planesOnRunway = 2;
 
-		//5 planes land on runway, increase planesOnRunway by 5
-		planesOnRunway =+ 5;   //expected value: 7
-		//3 planes take off, decrease planesOnRunway by 3
-		planesOnRunway =- 3;   //expected value: 4
+      // 5 planes land on runway, increase planesOnRunway by 5
+      planesOnRunway=+5; // expected value: 7
+      // 3 planes take off, decrease planesOnRunway by 3
+      planesOnRunway=-3; // expected value: 4
 
-		System.out.println("Planes on runway = " + planesOnRunway);
-	}
-
+      System.out.println("Planes on runway = " + planesOnRunway);
+   }
 }
 ```
 
@@ -456,22 +341,19 @@ Let's use the debugger to execute each line and view the variables in memory.
 
 <tr>
 <td>
-<img src = "images/debugit_breakpoint_line9.png" alt="double click on line 9 gutter to set breakpoint" width=500>
+<img src = "images/set_breakpoint.png" alt="click on line 10 gutter to set breakpoint" width=400>
 </td>
 <td>
-Set a breakpoint at line 9.
-
-Start the debugger.
-
+Set a breakpoint at line 10, the first executable line of the main method.<br><br>Start the debugger by right-clicking on the class and choose <b>Debug DebugIt.main()</b>.
 </td>
 </tr>
 
 <tr>
 <td>
-<img src = "images/debugit_breakpoint_line9.png" alt="debug perspective" width=500>
+<img src = "images/reach_breakpoint.png" alt="debug perspective" width=400>
 </td>
 <td>
-The main method is called and stops execution at the breakpoint. 
+The main method is called and stops execution at the breakpoint.
 </td>
 </tr>
 </table>
@@ -501,7 +383,7 @@ Variables View
 <code>int planesOnRunway = 2;</code>
 </td>
 <td>
-<img src = "images/debugit_line9.png" alt="line 9 variable state" width=200>
+<img src = "images/debugit_line10.png" alt="line 10 variable state" width=200>
 </td>
 </tr>
 
@@ -509,9 +391,9 @@ Variables View
 <td>
 <img src = "images/step_over.png" alt="step over" width=50></td>
 <td>
-<code>planesOnRunway =+ 5;</code></td>
+<code>planesOnRunway=+5;</code></td>
 <td>
-<img src = "images/debugit_line12.png" alt="line 12 variable state" width=200>
+<img src = "images/debugit_line13.png" alt="line 13 variable state" width=200>
 <br>
 <br>
 The variable should be increased by 5, resulting in the value 7, but it is assigned to 5.
@@ -524,9 +406,9 @@ The statement has a logic error.
 <td>
 <img src = "images/step_over.png" alt="step over icon" width=50></td>
 <td>
-<code>planesOnRunway =- 3;</code></td>
+<code>planesOnRunway=-3;</code></td>
 <td>
-<img src = "images/debugit_line14.png" alt="line 14 variable state" width=200>
+<img src = "images/debugit_line15.png" alt="line 15 variable state" width=200>
 <br>
 <br>
 The variable should be decreased by 3, resulting in the value 4, but it is assigned to -3.
@@ -541,9 +423,7 @@ The statement has a logic error.
 <td>
 <code>System.out.println("Planes on runway = " + planesOnRunway);</code></td>
 <td>
-<img src = "images/debugit_line16.png" alt="line 16 printing variable values" width=200>
-<br>
-The actual output does not match the expected output.
+Click the console tab to view the actual output, which does not match the expected output.
 </td>
 </tr>
 
@@ -573,7 +453,7 @@ Equivalent Code
 
 <tr>
 <td>
-<code>planesOnRunway =+ 5;</code>
+<code>planesOnRunway=+5;</code>
 </td>
 <td>
 <code>planesOnRunway = +5;</code>
@@ -583,7 +463,7 @@ Equivalent Code
 
 <tr>
 <td>
-<code>planesOnRunway =- 3;</code>
+<code>planesOnRunway=-3;</code>
 </td>
 <td>
 <code>planesOnRunway = -3;</code>
@@ -605,16 +485,18 @@ equal sign, not after it!
 <tr><td>%=</td><td>x %/ 5</td><td>x = x % 5</td> </tr>
 </table>
 
-1. Fix `DebugIt.java` to use the correct augmented assignment operators to
+1. Fix **DebugIt** to use the correct augmented assignment operators to
    update `planesOnRunway`.
-2. Run `DebugIt` to confirm the expected output.
-3. Run `DebugItTest` to confirm the Junit tests pass.
+2. Run **DebugIt** to confirm the expected output.
+3. Run **DebugItTest** to confirm the Junit tests pass.
 
 Try to remember this error, it is a very common mistake!
 
-## Task 7 - Rounding.java
+## Task 6 - Rounding
 
-Click on `Rounding.java` to open the file in the editor.
+**Objective**: Perform numeric conversions and rounding using the int type and various rounding methods.
+
+Open the **Rounding** class  in the editor.
 
 ```java
 import java.util.Scanner;
@@ -814,7 +696,7 @@ Truncate digits
 
 </table>
 
-The `Rounding` class shows how to:
+The **Rounding** class shows how to:
 
 1. cast a double as an int
 2. round a double to the nearest integer
@@ -823,10 +705,10 @@ The `Rounding` class shows how to:
 Your task is to update the `main` method with statements to round the input
 value to 3 digits after the decimal point.
 
-1. Update `Rounding.java` to round the number to 3 digits after the decimal
+1. Update **Rounding** to perform the additional task of rounding the number to 3 digits after the decimal
    point, producing the expected output displayed in the sample runs.
-2. Run `Rounding` to confirm the output.
-3. Run `RoundingTest` to confirm your solution passes the Junit tests.
+2. Run **Rounding** to confirm the output.
+3. Run **RoundingTest** to confirm your solution passes the Junit tests.
 
 <table>
 <tr>
@@ -879,15 +761,9 @@ Move . 3 digits left:	3.298<br>
 </tr>
 </table>
 
-## Task 8
-
-TODO: Create new Java class. Create new Junit class.
-
 ## Submit Your Solution
 
-Save and close any open files.
-
-TODO: Instructions on submitting
+TBD
 
 <style>
 table, th, td {
