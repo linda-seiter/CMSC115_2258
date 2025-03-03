@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
-public class PizzaSharesTest {
+public class PizzaSharesTestV2 {
 
     @Test
     @DisplayName("PizzaShares.main prints correct output for input: 24 10")
@@ -14,14 +13,10 @@ public class PizzaSharesTest {
                 + "There are 4 slices remaining.\n";
 
         // Capture the output from PizzaShares.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                PizzaShares.main(new String[] {});
-            });
+        String actualOutput = JunitHelper.mainInputOutput("PizzaShares", input);
 
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        // Compare expected vs actual output
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
@@ -33,14 +28,11 @@ public class PizzaSharesTest {
                 + "There are 0 slices remaining.\n";
 
         // Capture the output from PizzaShares.main using the provided input.
-        withTextFromSystemIn(input).execute(() -> {
-            String actualOutput = tapSystemOutNormalized(() -> {
-                PizzaShares.main(new String[] {});
-            });
+        String actualOutput = JunitHelper.mainInputOutput("PizzaShares", input);
 
-            // Compare expected vs actual output
-            assertEquals(expectedOutput, actualOutput);
-        });
+        // Compare expected vs actual output
+        assertEquals(expectedOutput, actualOutput);
+
     }
 
 }
