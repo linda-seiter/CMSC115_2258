@@ -121,13 +121,17 @@ Junit tests in a later lesson.  For now, you'll just run the test to check the r
 
 1. Right-click on `CourseWelcomeTest` in the project view, then select **Run CourseWelcomeTest**.<br>
 <img alt="Run junit test class" src="images/run_test.png" width="300" >
-2. You should see a message in the run view indicating the test failed.  Click on "Click to see difference". A side-by-side comparison is displayed with the differences highlighted.<br>
+
+2. The Run View will display a message indicating the test failed.  Click on <u>&lt;Click to see difference&gt;</u>. A side-by-side comparison is displayed highlighting the difference between the expected and actual output.<br>
 <img alt="Test failed message in run view" src="images/test_failed.png" width="400" >
+
 3. Close the comparison failure tab. You can click on the `CourseWelcome` tab in the editor if you don't see the code.
+
 4. Update the `CourseWelcome` class to produce the expected output. The first print statement in the `main` method should print the character string
    "Welcome to CMCS 115.".<br>
 <img alt="Task1 print statement corrected" src="images/task1_solution.png" width="400" >
-4. Re-run the Junit `CourseWelcomeTest` class and confirm the test passed.<br>
+
+5. Re-run the Junit `CourseWelcomeTest` class and confirm the test passed.<br>
 <img alt="Test passed message in run view" src="images/test_passed.png" width="400" >
 
 
@@ -232,8 +236,16 @@ Run the program to see the output. The second print statement is commented out, 
 
 In Java, every statement must end with a semicolon. Notice that the first and third print statements have a semicolon at the end of the line, but the commented-out second print statement does not.
 
-1. Remove the comment characters `//` from the second print statement.  If you run the program, you'll see an error message displayed in the run view.  The program can't run because of the missing semicolon.
-2. Notice the editor window displays a red warning symbol at the end of the line where the semicolon should be. You may also see a red warning icon at the beginning of the line of code.  If you click the warning or hover over the error , you'll see a message about the missing semicolon.<br>
+Remove the comment characters `//` from the second print statement.  
+
+```java
+System.out.println("airplane")
+```
+
+
+Notice the editor window displays a red warning symbol at the end of the line where the semicolon should be. You may also see a red warning icon at the beginning of the line of code.  If you click the warning or hover over the error , you'll see a message about the missing semicolon.
+If you run the program, you'll see an error message displayed in the run view.  The program can't run because of the missing semicolon.
+
 <img alt="Compiler warning for missing semicolon" src="images/error.png" width="400" >
 
 Let's fix the syntax error so the program can execute.
@@ -324,6 +336,9 @@ public class Variables {
 
         int age = 28;
         System.out.println("You are " + age + " years old.");
+
+        //TODO: Declare and assign gpa to 3.8.  Print a message showing the gpa.
+
     }
 }
 ```
@@ -355,7 +370,7 @@ the value assigned to the corresponding variable.  The plus character `+` is use
 
 <img alt="String concatenation in print statement" src="images/concatenation.png" width="300" >
 
-1. Update the `Variables` class to declare a third variable named `gpa` whose type is double and value is 3.5. Add a print statement to display the value. <br>
+1. Update the `Variables` class to declare a third variable named `gpa` whose type is double and value is 3.8. Add a print statement to display the value. <br>
 ```java
         double gpa = 3.8;
         System.out.println("Your gpa is " + gpa);
@@ -364,7 +379,7 @@ the value assigned to the corresponding variable.  The plus character `+` is use
 ```text
 Hello Silas
 You are 28 years old.
-Your gpa is 3.5
+Your gpa is 3.8
 ```
 3. Run `VariablesTest` to confirm the test passes.
 
@@ -422,7 +437,7 @@ Debugging shows how variables are declared, initialized, and updated in memory.
 <img src = "images/breakpoint.png" alt="click in line 9 gutter to set breakpoint" width=300>
 </td>
 <td>
-Set a breakpoint at line 9 by clicking in the gutter to the left of the line number.  A breakpoint is indicated by a red circle.  You can remove a breakpoint by clicking on it again.
+Set a breakpoint at line 9 by clicking in the gutter to the left of the line number.<br>  A breakpoint is indicated by a red circle.  You can remove a breakpoint by clicking on it again.
 </td>
 </tr>
 
@@ -432,10 +447,10 @@ Set a breakpoint at line 9 by clicking in the gutter to the left of the line num
 </td>
 <td>
 There are several ways to start the debugger:<br>
-- Click the "green" arrow by the class header, then select **Debug Paycheck.main()**.<br> 
-- Right-click in the code editor, then select **Debug Paycheck.main()**.<br>
+- Click the green arrow by the class header, then select <b>Debug Paycheck.main()</b>.<br> 
+- Right-click in the code editor, then select <b>Debug Paycheck.main()</b>.<br>
 - Select "Current File" and then press the Debug icon in the toolbar.<br>
-- Select **Run > Debug Paycheck.main** from the main menubar.<br>
+- Select <b>Run > Debug Paycheck.main</b> from the main menubar.<br>
 </td>
 </tr>
 </table>
@@ -576,7 +591,7 @@ Week#3 hours: 27 rate: $18.75 pay: $506.25
 any errors.
 - Run `PaycheckTest` to confirm the tests passed.
 
-NOTE: Aside from visualizing variables in memory, you can use the debugger to
+Aside from visualizing variables in memory, you can use the debugger to
 step through your code to find logic errors. Debugging is **one of the most
 useful skills** you can acquire as a software developer!
 

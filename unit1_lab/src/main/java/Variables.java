@@ -6,5 +6,7 @@ public class Variables {
         int age = 28;
         System.out.println("You are " + age + " years old.");
 
+        //TODO: Declare and assign gpa to 3.8.  Print a message showing the gpa.
+
     }
 }
