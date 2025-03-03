@@ -457,7 +457,7 @@ Equivalent Code
 </td>
 <td>
 <code>planesOnRunway = +5;</code>
-<br><br>Assign to positive 5.
+<br><br>Should have increased by 5, but it assigned to +5.
 </td>
 </tr>
 
@@ -467,7 +467,7 @@ Equivalent Code
 </td>
 <td>
 <code>planesOnRunway = -3;</code>
-<br><br>Assign to negative 3.
+<br><br>Should have decreased by 3, but it assigned to -3.
 </td>
 </tr>
 
@@ -766,7 +766,7 @@ Move . 3 digits left:	3.298<br>
 TBD
 
 <style>
-table, th, td {
+th, td {
   border: 1px solid black;
   padding: 4px;
   border-collapse: collapse;
