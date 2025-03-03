@@ -26,24 +26,22 @@ Enter rows and columns: 5 7
 🌳🐿️🟩🟩🟩🐿️🌳
 ```
 
-Array dimensions will be
-specified as `rows X columns`. You may assume the methods to implement receive a non-empty, rectangular 2D array as a parameter.
+Array dimensions will be specified as `rows X columns`.
+
+You may assume methods receive a non-empty, rectangular 2D array as a parameter.
+
 
 ## Restrictions
 
 Do not use methods from the Java `Array` or `Arrays` classes to solve the tasks.
 
+## Run the `main()` method with sample user input
 
-## Setup Instructions 
+You are provided with an initial version of the `LandscapeService` class, which includes a method called `printMatrix` designed to display the contents of a 2D array of strings.
 
-TBD
+The `main` method initializes a 2D array of strings based on dimensions specified by the user and then invokes the `printMatrix` method.
 
-## Task #0 - Run the `main()` method with sample user input
-
-The `LandscapeService` class contains a method `printMatrix` to print the contents of a 2D array of strings.
-The `main` method creates a 2D array of strings with the dimensions given by the user, then calls `printMatrix`.
-
-Run the `main()` method to confirm the matrix with the specified dimensions is created and printed:
+Execute the `main()` method to verify that the matrix is created and printed with the given dimensions.
 
 ```text
 Enter rows and columns: 7 9
@@ -57,6 +55,10 @@ nullnullnullnullnullnullnullnullnull
 ```
 
 Each cell contains the default String value of `null`.
+
+
+
+
 
 ## Task #1 - Implement the `fillMatrix()` method
 
@@ -138,15 +140,17 @@ Enter rows and columns: 7 9
 
 ## Task #2 - Implement the `setMiddleCells()` method
 
-The purpose of the setMiddleCells method is to assign a value to the middle cell(s) in a 2D array.
+The `setMiddleCells` method is designed to assign a value to the middle cell(s) of a 2D array.
 
-If both the number of rows and columns are odd, the method will set the cell at the exact center of the array.
-If either the number of rows or columns is even, there is no single middle cell. Instead:
+- When both the number of rows and columns are odd, there is a single central cell.
+- When either the number of rows or columns is even, there is no distinct middle cell.
 
-- If the number of rows is even, the method sets the two cells that are closest to the center vertically.
-- Similarly, if the number of columns is even, the method sets the two cells closest to the center horizontally.
+Here’s how the method works:
+- If both the number of rows and columns are odd, it sets the value for the single central cell.
+- If the number of rows is even, it sets the two cells closest to the center along the vertical axis.
+- If the number of columns is even, it sets the two cells closest to the center along the horizontal axis.
 
-Note the method will set 4 middle cells when the number of rows and columns are both even.
+Note that if both the number of rows and columns are even, the method will set 4 middle cells in total.
 
 ```java
 /**
