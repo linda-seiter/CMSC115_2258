@@ -11,11 +11,11 @@ that are crucial for developing more complex software solutions.
 
 You will be tasked with writing Java programs for the following scenarios:
 
-1. **SelfIntroduction.java**: This task will introduce you to printing multiple lines of output using `System.out.println()`. You will create a simple self-introduction program that produces at least four lines of text.
+1. **SelfIntroduction**: This task will introduce you to printing multiple lines of output using `System.out.println()`. You will create a simple self-introduction program that produces at least four lines of text.
 
-2. **BillSplitter.java**: This program will challenge you to work with mathematical expressions and operator precedence. You will fix errors in the code to calculate the amount each person owes when splitting a bill with a 20% tip.
+2. **BillSplitter**: This program will challenge you to work with mathematical expressions and operator precedence. You will fix errors in the code to calculate the amount each person owes when splitting a bill with a 20% tip.
 
-3. **GasPurchase.java**: In this task, you will take user input for gallons of gas purchased and the price per gallon, then calculate the total cost. This exercise will help you practice working with input/output and basic arithmetic operations in Java.
+3. **GasPurchase**: In this task, you will take user input for gallons of gas purchased and the price per gallon, then calculate the total cost. This exercise will help you practice working with input/output and basic arithmetic operations in Java.
 
 By completing these tasks, you will develop proficiency in basic Java syntax and functionality, while also gaining experience in using JUnit tests to verify the correctness of your code.
 
@@ -25,9 +25,9 @@ Expand the `unit1_project > src` folder to view the Java classes and associated 
 
 <img alt="expand unit1_project folders" src="images/unit1_project_files.png" width="200" >
 
-## Task 1 - SelfIntroduction.java
+## Task 1 - SelfIntroduction
 
-Double-click on **SelfIntroduction** to open the file in the editor.
+Open the `SelfIntroduction` class to view the file in the editor.
 
 ```java
 /**
@@ -45,7 +45,7 @@ public class SelfIntroduction {
 }
 ```
 
-The **SelfIntroduction** class contains a `main` method with an empty block for
+The `SelfIntroduction` class contains a `main` method with an empty block for
 the method body. The class also contains a JavaDoc comment before the class
 header.
 
@@ -53,7 +53,7 @@ header.
    name.
 2. Edit the `main` method to add print statements to introduce yourself. The
    program should produce **at least 4** lines of output.
-3. Run **SelfIntroduction** to confirm your program prints at least 4 lines of
+3. Run `SelfIntroduction` to confirm your program prints at least 4 lines of
    output. For example:<br>
    ```text
    My name is Spongebob.
@@ -61,12 +61,12 @@ header.
    I live in a pineapple at the bottom of the sea.
    I love to laugh!
    ```
-4. Run the Junit class **SelfIntroductionTest** to confirm the test passes.
+4. Run the Junit class `SelfIntroductionTest` to confirm the test passes.
 
 
 ## Task 2 - BillSplitter
 
-Open the  **BillSplitter** class in the editor.
+Open the  `BillSplitter` class in the editor.
 
 ```java
 /**
@@ -104,8 +104,8 @@ errors that prevent the program from producing the expected output.
    name.
 2. Edit the second print statement to fix the errors. The math expression should
    be corrected and its value printed.
-3. Run **BillSplitter** to confirm your program produces the correct output.
-4. Run the Junit **BillSplitterTest** class to confirm the test passes.
+3. Run `BillSplitter` to confirm your program produces the correct output.
+4. Run the Junit `BillSplitterTest` class to confirm the test passes.
 
 HINT: Recall operator precedence and the default order of operations:
 
@@ -115,7 +115,7 @@ HINT: Recall operator precedence and the default order of operations:
 
 ## Task 3
 
-Open the **GasPurchase** class in the editor.
+Open the `GasPurchase` class in the editor.
 
 ```java
 import java.util.Scanner;
@@ -143,14 +143,14 @@ public class GasPurchase {
 2. Edit the `main` method to prompt the user to enter the amount of gallons and
    the price per gallon of gas. Declare appropriate variables to store the user
    input, then calculate and print the cost as shown in the sample runs below.
-3. Run **GasPurchase** several times and confirm the expected output given the
+3. Run `GasPurchase` several times and confirm the expected output given the
    input values as shown in the sample runs.
 
 | Sample Run#1                                                            | Sample Run#2                                                         |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Enter gallons and price per gallon: <b>12.5 3.50</b><br> You owe $43.75 | Enter gallons and price per gallon: <b>8.0 3.75</b><br>You owe $30.0 |
 
-5. Run the Junit **GasPurchaseTest** class to confirm the tests pass.
+5. Run the Junit `GasPurchaseTest` class to confirm the tests pass.
 
 
 ## Submit Your Solution

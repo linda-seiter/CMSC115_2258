@@ -55,7 +55,7 @@ public class CourseWelcome {
 }
 ```
 
-Double-click on **CourseWelcome** in the project view to open the file in the editor.
+Double-click on `CourseWelcome` in the project view to open the file in the editor.
 The `main` method contains two print statements, each outputting the text enclosed in double quotes.
 
 <img alt="Output shown in run view" src="images/run_output.png" width="400" >
@@ -66,13 +66,13 @@ There are several ways to run the `main` method.
 
 1. Click the green run arrow to the left of the class header or the main method.
 2. Right-click in the editor window and select **Run CourseWelcome.main()**.
-3. Right-click on  **CourseWelcome** in the project view and select **Run CourseWelcome.main()**.
+3. Right-click on  `CourseWelcome` in the project view and select **Run CourseWelcome.main()**.
 4. Select **Current File** and then click the green run arrow in the project toolbar.
 5. Select **Run > Run CourseWelcome** from the top menubar.
 
 <img alt="ways to run a main method" src="images/run.png" width="500" >
 
-Experiment with the different ways to run the CourseWelcome class. Confirm the following two lines of output are produced.
+Experiment with the different ways to run the `CourseWelcome` class. Confirm the following two lines of output are produced.
 
 ```text
 Welcome.
@@ -100,28 +100,28 @@ We'll use a very popular testing framework named Junit.
 Junit is a popular Java testing framework. For each regular Java class,
 we use a separate Junit class to test the functionality.
 
-- Java class **CourseWelcome**
-- Junit test class **CourseWelcomeTest**
+- Java class `CourseWelcome`
+- Junit test class `CourseWelcomeTest`
 
 Expand the test folder in the project view as shown in the screenshot below.
 The test folder contains a Junit test class for each regular Java class.
 
 <img alt="CourseWelcomeTest junit test class" src="images/junit.png" width="400" >
 
-The **CourseWelcomeTest** Junit class has a method that checks the output
-produced when the **CourseWelcome** class is executed. Don't worry about
+The `CourseWelcomeTest` Junit class has a method that checks the output
+produced when the `CourseWelcome` class is executed. Don't worry about
 understanding the code in the Junit test class. We'll learn how to write
 Junit tests in a later lesson.  For now, you'll just run the test to check the result.
 
-1. Right-click on **CourseWelcomeTest** in the project view, then select **Run CourseWelcomeTest**.<br>
+1. Right-click on `CourseWelcomeTest` in the project view, then select **Run CourseWelcomeTest**.<br>
 <img alt="Run junit test class" src="images/run_test.png" width="300" >
 2. You should see a message in the run view indicating the test failed.  Click on "Click to see difference". A side-by-side comparison is displayed with the differences highlighted.<br>
 <img alt="Test failed message in run view" src="images/test_failed.png" width="400" >
-3. Close the comparison failure tab. You can click on the **CourseWelcome** tab in the editor if you don't see the code.
-4. Update the **CourseWelcome** class to produce the expected output. The first print statement in the `main` method should print the character string
+3. Close the comparison failure tab. You can click on the `CourseWelcome` tab in the editor if you don't see the code.
+4. Update the `CourseWelcome` class to produce the expected output. The first print statement in the `main` method should print the character string
    "Welcome to CMCS 115.".<br>
 <img alt="Task1 print statement corrected" src="images/task1_solution.png" width="400" >
-4. Re-run the Junit **CourseWelcomeTest** class and confirm the test passed.<br>
+4. Re-run the Junit `CourseWelcomeTest` class and confirm the test passed.<br>
 <img alt="Test passed message in run view" src="images/test_passed.png" width="400" >
 
 
@@ -135,7 +135,7 @@ one or more lines of code from executing.
 - Line comment: Text following `//` is ignored on the current line.
 - Block or multi-line comment: Text between `/*` and `*/` is ignored.
 
-Double-click on the Java class named **Comments** to open the file in the editor, then run the program to
+Double-click on the Java class named `Comments` to open the file in the editor, then run the program to
 view the output.
 
 ```java
@@ -177,13 +177,13 @@ public class Comments {
 
 Notice the expected output does not include "peach".
 
-1. Right-click on the Junit class **CommentsTest** in the project view, then select **Run CommentsTest**. You should see a message in the run view indicating the test failed.  Click to see the difference between the expected and actual output.<br>
+1. Right-click on the Junit class `CommentsTest` in the project view, then select **Run CommentsTest**. You should see a message in the run view indicating the test failed.  Click to see the difference between the expected and actual output.<br>
 <img alt="Task2 test fails" src="images/task2_fail.png" width="400" >
-2. Update the **Comments** class to produce the expected output by adding `//` to comment out the last print statement (don't delete it!). 
+2. Update the `Comments` class to produce the expected output by adding `//` to comment out the last print statement (don't delete it!). 
 ```text
      //System.out.println("peach");
 ```
-3. Re-run the Junit class **CommentsTest** to confirm the test passed.
+3. Re-run the Junit class `CommentsTest` to confirm the test passed.
 
 
 ### JavaDoc
@@ -233,8 +233,8 @@ In Java, every statement must end with a semicolon. Notice that the first and th
 Let's fix the syntax error so the program can execute.
 
 1. Add a semicolon to the end of the print statement to fix the syntax error.
-2. Run **Fixit** to see the output.
-3. Run the Junit class **FixitTest** and confirm the test passes.
+2. Run `Fixit` to see the output.
+3. Run the Junit class `FixitTest` and confirm the test passes.
 
 
 ## Task 4 - PrintNewline
@@ -264,17 +264,17 @@ public class PrintNewline {
 | -------------------------------------- | ------------------------------------------ |
 | red <br>green blue <br>pink <br>yellow | red <br>green blue <br>pink yellow<br><br> |
 
-Run **PrintNewline** to view the output. In the expected output, "yellow" appears on
+Run `PrintNewline` to view the output. In the expected output, "yellow" appears on
 a separate line from "pink". Let's fix the program to produce the expected
 output:
 
 1. Edit the code so a newline character is appended after printing "pink".
-2. Run **PrintNewline** to view the output.
-3. Run **PrintNewlineTest** to confirm the test passes.
+2. Run `PrintNewline` to view the output.
+3. Run `PrintNewlineTest` to confirm the test passes.
 
 ## Task 5 - MathExpression
 
-Open the class named **MathExpression**.
+Open the class named `MathExpression`.
 
 ```java
 public class MathExpression {
@@ -293,7 +293,7 @@ arithmetic expression evaluates to a numeric value.
 | "2 + 3 \* 8 = " | "2 + 3 \* 8 = " |
 | 2 + 3 \* 8      | 26              |
 
-Run **MathExpression** to view the output. Assume we would like to evolve the
+Run `MathExpression` to view the output. Assume we would like to evolve the
 program to produce the expected output shown below:
 
 | Expected Output   | Actual Output   |
@@ -303,12 +303,12 @@ program to produce the expected output shown below:
 1. Adjust the 2 print statements to produce the expected output. You need to add
    parenthesis in both the string and the math expression to force `+` to be
    performed before `*`.
-2. Run **MathExpression** to confirm the expected output.
-3. Run **MathExpressionTest** to confirm the test passes.
+2. Run `MathExpression` to confirm the expected output.
+3. Run `MathExpressionTest` to confirm the test passes.
 
 ## Task 6 - Variables
 
-Open the class named **Variables**.
+Open the class named `Variables`.
 
 ```java
 public class Variables {
@@ -349,22 +349,22 @@ the value assigned to the corresponding variable.  The plus character `+` is use
 
 <img alt="String concatenation in print statement" src="images/concatenation.png" width="300" >
 
-1. Update the **Variables** class to declare a third variable named `gpa` whose type is double and value is 3.5. Add a print statement to display the value. <br>
+1. Update the `Variables` class to declare a third variable named `gpa` whose type is double and value is 3.5. Add a print statement to display the value. <br>
 ```java
         double gpa = 3.8;
         System.out.println("Your gpa is " + gpa);
 ```
-2. Run **Variables** to confirm the output.<br>
+2. Run `Variables` to confirm the output.<br>
 ```text
 Hello Silas
 You are 28 years old.
 Your gpa is 3.5
 ```
-3. Run **VariablesTest** to confirm the test passes.
+3. Run `VariablesTest` to confirm the test passes.
 
 ## Task 7 - Paycheck
 
-Open the class named **Paycheck**.
+Open the class named `Paycheck`.
 
 ```java
 /**
@@ -427,9 +427,9 @@ Set a breakpoint at line 9 by clicking in the gutter to the left of the line num
 <td>
 There are several ways to start the debugger:<br>
 - Click the "green" arrow by the class header, then select **Debug Paycheck.main()**.<br> 
-- Right-click in the code editor, then select "Debug Paycheck.main()".<br>
+- Right-click in the code editor, then select **Debug Paycheck.main()**.<br>
 - Select "Current File" and then press the Debug icon in the toolbar.<br>
-- Select "Run > Debug Paycheck.main" from the main menubar.<br>
+- Select **Run > Debug Paycheck.main** from the main menubar.<br>
 </td>
 </tr>
 </table>
@@ -566,9 +566,9 @@ Week#2 hours: 39 rate: $18.25 pay: $711.75
 Week#3 hours: 27 rate: $18.75 pay: $506.25
 ```
 
-- Run **Paycheck** and confirm the expected output. Use the debugger to find and fix
+- Run `Paycheck` and confirm the expected output. Use the debugger to find and fix
 any errors.
-- Run **PaycheckTest** to confirm the tests passed.
+- Run `PaycheckTest` to confirm the tests passed.
 
 NOTE: Aside from visualizing variables in memory, you can use the debugger to
 step through your code to find logic errors. Debugging is **one of the most
@@ -576,7 +576,7 @@ useful skills** you can acquire as a software developer!
 
 ## Task 8 - Rectangle
 
-Open the class named **Rectangle**.
+Open the class named `Rectangle`.
 
 ```java
 import java.util.Scanner;
@@ -612,7 +612,7 @@ public class Rectangle {
 The program uses a `Scanner` to read user input and initialize the `length` and
 `width` variables of a rectangle.
 
-When you run the **Rectangle** class, the program displays the prompt "Enter
+When you run the `Rectangle` class, the program displays the prompt "Enter
 length and width: " and then waits until you enter two double values in the
 terminal window.
 
@@ -634,9 +634,9 @@ rectangle. However, it only prints the length and width.
         // TODO: Update to print area
         System.out.println("length=" + length + " width=" + width + " area=" + area);
 ```
-2. Run **Rectangle** several times, passing different input values for length and
+2. Run `Rectangle` several times, passing different input values for length and
    width.
-3. Run the Junit **RectangleTest** class to confirm the tests pass.
+3. Run the Junit `RectangleTest` class to confirm the tests pass.
 
 | Sample Run#1                                                             | Sample Run#2                                                                   |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |

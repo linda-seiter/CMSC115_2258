@@ -40,7 +40,7 @@ TBD
 
 ## Task #0 - Run the `main()` method with sample user input
 
-The **LandscapeService** class contains a method `printMatrix` to print the contents of a 2D array of strings.
+The `LandscapeService` class contains a method `printMatrix` to print the contents of a 2D array of strings.
 The `main` method creates a 2D array of strings with the dimensions given by the user, then calls `printMatrix`.
 
 Run the `main()` method to confirm the matrix with the specified dimensions is created and printed:
@@ -267,7 +267,7 @@ setMiddleCells(matrix, "X");
 */
 ```
 
-Run the JUnit tests in the **TestSetMiddleCells** class to verify your solution.
+Run the JUnit tests in the `TestSetMiddleCells` class to verify your solution.
 
 Once the tests pass, update the `main()` method to add a house in the middle of the yard.
 
@@ -700,7 +700,7 @@ Enter rows and columns: 6 8
 🌳🐿️🟩🟩🟩🟩🐿️🌳
 ```
 
-Finally, run the Junit tests in **TestMain** to confirm the `main` method produces the correct output for the given input.
+Finally, run the Junit tests in `TestMain` to confirm the `main` method produces the correct output for the given input.
 
 
 ## Submission Instructions

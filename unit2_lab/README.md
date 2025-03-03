@@ -30,7 +30,7 @@ methods, etc.
 
 Let's review how to run a Junit test to check code functionality.
 
-Open the **JavaFacts** class in the editor.
+Open the `JavaFacts` class in the editor.
 
 ```java
 public class JavaFacts {
@@ -50,15 +50,15 @@ actual output produced by the current code differs from the expected output.
 | --------------------------------------------------------------------- | ---------------------------------------------------- |
 | Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
 
-1. Run the Junit **JavaFactsTest** class and confirm the test fails.  Recall you can view the differences between the expected and actual output.
-2. Edit the second print statement in the `main` method in **JavaFacts** to produce the expected output.
-3. Re-run the **JavaFactsTest** class and confirm your solution passes the Junit test.
+1. Run the Junit `JavaFactsTest` class and confirm the test fails.  Recall you can view the differences between the expected and actual output.
+2. Edit the second print statement in the `main` method in `JavaFacts` to produce the expected output.
+3. Re-run the `JavaFactsTest` class and confirm your solution passes the Junit test.
 
 ## Task 2 - PizzaShares
 
 **Objective**: Use division and remainder operators to compute the number of slices per person and remaining slices.
 
-Open the **PizzaShares** class in the editor.
+Open the `PizzaShares` class in the editor.
 
 ```java
 import java.util.Scanner;
@@ -97,7 +97,7 @@ The program uses a `Scanner` to read user input and initialize the `totalSlices`
 and `people` variables. The number of whole slices per person is then computed and stored in 
 `slicesPerPerson`.
 
-Run the **PizzaShares** class and enter the sample input:
+Run the `PizzaShares` class and enter the sample input:
 
 <table>
 <tr>
@@ -122,7 +122,7 @@ leftover?
 </table>
 
 1. Modify the `main` method to use Java's modulo (remainder) operator to compute the remaining slices, storing the result in a new variable called `slicesRemaining`. Then, print the value as shown in the sample runs below.
-2. Run **PizzaShares** multiple times with different input values and verify that the output matches the expected results.
+2. Run `PizzaShares` multiple times with different input values and verify that the output matches the expected results.
 
 <table>
 <tr>
@@ -138,7 +138,7 @@ There are 0 slices remaining.</td>
 </tr>
 </table>
 
-3. Run the **PizzaSharesTest** class to confirm your solution passes the Junit tests. Note
+3. Run the `PizzaSharesTest` class to confirm your solution passes the Junit tests. Note
    there are two test methods, each checking a different set of inputs. You'll
    should see multiple test results displayed.
 
@@ -146,7 +146,7 @@ There are 0 slices remaining.</td>
 
 **Objective**: Fix an error where a variable is redeclared.
 
-Open **StudentInfo** in the editor and run the program. 
+Open `StudentInfo` in the editor and run the program. 
 
 ```java
 /**
@@ -241,7 +241,7 @@ Java also supports augmented assignment operators:
 <tr><td>%=</td><td>x %= 5</td><td>x = x % 5</td> </tr>
 </table>
 
-Open  **BusRoute** in the editor, then run the program to
+Open  `BusRoute` in the editor, then run the program to
 view the output.
 
 ```java
@@ -283,18 +283,18 @@ operators `+=` and `-=` to update `busStop` and `passengers`.
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bus begins its route<br>8 passengers get on at stop#1<br>Departing stop#1 with 8 passengers<br>2 passengers get off at stop#2<br>Departing stop#2 with 6 passengers<br>Half the passengers get off at stop#3<br>Departing stop#3 with 3 passengers<br>The number of passengers triples at stop#4<br>Departing stop#4 with 9 passengers | Bus begins its route<br>8 passengers get on at stop#1<br>Departing stop#1 with 8 passengers<br>2 passengers get off at stop#2<br>Departing stop#2 with 6 passengers<br> <br> <br> <br> <br> |
 
-1. Update **BusRoute** to add two more bus stops. Use the appropriate
+1. Update `BusRoute` to add two more bus stops. Use the appropriate
    augmented assignment operators to adjust the passenger count.
    - Half the passengers get off at the 3rd stop.
    - The number of passengers triples at the 4th stop.
-2. Run **BusRoute** to view the output.
-3. Run **BusRouteTest** to confirm your solution passes the Junit tests.
+2. Run `BusRoute` to view the output.
+3. Run `BusRouteTest` to confirm your solution passes the Junit tests.
 
 ## Task 5 - DebugIt
 
 **Objective**: Use the debugger to identify and fix logic errors involving assignment operators.
 
-Open the **DebugIt** class in the editor, then run the program to
+Open the `DebugIt` class in the editor, then run the program to
 view the output.
 
 ```java
@@ -476,10 +476,10 @@ equal sign, not after it!
 <tr><td>%=</td><td>x %/ 5</td><td>x = x % 5</td> </tr>
 </table>
 
-1. Fix **DebugIt** to use the correct augmented assignment operators to
+1. Fix `DebugIt` to use the correct augmented assignment operators to
    update `planesOnRunway`.
-2. Run **DebugIt** to confirm the expected output.
-3. Run **DebugItTest** to confirm the Junit tests pass.
+2. Run `DebugIt` to confirm the expected output.
+3. Run `DebugItTest` to confirm the Junit tests pass.
 
 Try to remember this error, it is a very common mistake!
 
@@ -487,7 +487,7 @@ Try to remember this error, it is a very common mistake!
 
 **Objective**: Perform numeric conversions and rounding using the int type and various rounding methods.
 
-Open the **Rounding** class  in the editor.
+Open the `Rounding` class  in the editor.
 
 ```java
 import java.util.Scanner;
@@ -687,7 +687,7 @@ Truncate digits
 
 </table>
 
-The **Rounding** class shows how to:
+The `Rounding` class shows how to:
 
 1. cast a double as an int
 2. round a double to the nearest integer
@@ -696,10 +696,10 @@ The **Rounding** class shows how to:
 Your task is to update the `main` method with statements to round the input
 value to 3 digits after the decimal point.
 
-1. Update **Rounding** to perform the additional task of rounding the number to 3 digits after the decimal
+1. Update `Rounding` to perform the additional task of rounding the number to 3 digits after the decimal
    point, producing the expected output displayed in the sample runs.
-2. Run **Rounding** to confirm the output.
-3. Run **RoundingTest** to confirm your solution passes the Junit tests.
+2. Run `Rounding` to confirm the output.
+3. Run `RoundingTest` to confirm your solution passes the Junit tests.
 
 <table>
 <tr>

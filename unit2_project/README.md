@@ -62,7 +62,7 @@ spread:
 
 </table>
 
-Update the `main` method in the **TransmissionRate* class to implement the following functionality:
+Update the `main` method in the `TransmissionRate` class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read the transmission rate R<sub>0</sub> as an integer.
@@ -88,13 +88,13 @@ New cases on 4th iteration: 104976
 </tr>
 </table>
 
-Run **TransmissionRateTest** to confirm your solution passes the Junit tests.
+Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
 
 ## Task 2 - SeafoodMarket
 
 **Objective**: Calculate the total cost of fish purchased based on the weight and price per pound, rounding the total to two decimal places.
 
-Update the `main` method in the **SeafoodMarket* class to implement the following functionality:
+Update the `main` method in the `SeafoodMarket` class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read two doubles: (1) pounds of fish and (2) price per pound.
@@ -119,13 +119,13 @@ Update the `main` method in the **SeafoodMarket* class to implement the followin
 </tr>
 </table>
 
-Run **SeafoodMarketTest** to confirm your solution passes the Junit tests.
+Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
 
 # Task 3 - NearestInt
 
 **Objective**: Demonstrate how to convert a fraction into a double and round it to the nearest integer, including handling negative values.
 
-Update the `main` method in the **NearestInt** class to implement the following functionality:
+Update the `main` method in the `NearestInt` class to implement the following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read two ints: (1) numerator and (2) denominator.
@@ -158,13 +158,13 @@ Negative Value rounded to nearest int: -1<br>
 </tr>
 </table>
 
-Run **NearestIntTest** to confirm your solution passes the Junit tests.
+Run `NearestIntTest` to confirm your solution passes the Junit tests.
 
 ## Task 4 - BasketBallGame
 
 **Objective**: Simulate the progression of a basketball game by updating scores after each quarter based on specific instructions.
 
-The `main` method in the **BasketBallGame** class prompts for the home and away scores for the first quarter,
+The `main` method in the `BasketBallGame` class prompts for the home and away scores for the first quarter,
 initializes variables to store each team's score, and prints the scores for the
 1st quarter.
 
@@ -197,7 +197,7 @@ After challenge: home 68 away 72<br>
 </tr>
 </table>
 
-Run **BasketballGameTest** to confirm your solution passes the Junit tests.
+Run `BasketballGameTest` to confirm your solution passes the Junit tests.
 
 
 ## Submitting your project
