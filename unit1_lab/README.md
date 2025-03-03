@@ -653,7 +653,7 @@ rectangle. However, it only prints the length and width.
 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 |
 
 1. Update the `main` method to declare a double variable named `area`. Calculate the
-   area using the given width and length. Update the print statement to display
+   area using the width and length that the user provided as input. Update the print statement to display
    the length, width, and area as shown in the expected output.<br>
 2. Run `Rectangle` several times, passing different input values for length and
    width.

@@ -19,13 +19,10 @@ You will be tasked with writing Java programs for the following scenarios:
 
 By completing these tasks, you will develop proficiency in basic Java syntax and functionality, while also gaining experience in using JUnit tests to verify the correctness of your code.
 
-## Project Structure
-
-Expand the `unit1_project > src` folder to view the Java classes and associated Junit tests.
-
-<img alt="expand unit1_project folders" src="images/unit1_project_files.png" width="200" >
 
 ## Task 1 - SelfIntroduction
+
+Expand the `unit1_project > src` folder and subfolders to view the Java classes and associated Junit tests.
 
 Open the `SelfIntroduction` class to view the file in the editor.
 
@@ -93,8 +90,7 @@ formula shown below.
 
 Run the program to view the output. The second print statement has a couple of
 errors that prevent the program from producing the expected output.
-1. Remove the double quotes so the value of the expression is printed.
-2. Fix the error in the arithmetic expression so the correct value is produced.
+
 
 | Expected Output         | Actual Output                              |
 | ----------------------- | ------------------------------------------ |
@@ -102,8 +98,7 @@ errors that prevent the program from producing the expected output.
 
 1. Edit the JavaDoc comment to update the author tag with your first and last
    name.
-2. Edit the second print statement to fix the errors. The math expression should
-   be corrected and its value printed.
+2. Edit the second print statement to fix the errors. You need to remove the double quotes so the value of the expression is printed, and fix the error in the arithmetic expression so the correct value is produced. 
 3. Run `BillSplitter` to confirm your program produces the correct output.
 4. Run the Junit `BillSplitterTest` class to confirm the test passes.
 
@@ -145,12 +140,12 @@ public class GasPurchase {
    input, then calculate and print the cost as shown in the sample runs below.
 3. Run `GasPurchase` several times and confirm the expected output given the
    input values as shown in the sample runs.
+4. Run the Junit `GasPurchaseTest` class to confirm the tests pass.
 
 | Sample Run#1                                                            | Sample Run#2                                                         |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Enter gallons and price per gallon: <b>12.5 3.50</b><br> You owe $43.75 | Enter gallons and price per gallon: <b>8.0 3.75</b><br>You owe $30.0 |
 
-5. Run the Junit `GasPurchaseTest` class to confirm the tests pass.
 
 
 ## Submit Your Solution
