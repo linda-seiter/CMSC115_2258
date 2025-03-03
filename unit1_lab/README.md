@@ -188,11 +188,15 @@ public class Comments {
 Notice the expected output does not include "peach".
 
 1. Right-click on the Junit class `CommentsTest` in the project view, then select **Run CommentsTest**. You should see a message in the run view indicating the test failed.  Click to see the difference between the expected and actual output.<br>
+
 <img alt="Task2 test fails" src="images/task2_fail.png" width="400" >
+
 2. Update the `Comments` class to produce the expected output by adding `//` to comment out the last print statement (don't delete it!). 
+
 ```text
      //System.out.println("peach");
 ```
+
 3. Re-run the Junit class `CommentsTest` to confirm the test passed.
 
 
@@ -592,7 +596,9 @@ any errors.
 - Run `PaycheckTest` to confirm the tests passed.
 
 Aside from visualizing variables in memory, you can use the debugger to
-step through your code to find logic errors. Debugging is **one of the most
+step through your code to find logic errors. 
+
+Debugging is **one of the most
 useful skills** you can acquire as a software developer!
 
 ## Task 8 - Rectangle
@@ -649,12 +655,6 @@ rectangle. However, it only prints the length and width.
 1. Update the `main` method to declare a double variable named `area`. Calculate the
    area using the given width and length. Update the print statement to display
    the length, width, and area as shown in the expected output.<br>
-```java
-        // TODO: Declare area and initialize using width and height
-        double area = length * width;
-        // TODO: Update to print area
-        System.out.println("length=" + length + " width=" + width + " area=" + area);
-```
 2. Run `Rectangle` several times, passing different input values for length and
    width.
 3. Run the Junit `RectangleTest` class to confirm the tests pass.
