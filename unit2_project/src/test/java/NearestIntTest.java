@@ -18,7 +18,7 @@ public class NearestIntTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("NearestInt", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "NearestInt.main fails for input: 19 4");
     }
 
     @Test
@@ -36,7 +36,7 @@ public class NearestIntTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("NearestInt", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "NearestInt.main fails for input: 11 8");
     }
 
     @Test
@@ -53,7 +53,7 @@ public class NearestIntTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("NearestInt", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "NearestInt.main fails for input: 7 10");
     }
 
 }

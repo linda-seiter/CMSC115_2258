@@ -13,7 +13,7 @@ class JavaFactsTest {
         String actualOutput = JunitHelper.captureClassOutput("JavaFacts");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "JavaFacts.main fails to print expected outout.");
+                "JavaFacts.main fails to print expected output.");
     }
 
 }

@@ -18,7 +18,7 @@ public class BasketballGameTest {
 		//Act
 		String actualOutput = JunitHelper.executeClassWithInput("BasketballGame", input);
 		// Assert
-		assertEquals(expectedOutput, actualOutput);
+		assertEquals(expectedOutput, actualOutput, "BasketballGame.main fails for input: 25 20");
 	}
 
 	@Test
@@ -36,7 +36,7 @@ public class BasketballGameTest {
 		//Act
 		String actualOutput = JunitHelper.executeClassWithInput("BasketballGame", input);
 		// Assert
-		assertEquals(expectedOutput, actualOutput);
+		assertEquals(expectedOutput, actualOutput, "BasketballGame.main fails for input: 30 22");
 	}
 
 	// @Test

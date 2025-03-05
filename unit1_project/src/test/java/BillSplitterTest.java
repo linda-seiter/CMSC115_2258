@@ -12,6 +12,6 @@ class BillSplitterTest  {
         String actualOutput = JunitHelper.captureClassOutput("BillSplitter");
         //Assert
         assertEquals(expectedOutput, actualOutput,
-                "BillSplitter.main fails to print expected outout.");
+                "BillSplitter.main fails to print expected output.");
     }
 }

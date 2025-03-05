@@ -11,7 +11,7 @@ public class SeafoodMarketTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("SeafoodMarket", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "SeafoodMarket.main fails for input: 5 8.99");
     }
 
     @Test
@@ -23,6 +23,6 @@ public class SeafoodMarketTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("SeafoodMarket", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "SeafoodMarket.main fails for input: 3.25 15.99");
     }
 }

@@ -12,7 +12,7 @@ public class TransmissionRateTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("TransmissionRate", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "TransmissionRate.main fails for input: 2");
     }
 
     @Test
@@ -25,7 +25,7 @@ public class TransmissionRateTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("TransmissionRate", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "TransmissionRate.main fails for input: 10");
     }
 
     @Test
@@ -38,7 +38,7 @@ public class TransmissionRateTest {
         //Act
         String actualOutput = JunitHelper.executeClassWithInput("TransmissionRate", input);
         // Assert
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(expectedOutput, actualOutput, "TransmissionRate.main fails for input: 18");
     }
 
     // @Test

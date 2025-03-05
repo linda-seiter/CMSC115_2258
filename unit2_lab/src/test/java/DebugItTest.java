@@ -12,7 +12,7 @@ public class DebugItTest {
         String actualOutput = JunitHelper.captureClassOutput("DebugIt");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "DebugIt.main fails to produce expected input.");
+                "DebugIt.main fails to produce expected output.");
     }
 
 }
