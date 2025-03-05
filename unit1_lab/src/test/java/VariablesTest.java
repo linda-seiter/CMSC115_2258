@@ -15,7 +15,7 @@ class VariablesTest  {
         String actualOutput = JunitHelper.captureClassOutput("Variables");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "Variables.main fails to print expected outout.");
+                "Variables.main fails to print expected output.");
     }
 
 }

@@ -14,7 +14,7 @@ class FixitTest {
         String actualOutput = JunitHelper.captureClassOutput("Fixit");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "Fixit.main fails to print expected outout.");
+                "Fixit.main fails to print expected output.");
     }
 
 }

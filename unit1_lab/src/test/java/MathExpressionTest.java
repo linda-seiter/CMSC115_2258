@@ -12,7 +12,7 @@ class MathExpressionTest  {
         String actualOutput = JunitHelper.captureClassOutput("MathExpression");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "MathExpression.main fails to print expected outout.");
+                "MathExpression.main fails to print expected output.");
     }
 
 }

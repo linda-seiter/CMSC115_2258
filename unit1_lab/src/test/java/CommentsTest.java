@@ -14,7 +14,7 @@ class CommentsTest  {
         String actualOutput = JunitHelper.captureClassOutput("Comments");
         //Assert
         assertEquals(expectedOutput, actualOutput,
-                "Comments.main fails to print expected outout.");
+                "Comments.main fails to print expected output.");
     }
 
 }

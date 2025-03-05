@@ -15,7 +15,7 @@ class PrintNewlineTest {
         String actualOutput = JunitHelper.captureClassOutput("PrintNewline");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "PrintNewline.main fails to print expected outout.");
+                "PrintNewline.main fails to print expected output.");
     }
 
 }

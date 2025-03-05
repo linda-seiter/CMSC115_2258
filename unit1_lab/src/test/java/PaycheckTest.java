@@ -14,7 +14,7 @@ public class PaycheckTest {
         String actualOutput = JunitHelper.captureClassOutput("Paycheck");
         // Assert
         assertEquals(expectedOutput, actualOutput,
-                "Paycheck.main fails to print expected outout.");
+                "Paycheck.main fails to print expected output.");
     }
 
 }

@@ -13,7 +13,7 @@ class CourseWelcomeTest {
         String actualOutput = JunitHelper.captureClassOutput("CourseWelcome");
         //Assert
         assertEquals(expectedOutput, actualOutput,
-                "CourseWelcome.main fails to print expected outout.");
+                "CourseWelcome.main fails to print expected output.");
     }
 
 }
