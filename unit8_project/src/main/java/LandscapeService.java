@@ -7,11 +7,11 @@ import java.util.Scanner;
  * All methods assume a non-empty, rectangular 2D array is passed as a parameter.
  */
 public class LandscapeService {
-    static final String TREE = "🌳";      // \uD83C\uDF33
-    static final String HOUSE = "🏠";     // \uD83C\uDFE0
-    static final String SQUIRREL = "🐿️";    // \uD83E\uDDBF
-    static final String GREEN_SQUARE =  "🟩"; //\uD83D\uDFE9
+    static final String TREE = "🌳";         // \uD83C\uDF33
+    static final String HOUSE = "🏠";        // \uD83C\uDFE0
+    static final String SQUIRREL = "🐿️";     // \uD83E\uDDBF
     static final String BROWN_SQUARE = "🟫"; //\uD83D\uDFAB
+    static final String SEEDLING = "🌱";     //\uD83C\uDF31
 
     /**
      * Prints a 2D array.
@@ -136,16 +136,16 @@ public class LandscapeService {
         //Create rows X cols sized yard
         String[][] myYard = new String[rows][cols];
 
-        //Fill the yard with dirt
-        ;
-
-        //Add a house
+        //Fill the yard with dirt (brown square)
 
 
-        //Add trees in corners
+        //Add a house in the middle
 
 
-        //Replace dirt with grass
+        //Add trees in the corners
+
+
+        //Replace dirt (brown square) with grass (seedling)
 
 
         //Surround trees with squirrels

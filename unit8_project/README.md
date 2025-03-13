@@ -12,18 +12,17 @@
 
 In this project, you will develop several methods within the **LandscapeService** class
 to manipulate a 2D array that represents a rectangular yard.
-The `main` method will add elements to the yard such as green grass,
-a house, and trees surrounded by squirrels. 
+The `main` method will add elements to the yard such as a house, grass, and trees surrounded by squirrels. 
 
 For example:
 
 ```text
 Enter rows and columns: 5 7
-🌳🐿️🟩🟩🟩🐿️🌳
-🐿️🐿️🟩🟩🟩🐿️🐿️
-🟩🟩🟩🏠🟩🟩🟩
-🐿️🐿️🟩🟩🟩🐿️🐿️
-🌳🐿️🟩🟩🟩🐿️🌳
+🌳🐿️🌱🌱🌱🐿️🌳
+🐿️🐿️🌱🌱🌱🐿️🐿️
+🌱🌱🌱🏠🌱🌱🌱
+🐿️🐿️🌱🌱🌱🐿️🐿️
+🌳🐿️🌱🌱🌱🐿️🌳
 ```
 
 Array dimensions will be specified as `rows X columns`.
@@ -470,17 +469,17 @@ replaceValue(matrix, "A", "X");
 
 Run the JUnit tests in the `TestReplaceTargetValue` class to verify your solution.
 
-Once the tests pass, update the `main()` to replace the dirt (brown square) with grass (green square).
+Once the tests pass, update the `main()` to replace the dirt (brown square) with grass (seedling).
 
 ```text
 Enter rows and columns: 7 9
-🌳🟩🟩🟩🟩🟩🟩🟩🌳
-🟩🟩🟩🟩🟩🟩🟩🟩🟩
-🟩🟩🟩🟩🟩🟩🟩🟩🟩
-🟩🟩🟩🟩🏠🟩🟩🟩🟩
-🟩🟩🟩🟩🟩🟩🟩🟩🟩
-🟩🟩🟩🟩🟩🟩🟩🟩🟩
-🌳🟩🟩🟩🟩🟩🟩🟩🌳
+🌳🌱🌱🌱🌱🌱🌱🌱🌳
+🌱🌱🌱🌱🌱🌱🌱🌱🌱
+🌱🌱🌱🌱🌱🌱🌱🌱🌱
+🌱🌱🌱🌱🏠🌱🌱🌱🌱
+🌱🌱🌱🌱🌱🌱🌱🌱🌱
+🌱🌱🌱🌱🌱🌱🌱🌱🌱
+🌳🌱🌱🌱🌱🌱🌱🌱🌳
 ```
 
 ## Task #5 - Implement the `isValidIndex()` method
@@ -684,24 +683,24 @@ Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` to
 
 ```text
 Enter rows and columns: 7 9
-🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
-🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
-🟩🟩🟩🟩🟩🟩🟩🟩🟩
-🟩🟩🟩🟩🏠🟩🟩🟩🟩
-🟩🟩🟩🟩🟩🟩🟩🟩🟩
-🐿️🐿️🟩🟩🟩🟩🟩🐿️🐿️
-🌳🐿️🟩🟩🟩🟩🟩🐿️🌳
+🌳🐿️🌱🌱🌱🌱🌱🐿️🌳
+🐿️🐿️🌱🌱🌱🌱🌱🐿️🐿️
+🌱🌱🌱🌱🌱🌱🌱🌱🌱
+🌱🌱🌱🌱🏠🌱🌱🌱🌱
+🌱🌱🌱🌱🌱🌱🌱🌱🌱
+🐿️🐿️🌱🌱🌱🌱🌱🐿️🐿️
+🌳🐿️🌱🌱🌱🌱🌱🐿️🌳
 ```
 
 
 ```text
 Enter rows and columns: 6 8
-🌳🐿️🟩🟩🟩🟩🐿️🌳
-🐿️🐿️🟩🟩🟩🟩🐿️🐿️
-🟩🟩🟩🏠🏠🟩🟩🟩
-🟩🟩🟩🏠🏠🟩🟩🟩
-🐿️🐿️🟩🟩🟩🟩🐿️🐿️
-🌳🐿️🟩🟩🟩🟩🐿️🌳
+🌳🐿️🌱🌱🌱🌱🐿️🌳
+🐿️🐿️🌱🌱🌱🌱🐿️🐿️
+🌱🌱🌱🏠🏠🌱🌱🌱
+🌱🌱🌱🏠🏠🌱🌱🌱
+🐿️🐿️🌱🌱🌱🌱🐿️🐿️
+🌳🐿️🌱🌱🌱🌱🐿️🌳
 ```
 
 Finally, run the Junit tests in `TestMain` to confirm the `main` method produces the correct output for the given input.
