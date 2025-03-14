@@ -61,6 +61,10 @@ Each cell contains the default String value of `null`.
 
 ## Task #1 - Implement the `fillMatrix()` method
 
+<details>
+  <summary>Task Instructions</summary>
+
+
 The purpose of the `fillMatrix` method is to assign a specified fill value to every cell in a 2D array of strings.
 
 ```java
@@ -121,7 +125,7 @@ fillMatrix(matrix, "HI");
  */
 ```
 
-Run the JUnit tests in the `TestFillMatrix` class to verify your solution.
+Run the JUnit tests in the `FillMatrixTest` class to verify your solution.
 
 Once the tests pass, update the `main()` method to fill the yard with dirt (brown squares).
 
@@ -136,6 +140,7 @@ Enter rows and columns: 7 9
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 ```
 
+</details>
 
 ## Task #2 - Implement the `setMiddleCells()` method
 
@@ -270,7 +275,7 @@ setMiddleCells(matrix, "X");
 */
 ```
 
-Run the JUnit tests in the `TestSetMiddleCells` class to verify your solution.
+Run the JUnit tests in the `SetMiddleCellsTest` class to verify your solution.
 
 Once the tests pass, update the `main()` method to add a house in the middle of the yard.
 
@@ -410,7 +415,7 @@ setCornerCells(matrix, "X");
 */
 ```
 
-Run the JUnit tests in the `TestSetCornerCells` class to verify your solution.
+Run the JUnit tests in the `SetCornerCellsTest` class to verify your solution.
 
 Once the tests pass, update the `main()` to add trees in the corners of the yard.
 
@@ -467,7 +472,7 @@ replaceValue(matrix, "A", "X");
  */
 ```
 
-Run the JUnit tests in the `TestReplaceTargetValue` class to verify your solution.
+Run the JUnit tests in the `ReplaceTargetValueTest` class to verify your solution.
 
 Once the tests pass, update the `main()` to replace the dirt (brown square) with grass (seedling).
 
@@ -522,7 +527,7 @@ System.out.println(isValidIndex(matrix, 0, -1)); //false
 System.out.println(isValidIndex(matrix, 0, 5));  //false
 ```
 
-Run the JUnit tests in the `TestIsValidIndex` class to verify your solution.
+Run the JUnit tests in the `IsValidIndexTest` class to verify your solution.
 
 ## Task #6 - Implement the `setAdjacentCells()` method
 
@@ -623,7 +628,7 @@ setAdjacentCells(matrix, 4, 3, "X");
 */
 ```
 
-Run the JUnit tests in the `TestSetAdjacentCells` class to verify your solution.
+Run the JUnit tests in the `SetAdjacentCellsTest` class to verify your solution.
 
 ## Task #7 - Implement the `findAndUpdateAdjacentCells()` method
 
@@ -677,7 +682,7 @@ findAndUpdateAdjacentCells(matrix, "A", "Z");
 */
 ```
 
-Run the JUnit tests in the `TestFindAndUpdateAdjacentCells` class to verify your solution.
+Run the JUnit tests in the `FindAndUpdateAdjacentCellsTest` class to verify your solution.
 
 Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` to surround trees with squirrels.
 
@@ -703,7 +708,7 @@ Enter rows and columns: 6 8
 🌳🐿️🌱🌱🌱🌱🐿️🌳
 ```
 
-Finally, run the Junit tests in `TestMain` to confirm the `main` method produces the correct output for the given input.
+Finally, run the Junit tests in `MainTest` to confirm the `main` method produces the correct output for the given input.
 
 
 ## Submission Instructions

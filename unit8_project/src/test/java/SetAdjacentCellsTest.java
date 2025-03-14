@@ -3,12 +3,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * Unit tests for the setAdjacentCells method in the LandscapeService class.
  */
-public class TestSetAdjacentCells {
+public class SetAdjacentCellsTest {
 
     @Test
     public void testInteriorCell() {

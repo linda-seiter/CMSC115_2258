@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the setCornerCells method in the LandscapeService class.
  */
-public class TestSetCornerCells {
+public class SetCornerCellsTest {
 
     @Test
     public void testSetCorners3x4() {

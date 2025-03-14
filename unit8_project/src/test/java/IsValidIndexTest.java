@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the isValidIndex method in the LandscapeService class.
  */
-public class TestIsValidIndex {
+public class IsValidIndexTest {
 
     @Test
     public void testValidIndex3x5() {

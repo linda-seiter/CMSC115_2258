@@ -4,9 +4,9 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the setCenterCell method in the LandscapeService class.
+ * Unit tests for the setMiddleCell method in the LandscapeService class.
  */
-public class TestSetMiddleCells {
+public class SetMiddleCellsTest {
 
     @Test
     public void testOddRow_OddCol_SetMiddleCells() {
@@ -36,12 +36,11 @@ public class TestSetMiddleCells {
         LandscapeService.setMiddleCells(matrix, replacement);
 
         // Assert
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nOdd X Odd single middle cell to" + replacement +
-                        "\nOriginal:" + Arrays.deepToString(original) +
-                        "\nExpected:" + Arrays.deepToString(expected) +
-                        "\nActual:" + Arrays.deepToString(matrix)
-        );
+        String message = "\nOdd X Odd single middle cell to" + replacement +
+                "\nOriginal:" + Arrays.deepToString(original) +
+                "\nExpected:" + Arrays.deepToString(expected) +
+                "\nActual:" + Arrays.deepToString(matrix);
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),message);
     }
 
     @Test
@@ -66,12 +65,11 @@ public class TestSetMiddleCells {
         LandscapeService.setMiddleCells(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nEven x Even sets 4 middle cells to " + replacement +
-                        "\nOriginal:" + Arrays.deepToString(original) +
-                        "\nExpected:" + Arrays.deepToString(expected) +
-                        "\nActual:" + Arrays.deepToString(matrix)
-        );
+        String message =   "\nEven x Even sets 4 middle cells to " + replacement +
+                "\nOriginal:" + Arrays.deepToString(original) +
+                "\nExpected:" + Arrays.deepToString(expected) +
+                "\nActual:" + Arrays.deepToString(matrix);
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix), message);
     }
 
     @Test
@@ -96,12 +94,11 @@ public class TestSetMiddleCells {
         LandscapeService.setMiddleCells(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nEven x Odd sets 2 middle cells to " + replacement +
-                        "\nOriginal:" + Arrays.deepToString(original) +
-                        "\nExpected:" + Arrays.deepToString(expected) +
-                        "\nActual:" + Arrays.deepToString(matrix)
-        );
+        String message = "\nEven x Odd sets 2 middle cells to " + replacement +
+                "\nOriginal:" + Arrays.deepToString(original) +
+                "\nExpected:" + Arrays.deepToString(expected) +
+                "\nActual:" + Arrays.deepToString(matrix);
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),message);
     }
 
     @Test
@@ -128,12 +125,11 @@ public class TestSetMiddleCells {
         LandscapeService.setMiddleCells(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nEven x Odd sets 2 middle cells to " + replacement +
-                        "\nOriginal:" + Arrays.deepToString(original) +
-                        "\nExpected:" + Arrays.deepToString(expected) +
-                        "\nActual:" + Arrays.deepToString(matrix)
-        );
+        String message =  "\nEven x Odd sets 2 middle cells to " + replacement +
+                "\nOriginal:" + Arrays.deepToString(original) +
+                "\nExpected:" + Arrays.deepToString(expected) +
+                "\nActual:" + Arrays.deepToString(matrix);
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix), message);
     }
 
     @Test

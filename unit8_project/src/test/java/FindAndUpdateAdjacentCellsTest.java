@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the surroundMatchingCells method in the LandscapeService class.
  */
-public class TestFindAndUpdateAdjacentCells {
+public class FindAndUpdateAdjacentCellsTest {
     @Test
     public void testFind1Match() {
         // Arrange

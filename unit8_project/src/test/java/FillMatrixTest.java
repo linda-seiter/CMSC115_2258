@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Unit tests for the fillMatrix method in the LandscapeService class.
  */
 
-public class TestFillMatrix {
+public class FillMatrixTest {
 
     @Test
     public void testFill3x4() {

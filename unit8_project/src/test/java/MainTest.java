@@ -2,7 +2,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestMain {
+public class MainTest {
 
         @Test
         @DisplayName("LandscapeService.main prints correct output for input: 7 9")

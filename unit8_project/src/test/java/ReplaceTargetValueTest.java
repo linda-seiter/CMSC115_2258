@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the replaceValue method in the LandscapeService class.
  */
-public class TestReplaceTargetValue {
+public class ReplaceTargetValueTest {
 
     @Test
     public void testReplaceSingleMatch() {
