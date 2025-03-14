@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestFillMatrix {
 
     @Test
-    public void testFill3x5() {
+    public void testFill3x4() {
         // Arrange
         String[][] matrix = new String[3][4]; //null values
         String val = "A";  // value to fill the matrix with
@@ -34,11 +34,10 @@ public class TestFillMatrix {
          */
 
         // Assert
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nFill 3x5 with A" +
-                        "\nExpected:" + Arrays.deepToString(expected) +
-                        "\nActual:" + Arrays.deepToString(matrix)
-        );
+        String message = "\nFill 3x4 with A" +
+                "\nExpected:" + Arrays.deepToString(expected) +
+                "\nActual:" + Arrays.deepToString(matrix);
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix), message);
     }
 
     @Test
@@ -55,11 +54,10 @@ public class TestFillMatrix {
         LandscapeService.fillMatrix(matrix, val);
 
         // Assert
-        Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
-                "\nFill 2x2 with B" +
-                        "\nExpected:" + Arrays.deepToString(expected) +
-                        "\nActual:" + Arrays.deepToString(matrix)
-        );
+        String message = "\nFill 2x2 with B" +
+                "\nExpected:" + Arrays.deepToString(expected) +
+                "\nActual:" + Arrays.deepToString(matrix);
+        Assertions.assertTrue(Arrays.deepEquals(expected, matrix), message);
     }
 
     @Test
