@@ -144,6 +144,9 @@ Enter rows and columns: 7 9
 
 ## Task #2 - Implement the `setMiddleCells()` method
 
+<details>
+  <summary>Task Instructions</summary>
+
 The `setMiddleCells` method is designed to assign a value to the middle cell(s) of a 2D array.
 
 - When both the number of rows and columns are odd, there is a single central cell.
@@ -319,7 +322,12 @@ Enter rows and columns: 4 10
 🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫
 ```
 
+</details>
+
 ## Task #3 - Implement the `setCornerCells()` method
+
+<details>
+  <summary>Task Instructions</summary>
 
 The `setCornerCells` method is designed to assign a value to the
 corner cells of a 2D array: (first row, first column), (first row, last column),
@@ -430,7 +438,12 @@ Enter rows and columns: 7 9
 🌳🟫🟫🟫🟫🟫🟫🟫🌳
 ```
 
+</details>
+
 ## Task #4 - Implement the `replaceValue()` method
+
+<details>
+  <summary>Task Instructions</summary>
 
 The `replaceValue` method is used to replace all instances of a specified string in a 2D array with a new string.
 
@@ -487,7 +500,12 @@ Enter rows and columns: 7 9
 🌳🌱🌱🌱🌱🌱🌱🌱🌳
 ```
 
+</details>
+
 ## Task #5 - Implement the `isValidIndex()` method
+
+<details>
+  <summary>Task Instructions</summary>
 
 The purpose of the `isValidIndex` method is to check if a given index is valid within the bounds
 of a 2D array.  Replace the current return statement to test the index.
@@ -529,7 +547,12 @@ System.out.println(isValidIndex(matrix, 0, 5));  //false
 
 Run the JUnit tests in the `IsValidIndexTest` class to verify your solution.
 
+</details>
+
 ## Task #6 - Implement the `setAdjacentCells()` method
+
+<details>
+  <summary>Task Instructions</summary>
 
 The `setAdjacentCells` method assigns a new value to the cells that are adjacent
 to a specified cell, including those horizontally, vertically, and diagonally adjacent.
@@ -630,7 +653,12 @@ setAdjacentCells(matrix, 4, 3, "X");
 
 Run the JUnit tests in the `SetAdjacentCellsTest` class to verify your solution.
 
+</details>
+
 ## Task #7 - Implement the `findAndUpdateAdjacentCells()` method
+
+<details>
+  <summary>Task Instructions</summary>
 
 The `findAndUpdateAdjacentCells` method should find each cell
 that matches the specified target value and update its adjacent cells
@@ -710,6 +738,7 @@ Enter rows and columns: 6 8
 
 Finally, run the Junit tests in `MainTest` to confirm the `main` method produces the correct output for the given input.
 
+</details>
 
 ## Submission Instructions
 
