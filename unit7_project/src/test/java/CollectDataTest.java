@@ -10,9 +10,12 @@ public class CollectDataTest {
 
     @Test
     @DisplayName("Collect data for 2 trainees")
-    public void input_2_trainees() throws Exception {
+    public void input_2_trainees()  {
         // Simulated user input: (each entry is separated by a newline)
-        String simulatedInput = "Jordan 50 62\nTaylor 40 48\n";
+        String simulatedInput = """
+            Jordan 50 62
+            Taylor 40 48
+            """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
         // Create arrays with fixed size (matching number of input lines)
@@ -38,7 +41,7 @@ public class CollectDataTest {
 
     @Test
     @DisplayName("Collect data for 5 trainees")
-    public void input_5_trainees() throws Exception {
+    public void input_5_trainees()  {
         // Simulated user input with 5 soldiers (Name PushUps SitUps)
         String simulatedInput = """
             Alex 50 80

@@ -29,27 +29,27 @@ public class PTPerformanceAnalyzer {
         // Task 1: Input Data (one-line entry)
         collectExerciseData(scanner, names, pushUps, sitUps);
 
-        // Task 2: Display statistics for each exercise
-        //System.out.println(calculateAndFormatStatistics(pushUps, "Push-ups"));
-        //System.out.println(calculateAndFormatStatistics(sitUps, "Sit-ups"));
-
-        // Prompt for minimum exercise thresholds after displaying statistics
-        //System.out.print("\nEnter minimum push-ups required: ");
-        //int minPushUps = scanner.nextInt();
-        //System.out.print("Enter minimum sit-ups required: ");
-        //int minSitUps = scanner.nextInt();
-
-        // Task 3: Encode overall performance and print
-//        System.out.println("\n--- Encoded Scores ---");
-//        String[] scoresSummary = evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
-//        for (String score : scoresSummary) {
-//            System.out.println(score);
-//        }
-
         // Display the contents of each array
         System.out.println(Arrays.toString(names));
         System.out.println(Arrays.toString(pushUps));
         System.out.println(Arrays.toString(sitUps));
+
+        // Task 2: Display statistics for each exercise
+        System.out.println(calculateAndFormatStatistics(pushUps, "Push-ups"));
+        System.out.println(calculateAndFormatStatistics(sitUps, "Sit-ups"));
+
+        // Prompt for minimum exercise thresholds after displaying statistics
+        System.out.print("Enter minimum push-ups required: ");
+        int minPushUps = scanner.nextInt();
+        System.out.print("Enter minimum sit-ups required: ");
+        int minSitUps = scanner.nextInt();
+
+        // Task 3: Encode overall performance and print
+        System.out.println("--- Encoded Scores ---");
+        String[] scoresSummary = evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
+        for (String score : scoresSummary) {
+            System.out.println(score);
+        }
 
         scanner.close();
     }
@@ -96,9 +96,9 @@ public class PTPerformanceAnalyzer {
     public static String calculateAndFormatStatistics(int[] exerciseScores, String exerciseName) {
         int max = getMax(exerciseScores);
         int min = getMin(exerciseScores);
-        double avg = getSum(exerciseScores) / (double) exerciseScores.length;
+        double avg = computeSum(exerciseScores) / (double) exerciseScores.length;
 
-        return String.format("--- %s Statistics ---\nMax: %d, Min: %d, Avg: %.2f",
+        return String.format("--- %s ---\nMax: %d, Min: %d, Avg: %.2f",
                 exerciseName, max, min, avg);
     }
 
@@ -162,7 +162,7 @@ public class PTPerformanceAnalyzer {
      * @param array The array to sum up.
      * @return The sum of all values in the array.
      */
-    public static int getSum(int[] array) {
+    public static int computeSum(int[] array) {
         int sum = 0;
         for (int num : array) {
             sum += num;
