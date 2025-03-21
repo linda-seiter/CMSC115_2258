@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 /**
- * Unit tests for the setAdjacentCells method in the LandscapeService class.
+ * Unit tests for the setAdjacentCells method in the YardPlanner class.
  */
 public class SetAdjacentCellsTest {
 
@@ -32,7 +32,7 @@ public class SetAdjacentCellsTest {
         String replacement = "X";
 
         // Act
-        LandscapeService.setAdjacentCells(matrix, row, col, replacement);
+        YardPlanner.setAdjacentCells(matrix, row, col, replacement);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -65,7 +65,7 @@ public class SetAdjacentCellsTest {
         String replacement = "X";
 
         // Act
-        LandscapeService.setAdjacentCells(matrix, row, col, replacement);
+        YardPlanner.setAdjacentCells(matrix, row, col, replacement);
 
         // Assert.  No exception should be thrown.
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -96,7 +96,7 @@ public class SetAdjacentCellsTest {
             String replacement = "Z";
 
             // Act
-            LandscapeService.setAdjacentCells(matrix, row, col, replacement);
+            YardPlanner.setAdjacentCells(matrix, row, col, replacement);
 
             // Assert. No exception should be thrown.
             Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -115,7 +115,7 @@ public class SetAdjacentCellsTest {
         String replacement = "B";
 
         // Act
-        LandscapeService.setAdjacentCells(matrix, 0, 0, replacement);
+        YardPlanner.setAdjacentCells(matrix, 0, 0, replacement);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(original, matrix),

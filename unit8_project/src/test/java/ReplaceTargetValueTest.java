@@ -6,7 +6,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the replaceValue method in the LandscapeService class.
+ * Unit tests for the replaceValue method in the YardPlanner class.
  */
 public class ReplaceTargetValueTest {
 
@@ -28,7 +28,7 @@ public class ReplaceTargetValueTest {
         String replacement = "X";
 
         // Act
-        LandscapeService.replaceTargetValue(matrix, target, replacement);
+        YardPlanner.replaceTargetValue(matrix, target, replacement);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -57,7 +57,7 @@ public class ReplaceTargetValueTest {
         String replacement = "Z";
 
         // Act
-        LandscapeService.replaceTargetValue(matrix, target, replacement);
+        YardPlanner.replaceTargetValue(matrix, target, replacement);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -82,7 +82,7 @@ public class ReplaceTargetValueTest {
         String replacement = "Y";  // Replacement value
 
         // Act
-        LandscapeService.replaceTargetValue(matrix, target, replacement);
+        YardPlanner.replaceTargetValue(matrix, target, replacement);
 
         // Assert no changes
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -101,7 +101,7 @@ public class ReplaceTargetValueTest {
         String replacement = "B";
 
         // Act
-        LandscapeService.replaceTargetValue(matrix, target, replacement);
+        YardPlanner.replaceTargetValue(matrix, target, replacement);
 
         // Assert
         assertEquals("B", matrix[0][0], "The cell in 1x1 should be replaced with " + replacement);
@@ -115,7 +115,7 @@ public class ReplaceTargetValueTest {
         String replacement = "B";
 
         // Act
-        LandscapeService.replaceTargetValue(matrix, target, replacement);
+        YardPlanner.replaceTargetValue(matrix, target, replacement);
 
         // Assert
         assertEquals(0, matrix.length, "0x0 matrix has no cells");

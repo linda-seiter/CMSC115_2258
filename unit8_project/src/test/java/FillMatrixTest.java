@@ -5,7 +5,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the fillMatrix method in the LandscapeService class.
+ * Unit tests for the fillMatrix method in the YardPlanner class.
  */
 
 public class FillMatrixTest {
@@ -21,17 +21,7 @@ public class FillMatrixTest {
                 {"A", "A", "A", "A"}
         };
         // Act
-        LandscapeService.fillMatrix(matrix, val);
-
-        //Testing reflection approach
-        /*
-        try {
-            final Class<?> clazz = LandscapeService.class;
-            final Method method = clazz.getMethod("fillMatrix", String[][].class, String.class);
-            final Object[] args =  {matrix,val};
-            method.invoke(null, args);
-        } catch (Exception e) { e.printStackTrace();}
-         */
+        YardPlanner.fillMatrix(matrix, val);
 
         // Assert
         String message = "\nFill 3x4 with A" +
@@ -51,7 +41,7 @@ public class FillMatrixTest {
         String val = "B";
 
         // Act
-        LandscapeService.fillMatrix(matrix, val);
+        YardPlanner.fillMatrix(matrix, val);
 
         // Assert
         String message = "\nFill 2x2 with B" +
@@ -67,7 +57,7 @@ public class FillMatrixTest {
         String val = "C";
 
         // Act
-        LandscapeService.fillMatrix(matrix, val);
+        YardPlanner.fillMatrix(matrix, val);
 
         // Assert
         assertEquals(val, matrix[0][0], "1x1 value at position (0,0) should be " + val);

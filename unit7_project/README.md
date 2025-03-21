@@ -8,6 +8,8 @@ and overall fitness evaluation.
 
 ## **Learning Outcomes**
 
+By the end of this project, you should be able to:
+
 ### **1. Working with Arrays**
 - Apply loops to traverse arrays for data entry, processing, and output generation.
 - Populate arrays dynamically based on user input.

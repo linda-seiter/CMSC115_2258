@@ -4,7 +4,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the setMiddleCell method in the LandscapeService class.
+ * Unit tests for the setMiddleCell method in the YardPlanner class.
  */
 public class SetMiddleCellsTest {
 
@@ -33,7 +33,7 @@ public class SetMiddleCellsTest {
         String replacement = "?";
 
         // Act
-        LandscapeService.setMiddleCells(matrix, replacement);
+        YardPlanner.setMiddleCells(matrix, replacement);
 
         // Assert
         String message = "\nOdd X Odd single middle cell to" + replacement +
@@ -62,7 +62,7 @@ public class SetMiddleCellsTest {
         String replacement = "#";
 
         // Act
-        LandscapeService.setMiddleCells(matrix, replacement);
+        YardPlanner.setMiddleCells(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
         String message =   "\nEven x Even sets 4 middle cells to " + replacement +
@@ -91,7 +91,7 @@ public class SetMiddleCellsTest {
         String replacement = "@";
 
         // Act
-        LandscapeService.setMiddleCells(matrix, replacement);
+        YardPlanner.setMiddleCells(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
         String message = "\nEven x Odd sets 2 middle cells to " + replacement +
@@ -122,7 +122,7 @@ public class SetMiddleCellsTest {
         String replacement = "*";
 
         // Act
-        LandscapeService.setMiddleCells(matrix, replacement);
+        YardPlanner.setMiddleCells(matrix, replacement);
 
         // Assert: Check that the bottom right center element is set
         String message =  "\nEven x Odd sets 2 middle cells to " + replacement +
@@ -139,7 +139,7 @@ public class SetMiddleCellsTest {
         String replacement = "E";
 
         // Act
-        LandscapeService.setMiddleCells(matrix, replacement);
+        YardPlanner.setMiddleCells(matrix, replacement);
 
         // Assert
         assertEquals(replacement, matrix[0][0], "Center element of 1x1 should be set to " + replacement);

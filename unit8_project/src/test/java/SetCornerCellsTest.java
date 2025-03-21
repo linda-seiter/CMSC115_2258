@@ -4,7 +4,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the setCornerCells method in the LandscapeService class.
+ * Unit tests for the setCornerCells method in the YardPlanner class.
  */
 public class SetCornerCellsTest {
 
@@ -26,7 +26,7 @@ public class SetCornerCellsTest {
         String replacement = "X";
 
         // Act
-        LandscapeService.setCornerCells(matrix, replacement);
+        YardPlanner.setCornerCells(matrix, replacement);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -45,7 +45,7 @@ public class SetCornerCellsTest {
         String replacement = "A";
 
         // Act
-        LandscapeService.setCornerCells(matrix, replacement);
+        YardPlanner.setCornerCells(matrix, replacement);
 
         // Assert
         assertEquals(replacement, matrix[0][0], "1x1 cell (0,0) should be " + replacement);
@@ -59,7 +59,7 @@ public class SetCornerCellsTest {
         String replacement = "B";  // value to set in the corners
 
         // Act
-        LandscapeService.setCornerCells(matrix, replacement);
+        YardPlanner.setCornerCells(matrix, replacement);
 
         // Assert
         assertEquals(replacement, matrix[0][0], "1x3 left corner should be " + replacement);
@@ -73,7 +73,7 @@ public class SetCornerCellsTest {
         String replacement = "C";  // value to set in the corners
 
         // Act
-        LandscapeService.setCornerCells(matrix, replacement);
+        YardPlanner.setCornerCells(matrix, replacement);
 
         // Assert
         assertEquals(replacement, matrix[0][0], "3x1 top corner should be " + replacement);

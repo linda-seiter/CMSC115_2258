@@ -6,7 +6,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the surroundMatchingCells method in the LandscapeService class.
+ * Unit tests for the surroundMatchingCells method in the YardPlanner class.
  */
 public class FindAndUpdateAdjacentCellsTest {
     @Test
@@ -34,7 +34,7 @@ public class FindAndUpdateAdjacentCellsTest {
         String surroundValue = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
+        YardPlanner.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -70,7 +70,7 @@ public class FindAndUpdateAdjacentCellsTest {
         String surroundValue = "Z";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
+        YardPlanner.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -103,7 +103,7 @@ public class FindAndUpdateAdjacentCellsTest {
         String surroundValue = "Z";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
+        YardPlanner.findAndUpdateAdjacentCells(matrix, targetValue, surroundValue);
 
         // Assert
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -133,7 +133,7 @@ public class FindAndUpdateAdjacentCellsTest {
         String s = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.findAndUpdateAdjacentCells(matrix, target, s);
+        YardPlanner.findAndUpdateAdjacentCells(matrix, target, s);
 
         // Assert: No changes should occur as 'Z' is not found
         Assertions.assertTrue(Arrays.deepEquals(expected, matrix),
@@ -153,7 +153,7 @@ public class FindAndUpdateAdjacentCellsTest {
         String surroundValue = "X";  // value to set in surrounding cells
 
         // Act
-        LandscapeService.findAndUpdateAdjacentCells(matrix, target, surroundValue);
+        YardPlanner.findAndUpdateAdjacentCells(matrix, target, surroundValue);
 
         // Assert: Since there's only one element, no surrounding cells should exist
         assertEquals(target, matrix[0][0], "Cell should remain " + target);

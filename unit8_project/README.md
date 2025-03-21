@@ -1,8 +1,22 @@
-# Unit 8 Project
+# Unit 8 Project - Yard Planner
+
+In this project, you will implement multiple methods in the **YardPlanner** class
+to modify a 2D array representing a rectangular yard. The `main` method will populate
+the yard by placing a house at the center, trees in the corners surrounded by squirrels,
+and grass covering the remaining area.
+
+```text
+Enter rows and columns: 5 7
+🌳🐿️🌱🌱🌱🐿️🌳
+🐿️🐿️🌱🌱🌱🐿️🐿️
+🌱🌱🌱🏠🌱🌱🌱
+🐿️🐿️🌱🌱🌱🐿️🐿️
+🌳🐿️🌱🌱🌱🐿️🌳
+```
 
 ## **Learning Outcomes**
 
-By the end of this lab, students should be able to:
+By the end of this project, you should be able to:
 
 1. **Understand and Manipulate 2D Arrays in Java**
     - Declare, initialize, and manipulate 2D arrays.
@@ -37,38 +51,19 @@ By the end of this lab, students should be able to:
 
 8. **Develop a Simple Grid-Based Simulation**
    - Represent objects (house, trees, squirrels, grass) in a yard using Unicode characters.
-   - Apply logical transformations to modify the landscape dynamically.
-
-## Introduction
-
-In this project, you will develop several methods within the **LandscapeService** class
-to manipulate a 2D array that represents a rectangular yard.
-The `main` method will add elements to the yard such as a house, grass, and trees surrounded by squirrels. 
-
-For example:
-
-```text
-Enter rows and columns: 5 7
-🌳🐿️🌱🌱🌱🐿️🌳
-🐿️🐿️🌱🌱🌱🐿️🐿️
-🌱🌱🌱🏠🌱🌱🌱
-🐿️🐿️🌱🌱🌱🐿️🐿️
-🌳🐿️🌱🌱🌱🐿️🌳
-```
-
-Array dimensions will be specified as `rows X columns`.
-
-You may assume methods receive a non-empty, rectangular 2D array as a parameter.
+   - Apply logical transformations to modify the yard dynamically.
 
 
 ## **Guidelines**
-- Utilize Scanner for user input.
+
+- Array dimensions will be specified as `rows X columns`.
+- You may assume methods receive a non-empty, rectangular 2D array as a parameter.
 - Use basic loops and conditionals instead of advanced Java Streams.
 - Do not use methods from the Array or Arrays classes.
 
 ## Run the `main()` method with sample user input
 
-You are provided with an initial version of the `LandscapeService` class, which includes a method called `printMatrix` designed to display the contents of a 2D array of strings.
+You are provided with an initial version of the `YardPlanner` class, which includes a method called `printMatrix` designed to display the contents of a 2D array of strings.
 
 The `main` method initializes a 2D array of strings based on dimensions specified by the user and then invokes the `printMatrix` method.
 
