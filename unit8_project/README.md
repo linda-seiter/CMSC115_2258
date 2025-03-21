@@ -30,9 +30,10 @@ Array dimensions will be specified as `rows X columns`.
 You may assume methods receive a non-empty, rectangular 2D array as a parameter.
 
 
-## Restrictions
-
-Do not use methods from the Java `Array` or `Arrays` classes to solve the tasks.
+## **Guidelines**
+- Utilize Scanner for user input.
+- Use basic loops and conditionals instead of advanced Java Streams.
+- Do not use methods from the Array or Arrays classes.
 
 ## Run the `main()` method with sample user input
 

@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Your Name
  * @version 1.0
  */
-public class PTPerformanceAnalyzer {
+public class PTPerformanceAnalyzerSolution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -34,22 +34,22 @@ public class PTPerformanceAnalyzer {
         System.out.println(Arrays.toString(pushUps));
         System.out.println(Arrays.toString(sitUps));
 
-//        // Task 2: Display statistics for each exercise
-//        System.out.println(calculateAndFormatStatistics(pushUps, "Push-ups"));
-//        System.out.println(calculateAndFormatStatistics(sitUps, "Sit-ups"));
-//
-//        // Task 3: Generate performance summary
-//        // Prompt for minimum exercise thresholds after displaying statistics
-//        System.out.print("Enter minimum push-ups required: ");
-//        int minPushUps = scanner.nextInt();
-//        System.out.print("Enter minimum sit-ups required: ");
-//        int minSitUps = scanner.nextInt();
-//        // Summarize each trainee's performance and display the result
-//        System.out.println("--- Performance Summary ---");
-//        String[] scoresSummary = evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
-//        for (String score : scoresSummary) {
-//            System.out.println(score);
-//        }
+        // Task 2: Display statistics for each exercise
+        System.out.println(calculateAndFormatStatistics(pushUps, "Push-ups"));
+        System.out.println(calculateAndFormatStatistics(sitUps, "Sit-ups"));
+
+        // Task 3: Generate performance summary
+        // Task 3a: Prompt for minimum exercise thresholds after displaying statistics
+        System.out.print("Enter minimum push-ups required: ");
+        int minPushUps = scanner.nextInt();
+        System.out.print("Enter minimum sit-ups required: ");
+        int minSitUps = scanner.nextInt();
+        // Task3b: Summarize each trainee's performance and display the result
+        System.out.println("--- Performance Summary ---");
+        String[] scoresSummary = evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
+        for (String score : scoresSummary) {
+            System.out.println(score);
+        }
 
         scanner.close();
     }
