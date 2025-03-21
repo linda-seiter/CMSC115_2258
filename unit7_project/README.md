@@ -23,17 +23,17 @@ best practices in **structured programming**.
 - Organize related data in **parallel arrays** for optimized access and manipulation.
 - Use conditional logic while iterating through arrays to extract important performance metrics.
 
-### **2. Modular Programming Practices**
-- Decompose a program into **independent, reusable methods**.
-- Use **method decomposition** to clearly separate different tasks (e.g., input handling, calculations, evaluations).
-- Follow the **Single Responsibility Principle (SRP)** to ensure that each method focuses on a single responsibility.
-
-### **3. Breaking Down Problems**
+### **2. Breaking Down Problems**
 - Divide complex tasks (like performance analysis) into smaller, manageable components:
   - Gathering user input
   - Calculating performance metrics
   - Summarizing individual results
   - Formatting and presenting the output
+
+### **3. Modular Programming Practices**
+- Decompose a program into **independent, reusable methods**.
+- Use **method decomposition** to clearly separate different tasks (e.g., input handling, calculations, evaluations).
+- Follow the **Single Responsibility Principle (SRP)** to ensure that each method focuses on a single responsibility.
 
 ### **4. Handling User Input**
 - Use **Scanner** to capture structured user input.
@@ -43,7 +43,7 @@ best practices in **structured programming**.
 - Utilize **formatted strings (`String.format()`)** to create clear and user-friendly outputs.
 - Convert arrays into human-readable formats using `Arrays.toString()`.
 
-### **6. Decision Making with Conditional Logic**
+### **6. Decision-Making with Conditional Logic**
 - Implement **logical conditions** to assess trainee performance against defined thresholds.
 
 ### **7. Code Readability and Documentation**
@@ -254,7 +254,6 @@ public static String[] getPerformanceSummaries(String[] names, int[] pushUps, in
 
 - Implement the `getPerformanceSummaries` method to return a string array where each element contains the individual's name, push-up and sit-up counts, and pass/fail status formatted as:<br>"Name - Push-ups: X, Sit-ups: Y - Status".
 - Run the JUnit tests in the `PerformanceSummariesTest` class to verify your solution.
-
 
 Once the tests pass, update the `main()` method:
 1. Prompt for and read in the minimum push-ups and sit-ups.
