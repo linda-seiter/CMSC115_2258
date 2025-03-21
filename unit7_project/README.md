@@ -8,44 +8,46 @@ and overall fitness evaluation.
 
 By the end of this lab, you will:  
 ✅ Work with **arrays** to store and process trainee data.  
-✅ Use **loops and conditionals** to compute performance statistics and determine pass/fail status.  
+✅ Use **loops and conditionals** to compute overall performance metrics and determine individual performance status.  
 ✅ Implement **method decomposition** to improve code readability and reusability.  
 ✅ Format and display structured output using **String.format()** and `Arrays.toString()`.
 
 This lab will strengthen your problem-solving skills and reinforce
 best practices in **structured programming**.
 
-## **Learning Objectives**
+## **Learning Outcomes**
 
-### **1. Modular Design**
-- Understand how to break down a program into **independent, reusable methods**.
-- Use **method decomposition** to separate concerns (e.g., input collection, calculations, evaluation).
-- Follow **single responsibility principle (SRP)** by ensuring each method handles only one task.
+### **1. Working with Arrays**
+- Apply loops to traverse arrays for data entry, processing, and output generation.
+- Populate arrays dynamically based on user input.
+- Organize related data in **parallel arrays** for optimized access and manipulation.
+- Use conditional logic while iterating through arrays to extract important performance metrics.
 
-### **2. Problem Decomposition**
-- Divide a complex task (PT performance analysis) into smaller, manageable steps:
-    - Collecting user input
-    - Computing performance metrics
-    - Summarizing individual performance
-    - Formatting and displaying results
+### **2. Modular Programming Practices**
+- Decompose a program into **independent, reusable methods**.
+- Use **method decomposition** to clearly separate different tasks (e.g., input handling, calculations, evaluations).
+- Follow the **Single Responsibility Principle (SRP)** to ensure that each method focuses on a single responsibility.
 
-### **3. Working with Arrays**
-- Store related data in **parallel arrays** for efficient access and processing.
-- Compute common statistics for arrays (min, max, and mean).
+### **3. Breaking Down Problems**
+- Divide complex tasks (like performance analysis) into smaller, manageable components:
+  - Gathering user input
+  - Calculating performance metrics
+  - Summarizing individual results
+  - Formatting and presenting the output
 
-### **4. User Input Handling**
-- Use **Scanner** for reading structured user input.
-- Handle **integer and string input** in a structured format (e.g., "Name PushUps SitUps").
+### **4. Handling User Input**
+- Use **Scanner** to capture structured user input.
+- Process **integer and string inputs** in a clear and organized format (e.g., "Name PushUps SitUps").
 
 ### **5. String Formatting & Output**
-- Use **formatted strings (`String.format()`)** for clear, user-friendly output.
-- Convert arrays into readable formats using `Arrays.toString()`.
+- Utilize **formatted strings (`String.format()`)** to create clear and user-friendly outputs.
+- Convert arrays into human-readable formats using `Arrays.toString()`.
 
-### **6. Decision Making & Conditional Logic**
-- Implement **logical conditions** to compare trainee performance against thresholds.
+### **6. Decision Making with Conditional Logic**
+- Implement **logical conditions** to assess trainee performance against defined thresholds.
 
-### **7. Code Readability & Documentation**
-- Write **Javadoc comments** to document methods clearly.
+### **7. Code Readability and Documentation**
+- Include **Javadoc comments** to clearly document methods and their functionalities.
 
 ## Guidelines
 - Use loops and conditionals instead of advanced Java Streams.
