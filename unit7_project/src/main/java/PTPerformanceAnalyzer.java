@@ -181,6 +181,4 @@ public class PTPerformanceAnalyzer {
         return scoresSummary;
     }
 
-
-
 }

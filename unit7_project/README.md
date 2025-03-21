@@ -6,15 +6,6 @@ You will apply modular design principles to break down the program
 into reusable methods for data collection, performance analysis,
 and overall fitness evaluation.
 
-By the end of this lab, you will:  
-✅ Work with **arrays** to store and process trainee data.  
-✅ Use **loops and conditionals** to compute overall performance metrics and determine individual performance status.  
-✅ Implement **method decomposition** to improve code readability and reusability.  
-✅ Format and display structured output using **String.format()** and `Arrays.toString()`.
-
-This lab will strengthen your problem-solving skills and reinforce
-best practices in **structured programming**.
-
 ## **Learning Outcomes**
 
 ### **1. Working with Arrays**
@@ -283,9 +274,6 @@ Delta - Push-ups: 35, Sit-ups: 40 - Fail
 ```
 
 Run the Junit tests in `MainTest` to confirm your solution.
-
-Great job on completing this lab! 
-
 
 </details>
 

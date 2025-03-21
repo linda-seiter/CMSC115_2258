@@ -1,12 +1,43 @@
 # Unit 8 Project
 
-## Learning Goals
+## **Learning Outcomes**
 
-- Manipulate 2D arrays in Java, including accessing, modifying, and iterating over rows and columns.
-- Use conditional logic and validation to ensure safe array access, preventing `ArrayIndexOutOfBoundsException`.
-- Handle and process strings containing Unicode characters.
-- Use a 2D array to visually represent data in a grid-like structure.
-- Create modular, clean, and well-organized code using reusable methods to achieve a final outcome (such as landscaping a yard).
+By the end of this lab, students should be able to:
+
+1. **Understand and Manipulate 2D Arrays in Java**
+    - Declare, initialize, and manipulate 2D arrays.
+    - Access and modify elements using row and column indices.
+
+2. **Implement Array Processing Methods**
+    - Write methods to modify a 2D array, including:
+        - Filling the array with a specific value.
+        - Setting values at specific locations (e.g., middle cell, corners).
+        - Replacing specific values throughout the array.
+
+3. **Apply Conditional Logic for Array Index Validation**
+    - Implement boundary checks to ensure valid access to array elements.
+    - Use conditional statements to prevent out-of-bounds errors when updating adjacent cells.
+
+4. **Work with Nested Loops for 2D Array Traversal**
+    - Use nested loops to iterate over a 2D array for searching and updating elements.
+    - Understand efficient ways to find and update adjacent elements in an array.
+
+5. **Enhance Problem-Solving and Debugging Skills**
+    - Analyze and complete partially implemented methods.
+    - Debug issues related to incorrect index calculations and logical errors.
+
+6. **Use Java’s Scanner for User Input**
+    - Read input values from the user to determine the size of the array dynamically.
+    - Understand how user input affects the execution of a program.
+
+7. **Write Scalable and Maintainable Code**
+   - Structure the program using separate methods to enhance readability and reusability.
+   - Organize code logically to simplify debugging and future modifications.
+   - Follow the Single Responsibility Principle (SRP) by ensuring each method focuses on a specific task.
+
+8. **Develop a Simple Grid-Based Simulation**
+   - Represent objects (house, trees, squirrels, grass) in a yard using Unicode characters.
+   - Apply logical transformations to modify the landscape dynamically.
 
 ## Introduction
 
