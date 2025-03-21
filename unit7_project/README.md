@@ -102,14 +102,14 @@ You can assume that the `Scanner` parameter is not null and reads from `System.i
 
 Use a loop to repeatedly prompt the user for input (name, push-ups, and sit-ups), then store the values in the `names`, `pushUps`, and `sitUps` arrays.
 
-### **Example Execution** (for arrays of length 3):
+Example I/O** (for arrays of length 3):
 ```
 Enter Name PushUps SitUps: Morgan 50 60  
 Enter Name PushUps SitUps: Abel 28 48  
 Enter Name PushUps SitUps: Tay 43 45  
 ```
 
-### **Stored Data:**
+Resulting array contents:
 ```java
 names = {"Morgan", "Abel", "Tay"};
 pushUps = {50, 28, 43};
@@ -174,40 +174,29 @@ in the given array.
 - Run the JUnit tests in the `MetricsTest` class to verify your solution.
 
 ```java
-  /**
-   * Evaluates and formats the performance metrics (max, min, and average) for a given exercise.
-   *
-   * @param exerciseScores The array of scores for the exercise (push-ups or sit-ups).
-   * @param exerciseName   The name of the exercise being analyzed.
-   * @return A formatted string displaying max, min, and average, with average rounded to two decimal places,
-   */
+    /**
+ * Computes and returns a formatted description of overall performance metrics for a given exercise.
+ * The description includes the maximum, minimum, and average scores.
+ *
+ * @param exerciseScores An array of scores representing performance in a specific exercise (e.g., push-ups or sit-ups).
+ * @param exerciseName   The name of the exercise being analyzed.
+ * @return A formatted string displaying the exercise name, maximum score, minimum score, and average score 
+ *         in the format: "*** Exercise *** Max: X, Min: Y, Avg: Z.ZZ".
+ */
   public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName)
   }
 ```
 
 - Implement the method `getOverallPerformanceMetrics` to compute the metrics (min, max, average) for the array passed as a parameter.
   - The `getOverallPerformanceMetrics` method should call the `getMinValue`, `getMaxValue`, and `calculateSum` methods in determining the metrics.  Note you'll have to compute the average using the sum and the array length.  Make sure you avoid integer division!
-  - The `getOverallPerformanceMetrics` method should return a formatted string that includes the exercise name and metrics. The average should be displayed with two digits after the decimal point. For example:
+  - The `getOverallPerformanceMetrics` method should return a formatted string that includes the exercise name and metrics as shown below. The average should be displayed with two digits after the decimal point.
     ```*** Sit-ups *** Max: 50, Min: 20, Avg: 35.00```
 - Run the JUnit tests in the `OverallPerformanceMetricsTest` class to verify your solution.
-
-For example:
-```java
-int[] squatsScores = {20, 35, 40, 50, 30};
-String result = getOverallPerformanceMetrics(squatsScores, "Squats");  
-System.out.println(result);
-```
-
-Expected output:
-
-```text
-*** Squats *** Max: 50, Min: 20, Avg: 35.00
-```
 
 Once the tests pass, update the `main()` method to  call `getOverallPerformanceMetrics` twice, once for calculating the push-ups metrics
 and once for calculating the sit-ups metrics.  Print the resulting string returned by each method call.
 
-Run the program to confirm the overall performance metrics are calculated and printed for some sample data.
+Sample execution:
 
 ```text
 Enter the number of trainees: 3
@@ -225,6 +214,79 @@ Trainee names, push-ups, sit-ups:
 </details>
 
 ## Task 3: Compute and Display Performance Report
+
+<details>
+  <summary>Task Instructions</summary>
+
+```java
+/**
+ * Determines whether a person passes or fails based on their push-up and sit-up performance.
+ *
+ * @param pushUps    The number of push-ups performed.
+ * @param sitUps     The number of sit-ups performed.
+ * @param minPushUps The minimum required push-ups to pass.
+ * @param minSitUps  The minimum required sit-ups to pass.
+ * @return "Pass" if both push-ups and sit-ups meet or exceed the minimum requirements, otherwise "Fail".
+ */
+public static String getPerformanceStatus(int pushUps, int sitUps, int minPushUps, int minSitUps) {
+```
+
+- Implement the `getPerformanceStatus` method to return "Pass" if both push-ups and sit-ups meet or exceed the minimum requirements, otherwise "Fail".
+- Run the JUnit tests in the `PerformanceStatusTest` class to verify your solution.
+
+```java
+/**
+ * Generates performance summaries for multiple individuals based on their push-up and sit-up scores.
+ * Each summary includes the individual's name, exercise counts, and pass/fail status.
+ *
+ * @param names      An array of individuals' names.
+ * @param pushUps    An array of push-up scores corresponding to each individual.
+ * @param sitUps     An array of sit-up scores corresponding to each individual.
+ * @param minPushUps The minimum required push-ups for passing.
+ * @param minSitUps  The minimum required sit-ups for passing.
+ * @return A string array where each element contains the individual's name, push-up and sit-up counts,
+ *         and pass/fail status formatted as: "Name - Push-ups: X, Sit-ups: Y - Status".
+ */
+public static String[] getPerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps)
+```
+
+- Implement the `getPerformanceSummaries` method to return a string array where each element contains the individual's name, push-up and sit-up counts, and pass/fail status formatted as:<br>"Name - Push-ups: X, Sit-ups: Y - Status".
+- Run the JUnit tests in the `PerformanceSummariesTest` class to verify your solution.
+
+
+Once the tests pass, update the `main()` method:
+1. Prompt for and read in the minimum push-ups and sit-ups.
+2. Call `getPerformanceSummaries`, passing the arrays and minimum values given by the user.
+3. Iterate through the resulting array and print each summary.
+
+Sample execution:
+
+```text
+Enter the number of trainees: 4
+Enter Name PushUps SitUps: Alpha 50 60
+Enter Name PushUps SitUps: Beta 40 45
+Enter Name PushUps SitUps: Gamma 67 77
+Enter Name PushUps SitUps: Delta 35 40
+Trainee names, push-ups, sit-ups:
+[Alpha, Beta, Gamma, Delta]
+[50, 40, 67, 35]
+[60, 45, 77, 40]
+*** Push-ups *** Max: 67, Min: 35, Avg: 48.00
+*** Sit-ups *** Max: 77, Min: 40, Avg: 55.50
+Enter minimum push-ups required: 45
+Enter minimum sit-ups required: 50
+Alpha - Push-ups: 50, Sit-ups: 60 - Pass
+Beta - Push-ups: 40, Sit-ups: 45 - Fail
+Gamma - Push-ups: 67, Sit-ups: 77 - Pass
+Delta - Push-ups: 35, Sit-ups: 40 - Fail
+```
+
+Run the Junit tests in `MainTest` to confirm your solution.
+
+Great job on completing this lab! 
+
+
+</details>
 
 ## Submission Instructions
 

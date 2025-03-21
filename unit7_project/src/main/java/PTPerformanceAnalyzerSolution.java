@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 /**
  * The PTPerformanceAnalyzer program collects and analyzes physical training (PT) performance data,
- * including push-ups and sit-ups. It calculates statistics, evaluates pass/fail status based on minimum thresholds,
+ * including push-ups and sit-ups. It calculates performance metrics, evaluates pass/fail status based on minimum thresholds,
  * and outputs a formatted performance summary.
  *
  * Features:
  * - Collects PT data using arrays
- * - Computes max, min, and average statistics
+ * - Computes max, min, and average performance metrics
  * - Evaluates and encodes pass/fail performance based on user-defined thresholds
  *
  * @author Your Name
@@ -30,23 +30,23 @@ public class PTPerformanceAnalyzerSolution {
         collectExerciseData(scanner, names, pushUps, sitUps);
 
         // Display the contents of each array
+        System.out.println("Trainee names, push-ups, sit-ups:");
         System.out.println(Arrays.toString(names));
         System.out.println(Arrays.toString(pushUps));
         System.out.println(Arrays.toString(sitUps));
 
-        // Task 2: Display statistics for each exercise
-        System.out.println(calculateAndFormatStatistics(pushUps, "Push-ups"));
-        System.out.println(calculateAndFormatStatistics(sitUps, "Sit-ups"));
+        // Task 2: Display overall performance metrics (min, max, average) for each exercise
+        System.out.println(getOverallPerformanceMetrics(pushUps, "Push-ups"));
+        System.out.println(getOverallPerformanceMetrics(sitUps, "Sit-ups"));
 
         // Task 3: Generate performance summary
-        // Task 3a: Prompt for minimum exercise thresholds after displaying statistics
+        // Prompt for minimum exercise thresholds after displaying metrics
         System.out.print("Enter minimum push-ups required: ");
         int minPushUps = scanner.nextInt();
         System.out.print("Enter minimum sit-ups required: ");
         int minSitUps = scanner.nextInt();
-        // Task3b: Summarize each trainee's performance and display the result
-        System.out.println("--- Performance Summary ---");
-        String[] scoresSummary = evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
+        // Summarize each trainee's performance and display the result
+        String[] scoresSummary = getPerformanceSummaries(names, pushUps, sitUps, minPushUps, minSitUps);
         for (String score : scoresSummary) {
             System.out.println(score);
         }
@@ -58,16 +58,11 @@ public class PTPerformanceAnalyzerSolution {
      * Collects physical training (PT) data by reading names, push-up counts, and sit-up counts
      * from user input. The method uses parallel arrays to store this information.
      *
-     * <p>The arrays are assumed to be pre-created with the same size.</p>
+     * <p>The arrays are assumed to be instantiated with the same size.</p>
      *
      * <p>Data is entered in a single line per trainee in the format:
      * <pre>
      * Name PushUps SitUps
-     * </pre>
-     * Example input:
-     * <pre>
-     * Jordan 50 80
-     * Morgan 40 60
      * </pre>
      *
      * @param scanner The Scanner object used to read input.
@@ -87,64 +82,12 @@ public class PTPerformanceAnalyzerSolution {
     }
 
     /**
-     * Calculates and formats the statistics (max, min, and average) for a given exercise.
-     *
-     * @param exerciseScores The array of scores for the exercise (push-ups or sit-ups).
-     * @param exerciseName   The name of the exercise being evaluated.
-     * @return A formatted string displaying max, min, and average values.
-     */
-    public static String calculateAndFormatStatistics(int[] exerciseScores, String exerciseName) {
-        int max = getMax(exerciseScores);
-        int min = getMin(exerciseScores);
-        double avg = computeSum(exerciseScores) / (double) exerciseScores.length;
-
-        return String.format("--- %s ---\nMax: %d, Min: %d, Avg: %.2f",
-                exerciseName, max, min, avg);
-    }
-
-    /**
-     * Evaluates soldiers' performance based on minimum push-up and sit-up requirements
-     * and returns a summary of pass/fail status.
-     *
-     * @param names     The array of soldier names.
-     * @param pushUps   The array of push-up scores.
-     * @param sitUps    The array of sit-up scores.
-     * @param minPushUps The minimum required push-ups for passing.
-     * @param minSitUps  The minimum required sit-ups for passing.
-     * @return A string array summarizing each soldier's performance with pass/fail status.
-     */
-    public static String[] evaluateAndSummarizePerformance(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps) {
-        String[] scoresSummary = new String[names.length];
-
-        for (int i = 0; i < names.length; i++) {
-            String status = evaluateStatus(pushUps[i], sitUps[i], minPushUps, minSitUps);
-            scoresSummary[i] = String.format("%s - Push-ups: %d, Sit-ups: %d - %s",
-                    names[i], pushUps[i], sitUps[i], status);
-        }
-        return scoresSummary;
-    }
-
-    /**
-     * Evaluates whether a person passes or fails based on their push-ups and sit-ups count.
-     *
-     * @param pushUps    The number of push-ups performed.
-     * @param sitUps     The number of sit-ups performed.
-     * @param minPushUps The minimum required push-ups to pass.
-     * @param minSitUps  The minimum required sit-ups to pass.
-     * @return "Pass" if both push-ups and sit-ups meet or exceed the minimum requirements, otherwise "Fail".
-     */
-    public static String evaluateStatus(int pushUps, int sitUps, int minPushUps, int minSitUps) {
-        return (pushUps >= minPushUps && sitUps >= minSitUps) ? "Pass" : "Fail";
-    }
-
-
-    /**
      * Finds and returns the maximum value in an integer array.
      *
      * @param array The array to evaluate.
      * @return The maximum value found in the array.
      */
-    public static int getMax(int[] array) {
+    public static int findMaxValue(int[] array) {
         int max = array[0];
         for (int num : array) {
             if (num > max) {
@@ -160,7 +103,7 @@ public class PTPerformanceAnalyzerSolution {
      * @param array The array to evaluate.
      * @return The minimum value found in the array.
      */
-    public static int getMin(int[] array) {
+    public static int findMinValue(int[] array) {
         int min = array[0];
         for (int num : array) {
             if (num < min) {
@@ -171,16 +114,71 @@ public class PTPerformanceAnalyzerSolution {
     }
 
     /**
-     * Computes and returns the sum of all values in an integer array.
+     * Calculates and returns the sum of all values in an integer array.
      *
      * @param array The array to sum up.
      * @return The sum of all values in the array.
      */
-    public static int computeSum(int[] array) {
+    public static int calculateSum(int[] array) {
         int sum = 0;
         for (int num : array) {
             sum += num;
         }
         return sum;
     }
+
+    /**
+     * Computes and returns a formatted description of overall performance metrics for a given exercise.
+     * The description includes the maximum, minimum, and average scores.
+     *
+     * @param exerciseScores An array of scores representing performance in a specific exercise (e.g., push-ups or sit-ups).
+     * @param exerciseName   The name of the exercise being analyzed.
+     * @return A formatted string displaying the exercise name, maximum score, minimum score, and average score
+     *         in the format: "*** Exercise *** Max: X, Min: Y, Avg: Z.ZZ".
+     */
+    public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName) {
+        int max = findMaxValue(exerciseScores);
+        int min = findMinValue(exerciseScores);
+        double avg = calculateSum(exerciseScores) / (double) exerciseScores.length;
+
+        return String.format("*** %s *** Max: %d, Min: %d, Avg: %.2f",
+                exerciseName, max, min, avg);
+    }
+
+    /**
+     * Determines whether a person passes or fails based on their push-up and sit-up performance.
+     *
+     * @param pushUps    The number of push-ups performed.
+     * @param sitUps     The number of sit-ups performed.
+     * @param minPushUps The minimum required push-ups to pass.
+     * @param minSitUps  The minimum required sit-ups to pass.
+     * @return "Pass" if both push-ups and sit-ups meet or exceed the minimum requirements, otherwise "Fail".
+     */
+    public static String getPerformanceStatus(int pushUps, int sitUps, int minPushUps, int minSitUps) {
+        return (pushUps >= minPushUps && sitUps >= minSitUps) ? "Pass" : "Fail";
+    }
+
+    /**
+     * Generates performance summaries for multiple individuals based on their push-up and sit-up scores.
+     * Each summary includes the individual's name, exercise counts, and pass/fail status.
+     *
+     * @param names      An array of individuals' names.
+     * @param pushUps    An array of push-up scores corresponding to each individual.
+     * @param sitUps     An array of sit-up scores corresponding to each individual.
+     * @param minPushUps The minimum required push-ups for passing.
+     * @param minSitUps  The minimum required sit-ups for passing.
+     * @return A string array where each element contains the individual's name, push-up and sit-up counts,
+     *         and pass/fail status formatted as: "Name - Push-ups: X, Sit-ups: Y - Status".
+     */
+    public static String[] getPerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps) {
+        String[] scoresSummary = new String[names.length];
+
+        for (int i = 0; i < names.length; i++) {
+            String status = getPerformanceStatus(pushUps[i], sitUps[i], minPushUps, minSitUps);
+            scoresSummary[i] = String.format("%s - Push-ups: %d, Sit-ups: %d - %s",
+                    names[i], pushUps[i], sitUps[i], status);
+        }
+        return scoresSummary;
+    }
+
 }

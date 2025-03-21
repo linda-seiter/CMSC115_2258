@@ -38,19 +38,18 @@ public class PTPerformanceAnalyzer {
         // Task 2: Display overall performance metrics (min, max, average) for each exercise
         System.out.println(getOverallPerformanceMetrics(pushUps, "Push-ups"));
         System.out.println(getOverallPerformanceMetrics(sitUps, "Sit-ups"));
-//
-//        // Task 3: Generate performance summary
-//        // Prompt for minimum exercise thresholds after displaying metrics
-//        System.out.print("Enter minimum push-ups required: ");
-//        int minPushUps = scanner.nextInt();
-//        System.out.print("Enter minimum sit-ups required: ");
-//        int minSitUps = scanner.nextInt();
-//        // Summarize each trainee's performance and display the result
-//        System.out.println("--- Performance Summary ---");
-//        String[] scoresSummary = evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
-//        for (String score : scoresSummary) {
-//            System.out.println(score);
-//        }
+
+        // Task 3: Generate performance summary
+        // Prompt for minimum exercise thresholds after displaying metrics
+        System.out.print("Enter minimum push-ups required: ");
+        int minPushUps = scanner.nextInt();
+        System.out.print("Enter minimum sit-ups required: ");
+        int minSitUps = scanner.nextInt();
+        // Summarize each trainee's performance and display the result
+        String[] scoresSummary = getPerformanceSummaries(names, pushUps, sitUps, minPushUps, minSitUps);
+        for (String score : scoresSummary) {
+            System.out.println(score);
+        }
 
         scanner.close();
     }
@@ -129,11 +128,13 @@ public class PTPerformanceAnalyzer {
     }
 
     /**
-     * Evaluates and formats the performance metrics (max, min, and average) for a given exercise.
+     * Computes and returns a formatted description of overall performance metrics for a given exercise.
+     * The description includes the maximum, minimum, and average scores.
      *
-     * @param exerciseScores The array of scores for the exercise (push-ups or sit-ups).
+     * @param exerciseScores An array of scores representing performance in a specific exercise (e.g., push-ups or sit-ups).
      * @param exerciseName   The name of the exercise being analyzed.
-     * @return A formatted string displaying max, min, and average, with average rounded to two decimal places,
+     * @return A formatted string displaying the exercise name, maximum score, minimum score, and average score
+     *         in the format: "*** Exercise *** Max: X, Min: Y, Avg: Z.ZZ".
      */
     public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName) {
         int max = findMaxValue(exerciseScores);
@@ -145,29 +146,7 @@ public class PTPerformanceAnalyzer {
     }
 
     /**
-     * Evaluates soldiers' performance based on minimum push-up and sit-up requirements
-     * and returns a summary including pass/fail status.
-     *
-     * @param names     The array of soldier names.
-     * @param pushUps   The array of push-up scores.
-     * @param sitUps    The array of sit-up scores.
-     * @param minPushUps The minimum required push-ups for passing.
-     * @param minSitUps  The minimum required sit-ups for passing.
-     * @return A string array summarizing each soldier's performance with pass/fail status.
-     */
-    public static String[] generatePerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps) {
-        String[] scoresSummary = new String[names.length];
-
-        for (int i = 0; i < names.length; i++) {
-            String status = evaluateStatus(pushUps[i], sitUps[i], minPushUps, minSitUps);
-            scoresSummary[i] = String.format("%s - Push-ups: %d, Sit-ups: %d - %s",
-                    names[i], pushUps[i], sitUps[i], status);
-        }
-        return scoresSummary;
-    }
-
-    /**
-     * Evaluates whether a person passes or fails based on their push-ups and sit-ups count.
+     * Determines whether a person passes or fails based on their push-up and sit-up performance.
      *
      * @param pushUps    The number of push-ups performed.
      * @param sitUps     The number of sit-ups performed.
@@ -175,8 +154,33 @@ public class PTPerformanceAnalyzer {
      * @param minSitUps  The minimum required sit-ups to pass.
      * @return "Pass" if both push-ups and sit-ups meet or exceed the minimum requirements, otherwise "Fail".
      */
-    public static String evaluateStatus(int pushUps, int sitUps, int minPushUps, int minSitUps) {
+    public static String getPerformanceStatus(int pushUps, int sitUps, int minPushUps, int minSitUps) {
         return (pushUps >= minPushUps && sitUps >= minSitUps) ? "Pass" : "Fail";
     }
+
+    /**
+     * Generates performance summaries for multiple individuals based on their push-up and sit-up scores.
+     * Each summary includes the individual's name, exercise counts, and pass/fail status.
+     *
+     * @param names      An array of individuals' names.
+     * @param pushUps    An array of push-up scores corresponding to each individual.
+     * @param sitUps     An array of sit-up scores corresponding to each individual.
+     * @param minPushUps The minimum required push-ups for passing.
+     * @param minSitUps  The minimum required sit-ups for passing.
+     * @return A string array where each element contains the individual's name, push-up and sit-up counts,
+     *         and pass/fail status formatted as: "Name - Push-ups: X, Sit-ups: Y - Status".
+     */
+    public static String[] getPerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps) {
+        String[] scoresSummary = new String[names.length];
+
+        for (int i = 0; i < names.length; i++) {
+            String status = getPerformanceStatus(pushUps[i], sitUps[i], minPushUps, minSitUps);
+            scoresSummary[i] = String.format("%s - Push-ups: %d, Sit-ups: %d - %s",
+                    names[i], pushUps[i], sitUps[i], status);
+        }
+        return scoresSummary;
+    }
+
+
 
 }
