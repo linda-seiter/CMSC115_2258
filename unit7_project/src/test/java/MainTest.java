@@ -19,7 +19,8 @@ public class MainTest {
                 48
                 """;
         String expectedOutput = """
-                Enter the number of trainees: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: [Morgan, Abel, Tay, Nela, Dina]
+                Enter the number of trainees: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Trainee names, push-ups, sit-ups:
+                [Morgan, Abel, Tay, Nela, Dina]
                 [50, 28, 43, 50, 49]
                 [60, 48, 45, 50, 38]
                 --- Push-ups ---

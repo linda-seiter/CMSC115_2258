@@ -25,7 +25,7 @@ public class PerformanceSummaryTest {
         };
 
         // Call the method under test
-        String[] actualOutput = PTPerformanceAnalyzer.evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
+        String[] actualOutput = PTPerformanceAnalyzer.generatePerformanceSummaries(names, pushUps, sitUps, minPushUps, minSitUps);
 
         // Verify that the actual output matches the expected output
         assertArrayEquals(expectedOutput, actualOutput, "Performance evaluation results do not match expected output.");
@@ -49,7 +49,7 @@ public class PerformanceSummaryTest {
         };
 
         // Call the method under test
-        String[] actualOutput = PTPerformanceAnalyzer.evaluateAndSummarizePerformance(names, pushUps, sitUps, minPushUps, minSitUps);
+        String[] actualOutput = PTPerformanceAnalyzer.generatePerformanceSummaries(names, pushUps, sitUps, minPushUps, minSitUps);
 
         // Verify that the actual output matches the expected output
         assertArrayEquals(expectedOutput, actualOutput, "Performance evaluation results do not match expected output.");
