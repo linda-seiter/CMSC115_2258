@@ -1,6 +1,6 @@
 # Unit 8 Project - Yard Planner
 
-In this project, you will implement multiple methods in the **YardPlanner** class
+You will implement multiple methods in the **YardPlanner** class
 to modify a 2D array representing a rectangular yard. The `main` method will populate
 the yard by placing a house at the center, trees in the corners surrounded by squirrels,
 and grass covering the remaining area.
@@ -15,8 +15,6 @@ Enter rows and columns: 5 7
 ```
 
 ## **Learning Outcomes**
-
-By the end of this project, you should be able to:
 
 1. **Understand and Manipulate 2D Arrays in Java**
     - Declare, initialize, and manipulate 2D arrays.
@@ -54,12 +52,12 @@ By the end of this project, you should be able to:
    - Apply logical transformations to modify the yard dynamically.
 
 
-## **Guidelines**
+## Coding Guidelines
 
+- Loops and conditionals are allowed, but avoid using advanced Java Streams.
+- Do not use methods from the `Array` or `Arrays` classes.
 - Array dimensions will be specified as `rows X columns`.
-- You may assume methods receive a non-empty, rectangular 2D array as a parameter.
-- Use basic loops and conditionals instead of advanced Java Streams.
-- Do not use methods from the Array or Arrays classes.
+- Assume methods receive a non-empty, rectangular 2D array as a parameter.
 
 ## Run the `main()` method with sample user input
 
@@ -83,14 +81,7 @@ nullnullnullnullnullnullnullnullnull
 Each cell contains the default String value of `null`.
 
 
-
-
-
 ## Task #1 - Implement the `fillMatrix()` method
-
-<details>
-  <summary>Task Instructions</summary>
-
 
 The purpose of the `fillMatrix` method is to assign a specified fill value to every cell in a 2D array of strings.
 
@@ -101,9 +92,7 @@ The purpose of the `fillMatrix` method is to assign a specified fill value to ev
  * @param matrix The 2D array to be filled with new values.
  * @param fillValue A string that will replace the current value of each cell in the matrix.
  */
-public static void fillMatrix(String[][] matrix, String fillValue) {
-    //TODO
-}
+public static void fillMatrix(String[][] matrix, String fillValue)
 ```
 
 **Example 1**
@@ -167,12 +156,7 @@ Enter rows and columns: 7 9
 🟫🟫🟫🟫🟫🟫🟫🟫🟫
 ```
 
-</details>
-
 ## Task #2 - Implement the `setMiddleCells()` method
-
-<details>
-  <summary>Task Instructions</summary>
 
 The `setMiddleCells` method is designed to assign a value to the middle cell(s) of a 2D array.
 
@@ -200,9 +184,7 @@ Note that if both the number of rows and columns are even, the method will set 4
  *              middle(s) of the matrix.
  *
  */
-public static void setMiddleCells(String[][] matrix, String value) {
-    //TODO
-}
+public static void setMiddleCells(String[][] matrix, String value)
 ```
 
 **Example 1**: 5x7: odd rows, odd columns
@@ -349,12 +331,7 @@ Enter rows and columns: 4 10
 🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫
 ```
 
-</details>
-
 ## Task #3 - Implement the `setCornerCells()` method
-
-<details>
-  <summary>Task Instructions</summary>
 
 The `setCornerCells` method is designed to assign a value to the
 corner cells of a 2D array: (first row, first column), (first row, last column),
@@ -369,9 +346,7 @@ The method should work for any non-empty 2D array, including arrays with a singl
  * @param matrix The 2D array.
  * @paramvalue The string to set in the corners.
  */
-public static void setCornerCells(String[][] matrix, String value) {
-    //TODO
-}
+public static void setCornerCells(String[][] matrix, String value)
 ```
 
 **Example 1**: 3x4
@@ -465,12 +440,7 @@ Enter rows and columns: 7 9
 🌳🟫🟫🟫🟫🟫🟫🟫🌳
 ```
 
-</details>
-
 ## Task #4 - Implement the `replaceValue()` method
-
-<details>
-  <summary>Task Instructions</summary>
 
 The `replaceValue` method is used to replace all instances of a specified string in a 2D array with a new string.
 
@@ -482,9 +452,7 @@ The `replaceValue` method is used to replace all instances of a specified string
  * @param targetValue The string to be replaced.
  * @param newValue The string to replace the target with.
  */
-public static void replaceValue(String[][] matrix, String targetValue, String newValue) {
-    //TODO
-}
+public static void replaceValue(String[][] matrix, String targetValue, String newValue)
 ```
 
 The matrix may contain zero, one, or multiple occurrences of the
@@ -527,12 +495,7 @@ Enter rows and columns: 7 9
 🌳🌱🌱🌱🌱🌱🌱🌱🌳
 ```
 
-</details>
-
 ## Task #5 - Implement the `isValidIndex()` method
-
-<details>
-  <summary>Task Instructions</summary>
 
 The purpose of the `isValidIndex` method is to check if a given index is valid within the bounds
 of a 2D array.  Replace the current return statement to test the index.
@@ -546,10 +509,7 @@ of a 2D array.  Replace the current return statement to test the index.
  * @param col The column index.
  * @return True if the indices are valid, false otherwise.
  */
-public static boolean isValidIndex(String[][] matrix, int row, int col) {
-    //TODO
-    return false;
-}
+public static boolean isValidIndex(String[][] matrix, int row, int col)
 ```
 
 **Example**: Given a 3x5 matrix, valid rows are in the range 0..2 and valid columns in 0..4.
@@ -574,12 +534,7 @@ System.out.println(isValidIndex(matrix, 0, 5));  //false
 
 Run the JUnit tests in the `IsValidIndexTest` class to verify your solution.
 
-</details>
-
 ## Task #6 - Implement the `setAdjacentCells()` method
-
-<details>
-  <summary>Task Instructions</summary>
 
 The `setAdjacentCells` method assigns a new value to the cells that are adjacent
 to a specified cell, including those horizontally, vertically, and diagonally adjacent.
@@ -598,9 +553,7 @@ before attempting to update an adjacent cell.
  * @param col The column index of the given cell.
  * @param newValue The string value to assign to the adjacent cells.
  */
-public static void setAdjacentCells(String[][] matrix, int row, int col, String newValue) {
-    //TODO
-}
+public static void setAdjacentCells(String[][] matrix, int row, int col, String newValue)
 ```
 
 **Example 1**: Surround an interior cell having 8 adjacent cells
@@ -680,12 +633,7 @@ setAdjacentCells(matrix, 4, 3, "X");
 
 Run the JUnit tests in the `SetAdjacentCellsTest` class to verify your solution.
 
-</details>
-
 ## Task #7 - Implement the `findAndUpdateAdjacentCells()` method
-
-<details>
-  <summary>Task Instructions</summary>
 
 The `findAndUpdateAdjacentCells` method should find each cell
 that matches the specified target value and update its adjacent cells
@@ -705,9 +653,7 @@ to the given new value by invoking the
  * @param targetValue The string value to search for in the matrix.
  * @param newValue The string value to assign to the adjacent cells of the matching target cells.
  */
-public static void findAndUpdateAdjacentCells(String[][] matrix, String targetValue, String newValue) {
-    //TODO
-}
+public static void findAndUpdateAdjacentCells(String[][] matrix, String targetValue, String newValue)
 ```
 
 **Example 1**: Find and surround 2 instances of the target string "A"
@@ -764,8 +710,6 @@ Enter rows and columns: 6 8
 ```
 
 Finally, run the Junit tests in `MainTest` to confirm the `main` method produces the correct output for the given input.
-
-</details>
 
 ## Submission Instructions
 
