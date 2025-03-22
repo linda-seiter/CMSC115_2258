@@ -28,18 +28,21 @@ public class PTPerformanceAnalyzer {
         int[] sitUps = new int[numTrainees];
 
         // Task 1: Input Data
-        collectExerciseData(scanner, names, pushUps, sitUps);
+        // TODO
 
         // Display the contents of each array
-        System.out.println("Trainee names, push-ups, sit-ups:");
+        System.out.println("\nTrainee names, push-ups, sit-ups:");
         System.out.println(Arrays.toString(names));
         System.out.println(Arrays.toString(pushUps));
         System.out.println(Arrays.toString(sitUps));
 
         // Task 2: Display overall performance metrics (min, max, mean) for each exercise
+        System.out.println("\nPerformance Metrics:");
         // TODO
 
         // Task 3: Generate performance summary
+        System.out.println("\nPerformance Summaries:");
+
         // Task 3a: Prompt for minimum exercise thresholds after displaying metrics
         // TODO
 
@@ -66,7 +69,7 @@ public class PTPerformanceAnalyzer {
      * @param sitUps  The pre-created array to store sit-up counts.
      */
     public static void collectExerciseData(Scanner scanner, String[] names, int[] pushUps, int[] sitUps) {
-        //TODO
+        // TODO
 
     }
 
@@ -113,7 +116,7 @@ public class PTPerformanceAnalyzer {
      *         in the format: "*** Exercise *** Max: X, Min: Y, Mean: Z.ZZ".
      */
     public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName) {
-        //TODO
+        // TODO
         return null;
     }
 
@@ -130,7 +133,7 @@ public class PTPerformanceAnalyzer {
      *         and their pass/fail status based on whether they meet the minimum requirements.
      */
     public static String getPerformanceSummary(String name, int pushUps, int sitUps, int minPushUps, int minSitUps) {
-        //TODO
+        // TODO
         return null;
     }
 
@@ -147,7 +150,7 @@ public class PTPerformanceAnalyzer {
      *         and pass/fail status formatted as: "Name - Push-ups: X, Sit-ups: Y - Status".
      */
     public static String[] getPerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps) {
-        //TODO
+        // TODO
         return null;
     }
 

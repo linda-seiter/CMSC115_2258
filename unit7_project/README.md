@@ -42,8 +42,8 @@ and overall fitness evaluation.
 
 ## Coding Guidelines
 
-- You may use loops and conditionals instead of advanced Java Streams.
-- You may use Arrays.toString(), but avoid other methods from the Array or Arrays classes.
+- Loops and conditionals are allowed, but avoid using advanced Java Streams.
+- You may use `Arrays.toString()`, but do not use other methods from the `Array` or `Arrays` classes.
 
 ## Getting Started: Run the `main()` method with sample user input
 
@@ -57,10 +57,15 @@ Execute the `main()` method with a sample size of 7 and confirm the output:
 
 ```text
 Enter the number of trainees: 7
+
 Trainee names, push-ups, sit-ups:
 [null, null, null, null, null, null, null]
 [0, 0, 0, 0, 0, 0, 0]
 [0, 0, 0, 0, 0, 0, 0]
+
+Performance Metrics:
+
+Performance Summaries:
 ```
 
 ## Task 1: Collect PT Data from user input
@@ -93,7 +98,8 @@ You can assume that the `Scanner` parameter is not null and reads from `System.i
 
 Use a loop to repeatedly prompt the user for input (name, push-ups, and sit-ups), then store the values in the `names`, `pushUps`, and `sitUps` arrays.
 
-Example I/O** (for arrays of length 3):
+Sample I/O, assuming the `names` array has length 3:
+
 ```
 Enter Name PushUps SitUps: Morgan 50 60  
 Enter Name PushUps SitUps: Abel 28 48  
@@ -101,6 +107,7 @@ Enter Name PushUps SitUps: Tay 43 45
 ```
 
 Resulting array contents:
+
 ```java
 names = {"Morgan", "Abel", "Tay"};
 pushUps = {50, 28, 43};
@@ -110,19 +117,26 @@ sitUps = {60, 48, 45};
 Run the JUnit tests in the `CollectDataTest` class to verify your solution.
 
 Once the tests pass, update the `main()` method to  call `collectExerciseData` after
-the arrays have been created for the specified input size.
+the arrays have been created for the specified input size, but before the print statements that display their content.
 Run the program to confirm the arrays are filled with the user input and their contents printed.
+
+Sample I/O:
 
 ```text
 Enter the number of trainees: 4
-Enter Name PushUps SitUps: Nel 42 50
-Enter Name PushUps SitUps: Lana 30 38
-Enter Name PushUps SitUps: Zelish 28 34
-Enter Name PushUps SitUps: Telaza 50 60
+Enter Name PushUps SitUps: Alpha 50 60
+Enter Name PushUps SitUps: Beta 40 45
+Enter Name PushUps SitUps: Gamma 67 77
+Enter Name PushUps SitUps: Delta 35 40
+
 Trainee names, push-ups, sit-ups:
-[Nel, Lana, Zelish, Telaza]
-[42, 30, 28, 50]
-[50, 38, 34, 60]
+[Alpha, Beta, Gamma, Delta]
+[50, 40, 67, 35]
+[60, 45, 77, 40]
+
+Performance Metrics:
+
+Performance Summaries:
 ```
 
 ## Task 2: Compute Overall Performance Metrics
@@ -174,27 +188,33 @@ public static double calculateMean(int[] array)
 
 - Implement the method `getOverallPerformanceMetrics` to compute the metrics (min, max, mean) for the array passed as a parameter.
   - The `getOverallPerformanceMetrics` method should call the `getMinValue`, `getMaxValue`, and `calculateMean` methods in determining the metrics.  
-  - The `getOverallPerformanceMetrics` method should return a formatted string that includes the exercise name and metrics as shown below. The mean should be formatted to display two digits after the decimal point.
-    ```*** Sit-ups *** Max: 50, Min: 20, Mean: 35.00```
+  - The `getOverallPerformanceMetrics` method should return a formatted string that includes the exercise name and metrics as shown below. The mean should be formatted to display two digits after the decimal point.<br>
+    ```*** Sit-ups *** Max: 50, Min: 20, Mean: 35.25```
 - Run the JUnit tests in the `OverallPerformanceMetricsTest` class to verify your solution.
 
 Once the tests pass, update the `main()` method. After collecting and displaying the trainee's data, the `main` method should
 call `getOverallPerformanceMetrics` twice, once to calculate the push-ups metrics
 and once for the sit-ups metrics.  Print the result of each method call.
 
-Sample execution:
+Sample I/O:
 
 ```text
-Enter the number of trainees: 3
+Enter the number of trainees: 4
 Enter Name PushUps SitUps: Alpha 50 60
-Enter Name PushUps SitUps: Beta 42 56
-Enter Name PushUps SitUps: Gamma 48 39
+Enter Name PushUps SitUps: Beta 40 45
+Enter Name PushUps SitUps: Gamma 67 77
+Enter Name PushUps SitUps: Delta 35 40
+
 Trainee names, push-ups, sit-ups:
-[Alpha, Beta, Gamma]
-[50, 42, 48]
-[60, 56, 39]
-*** Push-ups *** Max: 50, Min: 42, Mean: 46.67
-*** Sit-ups *** Max: 60, Min: 39, Mean: 51.67
+[Alpha, Beta, Gamma, Delta]
+[50, 40, 67, 35]
+[60, 45, 77, 40]
+
+Performance Metrics:
+*** Push-ups *** Max: 67, Min: 35, Mean: 48.00
+*** Sit-ups *** Max: 77, Min: 40, Mean: 55.50
+
+Performance Summaries:
 ```
 
 ## Task 3: Compute and Display Performance Summaries
@@ -216,11 +236,10 @@ public static String getPerformanceSummary(String name, int pushUps, int sitUps,
 
 Implement the `getPerformanceSummary` method to evaluate an individual's fitness performance based on push-ups and sit-ups. The method should:
   - Take the individual's name, number of push-ups, and sit-ups, and minimum push-ups and sit-ups as parameters.
-  - Compare their performance against the minimum required push-ups and sit-ups to determine Pass/Fail status. 
+  - Compare their performance against the minimum required push-ups **and** sit-ups to determine Pass/Fail status. Both thresholds must be met to pass.
   - Return a formatted string indicating their name, the number of push-ups and sit-ups performed, and their Pass/Fail status formatted as shown:
     <br>"Name - Push-ups: X, Sit-ups: Y - Status"
 
-Sample Method Calls and Expected Results**
 | **Method Call**  | **Expected Output** |
 |------------------|----------------------|
 | `getPerformanceSummary("Alpha", 20, 30, 15, 25)`  | `Alpha - Push-ups: 20, Sit-ups: 30 - Pass` |
@@ -275,7 +294,7 @@ The `results` array should contain the four strings as shown:
 
 Run the JUnit tests in the `PerformanceSummariesTest` class to verify your solution.
 
-Once the tests pass, update the `main()` method. After displaying the push-ups and sit-ups metrices,
+Once the tests pass, update the `main()` method. After displaying the push-ups and sit-ups metrics,
 the `main` method should:
 
 1. Prompt for and read in minimum push-up and sit-up requirements.
@@ -290,12 +309,17 @@ Enter Name PushUps SitUps: Alpha 50 60
 Enter Name PushUps SitUps: Beta 40 45
 Enter Name PushUps SitUps: Gamma 67 77
 Enter Name PushUps SitUps: Delta 35 40
+
 Trainee names, push-ups, sit-ups:
 [Alpha, Beta, Gamma, Delta]
 [50, 40, 67, 35]
 [60, 45, 77, 40]
+
+Performance Metrics:
 *** Push-ups *** Max: 67, Min: 35, Mean: 48.00
 *** Sit-ups *** Max: 77, Min: 40, Mean: 55.50
+
+Performance Summaries:
 Enter minimum push-ups required: 50
 Enter minimum sit-ups required: 60
 Alpha - Push-ups: 50, Sit-ups: 60 - Pass

@@ -19,12 +19,17 @@ public class MainTest {
                 48
                 """;
         String expectedOutput = """
-                Enter the number of trainees: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Trainee names, push-ups, sit-ups:
+                Enter the number of trainees: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps: Enter Name PushUps SitUps:\s
+                Trainee names, push-ups, sit-ups:
                 [Morgan, Abel, Tay, Nela, Dina]
                 [50, 28, 43, 50, 49]
                 [60, 48, 45, 50, 38]
+                
+                Performance Metrics:
                 *** Push-ups *** Max: 50, Min: 28, Mean: 44.00
                 *** Sit-ups *** Max: 60, Min: 38, Mean: 48.20
+                
+                Performance Summaries:
                 Enter minimum push-ups required: Enter minimum sit-ups required: Morgan - Push-ups: 50, Sit-ups: 60 - Pass
                 Abel - Push-ups: 28, Sit-ups: 48 - Fail
                 Tay - Push-ups: 43, Sit-ups: 45 - Fail

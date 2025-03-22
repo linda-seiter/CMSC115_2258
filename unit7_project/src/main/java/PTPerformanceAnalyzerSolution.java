@@ -31,17 +31,19 @@ public class PTPerformanceAnalyzerSolution {
         collectExerciseData(scanner, names, pushUps, sitUps);
 
         // Display the contents of each array
-        System.out.println("Trainee names, push-ups, sit-ups:");
+        System.out.println("\nTrainee names, push-ups, sit-ups:");
         System.out.println(Arrays.toString(names));
         System.out.println(Arrays.toString(pushUps));
         System.out.println(Arrays.toString(sitUps));
 
         // Task 2: Display overall performance metrics (min, max, mean) for each exercise
+        System.out.println("\nPerformance Metrics:");
         System.out.println(getOverallPerformanceMetrics(pushUps, "Push-ups"));
         System.out.println(getOverallPerformanceMetrics(sitUps, "Sit-ups"));
 
         // Task 3: Generate performance summary
         // Task 3a: Prompt for minimum exercise thresholds after displaying metrics
+        System.out.println("\nPerformance Summaries:");
         System.out.print("Enter minimum push-ups required: ");
         int minPushUps = scanner.nextInt();
         System.out.print("Enter minimum sit-ups required: ");
