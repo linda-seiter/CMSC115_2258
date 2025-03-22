@@ -23,13 +23,13 @@ class MetricsTest {
     }
 
     @Test
-    @DisplayName("Summative value")
-    void testGetSum() {
-        assertEquals(210, PTPerformanceAnalyzer.calculateSum(new int[]{10, 20, 100, 50, 30}), "calculateSum(new int[]{10, 20, 100, 50, 30})");
-        assertEquals(-13, PTPerformanceAnalyzer.calculateSum(new int[]{-5, -10, 0, 5, -3}), "calculateSum(new int[]{-5, -10, 0, 5, -3})");
-        assertEquals(-39, PTPerformanceAnalyzer.calculateSum(new int[]{-5, -10, -3, -1, -20}), "calculateSum(new int[]{-5, -10, -3, -1, -20})");
-        assertEquals(42, PTPerformanceAnalyzer.calculateSum(new int[]{42}), "calculateSum(new int[]{42})"); // Single element
-        assertEquals(0, PTPerformanceAnalyzer.calculateSum(new int[]{0, 0, 0, 0}), "calculateSum(new int[]{0, 0, 0, 0})"); // All zeros
+    @DisplayName("Mean value")
+    void testCalculateMean() {
+        double delta = 0.0001;
+        assertEquals(42.0, PTPerformanceAnalyzer.calculateMean(new int[]{10, 20, 100, 50, 30}), delta, "calculateMean(new int[]{10, 20, 100, 50, 30})");
+        assertEquals(-2.6, PTPerformanceAnalyzer.calculateMean(new int[]{-5, -10, 0, 5, -3}), delta, "calculateMean(new int[]{-5, -10, 0, 5, -3})");
+        assertEquals(2.0, PTPerformanceAnalyzer.calculateMean(new int[]{2}), delta, "calculateMean(new int[]{2})");
+
     }
 
 }

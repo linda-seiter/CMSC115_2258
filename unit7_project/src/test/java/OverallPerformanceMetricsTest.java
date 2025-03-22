@@ -15,15 +15,15 @@ public class OverallPerformanceMetricsTest {
     @DisplayName("Overall Performance Metrics")
     void testGetOverallPerformanceMetrics() {
         int[] scores = {10, 8, 30, 68, 50};
-        String expectedOutput = "*** Push-ups *** Max: 68, Min: 8, Avg: 33.20";
+        String expectedOutput = "*** Push-ups *** Max: 68, Min: 8, Mean: 33.20";
         assertEquals(expectedOutput, PTPerformanceAnalyzer.getOverallPerformanceMetrics(scores, "Push-ups"));
 
         int[] singleValue = {42};
-        expectedOutput = "*** Sit-ups *** Max: 42, Min: 42, Avg: 42.00";
+        expectedOutput = "*** Sit-ups *** Max: 42, Min: 42, Mean: 42.00";
         assertEquals(expectedOutput, PTPerformanceAnalyzer.getOverallPerformanceMetrics(singleValue, "Sit-ups"));
 
         int[] allSame = {25, 25, 25, 25};
-        expectedOutput = "*** Lunges *** Max: 25, Min: 25, Avg: 25.00";
+        expectedOutput = "*** Lunges *** Max: 25, Min: 25, Mean: 25.00";
         assertEquals(expectedOutput, PTPerformanceAnalyzer.getOverallPerformanceMetrics(allSame, "Lunges"));
     }
 
@@ -46,7 +46,7 @@ public class OverallPerformanceMetricsTest {
         // Check for method calls using regex
         assertTrue(methodBody.contains("findMaxValue("), "Method findMaxValue() is not called.");
         assertTrue(methodBody.contains("findMinValue("), "Method findMinValue() is not called.");
-        assertTrue(methodBody.contains("calculateSum("), "Method calculateSum() is not called.");
+        assertTrue(methodBody.contains("calculateMean("), "Method calculateMean() is not called.");
     }
 
 }

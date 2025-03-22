@@ -63,7 +63,7 @@ public class PerformanceSummariesTest {
     }
 
     @Test
-    @DisplayName("getPerformanceStatus called from getPerformanceSummaries()")
+    @DisplayName("getPerformanceSummary called from getPerformanceSummaries()")
     void testMethodCall() throws IOException {
         // Load source code as a string
         String filePath = "src/main/java/PTPerformanceAnalyzer.java"; // Update path as needed
@@ -79,7 +79,7 @@ public class PerformanceSummariesTest {
         String methodBody = methodMatcher.group(1);
 
         // Check for method call using regex
-        assertTrue(methodBody.contains("getPerformanceStatus("), "Method getPerformanceStatus is not called.");
+        assertTrue(methodBody.contains("getPerformanceSummary("), "Method getPerformanceSummary is not called.");
     }
 
 }

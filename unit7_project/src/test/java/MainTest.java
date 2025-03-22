@@ -23,8 +23,8 @@ public class MainTest {
                 [Morgan, Abel, Tay, Nela, Dina]
                 [50, 28, 43, 50, 49]
                 [60, 48, 45, 50, 38]
-                *** Push-ups *** Max: 50, Min: 28, Avg: 44.00
-                *** Sit-ups *** Max: 60, Min: 38, Avg: 48.20
+                *** Push-ups *** Max: 50, Min: 28, Mean: 44.00
+                *** Sit-ups *** Max: 60, Min: 38, Mean: 48.20
                 Enter minimum push-ups required: Enter minimum sit-ups required: Morgan - Push-ups: 50, Sit-ups: 60 - Pass
                 Abel - Push-ups: 28, Sit-ups: 48 - Fail
                 Tay - Push-ups: 43, Sit-ups: 45 - Fail
