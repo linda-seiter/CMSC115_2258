@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * The LandscapeService class provides functionality to manipulate a 2D array that represents a rectangular yard.
+ * The YardPlanner class provides functionality to manipulate a 2D array that represents a rectangular yard.
  * The main method simulates adding a house, trees, squirrels, and grass to a yard.
  * Array dimensions are given as rows x columns.
  * All methods assume a non-empty, rectangular 2D array is passed as a parameter.
@@ -77,7 +77,7 @@ public class YardPlanner {
      * @param newValue The string to replace the target with.
      */
     public static void replaceTargetValue(String[][] matrix, String targetValue, String newValue) {
-        // TODO
+         // TODO
     }
 
     /**
@@ -89,6 +89,7 @@ public class YardPlanner {
      * @return True if the indices are valid, false otherwise.
      */
     public static boolean isValidIndex(String[][] matrix, int row, int col) {
+       // TODO
         return false;
     }
 
@@ -133,23 +134,23 @@ public class YardPlanner {
         int rows = in.nextInt();
         int cols = in.nextInt();
 
-        //Create rows X cols sized yard
+        // Create rows X cols sized yard
         String[][] myYard = new String[rows][cols];
 
-        //Fill the yard with dirt (brown square)
+        // Fill the yard with dirt (brown square)
+        // TODO
 
+        // Add a house in the middle
+        // TODO
 
-        //Add a house in the middle
+        // Add trees in the corners
+        // TODO
 
+        // Replace dirt (brown square) with grass (seedling)
+        // TODO
 
-        //Add trees in the corners
-
-
-        //Replace dirt (brown square) with grass (seedling)
-
-
-        //Surround trees with squirrels
-
+        // Surround trees with squirrels
+        // TODO
 
         //Print final result
         printMatrix(myYard);

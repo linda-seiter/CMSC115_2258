@@ -539,7 +539,7 @@ Run the JUnit tests in the `IsValidIndexTest` class to verify your solution.
 The `setAdjacentCells` method assigns a new value to the cells that are adjacent
 to a specified cell, including those horizontally, vertically, and diagonally adjacent.
 To handle edge cases where the specified cell is located in the first or last
-row, or the first or last column, the method should check the validity of the indices
+row or column, the method should call the `isValidIndex()` method to check the validity of the indices
 before attempting to update an adjacent cell.
 
 ```java
