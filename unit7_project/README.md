@@ -40,9 +40,10 @@ and overall fitness evaluation.
 ### **7. Code Readability and Documentation**
 - Include **Javadoc comments** to clearly document methods and their functionalities.
 
-## Guidelines
-- Use loops and conditionals instead of advanced Java Streams.
-- Use Arrays.toString(), but avoid other methods from the Array or Arrays classes.
+## Coding Guidelines
+
+- You may use loops and conditionals instead of advanced Java Streams.
+- You may use Arrays.toString(), but avoid other methods from the Array or Arrays classes.
 
 ## Getting Started: Run the `main()` method with sample user input
 
@@ -52,20 +53,17 @@ The `main` method prompts the user for the number of exercise trainees, and crea
 3 parallel arrays to store the name, push-up count, and sit-up count for each trainee.
 The `Arrays.toString()` method is called to print the contents of each array, showing the default value `null` or `0` based on the data type.
 
-Execute the `main()` method with a sample size of 3 and confirm the output:
+Execute the `main()` method with a sample size of 7 and confirm the output:
 
 ```text
-Enter the number of trainees: 3
+Enter the number of trainees: 7
 Trainee names, push-ups, sit-ups:
-[null, null, null]
-[0, 0, 0]
-[0, 0, 0]
+[null, null, null, null, null, null, null]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
 ```
 
 ## Task 1: Collect PT Data from user input
-
-<details>
-  <summary>Task Instructions</summary>
 
 ```java
     /**
@@ -127,12 +125,7 @@ Trainee names, push-ups, sit-ups:
 [50, 38, 34, 60]
 ```
 
-</details>
-
 ## Task 2: Compute Overall Performance Metrics
-
-<details>
-  <summary>Task Instructions</summary>
 
 ```java
 /**
@@ -204,12 +197,7 @@ Trainee names, push-ups, sit-ups:
 *** Sit-ups *** Max: 60, Min: 39, Mean: 51.67
 ```
 
-</details>
-
 ## Task 3: Compute and Display Performance Summaries
-
-<details>
-  <summary>Task Instructions</summary>
 
 ```java
 /**
@@ -317,8 +305,6 @@ Delta - Push-ups: 35, Sit-ups: 40 - Fail
 ```
 
 Run the Junit tests in `MainTest` to confirm your solution.
-
-</details>
 
 ## Submission Instructions
 
