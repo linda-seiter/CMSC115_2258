@@ -1,18 +1,14 @@
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
+import static org.mockito.Mockito.*;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 public class OverallPerformanceMetricsTest {
 
     @Test
-    @DisplayName("Overall Performance Metrics")
+    @DisplayName("Method getOverallPerformanceMetrics returns correct result")
     void testGetOverallPerformanceMetrics() {
         int[] scores = {10, 8, 30, 68, 50};
         String expectedOutput = "*** Push-ups *** Max: 68, Min: 8, Mean: 33.20";
@@ -28,25 +24,24 @@ public class OverallPerformanceMetricsTest {
     }
 
     @Test
-    @DisplayName("Metrics Methods Are Called from getOverallPerformanceMetrics()")
-    void testMetricsMethodCalls() throws IOException {
-        // Load source code as a string
-        String filePath = "src/main/java/PTPerformanceAnalyzer.java"; // Update path as needed
-        String sourceCode = Files.readString(Paths.get(filePath));
+    @DisplayName("Method getOverallPerformanceMetrics calls findMinValue, findMaxValue, calculateMean")
+    void testGetOverallPerformanceMetrics_Calls_MinMaxMean() {
+        try (MockedStatic<PTPerformanceAnalyzer> mockedStatic = mockStatic(PTPerformanceAnalyzer.class)) {
+            // Stub the static methods to return dummy values
+            mockedStatic.when(() -> PTPerformanceAnalyzer.findMinValue(any())).thenReturn(5);
+            mockedStatic.when(() -> PTPerformanceAnalyzer.findMaxValue(any())).thenReturn(30);
+            mockedStatic.when(() -> PTPerformanceAnalyzer.calculateMean(any())).thenReturn(20.0);
+            mockedStatic.when(() -> PTPerformanceAnalyzer.getOverallPerformanceMetrics(any(), any()))
+                    .thenCallRealMethod();  // Ensures the method executes while keeping mocks
 
-        // Regex pattern to extract the getPerformanceMetrics method body
-        Pattern methodPattern = Pattern.compile(
-                "public\\s+static\\s+String\\s+getOverallPerformanceMetrics\\s*\\(.*?\\)\\s*\\{(.*?)\\}",
-                Pattern.DOTALL);
-        Matcher methodMatcher = methodPattern.matcher(sourceCode);
+            // Call the static method being tested
+            PTPerformanceAnalyzer.getOverallPerformanceMetrics(new int[]{10, 20, 5, 30, 25}, "Exercise");
 
-        assertTrue(methodMatcher.find(), "Method getOverallPerformanceMetrics not found in source code.");
-        String methodBody = methodMatcher.group(1);
-
-        // Check for method calls using regex
-        assertTrue(methodBody.contains("findMaxValue("), "Method findMaxValue() is not called.");
-        assertTrue(methodBody.contains("findMinValue("), "Method findMinValue() is not called.");
-        assertTrue(methodBody.contains("calculateMean("), "Method calculateMean() is not called.");
+            // Verify that findMinValue, findMaxValue, calculateMeanValue() called
+            mockedStatic.verify(() -> PTPerformanceAnalyzer.findMinValue(any()), times(1));
+            mockedStatic.verify(() -> PTPerformanceAnalyzer.findMaxValue(any()), times(1));
+            mockedStatic.verify(() -> PTPerformanceAnalyzer.calculateMean(any()), times(1));
+        }
     }
 
 }

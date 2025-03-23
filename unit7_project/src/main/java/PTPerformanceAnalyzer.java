@@ -69,7 +69,13 @@ public class PTPerformanceAnalyzer {
      * @param sitUps  The pre-created array to store sit-up counts.
      */
     public static void collectExerciseData(Scanner scanner, String[] names, int[] pushUps, int[] sitUps) {
-        // TODO
+        // Input Data (one-line entry)
+        for (int i = 0; i < names.length; i++) {
+            System.out.print("Enter Name PushUps SitUps: ");
+            names[i] = scanner.next();
+            pushUps[i] = scanner.nextInt();
+            sitUps[i] = scanner.nextInt();
+        }
 
     }
 
@@ -80,8 +86,13 @@ public class PTPerformanceAnalyzer {
      * @return The maximum value found in the array.
      */
     public static int findMaxValue(int[] array) {
-        // TODO
-        return 0;
+        int max = array[0];
+        for (int num : array) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
     }
 
     /**
@@ -91,8 +102,13 @@ public class PTPerformanceAnalyzer {
      * @return The minimum value found in the array.
      */
     public static int findMinValue(int[] array) {
-        // TODO
-        return 0;
+        int min = array[0];
+        for (int num : array) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        return min;
     }
 
     /**
@@ -102,8 +118,11 @@ public class PTPerformanceAnalyzer {
      * @return The mean of all values in the array.
      */
     public static double calculateMean(int[] array) {
-        // TODO
-        return 0.0;
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        return 1.0*sum/array.length;
     }
 
     /**
@@ -116,8 +135,12 @@ public class PTPerformanceAnalyzer {
      *         in the format: "*** Exercise *** Max: X, Min: Y, Mean: Z.ZZ".
      */
     public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName) {
-        // TODO
-        return null;
+        int min = findMinValue(exerciseScores);
+        int max = findMaxValue(exerciseScores);
+        double mean = calculateMean(exerciseScores);
+
+        return String.format("*** %s *** Max: %d, Min: %d, Mean: %.2f",
+                exerciseName, max, min, mean);
     }
 
 
@@ -133,8 +156,8 @@ public class PTPerformanceAnalyzer {
      *         and their pass/fail status based on whether they meet the minimum requirements.
      */
     public static String getPerformanceSummary(String name, int pushUps, int sitUps, int minPushUps, int minSitUps) {
-        // TODO
-        return null;
+        String status = (pushUps >= minPushUps && sitUps >= minSitUps) ? "Pass" : "Fail";
+        return String.format("%s - Push-ups: %d, Sit-ups: %d - %s", name, pushUps, sitUps, status);
     }
 
     /**
@@ -150,8 +173,12 @@ public class PTPerformanceAnalyzer {
      *         and pass/fail status formatted as: "Name - Push-ups: X, Sit-ups: Y - Status".
      */
     public static String[] getPerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps) {
-        // TODO
-        return null;
+        String[] scoresSummary = new String[names.length];
+
+        for (int i = 0; i < names.length; i++) {
+            scoresSummary[i] = getPerformanceSummary(names[i], pushUps[i], sitUps[i], minPushUps, minSitUps);
+        }
+        return scoresSummary;
     }
 
 }
