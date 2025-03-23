@@ -36,10 +36,10 @@ public class PTPerformanceAnalyzerSolution {
         System.out.println(Arrays.toString(pushUps));
         System.out.println(Arrays.toString(sitUps));
 
-        // Task 2: Display overall performance metrics (min, max, mean) for each exercise
+        // Task 2: Display performance metrics (min, max, mean) for each exercise
         System.out.println("\nPerformance Metrics:");
-        System.out.println(getOverallPerformanceMetrics(pushUps, "Push-ups"));
-        System.out.println(getOverallPerformanceMetrics(sitUps, "Sit-ups"));
+        System.out.println(getPerformanceMetrics(pushUps, "Push-ups"));
+        System.out.println(getPerformanceMetrics(sitUps, "Sit-ups"));
 
         // Task 3: Generate performance summary
         // Task 3a: Prompt for minimum exercise thresholds after displaying metrics
@@ -131,7 +131,7 @@ public class PTPerformanceAnalyzerSolution {
     }
 
     /**
-     * Computes and returns a formatted description of overall performance metrics for a given exercise.
+     * Computes and returns a formatted description of performance metrics for a given exercise.
      * The description includes the maximum, minimum, and mean scores.
      *
      * @param exerciseScores An array of scores representing performance in a specific exercise (e.g., push-ups or sit-ups).
@@ -139,7 +139,7 @@ public class PTPerformanceAnalyzerSolution {
      * @return A formatted string displaying the exercise name, maximum score, minimum score, and mean score formatted to 2 decimal places
      *         in the format: "*** Exercise *** Max: X, Min: Y, Mean: Z.ZZ".
      */
-    public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName) {
+    public static String getPerformanceMetrics(int[] exerciseScores, String exerciseName) {
         int max = findMaxValue(exerciseScores);
         int min = findMinValue(exerciseScores);
         double mean = calculateMean(exerciseScores);

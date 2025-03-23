@@ -3,8 +3,8 @@
 In this lab, you will develop a **PT Performance Analyzer** that collects
 and evaluates trainees' physical training (PT) performance.
 You will apply modular design principles to break down the program
-into reusable methods for data collection, performance analysis,
-and overall fitness evaluation.
+into reusable methods for data collection, overall performance analysis,
+and individual fitness evaluation.
 
 ## **Learning Outcomes**
 
@@ -139,7 +139,7 @@ Performance Metrics:
 Performance Summaries:
 ```
 
-## Task 2: Compute Overall Performance Metrics
+## Task 2: Compute Performance Metrics
 
 ```java
 /**
@@ -174,7 +174,7 @@ public static double calculateMean(int[] array)
 
 ```java
 /**
- * Computes and returns a formatted description of overall performance metrics for a given exercise.
+ * Computes and returns a formatted description of performance metrics for a given exercise.
  * The description includes the maximum, minimum, and mean scores.
  *
  * @param exerciseScores An array of scores representing performance in a specific exercise (e.g., push-ups or sit-ups).
@@ -182,19 +182,21 @@ public static double calculateMean(int[] array)
  * @return A formatted string displaying the exercise name, maximum score, minimum score, and mean score formatted to 2 decimal places
  *         in the format: "*** Exercise *** Max: X, Min: Y, Mean: Z.ZZ".
  */
-  public static String getOverallPerformanceMetrics(int[] exerciseScores, String exerciseName)
+  public static String getPerformanceMetrics(int[] exerciseScores, String exerciseName)
   }
 ```
 
-- Implement the method `getOverallPerformanceMetrics` to compute the metrics (min, max, mean) for the array passed as a parameter.
-  - The `getOverallPerformanceMetrics` method should call the `getMinValue`, `getMaxValue`, and `calculateMean` methods in determining the metrics.  
-  - The `getOverallPerformanceMetrics` method should return a formatted string that includes the exercise name and metrics as shown below. The mean should be formatted to display two digits after the decimal point.<br>
-    ```*** Sit-ups *** Max: 50, Min: 20, Mean: 35.25```
-- Run the JUnit tests in the `OverallPerformanceMetricsTest` class to verify your solution.
+Implement the `getPerformanceMetrics` method to calculate three key metrics (minimum, maximum, and mean) for the provided array.
 
-Once the tests pass, update the `main()` method. After collecting and displaying the trainee's data, the `main` method should
-call `getOverallPerformanceMetrics` twice, once to calculate the push-ups metrics
-and once for the sit-ups metrics.  Print the result of each method call.
+- This method should call `getMinValue`, `getMaxValue`, and `calculateMean` to determine the respective metrics.
+- It should return a formatted string displaying the exercise name along with the computed metrics, formatted as follows, with the mean rounded to two decimal places:
+  ```  
+  *** Sit-ups *** Max: 50, Min: 20, Mean: 35.25  
+  ```  
+
+Next, run the JUnit tests in the `PerformanceMetricsTest` class to validate your implementation.
+
+Once all tests pass, update the `main()` method. After gathering and displaying the trainee's data, modify `main` to call `getPerformanceMetrics` twice—once for push-up metrics and once for sit-up metrics—then print each result.
 
 Sample I/O:
 
