@@ -1,15 +1,9 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import org.mockito.MockedStatic;
 import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
 
 /**
  * Unit tests for the setAdjacentCells method in the YardPlanner class.
@@ -131,6 +125,24 @@ public class SetAdjacentCellsTest {
                         "\nOriginal:" + Arrays.deepToString(original) +
                         "\nActual:" + Arrays.deepToString(matrix)
         );
+    }
+
+    @Test
+    @DisplayName("Method setAdjacentCells calls isValidIndex")
+    void testSetAdjacentCells_Calls_isValidIndex() {
+        try (MockedStatic<YardPlanner> mockedStatic = mockStatic(YardPlanner.class)) {
+            // Stub the static method to return dummy value
+            mockedStatic.when(() -> YardPlanner.isValidIndex(any(), anyInt(), anyInt())).thenReturn(false);
+
+            // Ensures the method executes while keeping mocks
+            mockedStatic.when(() -> YardPlanner.setAdjacentCells(any(), anyInt(), anyInt(), any())).thenCallRealMethod();
+
+            // Call the static method being tested
+            YardPlanner.setAdjacentCells(new String[][]{{"A"}}, 0, 0, "B");
+
+            // Verify that isValidIndex() called
+            mockedStatic.verify(() -> YardPlanner.isValidIndex(any(), anyInt(), anyInt()), atLeastOnce());
+        }
     }
 
 }

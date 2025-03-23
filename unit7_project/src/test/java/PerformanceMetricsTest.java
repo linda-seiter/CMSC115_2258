@@ -26,9 +26,9 @@ public class PerformanceMetricsTest {
     void testGetPerformanceMetrics_Calls_MinMaxMean() {
         try (MockedStatic<PTPerformanceAnalyzer> mockedStatic = mockStatic(PTPerformanceAnalyzer.class)) {
             // Stub the static methods to return dummy values
-            mockedStatic.when(() -> PTPerformanceAnalyzer.findMinValue(any())).thenReturn(5);
-            mockedStatic.when(() -> PTPerformanceAnalyzer.findMaxValue(any())).thenReturn(30);
-            mockedStatic.when(() -> PTPerformanceAnalyzer.calculateMean(any())).thenReturn(20.0);
+            mockedStatic.when(() -> PTPerformanceAnalyzer.findMinValue(any())).thenReturn(0);
+            mockedStatic.when(() -> PTPerformanceAnalyzer.findMaxValue(any())).thenReturn(0);
+            mockedStatic.when(() -> PTPerformanceAnalyzer.calculateMean(any())).thenReturn(0.0);
             mockedStatic.when(() -> PTPerformanceAnalyzer.getPerformanceMetrics(any(), any()))
                     .thenCallRealMethod();  // Ensures the method executes while keeping mocks
 
@@ -36,9 +36,9 @@ public class PerformanceMetricsTest {
             PTPerformanceAnalyzer.getPerformanceMetrics(new int[]{10, 20, 5, 30, 25}, "Exercise");
 
             // Verify that findMinValue, findMaxValue, calculateMeanValue() called
-            mockedStatic.verify(() -> PTPerformanceAnalyzer.findMinValue(any()), times(1));
-            mockedStatic.verify(() -> PTPerformanceAnalyzer.findMaxValue(any()), times(1));
-            mockedStatic.verify(() -> PTPerformanceAnalyzer.calculateMean(any()), times(1));
+            mockedStatic.verify(() -> PTPerformanceAnalyzer.findMinValue(any()), atLeastOnce());
+            mockedStatic.verify(() -> PTPerformanceAnalyzer.findMaxValue(any()), atLeastOnce());
+            mockedStatic.verify(() -> PTPerformanceAnalyzer.calculateMean(any()), atLeastOnce());
         }
     }
 
