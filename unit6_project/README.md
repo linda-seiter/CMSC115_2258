@@ -1,6 +1,6 @@
 # Unit 6 Project - Inventory Analyzer
 
-In this project, you will develop a **Inventory Analyzer** system that extracts and processes
+In this project, you will develop a **Inventory Analyzer**  that extracts and processes
 item data from a structured string format. It enables users to track item quantities
 and reorder thresholds, compare current stock against thresholds, and generate reorder
 summaries for each item. The system aims to assist in inventory management by determining
@@ -9,43 +9,54 @@ thresholds.
 
 ## Learning Outcomes
 
-1. **Understand Data Extraction Techniques**:
-    - Learn how to parse and extract specific data from a structured string format (e.g., `ItemName:Quantity:Threshold;ItemName:Quantity:Threshold;`).
-    - Understand how to extract substrings from a larger string based on delimiters such as colons and semicolons.
+1. **Extract Data from Structured Strings**:
+   - Parse and extract specific data from a structured string format (e.g., `ItemName:Quantity:Threshold;ItemName:Quantity:Threshold;`).
+   - Use string manipulation methods to extract substrings based on delimiters such as colons and semicolons.
+   - Convert extracted string portions (e.g., quantity on hand and reorder threshold) into integers.
 
-2. **Handle String Manipulation**:
-    - Gain experience in handling string indexing, substring extraction, and case-insensitive searching within strings.
-    - Learn how to identify and handle edge cases, such as missing delimiters (e.g., missing semicolons or colons), and empty or null strings, to ensure reliable data parsing.
+2. **Manipulate Strings Effectively**:
+   - Apply string indexing, substring extraction, and case-insensitive searching to efficiently retrieve relevant data.
+   - Identify and handle edge cases, such as missing delimiters or null/empty strings, to ensure the robustness of data parsing logic.
 
-3. **Implement Conditional Logic**:
-    - Develop skills in using conditional statements to check whether data conforms to expected formats and handle invalid data.
-    - Understand how to compare values (e.g., quantity vs. reorder threshold) to determine whether an action, such as a reorder, is needed.
+3. **Implement Conditional Logic for Validation**:
+   - Use conditional statements to verify if data follows expected formats, such as checking for valid numeric values.
+   - Compare extracted values (e.g., quantity vs. reorder threshold) to determine appropriate actions, such as whether to reorder an item.
 
-4. **Build Reusable Utility Methods**:
-    - Learn how to create utility methods that can be reused across different parts of a program, such as methods to check for numeric strings and to extract specific details (quantity, threshold).
-    - Understand the importance of method decomposition and code modularity for improved maintainability and readability.
+4. **Create Reusable Utility Methods**:
+   - Design utility methods that can be reused across different parts of the program, such as checking for numeric strings or extracting specific item details (e.g., quantity, threshold).
+   - Break down larger tasks into smaller methods to enhance code modularity, maintainability, and readability.
 
-5. **Work with Basic Inventory Management**:
-    - Understand the basics of inventory management, including the concept of reorder thresholds, and how to calculate whether an item needs to be reordered based on its current quantity.
-    - Apply the concept of item thresholds to create meaningful outputs (such as reorder status) from the given data.
+5. **Apply Inventory Management Concepts**:
+   - Implement basic inventory management logic, including evaluating reorder thresholds based on the current quantity on hand.
+   - Generate meaningful outputs (e.g., reorder status) by comparing item quantities against reorder thresholds.
 
-6. **Implement String Formatting and Output**:
-    - Learn how to format strings dynamically using methods like `String.format()` to generate readable, structured outputs (e.g., summaries of item quantities and reorder statuses).
-    - Practice formatting strings to create well-organized reports or summaries from raw data.
+6. **Format Strings for Output**:
+   - Use dynamic string formatting techniques to generate well-organized, readable outputs, such as summaries of item quantities and reorder statuses.
+   - Ensure output readability and clarity for end-users or reports.
 
-7. **Enhance Debugging and Testing Skills**:
-    - Develop strategies for debugging and testing string parsing and conditional logic to ensure that the methods correctly handle all edge cases.
-    - Learn how to use unit testing or print statements to verify that each method works as expected.
-
+7. **Develop Debugging and Testing Skills**:
+   - Implement debugging strategies to identify and fix issues in string parsing and conditional logic.
+   - Use unit testing to verify that each method works correctly, covering edge cases and various input scenarios.
 
 ## Coding Guidelines
 
-- Loops and conditionals are allowed, but avoid using advanced Java Streams.
-- Do not use the `String` methods `split` or `matches` or methods that use regular expressions.
+- You may use loops and conditionals, but avoid using advanced Java Streams.
+- Do not use the `String` methods `split` or `matches` or other classes/methods that use regular expressions.
 
 ## Getting Started:
 
 You will implement the methods in the `InventoryAnalyzer` class.  
+
+The `main` method currently initializes the inventory with "Tactical Equipment" and
+"Medical Kit". It does not include "Rations" and "Water".  The `main` method calls the `getItemReorderSummary` method,
+which simply returns `null`.  Run the `main` method and confirm the output:
+
+```text
+null
+null
+null
+null
+```
 
 ## Task #1: Implement the `extractItemDetails` method
 
