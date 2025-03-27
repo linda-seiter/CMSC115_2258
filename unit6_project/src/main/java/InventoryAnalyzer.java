@@ -2,13 +2,11 @@
 public class InventoryAnalyzer {
 
     /**
-     * Extracts the details associated with an item from the given inventory data. The method returns the
-     * substring following the item name, up to the semicolon that marks the end of the item's data.
+     * Extracts the details associated with an item from the given inventory data.
      * The inventory data is assumed to be in the format:
      * "ItemName:Details;ItemName:Details;..." where each item is separated by a semicolon.
-     *
-     * The method checks for the presence of the semicolon to ensure the item data is properly delimited,
-     * but does not validate the content or format of the details following the item name.
+     * The method returns the substring following the item name, up to but not including
+     * the semicolon that marks the end of the item's details.
      *
      * @param inventoryData The string containing the inventory data, where each item is formatted as
      *                      "ItemName:Details", separated by semicolons.
@@ -35,15 +33,14 @@ public class InventoryAnalyzer {
     }
 
     /**
-     * Checks if the given string contains only digit characters.
+     * Checks if the given string contains only digit characters and is not null or empty.
      * The method returns true if all characters in the string are digits,
      * and false if the string is null, empty, or contains any non-digit characters.
      *
      * @param str The string to be checked.
-     *            It can be any string, including null or empty.
      * @return {@code true} if the string contains only digits; {@code false} otherwise.
      */
-    public static boolean containsOnlyDigits(String str) {
+    public static boolean isNonEmptyDigits(String str) {
         // Check if the string is null or empty
         if (str == null || str.isEmpty()) {
             return false;
@@ -79,7 +76,7 @@ public class InventoryAnalyzer {
         String quantityString = itemDetails.substring(0, colonIndex);
 
         // Ensure the substring can be parsed as an integer
-        if (containsOnlyDigits(quantityString))
+        if (isNonEmptyDigits(quantityString))
             return Integer.parseInt(quantityString);
         else
             return -1;
@@ -104,7 +101,7 @@ public class InventoryAnalyzer {
         String thresholdString = itemDetails.substring(colonIndex + 1);
 
         // Ensure the substring can be parsed as an integer
-        if (containsOnlyDigits(thresholdString))
+        if (isNonEmptyDigits(thresholdString))
             return Integer.parseInt(thresholdString);
         else
             return -1;

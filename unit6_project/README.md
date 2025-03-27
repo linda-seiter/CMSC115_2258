@@ -47,8 +47,7 @@ thresholds.
 
 You will implement the methods in the `InventoryAnalyzer` class.  
 
-The `main` method currently initializes the inventory with "Tactical Equipment" and
-"Medical Kit". It does not include "Rations" and "Water".  The `main` method calls the `getItemReorderSummary` method,
+The `main` method currently initializes the inventory with two items and then calls the `getItemReorderSummary` method,
 which simply returns `null`.  Run the `main` method and confirm the output:
 
 ```text
@@ -62,22 +61,15 @@ null
 
 ```java
 /**
- * Extracts the details associated with an item from the given inventory data. The method returns the
- * substring following the item name, up to the semicolon that marks the end of the item's data.
+ * Extracts the details associated with an item from the given inventory data.
  * The inventory data is assumed to be in the format:
  * "ItemName:Details;ItemName:Details;..." where each item is separated by a semicolon.
- *
- * The method performs a case-insensitive search for the item name to allow for flexibility in input.
- * It checks for the presence of the semicolon to ensure the item data is properly delimited,
- * but does not validate the content or format of the details following the item name.
- *
- * If the item is found, the method returns the details after the item name and before the next semicolon.
- * If the item is not found or the format is incorrect (e.g., missing the semicolon after the item data), 
- * it returns {@code null}.
- *
+ * The method returns the substring following the item name, up to but not including
+ * the semicolon that marks the end of the item's details.
+ * 
  * @param inventoryData The string containing the inventory data, where each item is formatted as
  *                      "ItemName:Details", separated by semicolons.
- * @param itemName The name of the item to search for in the inventory data. The search is case-insensitive.
+ * @param itemName The name of the item to search for in the inventory data.
  * @return The substring following the item name, up to the semicolon, or {@code null} if the item is not found
  *         or if the format is incorrect (e.g., missing the semicolon after the item data).
  */
@@ -136,30 +128,29 @@ System.out.println(itemDetails); // Output: null
 
 Run the Junit tests in `ExtractItemDetailsTest` to confirm your implementation.
 
-## Task #2: Implement the `containsOnlyDigits` method
+## Task #2: Implement the `isNonEmptyDigits` method
 
-The purpose of the `containsOnlyDigits` method is to check if a given string contains only digit characters. It returns true if the string contains only digits, and false otherwise (including when the string is null, empty, or contains non-digit characters).
+The purpose of the `isNonEmptyDigits` method is to check if a given string contains only digit characters. It returns true if the string contains only digits, and false otherwise (including when the string is null, empty, or contains non-digit characters).
 
 ```java
-/**
-* Checks if the given string contains only digit characters.
-* The method returns true if all characters in the string are digits,
-* and false if the string is null, empty, or contains any non-digit characters.
-*
-* @param str The string to be checked.
-*            It can be any string, including null or empty.
-* @return {@code true} if the string contains only digits; {@code false} otherwise.
-*/
-public static boolean containsOnlyDigits(String str)
+    /**
+ * Checks if the given string contains only digit characters and is not null or empty.
+ * The method returns true if all characters in the string are digits,
+ * and false if the string is null, empty, or contains any non-digit characters.
+ *
+ * @param str The string to be checked.
+ * @return {@code true} if the string contains only digits; {@code false} otherwise.
+ */
+public static boolean isNonEmptyDigits(String str)
 ```
 
 Here a sample method calls:
 
 ```java
-boolean result = containsOnlyDigits("123456");
+boolean result = isNonEmptyDigits("123456");
 System.out.println(result); // Output: true
 
-boolean result = containsOnlyDigits("123a56");
+boolean result = isNonEmptyDigits("123a56");
 System.out.println(result); // Output: false
 ```
 
@@ -168,7 +159,7 @@ Do not use `String.matches()` or other methods that rely on regular expressions.
 Use a loop to get each character in the string and test if it is a digit, returning false if a character is a not a digit.
 HINT: Call the `Character.isDigit()` method.
 
-Run the Junit tests in `ContainsOnlyDigitsTest`  to confirm your implementation.
+Run the Junit tests in `IsNonEmptyDigitsTest`  to confirm your implementation.
 
 ## Task #3: Implement the `ExtractQuantityOnHand` method
 
@@ -233,19 +224,7 @@ The quantity is the numeric value after the colon (`:`), and it should be return
  *                    For example, "50:25".
  * @return The reorder threshold as an integer if the substring after the colon consists solely of digits; otherwise, -1.
  */
-public static int extractReorderThreshold(String itemDetails) {
-   // Extract the threshold from the substring (after the colon)
-   int colonIndex = itemDetails.indexOf(":");
-   if (colonIndex == -1)
-      return -1;
-   String thresholdString = itemDetails.substring(colonIndex + 1);
-
-   // Ensure the substring can be parsed as an integer
-   if (containsOnlyDigits(thresholdString))
-      return Integer.parseInt(thresholdString);
-   else
-      return -1;
-}
+public static int extractReorderThreshold(String itemDetails)
 ```
 
 Run the Junit tests in `ExtractReorderThresholdTest`  to confirm your implementation.
