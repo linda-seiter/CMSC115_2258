@@ -23,6 +23,5 @@ public class Rectangle {
 
         // TODO: Update to print area
         System.out.println("length=" + length + " width=" + width);
-
     }
 }

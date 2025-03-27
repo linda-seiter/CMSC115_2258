@@ -1,22 +1,18 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
 class MathExpressionTest {
 
     @Test
     @DisplayName("MathExpression.main prints correct output")
-    void mathExpressionOutput() throws Exception {
-        // Define the expected output
+    void main_prints_correct_output() {
+        // Arrange
         String expectedOutput = "(2 + 3) * 8 = 40\n";
-
-        // Capture the actual output from MathExpression.main
-        String actualOutput = tapSystemOutNormalized(() -> {
-            MathExpression.main(new String[] {});
-        });
-
-        // Compare expected vs actual output
-        assertEquals(expectedOutput, actualOutput);
+        // Act: Call the main method of the MathExpression class and capture the output
+        String actualOutput = JunitHelper.captureClassOutput("MathExpression");
+        // Assert
+        assertEquals(expectedOutput, actualOutput,
+                "MathExpression.main fails to print expected output.");
     }
 
 }

@@ -1,4 +1,4 @@
-public class Printing {
+public class PrintNewline {
 	public static void main(String[] args) {
 		System.out.println("red ");
 		System.out.print("green ");
