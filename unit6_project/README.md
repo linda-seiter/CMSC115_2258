@@ -9,35 +9,34 @@ thresholds.
 
 ## Learning Outcomes
 
-1. **Extract Data from Structured Strings**:
-   - Parse and extract specific data from a structured string format (e.g., `ItemName:Quantity:Threshold;ItemName:Quantity:Threshold;`).
-   - Use string manipulation methods to extract substrings based on delimiters such as colons and semicolons.
-   - Convert extracted string portions (e.g., quantity on hand and reorder threshold) into integers.
+1. **Extract and Manipulate Data from Strings**:
+   - Parse and extract data from structured strings (e.g., `ItemName:Quantity:Threshold;`).
+   - Use string indexing, substring extraction, and case-insensitive searching to retrieve relevant data.
+   - Handle edge cases like missing delimiters or null/empty strings for robust parsing.
 
-2. **Manipulate Strings Effectively**:
-   - Apply string indexing, substring extraction, and case-insensitive searching to efficiently retrieve relevant data.
-   - Identify and handle edge cases, such as missing delimiters or null/empty strings, to ensure the robustness of data parsing logic.
+2. **Implement Conditional Logic for Validation**:
+   - Use conditionals to verify data formats, like checking for valid numbers.
+   - Compare extracted values (e.g., quantity vs. reorder threshold) to decide on actions like reordering.
 
-3. **Implement Conditional Logic for Validation**:
-   - Use conditional statements to verify if data follows expected formats, such as checking for valid numeric values.
-   - Compare extracted values (e.g., quantity vs. reorder threshold) to determine appropriate actions, such as whether to reorder an item.
+3. **Format Strings for Output**:
+   - Use string formatting to generate readable summaries (e.g., item quantities and reorder statuses).
+   - Ensure clarity and readability in output for reports or end-users.
 
-4. **Create Reusable Utility Methods**:
-   - Design utility methods that can be reused across different parts of the program, such as checking for numeric strings or extracting specific item details (e.g., quantity, threshold).
-   - Break down larger tasks into smaller methods to enhance code modularity, maintainability, and readability.
+4. **Master Modular Programming and the Single Responsibility Principle**:
+   - Decompose tasks into smaller, focused methods, each responsible for a single action to enhance clarity and reduce complexity.
+   - Pass parameters between methods to transfer data, promoting modularity and separation of concerns.
+   - Use return values to send results back, ensuring methods produce clear and predictable outputs.
+   - Write reusable methods to avoid redundancy, making the code more efficient and maintainable.
+   - Group related tasks (e.g., data extraction, validation, and formatting) into distinct methods, improving organization, maintainability, and ease of debugging.
 
-5. **Apply Inventory Management Concepts**:
-   - Implement basic inventory management logic, including evaluating reorder thresholds based on the current quantity on hand.
-   - Generate meaningful outputs (e.g., reorder status) by comparing item quantities against reorder thresholds.
+5. **Develop Debugging and Testing Skills**:
+   - Apply debugging techniques to fix issues in string parsing and logic.
+   - Use unit testing to ensure methods work correctly, covering different input scenarios.
 
-6. **Format Strings for Output**:
-   - Use dynamic string formatting techniques to generate well-organized, readable outputs, such as summaries of item quantities and reorder statuses.
-   - Ensure output readability and clarity for end-users or reports.
-
-7. **Develop Debugging and Testing Skills**:
-   - Implement debugging strategies to identify and fix issues in string parsing and conditional logic.
-   - Use unit testing to verify that each method works correctly, covering edge cases and various input scenarios.
-
+6. **Simulate Inventory Management**:
+   - Implement inventory logic like checking reorder thresholds based on available quantities.
+   - Generate outputs like reorder status by comparing quantities with thresholds.
+ 
 ## Coding Guidelines
 
 - You may use loops and conditionals, but avoid using advanced Java Streams.
