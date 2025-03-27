@@ -8,36 +8,39 @@ and individual fitness evaluation.
 
 ## **Learning Outcomes**
 
-### **1. Working with Arrays**
-- Utilize loops to iterate through arrays for data input, processing, and output generation.
-- Dynamically fill arrays based on user input.
-- Maintain related data using **parallel arrays**.
-- Construct an array dynamically by applying conditional logic to data from other arrays.
+### **1. Array Management and Operations**
 
-### **2. Breaking Down Problems**
+- **Declare and initialize arrays**: Create arrays of both primitive and reference types with proper syntax.
+- **Access and modify array elements**: Use index-based access to read and update values stored in an array.
+- **Iterate through arrays**: Use loops (e.g., `for`, enhanced `for`) to process each element for tasks like input, processing, and output generation.
+- **Handle array bounds**: Prevent `ArrayIndexOutOfBoundsException` by ensuring array accesses stay within valid index ranges.
+- **Perform common array operations**: Implement array operations such as searching, sorting, and copying elements.
+- **Use parallel arrays**: Organize related data in parallel arrays to store corresponding data sets (e.g., names and scores).
+- **Modify arrays dynamically**: Apply conditional logic to create or alter arrays based on data from other arrays.
+- **Pass arrays to methods**: Pass an array as a parameter to a method for further processing.
+- **Return arrays from methods**: Return an array from a method to provide data for other parts of the program.
+
+### **2. Handling User Input**
+- Use **Scanner** to capture structured user input.
+- Process both integer and string inputs in an organized manner (e.g., "Name PushUps SitUps"), ensuring clear parsing and validation.
+
+### **3. String Formatting & Output**
+- Utilize **formatted strings (`String.format()`)** to create clear and user-friendly outputs.
+- Convert arrays into human-readable formats using `Arrays.toString()`.
+
+### **4. Problem Decomposition and Analysis**
 - Divide complex tasks (like performance analysis) into smaller, manageable components:
   - Gathering user input
   - Calculating performance metrics
   - Summarizing individual results
   - Formatting and presenting the output
 
-### **3. Modular Programming Practices**
+### **5. Modular Programming Practices**
 - Decompose a program into **independent, reusable methods**.
 - Use **method decomposition** to clearly separate different tasks (e.g., input handling, calculations, evaluations).
 - Follow the **Single Responsibility Principle (SRP)** to ensure that each method focuses on a single responsibility.
 
-### **4. Handling User Input**
-- Use **Scanner** to capture structured user input.
-- Process **integer and string inputs** in a clear and organized format (e.g., "Name PushUps SitUps").
-
-### **5. String Formatting & Output**
-- Utilize **formatted strings (`String.format()`)** to create clear and user-friendly outputs.
-- Convert arrays into human-readable formats using `Arrays.toString()`.
-
-### **6. Decision-Making with Conditional Logic**
-- Implement **logical conditions** to assess trainee performance against defined thresholds.
-
-### **7. Code Readability and Documentation**
+### **6. Code Readability and Documentation**
 - Include **Javadoc comments** to clearly document methods and their functionalities.
 
 ## Coding Guidelines
