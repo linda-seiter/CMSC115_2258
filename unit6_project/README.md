@@ -13,29 +13,32 @@ thresholds.
    - Parse and extract data from structured strings (e.g., `ItemName:Quantity:Threshold;`).
    - Use string indexing, substring extraction, and case-insensitive searching to retrieve relevant data.
    - Handle edge cases like missing delimiters or null/empty strings for robust parsing.
+   - Construct strings dynamically by combining different elements (e.g., quantities, thresholds, and reorder status).
 
-2. **Implement Conditional Logic for Validation**:
+2. **Implement Conditional Logic for String Validation**:
    - Use conditionals to verify data formats, like checking for valid numbers.
    - Compare extracted values (e.g., quantity vs. reorder threshold) to decide on actions like reordering.
 
 3. **Format Strings for Output**:
    - Use string formatting to generate readable summaries (e.g., item quantities and reorder statuses).
-   - Ensure clarity and readability in output for reports or end-users.
 
-4. **Master Modular Programming and the Single Responsibility Principle**:
+4. **Handle String References in Methods**:
+   - Pass strings as parameters to methods to manage and manipulate text data. 
+   - Use string references to work with large amounts of text efficiently. 
+   - Return dynamically generated strings after processing or modification.
+
+5. **Master Modular Programming and the Single Responsibility Principle**:
    - Decompose tasks into smaller, focused methods, each responsible for a single action to enhance clarity and reduce complexity.
-   - Pass parameters between methods to transfer data, promoting modularity and separation of concerns.
-   - Use return values to send results back, ensuring methods produce clear and predictable outputs.
    - Write reusable methods to avoid redundancy, making the code more efficient and maintainable.
    - Group related tasks (e.g., data extraction, validation, and formatting) into distinct methods, improving organization, maintainability, and ease of debugging.
 
-5. **Develop Debugging and Testing Skills**:
+6. **Develop Debugging and Testing Skills**:
    - Apply debugging techniques to fix issues in string parsing and logic.
    - Use unit testing to ensure methods work correctly, covering different input scenarios.
 
-6. **Simulate Inventory Management**:
+7. **Simulate Inventory Management**:
    - Implement inventory logic like checking reorder thresholds based on available quantities.
-   - Generate outputs like reorder status by comparing quantities with thresholds.
+   - Generate inventory summaries including reorder status by comparing quantities with thresholds.
  
 ## Coding Guidelines
 
