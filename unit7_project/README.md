@@ -19,6 +19,7 @@ and individual fitness evaluation.
 - **Modify arrays dynamically**: Apply conditional logic to create or alter arrays based on data from other arrays.
 - **Pass arrays to methods**: Pass an array as a parameter to a method for further processing.
 - **Return arrays from methods**: Return an array from a method to provide data for other parts of the program.
+- **Debugging and Visualizing Array Structures**: Debug to visualize how arrays are stored and manipulated in memory.
 
 ### **2. Handling User Input**
 - Use **Scanner** to capture structured user input.

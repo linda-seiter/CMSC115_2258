@@ -23,9 +23,9 @@ Enter rows and columns: 5 7
 - **Iterate through 2D arrays**: Utilize nested loops to traverse and process each element in a 2D array, following row-major order.
 - **Manipulate array data**: Modify specific values, fill arrays with a constant value, replace values at specific locations (e.g., middle cell, corners), and apply transformations across the array.
 - **Search and update elements in a 2D array**: Locate specific values within a 2D array, and implement corresponding updates based on the search results (e.g., replacing or updating adjacent cells).
-- **Understand memory representation**: Identify how 2D arrays are stored in memory, emphasizing contiguous memory allocation.
 - **Pass 2D arrays to methods**: Pass 2D arrays as arguments to methods and observe how changes in the method affect the original array.
 - **Validate array indices**: Use conditional logic to check array bounds and prevent out-of-bounds errors when updating adjacent cells.
+- **Debugging and Visualizing 2D Array Structures**: Debug to visualize how 2D arrays are stored and manipulated in memory.
 
 ### **2. Working with String Manipulation in Arrays**
 - **Work with string data**: Store and manipulate various types of string values in a 2D array (e.g., representing objects with Unicode characters like trees, houses, etc.).
