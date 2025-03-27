@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+/**
+ * GasFillup class - demonstrate initializing variables from console input
+ *
+ * @author First Last
+ */
+public class GasPurchase {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter gallons and price per gallon: ");
+
+        // TODO:
+        double gallons = input.nextDouble();
+        double price_per_gallon = input.nextDouble();
+        double price = gallons * price_per_gallon;
+
+        System.out.println("You owe $" + price);
+
+    }
+}
