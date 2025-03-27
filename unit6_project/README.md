@@ -130,10 +130,11 @@ Run the Junit tests in `ExtractItemDetailsTest` to confirm your implementation.
 
 ## Task #2: Implement the `isNonEmptyDigits` method
 
-The purpose of the `isNonEmptyDigits` method is to check if a given string contains only digit characters. It returns true if the string contains only digits, and false otherwise (including when the string is null, empty, or contains non-digit characters).
+The purpose of the `isNonEmptyDigits` method is to check if a given string can be parsed as
+a non-negative integer, i.e. it contains only digit characters and is not null or empty. 
 
 ```java
-    /**
+/**
  * Checks if the given string contains only digit characters and is not null or empty.
  * The method returns true if all characters in the string are digits,
  * and false if the string is null, empty, or contains any non-digit characters.
@@ -144,20 +145,23 @@ The purpose of the `isNonEmptyDigits` method is to check if a given string conta
 public static boolean isNonEmptyDigits(String str)
 ```
 
-Here a sample method calls:
+Sample method calls:
 
 ```java
-boolean result = isNonEmptyDigits("123456");
-System.out.println(result); // Output: true
+boolean result1 = isNonEmptyDigits("123456");
+System.out.println(result1); // Output: true
 
-boolean result = isNonEmptyDigits("123a56");
-System.out.println(result); // Output: false
+boolean result2 = isNonEmptyDigits("123a56");
+System.out.println(result2); // Output: false
+
+boolean result3 = isNonEmptyDigits("");
+System.out.println(result3); // Output: false
 ```
 
 Do not use `String.matches()` or other methods that rely on regular expressions.
 
-Use a loop to get each character in the string and test if it is a digit, returning false if a character is a not a digit.
-HINT: Call the `Character.isDigit()` method.
+HINT: Use a loop to get each character in the string and test if it is a digit by calling the `Character.isDigit()` method.
+Return false if a character is **not** a digit.
 
 Run the Junit tests in `IsNonEmptyDigitsTest`  to confirm your implementation.
 
@@ -170,7 +174,7 @@ The quantity is the numeric value before the colon (`:`), and it should be retur
  /**
   * Extracts the quantity on hand from a string formatted as "QuantityOnHand:ReorderThreshold".
   * The quantity on hand is expected to be a sequence of digits before the colon (:).
-  * If the format is invalid or the quantity on hand is not a valid number, the method returns -1.
+  * If the format is invalid or the quantity on hand is not a valid sequence of digits, the method returns -1.
   *
   * @param itemDetails The string containing the quantity on hand and reorder threshold, separated by a colon.
   *                    For example, "50:25".
@@ -179,13 +183,13 @@ The quantity is the numeric value before the colon (`:`), and it should be retur
  public static int extractQuantityOnHand(String itemDetails)
 ```
 
-#### **Steps for Implementation**:
+#### **Algorithm**:
 1. Find the Colon (`:`) Separator
 2. Extract  the substring before the colon
 3. Validate the quantity substring contains only digits
 4. Convert the quantity from a string to an integer and return the value
 
-The method should return -1 if a quantity can't be extracted from the parameter string.
+The method should return -1 if a quantity can't be extracted as an integer from the parameter string.
 
 Sample Calls:
 
@@ -201,16 +205,19 @@ Sample Calls:
    //Invalid, missing colon
    int quantity3 = extractQuantityOnHand("10030");
    System.out.println(quantity3); // Output: -1
+
+   //Invalid, empty string
+   int quantity4 = extractQuantityOnHand(":30");
+   System.out.println(quantity4); // Output: -1
    ```
 
 Run the Junit tests in `ExtractQuantityOnHandTest`  to confirm your implementation.
-
 
 ## Task #4: Implement the `ExtractReorderThreshold` method
 
 The `extractReorderThreshold` method is responsible for extracting the reorder threshold
 of an item from a string formatted as `"quantity:threshold"`.
-The quantity is the numeric value after the colon (`:`), and it should be returned as an integer.
+The reorder threshold is the numeric value after the colon (`:`), and it should be returned as an integer.
 
 ```java
 /**
@@ -270,7 +277,7 @@ Consider the algorithm for this method:
 
 2. **Parse Quantity and Threshold:**
    - Extract the quantity on hand and reorder threshold values from the item details string.
-   - If either value is invalid (e.g., not a valid number), return `null`.
+   - If either value can't be extracted (e.g., extract method returns -1), return `null`.
 
 3. **Determine Reorder Status:**
    - Compare the quantity on hand with the reorder threshold:
