@@ -1,5 +1,5 @@
 
-public class InventoryAnalyzer {
+public class InventoryAnalyzerSolution {
 
     /**
      * Extracts the details associated with an item from the given inventory data.
@@ -15,8 +15,21 @@ public class InventoryAnalyzer {
      *         or if the format is incorrect (e.g., missing the semicolon after the item data).
      */
     public static String extractItemDetails(String inventoryData, String itemName) {
-        // TODO
-        return null;
+        // Find the start index of the item in the string
+        String searchStr = itemName + ":";
+        int itemIndex = inventoryData.toLowerCase().indexOf(searchStr.toLowerCase());
+        if (itemIndex == -1) {
+            return null; // Item not found
+        }
+
+        // Find the index of the semicolon (;) that marks the end of the item data
+        int semicolonIndex = inventoryData.indexOf(";", itemIndex);
+        // Return null if there isn't a semicolon
+        if (semicolonIndex == -1)
+            return null;
+
+        // Extract and return the substring containing the item details
+        return inventoryData.substring(itemIndex + searchStr.length(), semicolonIndex);
     }
 
     /**
@@ -28,8 +41,21 @@ public class InventoryAnalyzer {
      * @return {@code true} if the string contains only digits; {@code false} otherwise.
      */
     public static boolean isNonEmptyDigits(String str) {
-        // TODO
-        return false;
+        // Check if the string is null or empty
+        if (str == null || str.isEmpty()) {
+            return false;
+        }
+
+        // Iterate through each character in the string
+        for (int i = 0; i < str.length(); i++) {
+            // If any character is not a digit, return false
+            if (!Character.isDigit(str.charAt(i))) {
+                return false;
+            }
+        }
+
+        // If all characters are digits, return true
+        return true;
     }
 
 
@@ -43,8 +69,17 @@ public class InventoryAnalyzer {
      * @return The quantity on hand as an integer if the substring before the colon consists solely of digits; otherwise, -1.
      */
     public static int extractQuantityOnHand(String itemDetails) {
-        // TODO
-        return -1;
+        // Extract the quantity on hand from the substring (before the colon)
+        int colonIndex = itemDetails.indexOf(":");
+        if (colonIndex == -1)
+            return -1;
+        String quantityString = itemDetails.substring(0, colonIndex);
+
+        // Ensure the substring can be parsed as an integer
+        if (isNonEmptyDigits(quantityString))
+            return Integer.parseInt(quantityString);
+        else
+            return -1;
     }
 
     /**
@@ -59,8 +94,17 @@ public class InventoryAnalyzer {
      * @return The reorder threshold as an integer if the substring after the colon consists solely of digits; otherwise, -1.
      */
     public static int extractReorderThreshold(String itemDetails) {
-        // TODO
-        return -1;
+        // Extract the threshold from the substring (after the colon)
+        int colonIndex = itemDetails.indexOf(":");
+        if (colonIndex == -1)
+            return -1;
+        String thresholdString = itemDetails.substring(colonIndex + 1);
+
+        // Ensure the substring can be parsed as an integer
+        if (isNonEmptyDigits(thresholdString))
+            return Integer.parseInt(thresholdString);
+        else
+            return -1;
     }
 
     /**
@@ -88,14 +132,28 @@ public class InventoryAnalyzer {
      *         If the item is not found or the quantity or reorder threshold is invalid, returns null.
      */
     public static String getItemReorderSummary(String inventoryData, String itemName) {
-        // TODO
-        return null;
+        // Use the name to find the item details in the inventory
+        String itemDetail = extractItemDetails(inventoryData, itemName);
+        if (itemDetail == null)
+            return null;
+
+        // Extract quantity on hand and reorder threshold
+        int quantityOnHand = extractQuantityOnHand(itemDetail);
+        int reorderThreshold = extractReorderThreshold(itemDetail);
+        if (quantityOnHand == -1 || reorderThreshold == -1)
+            return null;
+
+        // Compare quantity on hand and reorder threshold to determine reorder status
+        String reorderStatus = quantityOnHand <= reorderThreshold ? "needs to be reordered" : "does not need to be reordered";
+
+        // Return a formatted item summary, including the reorder status
+        return String.format("%s - Quantity On Hand: %d, Reorder Threshold: %d - %s", itemName, quantityOnHand, reorderThreshold, reorderStatus);
     }
 
     // Main method to execute the program
     public static void main(String[] args) {
         // Sample inventory
-        String inventoryData = "Tactical Equipment:100:30;Medical Kit:5:20;";
+        String inventoryData = "Tactical Equipment:100:30;Medical Kit:5:20;Rations:40:50;Water:300:100;";
 
         // Display the reorder summary for each item
         System.out.println(getItemReorderSummary(inventoryData, "Tactical Equipment"));

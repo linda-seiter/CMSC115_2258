@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// MAYBE USE THIS FOR THE LESSON/LAB TO PREPARE FOR THE PROJECT????
 public class MissionLogAnalyzer {
 
     public static void main(String[] args) {
