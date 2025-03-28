@@ -1,13 +1,21 @@
 import java.util.Scanner;
 
 /**
- * This application helps to calculate the total area of the walls and ceiling of a room,
- * the amount of paint required, and the total paint cost.
- * It supports both imperial and metric measurement systems.
+ * This application calculates the total area of the walls and ceiling of a room
+ * and computes the total paint cost based on those dimensions.
+ * It provides methods for calculating surface areas (walls, ceiling), checking if the dimensions are valid,
+ * and generating a report with the calculated results.
+ *
+ * The application allows the user to input room dimensions (length, width, height) and choose whether to include
+ * the ceiling in the area calculation. The total area is then used to estimate the amount of paint required and
+ * calculate the total cost.
+ *
+ * Constants used in the calculation:
+ * - SQFT_PER_GALLON: the coverage area of one gallon of paint (350 square feet).
+ * - PRICE_PER_GALLON: the price per gallon of paint ($50.75).
  *
  * @Author First Last
  * @Version 1.0
- *
  */
 public class PaintCalculatorSolution {
 
@@ -45,7 +53,7 @@ public class PaintCalculatorSolution {
      * @param width The width of the room.
      * @return The area of the ceiling, or 0 if the dimensions are not valid.
      */
-    public static double calculateCeilingArea(double length, double width) {
+    public static double getCeilingArea(double length, double width) {
         return isValidRectangle(length, width) ?  length*width : 0;
     }
 
@@ -59,7 +67,7 @@ public class PaintCalculatorSolution {
      * @param height The height of the room.
      * @return The total wall area of the room, or 0 if the dimensions do not form a valid rectangular prism.
      */
-    public static double calculateWallArea(double length, double width, double height) {
+    public static double getWallArea(double length, double width, double height) {
         if (isValidRectangularPrism(length, width, height)) {
             double perimeter = 2 * (length + width); // Perimeter of the room (sum of all sides)
             return perimeter * height; // Wall area
@@ -68,133 +76,74 @@ public class PaintCalculatorSolution {
             return 0;
     }
 
+
     /**
-     * Calculates the total area to be painted, which includes the ceiling and the walls of the room.
-     * The method checks if the given dimensions form a valid rectangular prism (all dimensions must be greater than zero).
-     * If the dimensions are valid, it returns the sum of the ceiling area and the wall area.
-     * If any dimension is invalid, it returns 0.
+     * Calculates the total surface area to be painted, including or excluding the ceiling.
      *
-     * @param length The length of the room.
-     * @param width The width of the room.
-     * @param height The height of the room.
-     * @return The total area to be painted, or 0 if the dimensions do not form a valid rectangular prism.
+     * @param length The length of the surface in feet.
+     * @param width The width of the surface in feet.
+     * @param height The height of the surface in feet.
+     * @param includeCeiling A flag indicating whether to include the ceiling area in the total surface area calculation.
+     * @return The total surface area to be painted.
      */
-    public static double calculateTotalArea(double length, double width, double height) {
-        if (isValidRectangularPrism(length, width, height))
-            return (calculateCeilingArea(length, width) + calculateWallArea(length, width, height));
-        else
+    public static double getSurfaceArea(double length, double width, double height, boolean includeCeiling) {
+        if (isValidRectangularPrism(length, width, height)) {
+            if (includeCeiling) {
+                return (getCeilingArea(length, width) + getWallArea(length, width, height));
+            } else {
+                return getWallArea(length, width, height);
+            }
+        } else {
             return 0;
-    }
-
-
-    /**
-     * Checks if the provided measurement system is valid.
-     * The valid systems are "imperial" and "metric".
-     *
-     * @param measurementSystem The measurement system to check (either "imperial" or "metric").
-     * @return true if the measurement system is valid, false otherwise.
-     */
-    public static boolean isValidMeasurementSystem(String measurementSystem) {
-        return (measurementSystem != null && (measurementSystem.equals("imperial") || measurementSystem.equals("metric")));
-    }
-
-    /**
-     * Calculates the amount of paint required based on the total area and the measurement system.
-     * The calculation depends on the measurement system used (imperial or metric).
-     * The constant values used are:
-     * - COVERAGE_PER_GALLON = 350.0 (square feet per gallon) for the imperial system.
-     * - COVERAGE_PER_LITER = 9.0 (square meters per liter) for the metric system.
-     *
-     * @param area The total area to be painted.
-     * @param measurementSystem The measurement system being used ("imperial" or "metric").
-     * @return The amount of paint required or 0 if the measurement system is not valid.
-     */
-    public static double calculatePaintQuantity(double area, String measurementSystem) {
-        double paintQuantity = 0.0;
-        final double COVERAGE_PER_GALLON = 350.0; // Square feet per gallon
-        final double COVERAGE_PER_LITER = 9.0;   // Square meters per liter
-
-        // Imperial system (gallons) or metric system (liters)
-        if (measurementSystem.equals("imperial")) {
-            paintQuantity = area / COVERAGE_PER_GALLON;
-        } else if (measurementSystem.equals("metric")) {
-            paintQuantity = area / COVERAGE_PER_LITER;
         }
-
-        return paintQuantity;
     }
 
+
+
     /**
-     * Calculates the total cost of paint required based on the amount of paint and the measurement system.
-     * The cost is calculated based on a fixed price per gallon (for imperial) or per liter (for metric).
-     * The constant values used are:
-     * - PRICE_PER_GALLON = 50.75 (price per gallon in imperial system).
-     * - PRICE_PER_LITER = 9.50 (price per liter in metric system).
+     * Calculates the cost of paint required to cover a given surface area.
      *
-     * @param paintRequired The amount of paint required.
-     * @param measurementSystem The measurement system being used ("imperial" or "metric").
-     * @return The total cost of paint or 0 if the measurement system is not valid.
+     * This method calculates how many gallons of paint are required to cover the area,
+     * and then calculates the total cost of the paint based on the price per gallon.
+     *
+     * The constants used in this calculation are:
+     * - SQFT_PER_GALLON: the coverage area of one gallon of paint (350 square feet).
+     * - PRICE_PER_GALLON: the price per gallon of paint ($50.75).
+     *
+     * @return The total cost of paint required to cover the surface area.
      */
-    public static double calculatePaintCost(double paintRequired, String measurementSystem) {
+    public static double calculatePaintCost(double surfaceArea) {
+        final double SQFT_PER_GALLON = 350.0;
         final double PRICE_PER_GALLON = 50.75;
-        final double PRICE_PER_LITER = 9.50;
-        double cost = 0.0;
 
-        // Imperial system (gallons) or metric system (liters)
-        if (measurementSystem.equals("imperial")) {
-            cost = paintRequired * PRICE_PER_GALLON;
-        } else if (measurementSystem.equals("metric")) {
-            cost = paintRequired * PRICE_PER_LITER;
-        }
-
+        double gallonsPaint = surfaceArea / SQFT_PER_GALLON;
+        double cost = gallonsPaint * PRICE_PER_GALLON;
         return cost;
     }
 
 
     /**
-     * Generates a formatted report of the total area,
-     * the amount of paint required, and the total cost.
+     * Generates a formatted report of the surface area and the total cost.
      *
-     * @param totalArea The total area to be painted.
-     * @param paintRequired The amount of paint required.
-     * @param paintCost The total cost of the paint.
-     * @param measurementSystem The measurement system being used ("imperial" or "metric").
-     * @return A formatted string containing the room renovation report, or an error message if the measurement system is invalid.
+     * @param surfaceArea The surface area to be painted.
+     * @param paintCost The cost of the paint.
+     * @return A formatted string containing the surface area and cost to paint the room.
      */
-    public static String paintCostReport(double totalArea, double paintRequired, double paintCost, String measurementSystem) {
-        // Validate the measurement system
-        if (!isValidMeasurementSystem(measurementSystem))
-            return "Invalid Measurement System";
-
-        // Determine the appropriate units based on the measurement system
-        String areaUnit = measurementSystem.equals("imperial") ? "square feet" : "square meters";
-        String paintUnit = measurementSystem.equals("imperial") ? "gallons" : "liters";
-
+    public static String generatePaintCostReport(double surfaceArea, double paintCost) {
         // Create the report string using String.format for consistent formatting
-        String report = String.format("Total area: %.2f %s\n", totalArea, areaUnit) +
-                String.format("Amount of paint required: %.2f %s\n", paintRequired, paintUnit) +
-                String.format("Total paint cost: $%.2f", paintCost);
-
-        return report;
+        return String.format("Total area: %.2f square feet, total cost: $%.2f", surfaceArea, paintCost);
     }
 
-
     /**
-     * Main method to interact with the user, take inputs, and display the room renovation report.
+     * The user is prompted to input room dimensions
+     * and whether to include the ceiling in the paint area calculation.
+     * The method calculates the total surface area to be painted, the total paint cost,
+     * and generates a formatted report displaying the results.
      *
-     * @param args Command-line arguments (not used in this program).
+     * @param args Command-line arguments (not used in this method).
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Would you like to use imperial (feet, gallons) or metric (meters, liters) units? ");
-        String measurementSystem = scanner.next();
-
-        // Loop until user enters valid measurement system (imperial or metric)
-        if (!isValidMeasurementSystem(measurementSystem)) {
-            System.out.println("Invalid input.");
-            return;
-        }
 
         // Prompt for room dimensions
         System.out.print("Enter the room length, width, and height: ");
@@ -202,15 +151,15 @@ public class PaintCalculatorSolution {
         double width = scanner.nextDouble();
         double height = scanner.nextDouble();
 
-        // Calculate total surface area
-        double totalArea = calculateTotalArea(length, width, height);
-        // Calculate the amount of paint required
-        double paintRequired = calculatePaintQuantity(totalArea, measurementSystem);
-        // Calculate paint cost
-        double paintCost = calculatePaintCost(paintRequired, measurementSystem);
+        System.out.println("Include ceiling (true/false): ");
+        boolean includeCeiling = scanner.nextBoolean();
+
+        // Calculate total area and cost of paint
+        double surfaceArea = getSurfaceArea(length, width, height, includeCeiling);
+        double paintCost = calculatePaintCost(surfaceArea);
 
         // Generate the report and print the results
-        System.out.println(paintCostReport(totalArea, paintRequired, paintCost, measurementSystem));
+        System.out.println(generatePaintCostReport(surfaceArea, paintCost));
 
         scanner.close();
     }
