@@ -25,7 +25,7 @@ Enter rows and columns: 5 7
 - **Search and update elements in a 2D array**: Locate specific values within a 2D array, and implement corresponding updates based on the search results (e.g., replacing or updating adjacent cells).
 - **Validate array indices**: Use conditional logic to check array bounds and prevent out-of-bounds errors when updating adjacent cells.
 - **Pass 2D arrays to methods**: Pass 2D arrays as arguments to methods and observe how changes in the method affect the original array.
-- **Debugging and Visualizing 2D Array Structures**: Debug to visualize how 2D arrays are stored and manipulated in memory.
+- **Model how 2D arrays are organized and stored in memory**: Use the debugger to inspect a 2D array and verify it as an array of references to row arrays, with each row being a separate array object.
 
 ### **2. Algorithmic Thinking**
 - **Apply logical transformations**: Design and implement algorithms to transform data within a 2D array based on specific conditions, such as replacing values or setting adjacent cells.
@@ -43,6 +43,8 @@ Enter rows and columns: 5 7
 ### **5. Developing Simulations and Grid-Based Applications**
 - **Build a grid-based simulation**: Represent objects (e.g., house, trees, squirrels, grass) in a 2D grid using Unicode characters.
 - **Simulate dynamic interactions**: Apply logical transformations to update the grid and simulate environmental changes.
+
+
 
 ## Coding Guidelines
 

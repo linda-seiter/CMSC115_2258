@@ -12,7 +12,7 @@ public class PaintCostReportTest {
         double paintCost = 72.5;    // example cost in dollars
 
         // When
-        String report = PaintCalculator.generatePaintCostReport(surfaceArea, paintCost);
+        String report = RoomPaintingCostCalculator.generatePaintCostReport(surfaceArea, paintCost);
 
         // Then
         assertEquals("Total area: 500.00 square feet, total cost: $72.50", report);
@@ -27,7 +27,7 @@ public class PaintCostReportTest {
         double paintCost = 0.0;   // cost of paint is also zero
 
         // When
-        String report = PaintCalculator.generatePaintCostReport(surfaceArea, paintCost);
+        String report = RoomPaintingCostCalculator.generatePaintCostReport(surfaceArea, paintCost);
 
         // Then
         assertEquals("Total area: 0.00 square feet, total cost: $0.00", report);

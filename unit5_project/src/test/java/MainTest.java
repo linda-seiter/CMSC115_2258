@@ -19,7 +19,7 @@ public class MainTest {
         System.setOut(new PrintStream(systemOutBackup));
 
         // Run the main method
-        PaintCalculator.main(new String[]{});
+        RoomPaintingCostCalculator.main(new String[]{});
 
         // Restore System.in and System.out
         System.setIn(systemInBackup);

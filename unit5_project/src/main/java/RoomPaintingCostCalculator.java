@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @Author First Last
  * @Version 1.0
  */
-public class PaintCalculator {
+public class RoomPaintingCostCalculator {
 
     /**
      * Checks if the given length and width represent a valid rectangle.
