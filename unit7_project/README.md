@@ -19,30 +19,26 @@ and individual fitness evaluation.
 - **Modify arrays dynamically**: Apply conditional logic to create or alter arrays based on data from other arrays.
 - **Pass arrays to methods**: Pass an array as a parameter to a method for further processing.
 - **Return arrays from methods**: Return an array from a method to provide data for other parts of the program.
+- **Manage Arrays as Reference Types**: Work with arrays as reference types in Java.
 - **Debugging and Visualizing Array Structures**: Debug to visualize how arrays are stored and manipulated in memory.
+- **String formatting and output**: Convert arrays into human-readable formats using `Arrays.toString()`.
 
-### **2. Handling User Input**
+### **2. Handling I/O**
 - Use **Scanner** to capture structured user input.
 - Process both integer and string inputs in an organized manner (e.g., "Name PushUps SitUps"), ensuring clear parsing and validation.
-
-### **3. String Formatting & Output**
 - Utilize **formatted strings (`String.format()`)** to create clear and user-friendly outputs.
-- Convert arrays into human-readable formats using `Arrays.toString()`.
 
-### **4. Problem Decomposition and Analysis**
+### **3. Problem Decomposition and Analysis**
 - Divide complex tasks (like performance analysis) into smaller, manageable components:
   - Gathering user input
   - Calculating performance metrics
   - Summarizing individual results
   - Formatting and presenting the output
 
-### **5. Modular Programming Practices**
+### **4. Modular Programming Practices**
 - Decompose a program into **independent, reusable methods**.
 - Use **method decomposition** to clearly separate different tasks (e.g., input handling, calculations, evaluations).
 - Follow the **Single Responsibility Principle (SRP)** to ensure that each method focuses on a single responsibility.
-
-### **6. Code Readability and Documentation**
-- Include **Javadoc comments** to clearly document methods and their functionalities.
 
 ## Coding Guidelines
 

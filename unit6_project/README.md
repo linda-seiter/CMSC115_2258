@@ -27,15 +27,20 @@ thresholds.
 4. **Format Strings for Output**:
    - Use string formatting to generate readable summaries.
 
-5. **Handle String References in Methods**:
+5. **Work with Reference Types**:
+   - Distinguish between primitive data types (e.g., `int`, `double`, `boolean`) and reference data types (e.g., `String`).
+   - Recognize that `null` in Java signifies the absence of a reference.
+   - Check for `null` to prevent `NullPointerExceptions` when working with reference types.
+
+6. **Handle String References in Methods**:
    - Write methods that accept string parameters and return string values.
    - Return dynamically generated strings after processing or modification.
 
-6. **Develop Debugging and Testing Skills**:
-   - Use debugging techniques to visualize and inspect the structure of strings in memory, focusing on how strings are stored and manipulated.
+7. **Develop Debugging and Testing Skills**:
+   - Use debugging techniques to visualize and inspect the structure of strings in memory, focusing on how strings are stored.
    - Apply debugging techniques to fix issues in string parsing and logic.
 
-7. **Master Modular Programming and the Single Responsibility Principle**:
+8. **Master Modular Programming and the Single Responsibility Principle**:
    - Decompose tasks into smaller, focused methods, each responsible for a single action to enhance clarity and reduce complexity.
    - Write reusable methods to avoid redundancy, making the code more efficient and maintainable.
    - Group related tasks (e.g., data extraction, validation, and formatting) into distinct methods, improving organization, maintainability, and ease of debugging.

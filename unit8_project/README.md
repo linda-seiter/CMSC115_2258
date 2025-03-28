@@ -23,33 +23,26 @@ Enter rows and columns: 5 7
 - **Iterate through 2D arrays**: Utilize nested loops to traverse and process each element in a 2D array, following row-major order.
 - **Manipulate array data**: Modify specific values, fill arrays with a constant value, replace values at specific locations (e.g., middle cell, corners), and apply transformations across the array.
 - **Search and update elements in a 2D array**: Locate specific values within a 2D array, and implement corresponding updates based on the search results (e.g., replacing or updating adjacent cells).
-- **Pass 2D arrays to methods**: Pass 2D arrays as arguments to methods and observe how changes in the method affect the original array.
 - **Validate array indices**: Use conditional logic to check array bounds and prevent out-of-bounds errors when updating adjacent cells.
+- **Pass 2D arrays to methods**: Pass 2D arrays as arguments to methods and observe how changes in the method affect the original array.
 - **Debugging and Visualizing 2D Array Structures**: Debug to visualize how 2D arrays are stored and manipulated in memory.
 
-### **2. Working with String Manipulation in Arrays**
-- **Work with string data**: Store and manipulate various types of string values in a 2D array (e.g., representing objects with Unicode characters like trees, houses, etc.).
-- **Manipulate array values based on string comparison**: Compare and replace string values within a 2D array, allowing for the modification of certain locations based on specific conditions.
-
-### **3. Algorithmic Thinking**
+### **2. Algorithmic Thinking**
 - **Apply logical transformations**: Design and implement algorithms to transform data within a 2D array based on specific conditions, such as replacing values or setting adjacent cells.
 - **Manipulate data based on conditions**: Use conditions to identify specific array elements (e.g., middle cells, corners, or specific target values) and modify them accordingly.
 
-### **4. Problem Decomposition, Incremental Problem-Solving, and Debugging**
+### **3. Problem Decomposition, Incremental Problem-Solving, and Debugging**
 - **Decompose complex problems**: Break down larger tasks into smaller, manageable sub-problems to simplify the development process.
 - **Implement solutions incrementally**: Solve problems in stages, testing and verifying each part before moving to the next.
 - **Test and debug methods**: Identify and fix issues in partially implemented methods, such as incorrect index calculations and logical errors, through systematic testing and debugging techniques.
 
-### **5. Modular Programming and Maintainable Code**
+### **4. Modular Programming and Maintainable Code**
 - **Write modular code using methods**: Organize programs into independent, reusable methods to enhance clarity, simplify debugging, and facilitate maintenance.
 - **Apply the Single Responsibility Principle (SRP)**: Ensure that each method handles a specific task, improving code readability and making it easier to debug, test, and modify when necessary.
 
-### **6. Developing Simulations and Grid-Based Applications**
+### **5. Developing Simulations and Grid-Based Applications**
 - **Build a grid-based simulation**: Represent objects (e.g., house, trees, squirrels, grass) in a 2D grid using Unicode characters.
 - **Simulate dynamic interactions**: Apply logical transformations to update the grid and simulate environmental changes.
-
-### **7. Code Readability and Documentation**
-- Include **Javadoc comments** to clearly document methods and their functionalities.
 
 ## Coding Guidelines
 
