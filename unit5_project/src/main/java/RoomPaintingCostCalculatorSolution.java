@@ -110,13 +110,14 @@ public class RoomPaintingCostCalculatorSolution {
      * - SQFT_PER_GALLON: the coverage area of one gallon of paint (350 square feet).
      * - PRICE_PER_GALLON: the price per gallon of paint ($50.75).
      *
+     * @param totalSquareFeet The total surface area in square feet that needs to be painted.
      * @return The total cost of paint required to cover the surface area.
      */
-    public static double calculatePaintCost(double surfaceArea) {
+    public static double calculatePaintCost(double totalSquareFeet) {
         final double SQFT_PER_GALLON = 350.0;
         final double PRICE_PER_GALLON = 50.75;
 
-        double gallonsPaint = surfaceArea / SQFT_PER_GALLON;
+        double gallonsPaint = totalSquareFeet / SQFT_PER_GALLON;
         double cost = gallonsPaint * PRICE_PER_GALLON;
         return cost;
     }

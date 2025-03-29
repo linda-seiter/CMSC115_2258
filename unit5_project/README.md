@@ -3,7 +3,7 @@
 ### Introduction 
 
 The `RoomPaintingCostCalculator` application calculates the total area
-of the walls and ceiling of a room and estimates the cost of paint
+of the walls and ceiling of a rectangular room and estimates the cost of paint
 required to cover those surfaces. The user inputs the room's dimensions
 (length, width, and height) and can specify whether the ceiling should
 be included in the area calculation. The program uses predefined constants
@@ -76,7 +76,7 @@ greater than zero, and `false` otherwise.
 public static boolean isValidRectangle(double length, double width)
 ```
 
-Here are a few method calls for the `isValidRectangle` method:
+Here are a few sample method calls for the `isValidRectangle` method:
 
 ```java
 // Example 1: Valid rectangle
@@ -96,11 +96,11 @@ Run the Junit tests in `IsValidRectangleTest` to confirm your solution.
 
 ## Task #2: `isValidRectangularPrism`
 
-A rectangular prism is a three-dimensional geometric shape with six rectangular faces, where each face meets at a right angle
-Common examples include boxes and books.
+A rectangular prism is a three-dimensional geometric shape with six rectangular faces,
+where each face meets at a right angle.  Common examples include boxes, envelopes, and books.
 
 Implement and test a method called `isValidRectangularPrism` that verifies if the length, width, and height
-provided as parameters represent a valid rectagular prism. The method should return `true` if the three dimensions are
+provided as parameters represent a valid rectagular prism. The method should return `true` if all three dimensions are
 greater than zero, and `false` otherwise.
 
 ```java
@@ -116,7 +116,7 @@ greater than zero, and `false` otherwise.
 public static boolean isValidRectangularPrism(double length, double width, double height) 
 ```
 
-Here are a few method calls for the `isValidRectangularPrism` method:
+Here are a few sample method calls for the `isValidRectangularPrism` method:
 
 ```java
 // Example 1: Valid rectangular prism
@@ -159,7 +159,7 @@ validate the dimensions. If the dimensions are valid, `getCeilingArea` should ca
 otherwise, it should return `0.0`. This approach avoids duplicating the validity check and promotes code
 reusability by simply invoking the `isValidRectangle` method.
 
-Here are a few method calls for the `getCeilingArea` method:
+Here are a few sample method calls for the `getCeilingArea` method:
 
 ```java
 // Example 1: Valid rectangle
@@ -179,7 +179,8 @@ Run the Junit tests in `GetCeilingAreaTest` to confirm your solution.  One of th
 
 ## Task #4: `getWallArea`
 
-Implement and test a method called `getWallArea` that calculates the wall area given the room length, width, and height.
+Implement and test a method called `getWallArea` that calculates the wall area given
+the room length, width, and height.  
 
 
 ```java
@@ -194,9 +195,12 @@ Implement and test a method called `getWallArea` that calculates the wall area g
  */
 ```
 
-Just like the validation check for calculating the ceiling area, the room dimensions should be validated to ensure they form a valid rectangular prism.
+Just like the validation check for calculating the ceiling area, the room dimensions
+should be validated to ensure they form a valid rectangular prism.
+If the room is a rectangular prism, the
+wall area can be determined by multiplying the perimeter by the height.
 
-Here are a few method calls for the `getWallArea` method:
+Here are a few sample method calls for the `getWallArea` method:
 
 ```java
 // Example 1: Valid rectangular prism
@@ -262,8 +266,7 @@ double surfaceArea4 = getSurfaceArea(5.0, 3.0, 4.0, false);
 System.out.println(surfaceArea4); // Expected: 64.0 (ceiling area excluded)
 ```
 
-Run the Junit tests in `GetSurfaceAreaTest` to confirm your solution.  The tests checks that `getSurfaceArea` calls `getWallArea` and `getCeilingArea` when the flag is true.
-
+Run the Junit tests in `GetSurfaceAreaTest` to confirm your solution.
 
 ## Task #5: `calculatePaintCost`
 
@@ -271,12 +274,12 @@ Implement and test a method called `calculatePaintCost` that  calculates
 how many gallons of paint are required to cover the area,
 and then calculates the total cost of the paint based on the price per gallon.
 
-The constants used in this calculation are:
+The method should define local variables for the following constants to be used in the calculation:
 - SQFT_PER_GALLON: the coverage area of one gallon of paint (350 square feet).
 - PRICE_PER_GALLON: the price per gallon of paint ($50.75).
 
 ```java
-/**
+    /**
  * Calculates the cost of paint required to cover a given surface area.
  *
  * This method calculates how many gallons of paint are required to cover the area,
@@ -286,9 +289,10 @@ The constants used in this calculation are:
  * - SQFT_PER_GALLON: the coverage area of one gallon of paint (350 square feet).
  * - PRICE_PER_GALLON: the price per gallon of paint ($50.75).
  *
+ * @param totalSquareFeet The total surface area in square feet that needs to be painted.
  * @return The total cost of paint required to cover the surface area.
  */
-public static double calculatePaintCost(double surfaceArea)
+public static double calculatePaintCost(double totalSquareFeet)
 ```
 
 Here are a few method calls for the `calculatePaintCost` method:
@@ -315,12 +319,13 @@ Run the Junit tests in `CalculatePaintCostTest` to confirm your solution.
 ## Task #6: `generatePaintCostReport`
 
 Implement the method `generatePaintCostReport` to return a string containing
-the surface area and cost to paint the room.
+the surface area and cost to paint the room. The values should be
+formatted to display two digits after the decimal point.
 
 Example format: "Total area: 700.00 square feet, total cost: $102.25"
 
 ```java
-    /**
+/**
  * Generates a formatted report of the surface area and the total cost.
  *
  * Example format: "Total area: 700.00 square feet, total cost: $102.25"
