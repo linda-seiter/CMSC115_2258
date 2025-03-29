@@ -47,47 +47,47 @@ public class RoomPaintingCostCalculator {
     }
 
     /**
-     * Calculates the area of the ceiling based on the length and width of the room.
-     * The method checks if the given dimensions form a valid rectangle (both length and width must be greater than zero).
-     * If either dimension is invalid (less than or equal to zero), it returns 0.
+     * Calculates the ceiling area of a rectangular room using the given length and width.
+     * If either dimension is invalid (less than or equal to zero), the method returns 0.
      *
      * @param length The length of the room.
      * @param width The width of the room.
-     * @return The area of the ceiling, or 0 if the dimensions are not valid.
+     * @return The area of the ceiling, or 0 if either dimension is invalid.
      */
     public static double getCeilingArea(double length, double width) {
         // TODO
-        return 0;
+        return 0.0;
     }
 
     /**
-     * Calculates the total wall area of the room based on the length, width, and height.
-     * The method checks if the dimensions form a valid rectangular prism (all dimensions must be greater than zero).
-     * If any of the dimensions are invalid, it returns 0.
+     * Calculates the total wall area of a room with a rectangular prism shape, using the provided length, width, and height.
+     * If any of the dimensions are invalid (less than or equal to zero), the method returns 0.
      *
      * @param length The length of the room.
      * @param width The width of the room.
      * @param height The height of the room.
-     * @return The total wall area of the room, or 0 if the dimensions do not form a valid rectangular prism.
+     * @return The total wall area of the room, or 0 if any dimension is invalid.
      */
     public static double getWallArea(double length, double width, double height) {
         // TODO
-        return 0;
+        return 0.0;
     }
 
 
     /**
-     * Calculates the total surface area to be painted, including or excluding the ceiling.
+     * Calculates the total surface area of a room shaped like a rectangular prism, with an option to include or exclude the ceiling area.
+     * Note that the floor area is not included in the calculation.
+     * The provided length, width, and height are used for the calculation. If any dimension is invalid (less than or equal to zero), the method returns 0.
      *
-     * @param length The length of the surface in feet.
-     * @param width The width of the surface in feet.
-     * @param height The height of the surface in feet.
-     * @param includeCeiling A flag indicating whether to include the ceiling area in the total surface area calculation.
-     * @return The total surface area to be painted.
+     * @param length The length of the room in feet.
+     * @param width The width of the room in feet.
+     * @param height The height of the room in feet.
+     * @param includeCeiling A flag to indicate whether the ceiling area should be included in the total surface area.
+     * @return The total surface area to be painted, or 0 if any dimension is invalid.
      */
     public static double getSurfaceArea(double length, double width, double height, boolean includeCeiling) {
         // TODO
-        return 0;
+        return 0.0;
     }
 
 
@@ -106,12 +106,15 @@ public class RoomPaintingCostCalculator {
      */
     public static double calculatePaintCost(double surfaceArea) {
         // TODO
-        return 0;
+        return 0.0;
     }
 
 
     /**
      * Generates a formatted report of the surface area and the total cost.
+     *
+     * Example format: "Total area: 700.00 square feet, total cost: $102.25"
+     * The values are formatted to display two digits after the decimal point.
      *
      * @param surfaceArea The surface area to be painted.
      * @param paintCost The cost of the paint.
@@ -121,7 +124,6 @@ public class RoomPaintingCostCalculator {
         // TODO
         return null;
     }
-
 
     /**
      * The user is prompted to input room dimensions
@@ -134,7 +136,13 @@ public class RoomPaintingCostCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // TODO
+        // Prompt for room dimensions
+
+        // Prompt for ceiling option
+
+        // Calculate total area and cost of paint
+
+        // Generate the report and print the results
 
         scanner.close();
     }
