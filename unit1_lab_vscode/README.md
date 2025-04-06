@@ -2,34 +2,56 @@
 
 ## Learning Objectives
 
-- Run, test, and edit a Java class
-- Use single-line and multi-line (block) comments
-- Declare, initialize, and update a variable.
-- Use numeric operators in calculations.
-- Use the debugger to step through a program one line at a time.
-- Use the debugger to visualize variable initialization and reassignment in
-  memory.
-- Use a `Scanner` to read user input.
-- Identify and fix syntax and logic errors
+1. **Run and Test Java Classes**:
+
+   - Execute Java classes using different methods in an IDE and verify output
+     correctness.
+
+2. **Use Comments Effectively**:
+
+   - Implement single-line and multi-line comments to improve code readability
+     and documentation.
+
+3. **Declare and Manipulate Variables**:
+
+   - Declare, initialize, and update variables in Java to store and modify data.
+
+4. **Apply Numeric Operations**:
+
+   - Use numeric operators to perform calculations and manipulate data in Java
+     programs.
+
+5. **Utilize the Debugger**:
+
+   - Step through code using the debugger to analyze program flow and inspect
+     variable changes.
+
+6. **Handle User Input with `Scanner`**:
+
+   - Use the `Scanner` class to read and process user input during program
+     execution.
+
+7. **Identify and Fix Errors**:
+   - Diagnose and correct syntax and logic errors in Java code to ensure correct
+     functionality.
 
 ## Introduction
 
-In this lab, you will learn how to effectively run, test, and edit a Java class
-while mastering a variety of core programming concepts. You'll explore how to
-use both single-line and multi-line comments for documentation and clarity. The
-lab will show you how to declare, initialize, and update variables, as well as
-apply numeric operators in calculations. You'll also gain hands-on experience
-with using the debugger to step through a program, visualize variable changes in
-memory, and track variable initialization and reassignment. Additionally, you'll
-discover how to use the `Scanner` class to read user input, and learn how to
-identify and fix common syntax and logic errors. By the end of this lab, you'll
-have a deeper understanding of Java programming fundamentals and debugging
-techniques.
+In this lab, you'll practice running, testing, and editing Java classes while
+learning key programming concepts. You'll use comments for documentation,
+declare and manipulate variables, and perform calculations with numeric
+operators. You'll also get hands-on experience with the debugger to step through
+code and track variable changes. Additionally, you'll learn how to use the
+Scanner class to read user input and fix common coding errors. By the end of
+this lab, you'll strengthen your understanding of Java programming and
+debugging.
 
 ## Setup
 
-NOTE: Instructions for accessing VS Code on Mars and/or installing VS Code on
-local machine will be provided in a separate document.
+**Note:** Instructions for accessing VS Code on Mars and/or installing VS Code
+on local machine will be provided in a separate document.
+
+## VS Code Interactive Development Environment
 
 VS Code is a powerful interactive development environment (IDE) whose primary
 purpose is to serve as a code editor. The basic user interface includes a
@@ -56,7 +78,7 @@ Let's examine a simple Java program that prints a greeting. A Java class with a
 ```java
 public class CourseWelcome {
     public static void main(String[] args) {
-        System.out.println("Welcome to CMSC 115.");
+        System.out.println("Welcome.");
         System.out.println("Let's learn Java!");
     }
 }
@@ -102,20 +124,19 @@ Let's learn Java!
 
 ### Run CourseWelcomeTest
 
-The current code produces the text shown in the **Actual Output** column below.
-However, assume the code should produce the text in the **Expected Output**
-column.
+Many of the tasks you'll do will involve writing a program to produce some
+expected output. For each task, you need to test the program to check the
+output. The current code produces the text shown in the **Actual Output** column
+below. However, assume the code should produce the text in the **Expected
+Output** column.
 
 | Expected Output                           | Actual Output                 |
 | ----------------------------------------- | ----------------------------- |
 | Welcome to CMCS 115.<br>Let's learn Java! | Welcome.<br>Let's learn Java! |
 
-Many of the tasks you'll do will involve writing a program to produce some
-expected output. For each task, you need to test the program to check the
-output.
-
-We'll use a very popular testing framework named Junit. For each regular Java
-class, we use a separate Junit class to test the functionality.
+We'll use a very popular testing framework named Junit to test our code. For
+each regular Java class, we use a separate Junit class to test the
+functionality.
 
 - Java class `CourseWelcome`
 - Junit test class `CourseWelcomeTest`
@@ -673,7 +694,7 @@ When you run the `Rectangle` class, the program displays the prompt "Enter
 length and width: " and then waits until you enter two double values in the
 terminal window.
 
-<img src="images/console_input.png" alt="enter user input in the terminal window" width="200">
+<img src="images/console_input.png" alt="enter user input in the terminal window" width="600">
 
 The program should calculate and print the length, width, and area of the
 rectangle. However, it only prints the length and width.
