@@ -86,7 +86,8 @@ header.
    I live in a pineapple at the bottom of the sea.
    I love to laugh!
    ```
-4. Run the Junit class `SelfIntroductionTest` to confirm the test passes.
+4. Run the Junit class `SelfIntroductionTest` to confirm the test passes. The
+   test checks that the `main` method prints at least 4 lines of output.
 
 ## Task 2 - BillSplitter
 
@@ -101,14 +102,13 @@ Open the `BillSplitter` class in the editor.
  * BillSplitter - demonstrates printing a math expression and order of operations.
  * This class calculates the amount each person owes when a bill of $94.20
  * is split between two people with a 20% tax applied.
- * The calculation takes into account the correct order of operations.
  *
  * @author First Last
  */
 public class BillSplitter {
     public static void main(String[] args) {
         System.out.print("Each person owes: ");
-        System.out.println("94.20 + 94.20 * 0.2 / 2"); // TODO: Fix the errors
+        System.out.println("94.20 + 94.20 * 0.2 / 2"); // TODO: Remove quotes and fix calculation
     }
 }
 ```
@@ -130,7 +130,8 @@ errors that prevent the program from producing the expected output.
    name.
 2. Edit the second print statement to fix the errors. You need to remove the
    double quotes so the value of the expression is printed, and fix the error in
-   the arithmetic expression so the correct value is produced.
+   the arithmetic expression so the correct value is produced. Do not hard-code
+   the value 56.52 in the print statement.
 3. Run `BillSplitter` to confirm your program produces the correct output.
 4. Run the Junit `BillSplitterTest` class to confirm the test passes.
 
@@ -163,7 +164,9 @@ public class GasPurchase {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // TODO:
+        // TODO: Prompt and read in gallons and price per gallon.
+
+        // TODO: Calculate and print how much is owed.
 
     }
 }

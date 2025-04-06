@@ -1,19 +1,38 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CourseWelcomeTest {
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
-    @Test
-    @DisplayName("CourseWelcome.main prints correct output")
-    void main_prints_correct_output() {
-        //Arrange
-        String expectedOutput = "Welcome to CMSC 115.\n" +
-                "Let's learn Java!\n";
-        // Act: Call the main method of the CourseWelcome class and capture the output
-        String actualOutput = JunitHelper.captureClassOutput("CourseWelcome");
-        //Assert
-        assertEquals(expectedOutput, actualOutput,
-                "CourseWelcome.main fails to print expected output.");
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+
+public class CourseWelcomeTest {
+
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @BeforeEach
+    public void setUp() {
+        // Redirect System.out to capture the output
+        System.setOut(new PrintStream(outContent));
     }
 
+    @AfterEach
+    public void tearDown() {
+        // Reset System.out to its original stream
+        System.setOut(originalOut);
+    }
+
+    @Test
+    @DisplayName("Test: CourseWelcome output")
+    public void testCourseWelcomeOutput() {
+        // Call the main method of CourseWelcome
+        CourseWelcome.main(new String[] {});
+
+        // Verify the output
+        String expectedOutput = "Welcome to CMSC 115.\nLet's learn Java!\n";
+        assertEquals(expectedOutput, outContent.toString(), "CourseWelcome fails to print correct output");
+    }
 }

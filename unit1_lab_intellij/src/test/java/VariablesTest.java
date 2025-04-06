@@ -1,21 +1,40 @@
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class VariablesTest  {
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+
+public class VariablesTest {
+
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @BeforeEach
+    public void setUp() {
+        // Redirect System.out to capture the output
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        // Reset System.out to its original stream
+        System.setOut(originalOut);
+    }
 
     @Test
-    @DisplayName("Variables.main prints correct output")
-    void main_prints_correct_output() {
-        //Arrange
+    @DisplayName("Test: Variables class output")
+    public void testVariablesOutput() {
+        // Call the main method of Variables class
+        Variables.main(new String[] {});
+
+        // Verify the output
         String expectedOutput = "Hello Silas\n" +
                 "You are 28 years old.\n" +
                 "Your gpa is 3.8\n";
-        // Act: Call the main method of the Variables class and capture the output
-        String actualOutput = JunitHelper.captureClassOutput("Variables");
-        // Assert
-        assertEquals(expectedOutput, actualOutput,
-                "Variables.main fails to print expected output.");
+        assertEquals(expectedOutput, outContent.toString(), "Variables fails to produce correct output");
     }
-
 }
