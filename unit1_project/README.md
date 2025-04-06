@@ -2,34 +2,62 @@
 
 ## Introduction
 
-In this assignment, you will complete three programming tasks
-to practice essential Java skills such as printing output,
-performing arithmetic operations, taking user input, and
-using JavaDocs for documentation. These tasks will help
-solidify your understanding of basic programming concepts
-that are crucial for developing more complex software solutions.
+In this assignment, you will complete three programming tasks to practice
+essential Java skills such as printing output, performing arithmetic operations,
+taking user input, and using JavaDocs for documentation. These tasks will help
+solidify your understanding of basic programming concepts that are crucial for
+developing more complex software solutions.
 
-You will be tasked with writing Java programs for the following scenarios:
+## Learning Outcomes
 
-1. **SelfIntroduction**: This task will introduce you to printing multiple lines of output using `System.out.println()`. You will create a simple self-introduction program that produces at least four lines of text.
+1. **Use Basic Java Syntax**:
 
-2. **BillSplitter**: This program will challenge you to work with mathematical expressions and operator precedence. You will fix errors in the code to calculate the amount each person owes when splitting a bill with a 20% tip.
+   - Implement basic Java syntax, including `System.out.println()` for output
+     and proper handling of variables and data types.
 
-3. **GasPurchase**: In this task, you will take user input for gallons of gas purchased and the price per gallon, then calculate the total cost. This exercise will help you practice working with input/output and basic arithmetic operations in Java.
+2. **Perform Arithmetic Operations in Java**:
 
-By completing these tasks, you will develop proficiency in basic Java syntax and functionality, while also gaining experience in using JUnit tests to verify the correctness of your code.
+   - Apply arithmetic operations such as addition, multiplication, and division,
+     and handle operator precedence correctly in Java programs.
 
+3. **Process User Input in Java**:
+
+   - Use the `Scanner` class to take user input and process it in Java programs,
+     such as calculating costs or handling user-provided values.
+
+4. **Debug and Fix Errors in Java Code**:
+
+   - Identify and resolve errors in Java programs.
+
+5. **Document Java Code with JavaDocs**:
+
+   - Write JavaDocs comments for classes and methods to enhance code readability
+     and maintainability.
+
+6. **Test Java Programs with JUnit**:
+
+   - Create and run JUnit test cases to verify the correctness of Java programs
+     and ensure their functionality.
+
+7. **Format Output in Java**:
+   - Format program output to present information clearly, such as displaying
+     calculated totals or user details in a readable format.
 
 ## Task 1 - SelfIntroduction
 
-Expand the `unit1_project > src` folder and subfolders to view the Java classes and associated Junit tests.
+This task will introduce you to printing multiple lines of output using
+`System.out.println()`. You will create a simple self-introduction program that
+produces at least four lines of text.
+
+Expand the `unit1_project > src` folder and sub-folders to view the Java classes
+and associated Junit tests.
 
 Open the `SelfIntroduction` class to view the file in the editor.
 
 ```java
 /**
  * SelfIntroduction class demonstrates at least 4 print statements.
- * This class is intended to show how to use the System.out.println method 
+ * This class is intended to show how to use the System.out.println method
  * for printing various self-introduction details.
  *
  * @author First Last
@@ -60,15 +88,18 @@ header.
    ```
 4. Run the Junit class `SelfIntroductionTest` to confirm the test passes.
 
-
 ## Task 2 - BillSplitter
 
-Open the  `BillSplitter` class in the editor.
+This task will challenge you to work with mathematical expressions and operator
+precedence. You will fix errors in the code to calculate the amount each person
+owes when splitting a bill with a 20% tip.
+
+Open the `BillSplitter` class in the editor.
 
 ```java
 /**
  * BillSplitter - demonstrates printing a math expression and order of operations.
- * This class calculates the amount each person owes when a bill of $94.20 
+ * This class calculates the amount each person owes when a bill of $94.20
  * is split between two people with a 20% tax applied.
  * The calculation takes into account the correct order of operations.
  *
@@ -91,14 +122,15 @@ formula shown below.
 Run the program to view the output. The second print statement has a couple of
 errors that prevent the program from producing the expected output.
 
-
 | Expected Output         | Actual Output                              |
 | ----------------------- | ------------------------------------------ |
 | Each person owes: 56.52 | Each person owes: 94.20 + 94.20 \* 0.2 / 2 |
 
 1. Edit the JavaDoc comment to update the author tag with your first and last
    name.
-2. Edit the second print statement to fix the errors. You need to remove the double quotes so the value of the expression is printed, and fix the error in the arithmetic expression so the correct value is produced. 
+2. Edit the second print statement to fix the errors. You need to remove the
+   double quotes so the value of the expression is printed, and fix the error in
+   the arithmetic expression so the correct value is produced.
 3. Run `BillSplitter` to confirm your program produces the correct output.
 4. Run the Junit `BillSplitterTest` class to confirm the test passes.
 
@@ -110,6 +142,10 @@ HINT: Recall operator precedence and the default order of operations:
 
 ## Task 3
 
+In this task, you will take user input for gallons of gas purchased and the
+price per gallon, then calculate the total cost. This exercise will help you
+practice working with input/output and basic arithmetic operations in Java.
+
 Open the `GasPurchase` class in the editor.
 
 ```java
@@ -117,8 +153,8 @@ import java.util.Scanner;
 
 /**
  * GasPurchase class - demonstrates initializing variables from console input.
- * This class prompts the user for input regarding the number of gallons 
- * purchased and the price per gallon, calculates the total cost, and 
+ * This class prompts the user for input regarding the number of gallons
+ * purchased and the price per gallon, calculates the total cost, and
  * then prints the total amount owed.
  *
  * @author First Last
@@ -145,8 +181,6 @@ public class GasPurchase {
 | Sample Run#1                                                            | Sample Run#2                                                         |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Enter gallons and price per gallon: <b>12.5 3.50</b><br> You owe $43.75 | Enter gallons and price per gallon: <b>8.0 3.75</b><br>You owe $30.0 |
-
-
 
 ## Submit Your Solution
 
