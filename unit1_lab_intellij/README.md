@@ -2,42 +2,62 @@
 
 ## Learning Objectives
 
-1. **Run and Test Java Classes**:
+1. **Run Java Classes**:
 
-   - Execute Java classes using different methods in an IDE and verify output
-     correctness.
+   - Execute Java classes using different methods in the IntelliJ IDE and verify
+     output correctness.
 
-2. **Use Comments Effectively**:
+2. **Produce Program Output**:
 
-   - Implement single-line and multi-line comments to improve code readability
-     and documentation.
+   - Use `System.out.println` to display information on the console.
 
-3. **Declare and Manipulate Variables**:
+3. **Use Comments Effectively**:
 
-   - Declare, initialize, and update variables in Java to store and modify data.
+   - Use single-line and multi-line comments to improve code readability and
+     documentation and control execution.
 
 4. **Apply Numeric Operations**:
 
    - Use numeric operators to perform calculations and manipulate data in Java
      programs.
 
-5. **Utilize the Debugger**:
+5. **Declare and Manipulate Variables**:
 
-   - Step through code using the debugger to analyze program flow and inspect
-     variable changes.
+   - Declare, initialize, and update variables in Java to store and modify data.
 
-6. **Handle User Input with `Scanner`**:
+6. **Utilize the Debugger**:
+
+   - Set a breakpoint to stop program execution at a particular line of code.
+   - Step through code using the IDE debugger to analyze program flow and
+     inspect variable changes.
+
+7. **Handle User Input with `Scanner`**:
 
    - Use the `Scanner` class to read and process user input during program
      execution.
+   - Assign a variable to store a value read from user input.
 
-7. **Identify and Fix Errors**:
+8. **Format Output Using String Concatenation**
+
+   - Concatenate strings with other data types (e.g., integers or doubles) using
+     the `+` operator to produce descriptive output.
+
+9. **Identify and Fix Errors**:
+
    - Diagnose and correct syntax and logic errors in Java code to ensure correct
      functionality.
 
+10. **Use Junit to validate Java code:**
+   - Run a JUnit test class to validate that the program's output matches the
+     expected results.
+   - View and interpret the test result.
+   - Use the side-by-side comparison to pinpoint differences between expected
+     and actual outputs.
+   - Build debugging skills by using JUnit test failures to identify issues in
+     the code and resolve them.
 ## Introduction
 
-In this lab, you'll practice running, testing, and editing Java classes while
+In this lab, you'll practice running, testing, editing, and debugging Java classes while
 learning key programming concepts. You'll use comments for documentation,
 declare and manipulate variables, and perform calculations with numeric
 operators. You'll also get hands-on experience with the debugger to step through

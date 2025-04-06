@@ -10,38 +10,44 @@ developing more complex software solutions.
 
 ## Learning Outcomes
 
-1. **Use Basic Java Syntax**:
+1. **Program Output**:
 
-   - Implement basic Java syntax, including `System.out.println()` for output
-     and proper handling of variables and data types.
+   - Use `System.out.println` to display information on the console.
 
-2. **Perform Arithmetic Operations in Java**:
+2. **Declare and Manipulate Variables**:
 
-   - Apply arithmetic operations such as addition, multiplication, and division,
-     and handle operator precedence correctly in Java programs.
+   - Declare, initialize, and modify variables using appropriate data types to
+     store and manage data.
 
-3. **Process User Input in Java**:
+3. **Perform Arithmetic Operations in Java**:
 
-   - Use the `Scanner` class to take user input and process it in Java programs,
-     such as calculating costs or handling user-provided values.
+   - Apply arithmetic operations and correctly handle operator precedence in
+     Java programs.
 
-4. **Debug and Fix Errors in Java Code**:
+4. **Handle User Input with `Scanner`**:
 
-   - Identify and resolve errors in Java programs.
+   - Use the `Scanner` class to read and process user input during program
+     execution.
+   - Assign a variable to store a value read from user input.
 
-5. **Document Java Code with JavaDocs**:
+5. **Format Output Using String Concatenation**
 
-   - Write JavaDocs comments for classes and methods to enhance code readability
-     and maintainability.
+   - Concatenate strings with other data types (e.g., integers or doubles) using
+     the `+` operator to produce descriptive output.
 
 6. **Test Java Programs with JUnit**:
 
-   - Create and run JUnit test cases to verify the correctness of Java programs
-     and ensure their functionality.
+   - Run a JUnit test class to check that the program's output matches the
+     expected results.
 
-7. **Format Output in Java**:
-   - Format program output to present information clearly, such as displaying
-     calculated totals or user details in a readable format.
+7. **Debug and Fix Errors in Java Code**:
+
+   - Identify and resolve syntax, logic, and runtime errors in Java programs to
+     ensure correct functionality.
+
+8. **Document Java Code**:
+   - Write comments to improve the readability, maintainability, and clarity of
+     Java code.
 
 ## Task 1 - SelfIntroduction
 
