@@ -1,20 +1,38 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class FixitTest {
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
-    @Test
-    @DisplayName("Fixit.main prints correct output")
-    void main_prints_correct_output() {
-        // Arrange
-        String expectedOutput = "ship\n"
-                + "airplane\n"
-                + "tank\n";
-        // Act: Call the main method of the Fixit class and capture the output
-        String actualOutput = JunitHelper.captureClassOutput("Fixit");
-        // Assert
-        assertEquals(expectedOutput, actualOutput,
-                "Fixit.main fails to print expected output.");
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+
+public class FixitTest {
+
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @BeforeEach
+    public void setUp() {
+        // Redirect System.out to capture the output
+        System.setOut(new PrintStream(outContent));
     }
 
+    @AfterEach
+    public void tearDown() {
+        // Reset System.out to its original stream
+        System.setOut(originalOut);
+    }
+
+    @Test
+    @DisplayName("Test: Fixit class output")
+    public void testFixitOutput() {
+        // Call the main method of Fixit class
+        Fixit.main(new String[] {});
+
+        // Verify the output
+        String expectedOutput = "ship\nairplane\ntank\n";
+        assertEquals(expectedOutput, outContent.toString(), "Fixit class fails to produce correct output");
+    }
 }

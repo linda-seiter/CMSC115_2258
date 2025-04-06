@@ -2,26 +2,57 @@
 
 ### Learning Objectives
 
-1. Solve tasks that require logic and the use of appropriate operators for different types of computations.
-2. Use built-in Java methods, like `Math.pow()`, to perform mathematical calculations.
-3. Cast between data types (e.g., `double` to `int`) and perform different types of numeric rounding.
-4. Use the `Scanner` class to read input, including working with both integers and floating-point numbers.
+1. **Perform Mathematical Calculations**:
+
+   - Apply arithmetic operations like addition, subtraction, multiplication, and
+     division to solve real-world problems.
+
+2. **Use Java Math Methods**:
+
+   - Utilize built-in Java methods like `Math.pow()` and `Math.sqrt()` to handle
+     more advanced mathematical operations.
+
+3. **Perform Type Casting and Rounding**:
+
+   - Use type casting to convert between data types (e.g., `double` to `int`)
+     and apply rounding techniques to format numeric outputs.
+
+4. **Capture and Process User Input**:
+
+   - Implement the `Scanner` class to gather user input, including both integers
+     and floating-point numbers, for calculations.
+
+5. **Format and Display Output**:
+
+   - Format numerical results for clear and precise output, such as rounding to
+     a specified number of decimal places.
+
+6. **Test Java Code Using JUnit**:
+   - Execute JUnit tests to validate program correctness and ensure accurate
+     output.
 
 ### Introduction
 
-In this unit's programming assignment, you will complete several tasks that involve practical Java programming concepts such as mathematical operations, input/output handling, and working with variables. These tasks are designed to improve your understanding of Java fundamentals and enhance your problem-solving abilities.
+In this unit's programming assignment, you will complete several tasks that
+involve practical Java programming concepts such as mathematical operations,
+input/output handling, and working with variables. These tasks are designed to
+improve your understanding of Java fundamentals and enhance your problem-solving
+abilities.
 
-The tasks will also help you apply mathematical functions and work with both integer and floating-point numbers in real-world scenarios. By the end of this assignment, you will have experience in implementing basic calculations, formatting output, and running unit tests to verify your solutions.
-
-Throughout this assignment, you will use a variety of operators to solve each task. You will also practice running unit tests to ensure the correctness of your code.
+The tasks will also help you apply mathematical functions and work with both
+integer and floating-point numbers in real-world scenarios. By the end of this
+assignment, you will have experience in implementing basic calculations,
+formatting output, and running unit tests to verify your solutions.
 
 ## Task 1 - TransmissionRate
 
-**Objective**: Simulate the spread of a virus using the concept of the transmission rate (R₀) and calculate the number of new cases after several iterations.
+**Objective**: Simulate the spread of a virus using the concept of the
+transmission rate (R₀) and calculate the number of new cases after several
+iterations.
 
 R<sub>0</sub> (pronounced R-naught) is a number that refers to the transmission
 rate of a given virus. If R<sub>0</sub> is 5, then 1 person is capable of
-spreading to 5 other people on average.
+spreading on average to 5 other people within a susceptible population.
 
 The table below shows the number of new cases after various iterations of viral
 spread:
@@ -61,16 +92,18 @@ spread:
 
 </table>
 
-Update the `main` method in the `TransmissionRate` class to implement the following functionality:
+Update the `main` method in the `TransmissionRate` class to implement the
+following functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
-2. Prompt for and read the transmission rate R<sub>0</sub> as an integer.
+2. Prompt for and read the transmission rate R<sub>0</sub> as an integer,
+   storing the value in a variable named `r0`.
 3. Call `Math.pow` to calculate the potential new cases at the 4th iteration
-   based on the given R<sub>0</sub> value.
-4. Use casting to convert the `double` value returned from `Math.pow` to an
-   `int`.
-5. Print the number of new cases as shown in the sample runs.
-6. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
+   based on the given R<sub>0</sub> value. Use casting to convert the `double`
+   value returned from `Math.pow` to an `int`, and store the result in an int
+   variable named `newCases`.
+4. Print the number of new cases as shown in the sample runs.
+5. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
 
 <table>
 <tr>
@@ -88,21 +121,21 @@ New cases on 4th iteration: 104976
 </tr>
 </table>
 
-
 ## Task 2 - SeafoodMarket
 
-**Objective**: Calculate the total cost of fish purchased based on the weight and price per pound, rounding the total to two decimal places.
+**Objective**: Calculate the total cost of fish purchased based on the weight
+and price per pound, rounding the total to two decimal places.
 
-Update the `main` method in the `SeafoodMarket` class to implement the following functionality:
+Update the `main` method in the `SeafoodMarket` class to implement the following
+functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read two doubles: (1) pounds of fish and (2) price per pound.
 3. Calculate the total cost as a double, rounding the value to 2 digits after
-   the decimal point.
+   the decimal point. Make sure you avoid integer division!
 4. Print the pounds, price per pound, and total cost as shown in the sample runs
    below.
 5. Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
-
 
 <table>
 <tr>
@@ -120,19 +153,20 @@ Update the `main` method in the `SeafoodMarket` class to implement the following
 </tr>
 </table>
 
-
 # Task 3 - NearestInt
 
-**Objective**: Demonstrate how to convert a fraction into a double and round it to the nearest integer, including handling negative values.
+**Objective**: Demonstrate how to convert a fraction into a double and round it
+to the nearest integer, including handling negative values.
 
-Update the `main` method in the `NearestInt` class to implement the following functionality:
+Update the `main` method in the `NearestInt` class to implement the following
+functionality:
 
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read two ints: a numerator and a denominator.
-3. Print the numeric conversions displayed in the sample runs. Hint: subtract
-   0.5 when rounding to the nearest negative int.
+3. Print the numeric conversions displayed in the sample runs.<br>Hint: add 0.5
+   when rounding to nearest positive int, and subtract 0.5 when rounding to the
+   nearest negative int.
 4. Run `NearestIntTest` to confirm your solution passes the Junit tests.
-
 
 <table>
 <tr>
@@ -160,14 +194,14 @@ Negative Value rounded to nearest int: -1<br>
 </tr>
 </table>
 
-
 ## Task 4 - BasketBallGame
 
-**Objective**: Simulate the progression of a basketball game by updating scores after each quarter based on specific instructions.
+**Objective**: Simulate the progression of a basketball game by updating scores
+after each quarter based on specific instructions.
 
-The `main` method in the `BasketBallGame` class prompts for the home and away scores for the first quarter,
-initializes variables to store each team's score, and prints the scores for the
-1st quarter.
+The `main` method in the `BasketBallGame` class prompts for the home and away
+scores for the first quarter, initializes variables to store each team's score,
+and prints the scores for the 1st quarter.
 
 Your task is to update the code for the 2nd, 3rd, and 4th quarters based on the
 instructions given in the comments.
@@ -199,7 +233,6 @@ After challenge: home 68 away 72<br>
 </table>
 
 Run `BasketballGameTest` to confirm your solution passes the Junit tests.
-
 
 ## Submitting your project
 

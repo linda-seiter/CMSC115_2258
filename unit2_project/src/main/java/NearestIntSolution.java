@@ -1,41 +1,47 @@
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 /**
- * The {@code NearestIntSolution} class demonstrates how to round a fraction to its nearest integer
- * and handle both positive and negative values. It also shows how to cast a fractional number
- * to an integer and round it in different ways.
- *
- * <p>The program takes two integers from the user (numerator and denominator) to create a fraction,
- * then performs the following operations:</p>
- * <ul>
- *     <li>Calculate the double value of the fraction.</li>
- *     <li>Cast the double value to an integer.</li>
- *     <li>Round the value to the nearest integer (for both positive and negative values).</li>
- * </ul>
- *
- * <p>It outputs the fraction, the double value, the integer value (casted), and the rounded integer values for both positive and negative cases.</p>
- *
- * @author [Your Name]
+ * The NearestIntSolution class demonstrates how to round a fraction to its
+ * nearest integer and perform various operations involving integer and double
+ * data types. This program reads a numerator and denominator, calculates their
+ * division as a double, rounds the result to the nearest integer, and handles
+ * both positive and negative numbers.
+ * 
+ * <p>
+ * It also demonstrates how to cast double values to integers and round both
+ * positive and negative fractional numbers to the nearest integer value.
+ * </p>
+ * 
+ * @author Your Name
  * @version 1.0
  */
 public class NearestIntSolution {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
+        // Prompt for numerator and denominator
         System.out.print("Enter numerator and denominator: ");
         int numerator = input.nextInt();
         int denominator = input.nextInt();
-        double number = 1.0*numerator/denominator;
-        int nearestInt = (int)(number + 0.5);
-        System.out.println("Fraction: " + numerator+"/"+denominator);
+
+        // Calculate the double value of the fraction
+        double number = 1.0 * numerator / denominator;
+
+        // Round to the nearest integer (positive number)
+        int nearestInt = (int) (number + 0.5);
+
+        // Display fraction and rounded results
+        System.out.println("Fraction: " + numerator + "/" + denominator);
         System.out.println("Double Value: " + number);
-        System.out.println("Cast as Int: " + (int)number );
+        System.out.println("Cast as Int: " + (int) number);
         System.out.println("Rounded to nearest int: " + nearestInt);
+
+        // Handle negative number case (correct rounding for negative numbers)
         double negNumber = -number;
-        int nearestNegInt = (int)(negNumber - 0.5);
+        int nearestNegInt = (int) (negNumber - 0.5);
         System.out.println("Negative Value: " + negNumber);
         System.out.println("Negative Value rounded to nearest int: " + nearestNegInt);
     }
+
 }

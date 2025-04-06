@@ -155,10 +155,10 @@ lesson. For now, you'll just run the test to check the result.
    Tests**.<br>
    <img alt="Run junit test class" src="images/run_test.png" width="300" >
 
-2. The Test Runner view will display a message indicating the test failed. Click
-   on the failed test to view a side-by-side comparison highlighting the
-   difference between the expected and actual output.<br>
-   <img alt="Test failed message in run view" src="images/test_failed.png" width="400" >
+2. The Test Runner view will display a message indicating the test failed (red
+   x). Click on the failed test to view a side-by-side comparison highlighting
+   the difference between the expected and actual output.<br>
+   <img alt="Test failed message in run view" src="images/test_failed.png" width="600" >
 
 3. Update the `CourseWelcome` class to produce the expected output. The first
    print statement in the `main` method should print the character string
@@ -167,7 +167,7 @@ lesson. For now, you'll just run the test to check the result.
 
 4. Re-run the Junit `CourseWelcomeTest` class and confirm the test passed. You
    should see a green checkmark indicating the test passed.<br>
-   <img alt="Test passed message in run view" src="images/test_passed.png" width="400" >
+   <img alt="Test passed message in run view" src="images/test_passed.png" width="300" >
 
 Congratulations on successfully passing your first Java coding task!
 
@@ -224,10 +224,9 @@ Notice the expected output does not include "peach".
 
 1. Right-click on the Junit class `CommentsTest` in the project view, then
    select **Run Tests**. You should see a message in the run view indicating the
-   test failed. Click to see the difference between the expected and actual
-   output.<br>
-
-<img alt="Task2 test fails" src="images/task2_fail.png" width="400" >
+   test failed (red x). Click to see the difference between the expected and
+   actual output.<br>
+   <img alt="Task2 test fails" src="images/task2_fail.png" width="600" >
 
 2. Update the `Comments` class to produce the expected output by adding `//` to
    comment out the last print statement (don't delete it!).
@@ -236,7 +235,8 @@ Notice the expected output does not include "peach".
      //System.out.println("peach");
 ```
 
-3. Re-run the Junit class `CommentsTest` to confirm the test passed.
+3. Re-run the Junit class `CommentsTest` to confirm the test passed (green
+   checkmark).
 
 ### JavaDoc
 
@@ -320,9 +320,11 @@ public class PrintNewline {
 ```
 
 - `System.out.println`: Appends a newline character. Subsequent output appears
-  on the next line.
+  on the next line. For example, "red" and "green" are printed on separate lines
+  because a newline is added after printing "red".
 - `System.out.print` : Does not append a newline character. Subsequent output
-  appears on the same line.
+  appears on the same line. For instance, "green" and "blue" are printed on the
+  same line because no newline is added after printing "green".
 
 | Expected Output                        | Actual Output                              |
 | -------------------------------------- | ------------------------------------------ |
@@ -694,7 +696,7 @@ When you run the `Rectangle` class, the program displays the prompt "Enter
 length and width: " and then waits until you enter two double values in the
 terminal window.
 
-<img src="images/console_input.png" alt="enter user input in the terminal window" width="600">
+<img src="images/console_input.png" alt="enter user input in the terminal window" width="700">
 
 The program should calculate and print the length, width, and area of the
 rectangle. However, it only prints the length and width.
@@ -702,6 +704,13 @@ rectangle. However, it only prints the length and width.
 | Expected Input/Output                                                    | Actual Input/Output                                            |
 | ------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 |
+
+If you run the Junit test class `RectangleTest`, you'll see several tests fail.
+Each test provides the main method with different input values for `length` and
+`width`. Click on any failed test to compare the expected versus actual output.
+Notice the area is missing in the output.
+
+<img src = "images/task8_fail.png" alt="task8 junit tests fail" width=600>
 
 1. Update the `main` method to declare a double variable named `area`. Calculate
    the area using the width and length that the user provided as input. Update

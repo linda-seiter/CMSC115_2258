@@ -1,21 +1,38 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PrintNewlineTest {
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
-    @Test
-    @DisplayName("PrintNewline.main prints correct output")
-    void main_prints_correct_output() {
-        // Arrange
-        String expectedOutput = "red \n"
-                + "green blue \n"
-                + "pink \n"
-                + "yellow\n";
-        // Act: Call the main method of the PrintNewline class and capture the output
-        String actualOutput = JunitHelper.captureClassOutput("PrintNewline");
-        // Assert
-        assertEquals(expectedOutput, actualOutput,
-                "PrintNewline.main fails to print expected output.");
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+
+public class PrintNewlineTest {
+
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @BeforeEach
+    public void setUp() {
+        // Redirect System.out to capture the output
+        System.setOut(new PrintStream(outContent));
     }
 
+    @AfterEach
+    public void tearDown() {
+        // Reset System.out to its original stream
+        System.setOut(originalOut);
+    }
+
+    @Test
+    @DisplayName("Test: PrintNewline class output")
+    public void testPrintNewlineOutput() {
+        // Call the main method of PrintNewline class
+        PrintNewline.main(new String[] {});
+
+        // Verify the output
+        String expectedOutput = "red \ngreen blue \npink \nyellow\n";
+        assertEquals(expectedOutput, outContent.toString(), "PrintNewline fails to produce correct output");
+    }
 }
