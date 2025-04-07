@@ -10,25 +10,22 @@ developing more complex software solutions.
 
 ## Learning Outcomes
 
-1. **Program Output**:
+1. **Generate Program Output**:
 
-   - Use `System.out.println` to display information on the console.
+   - Use `System.out.println` to display program output.
 
 2. **Declare and Manipulate Variables**:
 
-   - Declare, initialize, and modify variables using appropriate data types to
-     store and manage data.
+   - Declare, initialize, and reassign variables to store and update data.
 
 3. **Perform Arithmetic Operations in Java**:
 
-   - Apply arithmetic operations and correctly handle operator precedence in
-     Java programs.
+   - Apply arithmetic operations and correctly handle operator precedence.
 
 4. **Handle User Input with `Scanner`**:
 
-   - Use the `Scanner` class to read and process user input during program
-     execution.
-   - Assign a variable to store a value read from user input.
+   - Use the `Scanner` class to capture user input.
+   - Assign a variable to store a value received from user input.
 
 5. **Format Output Using String Concatenation**
 
@@ -37,17 +34,15 @@ developing more complex software solutions.
 
 6. **Test Java Programs with JUnit**:
 
-   - Run a JUnit test class to check that the program's output matches the
-     expected results.
+   - Run a JUnit test class to validate a program's output.
 
 7. **Debug and Fix Errors in Java Code**:
 
-   - Identify and resolve syntax, logic, and runtime errors in Java programs to
-     ensure correct functionality.
+   - Identify and resolve syntax and logic errors.
 
 8. **Document Java Code**:
-   - Write comments to improve the readability, maintainability, and clarity of
-     Java code.
+
+   - Use comments to improve code readability and provide clear documentation.
 
 ## Task 1 - SelfIntroduction
 

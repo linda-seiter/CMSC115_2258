@@ -59,13 +59,13 @@ public class JunitHelper {
             final Class<?> clazz = Class.forName(className);
             final Method main = clazz.getMethod("main", String[].class);
             final Object[] args = new Object[1];
-            args[0] = new String[] {};  // You can customize this if needed
+            args[0] = new String[] {}; // You can customize this if needed
             main.invoke(null, args);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.setIn(standardIn);  // Reset standard input
-        System.setOut(standardOut);  // Reset standard output
+        System.setIn(standardIn); // Reset standard input
+        System.setOut(standardOut); // Reset standard output
         return outputStreamCaptor.toString();
     }
 
@@ -106,11 +106,13 @@ public class JunitHelper {
      * @return The method body
      */
     public static String getMethodBody(String className, String methodName) {
-        // Use absolute path from the project directory, or use a relative path based on the working directory
+        // Use absolute path from the project directory, or use a relative path based on
+        // the working directory
         String projectPath = Paths.get("").toAbsolutePath().toString(); // Get the root directory of the project
 
-        //IntelliJ Maven build path
-        String fileName = projectPath + "/src/main/java/" + className.replace('.', '/') + ".java"; // Adjust file path for Java class
+        // IntelliJ Maven build path
+        String fileName = projectPath + "/src/main/java/" + className.replace('.', '/') + ".java"; // Adjust file path
+                                                                                                   // for Java class
 
         final JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         try (final StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null,

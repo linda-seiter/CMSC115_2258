@@ -1,32 +1,69 @@
 # CMSC 115 Unit 2 Lab
 
+TODO: Adjust debugging screenshots once IDE decision has been made.
+
 ## Learning Objectives
 
-- Use mathematical and augmented assignment operators to perform operations on variables.
-- Convert between different numeric types, such as casting a `double` to an `int`, and applying rounding methods to numeric values.
-- Run JUnit tests to verify the correctness of a Java program.
-- Identify and fix syntax errors in code, such as incorrect variable declarations or operator usage.
-- Use a debugger to step through code and identify logic errors in programs.
+1. **Use of Mathematical and Augmented Assignment Operators**
 
+   - Apply basic mathematical operations (addition, subtraction, multiplication,
+     division, and remainder).
+
+2. **Numeric Type Conversion**
+
+   - Cast between different numeric types (e.g., `double` to `int`)
+   - Apply rounding methods such as truncation and rounding to specific decimal
+     places.
+
+3. **Debug Code**
+
+   - Use a debugger to identify and fix logic errors involving numeric and
+     assignment operators.
+
+4. **Detect and Resolve Variable Redeclaration Issues**
+
+   - Recognize when a variable is declared multiple times in the same scope.
+   - Reassign a value to an existing variable instead of redeclaring it.
+
+5. **Use Augmented Assignment Operators**
+
+   - Apply augmented assignment operators `+=`, `-=`, `*=`, `/=`, and `%=` for
+     concise and efficient coding.
+
+6. **Identify Variable Scope and Re-declarations**
+
+   - Recognize when a variable has been redeclared within a scope and evolve
+     code to reassign without redeclaring a variable.
+
+7. **Round and Truncate Floating-Point Numbers**
+
+   - Handle floating-point precision and use methods like rounding to a specific
+     number of decimal places.
+
+8. **Test and Debug Code**:
+   - Run a JUnit test class to validate a program's output.
+   - Develop debugging skills by leveraging JUnit test failures to pinpoint
+     issues in the code and fix them.
+   - Use the IDE debugger to set breakpoints, step through code, examine program
+     flow, and monitor changes in variable values.
 
 ## Introduction
 
-In this unit, we will explore some of the fundamental concepts in Java programming
-that will help you improve the readability, efficiency, and correctness
-of your code. These include augmented assignment operators, numeric conversions,
-and debugging techniques. You will also learn how to use JUnit for testing,
-which is essential for ensuring your code performs as expected. By the end of this lab,
-you should have a solid understanding of these concepts and be able to apply them
-to your Java programs effectively.
+In this unit, we will explore some of the fundamental concepts in Java
+programming that will help you improve the readability, efficiency, and
+correctness of your code. These include augmented assignment operators, numeric
+conversions, and debugging techniques. You will also use JUnit for testing,
+which is essential for ensuring your code performs as expected. These skills are
+critical for developing correct and optimized programs.
 
 ## Setup
 
-TODO: Instructions on how to configure debugger to prevent stepping into java.\*
-methods, etc.
+TODO
 
 ## Task 1 - JavaFacts
 
-**Objective**: Review how to use JUnit to check if the code produces the correct output.
+**Objective**: Review how to use JUnit to check if the code produces the correct
+output.
 
 Let's review how to run a Junit test to check code functionality.
 
@@ -50,13 +87,17 @@ actual output produced by the current code differs from the expected output.
 | --------------------------------------------------------------------- | ---------------------------------------------------- |
 | Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
 
-1. Run the Junit `JavaFactsTest` class and confirm the test fails.  Recall you can view the differences between the expected and actual output.
-2. Edit the second print statement in the `main` method in `JavaFacts` to produce the expected output.
-3. Re-run the `JavaFactsTest` class and confirm your solution passes the Junit test.
+1. Run the Junit `JavaFactsTest` class and confirm the test fails. Recall you
+   can view the differences between the expected and actual output.
+2. Edit the second print statement in the `main` method in `JavaFacts` to
+   produce the expected output.
+3. Re-run the `JavaFactsTest` class and confirm your solution passes the Junit
+   test.
 
 ## Task 2 - PizzaShares
 
-**Objective**: Use division and remainder operators to compute the number of slices per person and remaining slices.
+**Objective**: Use division and remainder operators to compute the number of
+slices per person and remaining slices.
 
 Open the `PizzaShares` class in the editor.
 
@@ -92,8 +133,8 @@ public class PizzaShares {
 ```
 
 The program uses a `Scanner` to read user input and initialize the `totalSlices`
-and `people` variables. The number of whole slices per person is then computed and stored in 
-`slicesPerPerson`.
+and `people` variables. The number of whole slices per person is then computed
+and stored in `slicesPerPerson`.
 
 Run the `PizzaShares` class and enter the sample input:
 
@@ -119,8 +160,11 @@ leftover?
 <tr><td>%</td><td>remainder</td><td>17%3</td><td>2</td> </tr>
 </table>
 
-1. Modify the `main` method to use Java's modulo (remainder) operator to compute the remaining slices, storing the result in a new variable called `slicesRemaining`. Then, print the value as shown in the sample runs below.
-2. Run `PizzaShares` multiple times with different input values and verify that the output matches the expected results.
+1. Modify the `main` method to use Java's modulo (remainder) operator to compute
+   the remaining slices, storing the result in a new variable called
+   `slicesRemaining`. Then, print the value as shown in the sample runs below.
+2. Run `PizzaShares` multiple times with different input values and verify that
+   the output matches the expected results.
 
 <table>
 <tr>
@@ -136,9 +180,9 @@ There are 0 slices remaining.</td>
 </tr>
 </table>
 
-3. Run the `PizzaSharesTest` class to confirm your solution passes the Junit tests. Note
-   there are two test methods, each checking a different set of inputs. You'll
-   should see multiple test results displayed.
+3. Run the `PizzaSharesTest` class to confirm your solution passes the Junit
+   tests. Note there are two test methods, each checking a different set of
+   inputs. You'll should see multiple test results displayed.
 
 ## Task 3 - StudentInfo
 
@@ -147,11 +191,11 @@ There are 0 slices remaining.</td>
 In Java, when you declare a variable, you define its type and assign it a name.
 After the variable is declared, its value can be changed multiple times within
 the same scope, such as inside a method, loop, or block of code. We'll explore
-loops and blocks in more detail later. For now, let's look at an example where
-a variable is declared and initialized in the `main` method, and then mistakenly
+loops and blocks in more detail later. For now, let's look at an example where a
+variable is declared and initialized in the `main` method, and then mistakenly
 declared a second time within the same method.
 
-Open `StudentInfo` in the editor and run the program. 
+Open `StudentInfo` in the editor and run the program.
 
 ```java
 /**
@@ -202,34 +246,202 @@ Age: 29 gpa: 3.8</td>
 
 After updating `age` to 29, the code should update `gpa` to 4.0. The line to
 reassign `gpa` to 4.0 is currently commented out.
+
 ```java
 // double gpa = 4.0;
 ```
 
 1. Remove the comment character before `double gpa = 4.0;`
-2. The variable <code>gpa</code> is now underlined in red to indicate an error. Hover the mouse over the error to see a message indicating the variable was already declared (see line 10).
+2. The variable <code>gpa</code> is now underlined in red to indicate an error.
+   Hover the mouse over the error to see a message indicating the variable was
+   already declared (see line 10).
 
 <img src = "images/error_gpa.png" alt="error redeclared gpa" width=300>
 
 3. Try to run the program. It crashes due to the duplicate variable declaration.
 
-Let's fix the error. Line 24 should assign `gpa` to 4.0 **without** re-declaring the variable.
+Let's fix the error. Line 24 should assign `gpa` to 4.0 **without** re-declaring
+the variable.
 
-1. Remove the type `double` to prevent a duplicate variable
-   declaration. The compiler error should go away.
+1. Remove the type `double` to prevent a duplicate variable declaration. The
+   compiler error should go away.
    ```java
    gpa = 4.0;
    ```
 2. Run `StudentInfo` to view the output.
 3. Run `StudentInfoTest` to confirm your solution passes the Junit test.
 
-To summarize, you declare a variable only once in the `main` method by specifying
-its name and type. If you want to assign a new value to the variable later,
-you don’t need to specify the type again.
+To summarize, you declare a variable only once in the `main` method by
+specifying its name and type. If you want to assign a new value to the variable
+later, you don’t need to specify the type again.
 
-## Task 4
+## Task 4 - InchesToFeet
 
-**Objective**: Demonstrate the use of augmented assignment operators to update passenger counts at various bus stops.
+**Objective**: Test and debug a program that has an error involving integer
+division.
+
+Consider the following program requirements:
+
+_Write a program that converts inches to feet. Read in an integer representing
+the number of inches, then calculate and display the equivalent number of feet.
+One foot is equivalent to 12 inches._
+
+The `InchesToFeet` class attempts to implement the requirements, but it has a
+subtle yet common error.
+
+```java
+import java.util.Scanner;
+
+/**
+ * The InchesToFeet class provides a simple conversion from inches to feet.
+ * It prompts the user to enter a value in inches, performs the conversion,
+ * and then displays the result in feet.
+ *
+ * There is an error in the code.
+ *
+ * @author Your Name
+ * @version 1.0
+ */
+public class InchesToFeet {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter inches: ");
+        int inches = input.nextInt();
+        double feet = inches / 12;
+        System.out.println(inches + " inches = " + feet + " feet");
+    }
+}
+```
+
+Run the Junit `InchesToFeetTest` class, which tests the program with input value
+of 3, 12, 18, and 24. While the program produces the correct output when the
+input is 12 or 24 inches, it fails for input values of 3 and 18.
+
+<img src = "images/inches_to_feet_junit_tests.png" alt="InchesToFeet fails when input is 3 or 18 inches" width=600>
+
+A failed test indicates an error exists in the code. We'll use the debugger to
+step through the code and identify the error.
+
+<table>
+
+<tr>
+<td>
+<img src = "images/inchestofeet_step0.png" alt="click on line 14 gutter to set breakpoint" width=600>
+</td>
+<td>
+Set a breakpoint at line 14, the line that<br> declares and initializes the variable `inches`.<br><br>Start the debugger by right-clicking on the class and choose <b>Debug</b>.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/inchestofeet_step1.png" alt="debug perspective" width=600>
+</td>
+<td>
+Execution stops at the breakpoint.<br>  
+The terminal shows the prompt "Enter inches:".<br>
+Let's test the program by entering the input value `18`.
+</td>
+</tr>
+</table>
+
+We'll find the bug using the "step over" button to execute one line of code at a
+time and view the variables in memory.
+
+<table>
+
+<tr>
+<th>
+Step Over
+</th>
+<th>
+Current line
+</th>
+<th>
+Variables View
+</th>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50>
+</td>
+<td>
+<code>int inches = input.nextInt();</code>
+</td>
+<td>
+<img src = "images/inchestofeet_step2.png" alt="line 14 variable inches assigned to 18" width=200>
+<br>
+Variable inches is assigned to the input value 18.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>double feet = inches / 12;</code></td>
+<td>
+<img src = "images/inchestofeet_step3.png" alt="line 15 variable feet incorrectly assigned 1.0" width=200>
+<br>
+<br>
+The variable feet should be assigned to 1.5, but it is assigned to 1.0.
+<br><br>
+The statement has a logic error.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over.png" alt="step over" width=50></td>
+<td>
+<code>System.out.println(inches + " inches = " + feet + " feet");</code></td>
+<td>
+<img src = "images/inchestofeet_step4.png" alt="line 16 print statement" width=200>
+<br>
+<br>
+The program does not print the expected output since 18 inches is equivalent to 1.5 feet.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/terminate.png" alt="step over" width=150>
+</td>
+<td colspan="2">
+We've reached the end of the main method.  Press the red square to terminate the debug session.
+</td>
+</tr>
+
+</table>
+
+This example demonstrates a common error with the division operator. Recall how
+division works in Java. If both operands are integers, the result is an integer
+and any remainder is discarded. However, if either operand is a double, the
+result is a double.
+
+| Expression | Value |
+| ---------- | ----- |
+| 3/12       | 0     |
+| 3/12.0     | 0.25  |
+| 18/12      | 1     |
+| 18/12.0    | 1.5   |
+
+To prevent integer division and preserve the fractional part, we can divide by a
+floating point number (a float or double) such as 12.0.
+
+```java
+ double feet = inches / 12.0;
+```
+
+- Modify the `InchesToFeet` class to use floating-point division instead of
+  integer division.
+- Rerun the `InchesToFeetTest` JUnit test class to ensure all tests pass.
+
+## Task 5 - BusRoute
+
+**Objective**: Demonstrate the use of augmented assignment operators to update
+passenger counts at various bus stops.
 
 Java has increment and decrement operators:
 
@@ -250,8 +462,7 @@ Java also supports augmented assignment operators:
 <tr><td>%=</td><td>x %= 5</td><td>x = x % 5</td> </tr>
 </table>
 
-Open  `BusRoute` in the editor, then run the program to
-view the output.
+Open `BusRoute` in the editor, then run the program to view the output.
 
 ```java
 /**
@@ -292,19 +503,19 @@ operators `+=` and `-=` to update `busStop` and `passengers`.
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bus begins its route<br>8 passengers get on at stop#1<br>Departing stop#1 with 8 passengers<br>2 passengers get off at stop#2<br>Departing stop#2 with 6 passengers<br>Half the passengers get off at stop#3<br>Departing stop#3 with 3 passengers<br>The number of passengers triples at stop#4<br>Departing stop#4 with 9 passengers | Bus begins its route<br>8 passengers get on at stop#1<br>Departing stop#1 with 8 passengers<br>2 passengers get off at stop#2<br>Departing stop#2 with 6 passengers<br> <br> <br> <br> <br> |
 
-1. Update `BusRoute` to add two more bus stops. Use the appropriate
-   augmented assignment operators to adjust the passenger count.
+1. Update `BusRoute` to add two more bus stops. Use the appropriate augmented
+   assignment operators to adjust the passenger count.
    - Half the passengers get off at the 3rd stop.
    - The number of passengers triples at the 4th stop.
 2. Run `BusRoute` to view the output.
 3. Run `BusRouteTest` to confirm your solution passes the Junit tests.
 
-## Task 5 - DebugIt
+## Task 6 - DebugIt
 
-**Objective**: Use the debugger to identify and fix logic errors involving assignment operators.
+**Objective**: Use the debugger to identify and fix logic errors involving
+assignment operators.
 
-Open the `DebugIt` class in the editor, then run the program to
-view the output.
+Open the `DebugIt` class in the editor, then run the program to view the output.
 
 ```java
 /**
@@ -485,18 +696,19 @@ equal sign, not after it!
 <tr><td>%=</td><td>x %/ 5</td><td>x = x % 5</td> </tr>
 </table>
 
-1. Fix `DebugIt` to use the correct augmented assignment operators to
-   update `planesOnRunway`.
+1. Fix `DebugIt` to use the correct augmented assignment operators to update
+   `planesOnRunway`.
 2. Run `DebugIt` to confirm the expected output.
 3. Run `DebugItTest` to confirm the Junit tests pass.
 
 Try to remember this error, it is a very common mistake!
 
-## Task 6 - Rounding
+## Task 7 - Rounding
 
-**Objective**: Perform numeric conversions and rounding using the int type and various rounding methods.
+**Objective**: Perform numeric conversions and rounding using the int type and
+various rounding methods.
 
-Open the `Rounding` class  in the editor.
+Open the `Rounding` class in the editor.
 
 ```java
 import java.util.Scanner;
@@ -705,8 +917,9 @@ The `Rounding` class shows how to:
 Your task is to update the `main` method with statements to round the input
 value to 3 digits after the decimal point.
 
-1. Update `Rounding` to perform the additional task of rounding the number to 3 digits after the decimal
-   point, producing the expected output displayed in the sample runs.
+1. Update `Rounding` to perform the additional task of rounding the number to 3
+   digits after the decimal point, producing the expected output displayed in
+   the sample runs.
 2. Run `Rounding` to confirm the output.
 3. Run `RoundingTest` to confirm your solution passes the Junit tests.
 
