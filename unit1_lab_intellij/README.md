@@ -2,74 +2,75 @@
 
 ## Learning Objectives
 
-1. **Run Java Classes**:
+1. **Run A Java Program**:
 
-   - Execute Java classes using different methods in the IntelliJ IDE and verify
-     output correctness.
+    - Execute the `main` method of a Java class using different methods in an
+      IDE.
 
-2. **Produce Program Output**:
+2. **Generate Program Output**:
 
-   - Use `System.out.println` to display information on the console.
+    - Utilize `System.out.println` to display program output.
+    - View the output in the terminal or output window of the IDE.
 
 3. **Use Comments Effectively**:
 
-   - Use single-line and multi-line comments to improve code readability and
-     documentation and control execution.
+    - Use single-line and multi-line comments to improve code readability and
+      documentation and control execution.
 
 4. **Apply Numeric Operations**:
 
-   - Use numeric operators to perform calculations and manipulate data in Java
-     programs.
+    - Use numeric operators to perform calculations and manipulate data.
 
 5. **Declare and Manipulate Variables**:
 
-   - Declare, initialize, and update variables in Java to store and modify data.
+    - Declare, initialize, and reassign variables in Java to store and modify
+      data.
 
 6. **Utilize the Debugger**:
 
-   - Set a breakpoint to stop program execution at a particular line of code.
-   - Step through code using the IDE debugger to analyze program flow and
-     inspect variable changes.
+    - Set a breakpoint to stop program execution at a particular line of code.
+    - Step through code using the IDE debugger to analyze program flow and
+      inspect variable changes.
 
 7. **Handle User Input with `Scanner`**:
 
-   - Use the `Scanner` class to read and process user input during program
-     execution.
-   - Assign a variable to store a value read from user input.
+    - Use the `Scanner` class to read and process user input during program
+      execution.
+    - Assign a variable to store a value read from user input.
 
 8. **Format Output Using String Concatenation**
 
-   - Concatenate strings with other data types (e.g., integers or doubles) using
-     the `+` operator to produce descriptive output.
+    - Concatenate strings with other data types (e.g., integers or doubles) using
+      the `+` operator to produce descriptive output.
 
 9. **Identify and Fix Errors**:
 
-   - Diagnose and correct syntax and logic errors in Java code to ensure correct
-     functionality.
+    - Diagnose and correct syntax and logic errors.
 
 10. **Use Junit to validate Java code:**
-   - Run a JUnit test class to validate that the program's output matches the
-     expected results.
-   - View and interpret the test result.
-   - Use the side-by-side comparison to pinpoint differences between expected
-     and actual outputs.
-   - Build debugging skills by using JUnit test failures to identify issues in
-     the code and resolve them.
+    - Run a JUnit test class to validate a program's output.
+    - View and interpret the test result.
+    - Use the side-by-side comparison to pinpoint differences between expected
+      and actual outputs.
+    - Build debugging skills by using JUnit test failures to identify issues in
+      the code and resolve them.
+
 ## Introduction
 
-In this lab, you'll practice running, testing, editing, and debugging Java classes while
-learning key programming concepts. You'll use comments for documentation,
-declare and manipulate variables, and perform calculations with numeric
-operators. You'll also get hands-on experience with the debugger to step through
-code and track variable changes. Additionally, you'll learn how to use the
-Scanner class to read user input and fix common coding errors. By the end of
-this lab, you'll strengthen your understanding of Java programming and
-debugging.
+In this lab, you'll practice running, testing, editing, and debugging Java
+classes while learning key programming concepts. You'll use comments for
+documentation, declare and assign variables, and perform calculations with
+numeric operators. Additionally, you'll learn how to use the Scanner class to
+read user input. You'll get hands-on experience with the debugger to step
+through code and track variable changes. You'll also execute JUnit tests and
+compare the expected output with the actual output to detect any errors.
 
 ## Setup
 
-**Note:** Instructions for accessing IntelliJ on Mars and installing IntelliJ on
-your local machine can be found in a separate document.
+TODO:
+
+- Instructions for accessing IDE on Mars and/or installing IDE, JDK.
+- Instructions on downloading and importing lab starter files.
 
 ## IntelliJ Interactive Development Environment
 
