@@ -24,7 +24,7 @@
 
 5. **Declare and Manipulate Variables**:
 
-   - - Declare, initialize, and reassign variables to store and update data.
+   - Declare, initialize, and reassign variables to store and update data.
 
 6. **Utilize the Debugger**:
 
