@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * The {@code BasketballGameSolution} class simulates the scoring of a
+ * The {@code BasketballGame} class simulates the scoring of a
  * basketball game through four quarters, demonstrating the use of various
  * arithmetic operations on the scores of both the home and away teams.
  *
@@ -68,7 +68,8 @@ public class BasketballGame {
 
 		// TODO: In the 4th quarter, the home team scores 1 fewer point than in the 1st
 		// quarter. This is achieved by subtracting 1 from their 1st quarter score using
-		// the decrement operator, and then adding the result to their current score.
+		// the prefix decrement operator, and then adding the result to their current
+		// score using the increment assignment operator.
 
 		// TODO: Away team loses by 1 point, so their score is set to be 1 point less
 		// than the home team's score.

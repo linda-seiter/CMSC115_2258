@@ -9,8 +9,8 @@
 
 2. **Use Java Math Methods**:
 
-   - Utilize built-in Java methods like `Math.pow()` and `Math.sqrt()` to handle
-     more advanced mathematical operations.
+   - Utilize built-in Java method `Math.pow()` to handle more advanced
+     mathematical operations.
 
 3. **Perform Type Casting and Rounding**:
 
@@ -98,12 +98,14 @@ following functionality:
 1. Declare and initialize a `Scanner` to read input from the console.
 2. Prompt for and read the transmission rate R<sub>0</sub> as an integer,
    storing the value in a variable named `r0`.
-3. Call `Math.pow` to calculate the potential new cases at the 4th iteration
-   based on the given R<sub>0</sub> value. Use casting to convert the `double`
-   value returned from `Math.pow` to an `int`, and store the result in an int
-   variable named `newCases`.
-4. Print the number of new cases as shown in the sample runs.
-5. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
+3. Prompt for and read in the number of iterations as an integer, storing the
+   value in a variable named `iterations`.
+4. Call `Math.pow` to calculate the potential new cases after the specified
+   iterations based on the given R<sub>0</sub> value. Use casting to convert the
+   `double` value returned from `Math.pow` to an `int`, and store the result in
+   an int variable named `newCases`.
+5. Print the number of new cases as shown in the sample runs.
+6. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
 
 <table>
 <tr>
@@ -112,10 +114,12 @@ following functionality:
 </tr>
 <tr>
 <td>Enter r0: <b>2</b><br>
-New cases on 4th iteration: 16
+Enter iterations: <b>4</b><br>
+New cases after 4 iterations: 16
 </td>
-<td>Enter r0: <b>18</b><br>
-New cases on 4th iteration: 104976
+<td>Enter r0: <b>3</b><br>
+Enter iterations: <b>5<b><br>
+New cases after 5 iterations: 243
 </td>
 
 </tr>

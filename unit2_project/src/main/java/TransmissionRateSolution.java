@@ -22,12 +22,17 @@ public class TransmissionRateSolution {
         // Read the integer input from the user and store it in the variable r0
         int r0 = input.nextInt();
 
-        // Calculate the number of new cases on the 4th iteration by raising r0 to the
-        // power of 4. Math.pow() returns a double, so we cast it to an integer
-        int newCases = (int) Math.pow(r0, 4);
+        // Prompt the user to enter the number of iterations
+        System.out.print("Enter iterations: ");
 
-        // Display the result: the number of new cases on the 4th iteration
-        System.out.println("New cases on 4th iteration: " + newCases);
+        int n = input.nextInt();
+
+        // Calculate the number of new cases on the nth iteration by raising r0 to the
+        // power of n. Math.pow() returns a double, so we cast it to an integer
+        int newCases = (int) Math.pow(r0, n);
+
+        // Display the result: the number of new cases on the nth iteration
+        System.out.println("New cases after " + n + " iterations: " + newCases);
     }
 
 }

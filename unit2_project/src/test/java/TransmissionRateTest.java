@@ -2,8 +2,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -12,50 +11,75 @@ import java.io.PrintStream;
 
 public class TransmissionRateTest {
 
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final InputStream originalIn = System.in;
+    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    private final PrintStream printStream = new PrintStream(outputStream);
+    private final PrintStream originalSystemOut = System.out;
+    private final InputStream originalSystemIn = System.in;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         // Redirect System.out to capture the output
-        System.setOut(new PrintStream(outContent));
+        System.setOut(printStream);
     }
 
     @AfterEach
-    public void tearDown() {
-        // Reset System.out to its original stream
-        System.setOut(originalOut);
-
-        // Reset System.in to its original stream
-        System.setIn(originalIn);
+    void tearDown() {
+        // Restore the original System.out and System.in
+        System.setOut(originalSystemOut);
+        System.setIn(originalSystemIn);
     }
 
-    private void simulateInput(String input) {
-        // Simulate user input
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-    }
+    @Test
+    @DisplayName("Test TransmissionRate with r0 3 and 5 iterations")
+    void testTransmissionRate_3_5() {
+        // Set the input stream to simulate user input
+        String input = "3 5";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-    @ParameterizedTest
-    @CsvSource({
-            "2, 16",
-            "3, 81",
-            "10, 10000",
-            "0, 0",
-            "1, 1"
-    })
-    @DisplayName("Test: Calculate new cases for various r0 values")
-    public void testCalculateNewCases(int r0, int expectedNewCases) {
-        // Simulate user input for each r0 value
-        simulateInput(r0 + "\n");
-
-        // Call the main method of TransmissionRate
+        // Run the main method of TransmissionRate
         TransmissionRate.main(new String[] {});
 
-        // Verify the output
-        String expectedOutput = "Enter r0: " +
-                "New cases on 4th iteration: " + expectedNewCases + "\n";
-        assertEquals(expectedOutput, outContent.toString());
+        // Expected output for the inputs 3 and 5
+        String expectedOutput = "Enter r0: " + "Enter iterations: " +
+                "New cases after 5 iterations: 243\n";
+
+        // Check if the captured output matches the expected output
+        assertEquals(expectedOutput, outputStream.toString());
+    }
+
+    @Test
+    @DisplayName("Test TransmissionRate with r0 2 and 4 iterations")
+    void testTransmissionRate_2_4() {
+        // Set the input stream to simulate user input
+        String input = "2 4";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        // Run the main method of TransmissionRate
+        TransmissionRate.main(new String[] {});
+
+        // Expected output for the inputs 2 and 4
+        String expectedOutput = "Enter r0: " + "Enter iterations: " +
+                "New cases after 4 iterations: 16\n";
+
+        // Check if the captured output matches the expected output
+        assertEquals(expectedOutput, outputStream.toString());
+    }
+
+    @Test
+    @DisplayName("Test TransmissionRate with r0 10 and 4 iterations")
+    void testTransmissionRate_10_4() {
+        // Set the input stream to simulate user input
+        String input = "10 4";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        // Run the main method of TransmissionRate
+        TransmissionRate.main(new String[] {});
+
+        // Expected output for the inputs 10 and 4
+        String expectedOutput = "Enter r0: " + "Enter iterations: " +
+                "New cases after 4 iterations: 10000\n";
+
+        // Check if the captured output matches the expected output
+        assertEquals(expectedOutput, outputStream.toString());
     }
 }

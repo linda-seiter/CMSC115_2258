@@ -1,6 +1,7 @@
 # CMSC 115 Unit 2 Lab
 
-TODO: Adjust debugging screenshots once IDE decision has been made.
+TODO: Adjust debugging screenshots once IDE decision has been made. TODO: Remove
+Math.pow task if using Zybooks (Math methods not in chapter 2)
 
 ## Learning Objectives
 
