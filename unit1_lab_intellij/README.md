@@ -14,29 +14,27 @@
 
 3. **Use Comments Effectively**:
 
-    - Use single-line and multi-line comments to improve code readability and
-      documentation and control execution.
+   - Use single-line and multi-line comments to improve code readability,
+      provide clear documentation, and temporarily disable lines of code for
+      testing or debugging purposes.
 
 4. **Apply Numeric Operations**:
 
-    - Use numeric operators to perform calculations and manipulate data.
+    - Use numeric operators to perform calculations and modify data.
 
 5. **Declare and Manipulate Variables**:
 
-    - Declare, initialize, and reassign variables in Java to store and modify
-      data.
+   - Declare, initialize, and reassign variables  to store and update data.
 
 6. **Utilize the Debugger**:
 
     - Set a breakpoint to stop program execution at a particular line of code.
-    - Step through code using the IDE debugger to analyze program flow and
-      inspect variable changes.
+    - Use the IDE debugger to step through code, examine program flow, and monitor changes in variable values.
 
 7. **Handle User Input with `Scanner`**:
 
-    - Use the `Scanner` class to read and process user input during program
-      execution.
-    - Assign a variable to store a value read from user input.
+   - Utilize the `Scanner` class to capture user input.
+   - Assign a variable to store the value received from user input.
 
 8. **Format Output Using String Concatenation**
 
