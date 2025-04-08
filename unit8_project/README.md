@@ -1,8 +1,8 @@
 # Unit 8 Project - Yard Planner
 
-You will implement multiple methods in the **YardPlanner** class
-to modify a 2D array representing a rectangular yard. The `main` method will populate
-the yard by placing a house at the center, trees in the corners surrounded by squirrels,
+You will implement multiple methods in the **YardPlanner** class to modify a 2D
+array representing a rectangular yard. The `main` method will populate the yard
+by placing a house at the center, trees in the corners surrounded by squirrels,
 and grass covering the remaining area.
 
 ```text
@@ -16,35 +16,64 @@ Enter rows and columns: 5 7
 
 ## **Learning Outcomes**
 
-### **1. Working with and Manipulating 2D Arrays in Java**
-- **Declare and initialize 2D arrays**: Create 2D arrays by specifying the number of rows and columns.
-- **Dynamic Array Sizing**:  Use the `Scanner` class to collect user input to dynamically determine the size of the array.
-- **Access and modify elements**: Use row and column indices to read and modify individual elements in a 2D array.
-- **Iterate through 2D arrays**: Utilize nested loops to traverse and process each element in a 2D array, following row-major order.
-- **Manipulate array data**: Modify specific values, fill arrays with a constant value, replace values at specific locations (e.g., middle cell, corners), and apply transformations across the array.
-- **Search and update elements in a 2D array**: Locate specific values within a 2D array, and implement corresponding updates based on the search results (e.g., replacing or updating adjacent cells).
-- **Validate array indices**: Use conditional logic to check array bounds and prevent out-of-bounds errors when updating adjacent cells.
-- **Pass 2D arrays to methods**: Pass 2D arrays as arguments to methods and observe how changes in the method affect the original array.
-- **Model how 2D arrays are organized and stored in memory**: Use the debugger to inspect a 2D array and verify it as an array of references to row arrays, with each row being a separate array object.
+**1. Working with and Manipulating 2D Arrays in Java**
 
-### **2. Algorithmic Thinking**
-- **Apply logical transformations**: Design and implement algorithms to transform data within a 2D array based on specific conditions, such as replacing values or setting adjacent cells.
-- **Manipulate data based on conditions**: Use conditions to identify specific array elements (e.g., middle cells, corners, or specific target values) and modify them accordingly.
+- **Declare and initialize 2D arrays**: Create 2D arrays by specifying the
+  number of rows and columns.
+- **Dynamic Array Sizing**: Use the `Scanner` class to collect user input to
+  dynamically determine the size of the array.
+- **Access and modify elements**: Use row and column indices to read and modify
+  individual elements in a 2D array.
+- **Iterate through 2D arrays**: Utilize nested loops to traverse and process
+  each element in a 2D array, following row-major order.
+- **Manipulate array data**: Modify specific values, fill arrays with a constant
+  value, replace values at specific locations (e.g., middle cell, corners), and
+  apply transformations across the array.
+- **Search and update elements in a 2D array**: Locate specific values within a
+  2D array, and implement corresponding updates based on the search results
+  (e.g., replacing or updating adjacent cells).
+- **Validate array indices**: Use conditional logic to check array bounds and
+  prevent out-of-bounds errors when updating adjacent cells.
+- **Pass 2D arrays to methods**: Pass 2D arrays as arguments to methods and
+  observe how changes in the method affect the original array.
+- **Model how 2D arrays are organized and stored in memory**: Use the debugger
+  to inspect a 2D array and verify it as an array of references to row arrays,
+  with each row being a separate array object.
 
-### **3. Problem Decomposition, Incremental Problem-Solving, and Debugging**
-- **Decompose complex problems**: Break down larger tasks into smaller, manageable sub-problems to simplify the development process.
-- **Implement solutions incrementally**: Solve problems in stages, testing and verifying each part before moving to the next.
-- **Test and debug methods**: Identify and fix issues in partially implemented methods, such as incorrect index calculations and logical errors, through systematic testing and debugging techniques.
+**2. Algorithmic Thinking**
 
-### **4. Modular Programming and Maintainable Code**
-- **Write modular code using methods**: Organize programs into independent, reusable methods to enhance clarity, simplify debugging, and facilitate maintenance.
-- **Apply the Single Responsibility Principle (SRP)**: Ensure that each method handles a specific task, improving code readability and making it easier to debug, test, and modify when necessary.
+- **Apply logical transformations**: Design and implement algorithms to
+  transform data within a 2D array based on specific conditions, such as
+  replacing values or setting adjacent cells.
+- **Manipulate data based on conditions**: Use conditions to identify specific
+  array elements (e.g., middle cells, corners, or specific target values) and
+  modify them accordingly.
 
-### **5. Developing Simulations and Grid-Based Applications**
-- **Build a grid-based simulation**: Represent objects (e.g., house, trees, squirrels, grass) in a 2D grid using Unicode characters.
-- **Simulate dynamic interactions**: Apply logical transformations to update the grid and simulate environmental changes.
+**3. Problem Decomposition, Incremental Problem-Solving, and Debugging**
 
+- **Decompose complex problems**: Break down larger tasks into smaller,
+  manageable sub-problems to simplify the development process.
+- **Implement solutions incrementally**: Solve problems in stages, testing and
+  verifying each part before moving to the next.
+- **Test and debug methods**: Identify and fix issues in partially implemented
+  methods, such as incorrect index calculations and logical errors, through
+  systematic testing and debugging techniques.
 
+**4. Modular Programming and Maintainable Code**
+
+- **Write modular code using methods**: Organize programs into independent,
+  reusable methods to enhance clarity, simplify debugging, and facilitate
+  maintenance.
+- **Apply the Single Responsibility Principle (SRP)**: Ensure that each method
+  handles a specific task, improving code readability and making it easier to
+  debug, test, and modify when necessary.
+
+**5. Developing Simulations and Grid-Based Applications**
+
+- **Build a grid-based simulation**: Represent objects (e.g., house, trees,
+  squirrels, grass) in a 2D grid using Unicode characters.
+- **Simulate dynamic interactions**: Apply logical transformations to update the
+  grid and simulate environmental changes.
 
 ## Coding Guidelines
 
@@ -55,11 +84,15 @@ Enter rows and columns: 5 7
 
 ## Run the `main()` method with sample user input
 
-You are provided with an initial version of the `YardPlanner` class, which includes a method called `printMatrix` designed to display the contents of a 2D array of strings.
+You are provided with an initial version of the `YardPlanner` class, which
+includes a method called `printMatrix` designed to display the contents of a 2D
+array of strings.
 
-The `main` method initializes a 2D array of strings based on dimensions specified by the user and then invokes the `printMatrix` method.
+The `main` method initializes a 2D array of strings based on dimensions
+specified by the user and then invokes the `printMatrix` method.
 
-Execute the `main()` method to verify that the matrix is created and printed with the given dimensions.
+Execute the `main()` method to verify that the matrix is created and printed
+with the given dimensions.
 
 ```text
 Enter rows and columns: 7 9
@@ -74,10 +107,10 @@ nullnullnullnullnullnullnullnullnull
 
 Each cell contains the default String value of `null`.
 
-
 ## Task #1 - Implement the `fillMatrix()` method
 
-The purpose of the `fillMatrix` method is to assign a specified fill value to every cell in a 2D array of strings.
+The purpose of the `fillMatrix` method is to assign a specified fill value to
+every cell in a 2D array of strings.
 
 ```java
 /**
@@ -92,7 +125,7 @@ public static void fillMatrix(String[][] matrix, String fillValue)
 **Example 1**
 
 ```java
-String[][] matrix = new String[3][3]; 
+String[][] matrix = new String[3][3];
 
 /* All cells are initially null:
 {
@@ -105,7 +138,7 @@ String[][] matrix = new String[3][3];
 // Reassign all cells to "X"
 fillMatrix(matrix, "X");
 
-/* All cells now contain "X" 
+/* All cells now contain "X"
 {
     {"X", "X", "X"},
     {"X", "X", "X"},
@@ -126,7 +159,7 @@ String[][] matrix = {
 // Reassign all cells to "HI"
 fillMatrix(matrix, "HI");
 
-/* All cells now contain "HI" 
+/* All cells now contain "HI"
 {
     {"HI", "HI"},
     {"HI", "HI"},
@@ -137,7 +170,8 @@ fillMatrix(matrix, "HI");
 
 Run the JUnit tests in the `FillMatrixTest` class to verify your solution.
 
-Once the tests pass, update the `main()` method to fill the yard with dirt (brown squares).
+Once the tests pass, update the `main()` method to fill the yard with dirt
+(brown squares).
 
 ```text
 Enter rows and columns: 7 9
@@ -152,17 +186,25 @@ Enter rows and columns: 7 9
 
 ## Task #2 - Implement the `setMiddleCells()` method
 
-The `setMiddleCells` method is designed to assign a value to the middle cell(s) of a 2D array.
+The `setMiddleCells` method is designed to assign a value to the middle cell(s)
+of a 2D array.
 
-- When both the number of rows and columns are odd, there is a single central cell.
-- When either the number of rows or columns is even, there is no distinct middle cell.
+- When both the number of rows and columns are odd, there is a single central
+  cell.
+- When either the number of rows or columns is even, there is no distinct middle
+  cell.
 
 Here’s how the method works:
-- If both the number of rows and columns are odd, it sets the value for the single central cell.
-- If the number of rows is even, it sets the two cells closest to the center along the vertical axis.
-- If the number of columns is even, it sets the two cells closest to the center along the horizontal axis.
 
-Note that if both the number of rows and columns are even, the method will set 4 middle cells in total.
+- If both the number of rows and columns are odd, it sets the value for the
+  single central cell.
+- If the number of rows is even, it sets the two cells closest to the center
+  along the vertical axis.
+- If the number of columns is even, it sets the two cells closest to the center
+  along the horizontal axis.
+
+Note that if both the number of rows and columns are even, the method will set 4
+middle cells in total.
 
 ```java
 /**
@@ -195,7 +237,7 @@ String[][] matrix = {
 // Set middle cell to "X"
 setMiddleCells(matrix, "X");
 
-/* Middle cell (2,3) contains "X" 
+/* Middle cell (2,3) contains "X"
 {
     {"O", "O", "O", "O", "O", "O", "O"},
     {"O", "O", "O", "O", "O", "O", "O"},
@@ -220,7 +262,7 @@ String[][] matrix = {
 // Set middle cells to "X"
 setMiddleCells(matrix, "X");
 
-/* Middle cells (2,2) and (2,3) contains "X" 
+/* Middle cells (2,2) and (2,3) contains "X"
 {
     {"O", "O", "O", "O", "O", "O"},
     {"O", "O", "O", "O", "O", "O"},
@@ -246,7 +288,7 @@ String[][] matrix = {
 // Set middle cells to "X"
 setMiddleCells(matrix, "X");
 
-/* Middle cells (2,2) and (3,2) contains "X" 
+/* Middle cells (2,2) and (3,2) contains "X"
 {
     {"O", "O", "O", "O", "O"},
     {"O", "O", "O", "O", "O"},
@@ -271,7 +313,7 @@ String[][] matrix = {
 // Set middle cells to "X"
 setMiddleCells(matrix, "X");
 
-/* Middle cells (1,2), (1,3), (2,2), (2,3) contains "X". 
+/* Middle cells (1,2), (1,3), (2,2), (2,3) contains "X".
 {
     {"O", "O", "O", "O", "O", "O"},
     {"O", "O", "X", "X", "O", "O"},
@@ -283,7 +325,8 @@ setMiddleCells(matrix, "X");
 
 Run the JUnit tests in the `SetMiddleCellsTest` class to verify your solution.
 
-Once the tests pass, update the `main()` method to add a house in the middle of the yard.
+Once the tests pass, update the `main()` method to add a house in the middle of
+the yard.
 
 Test with various even and odd sized yards as shown.
 
@@ -327,11 +370,12 @@ Enter rows and columns: 4 10
 
 ## Task #3 - Implement the `setCornerCells()` method
 
-The `setCornerCells` method is designed to assign a value to the
-corner cells of a 2D array: (first row, first column), (first row, last column),
-(last row, first column), and (last row, last column).
+The `setCornerCells` method is designed to assign a value to the corner cells of
+a 2D array: (first row, first column), (first row, last column), (last row,
+first column), and (last row, last column).
 
-The method should work for any non-empty 2D array, including arrays with a single row or column.
+The method should work for any non-empty 2D array, including arrays with a
+single row or column.
 
 ```java
 /**
@@ -355,7 +399,7 @@ String[][] matrix = {
 // Set corner cells to "Z"
 setCornerCells(matrix, "Z");
 
-/* Result 
+/* Result
 {
         {"Z", "A", "A", "Z"},
         {"B", "B", "B", "B"},
@@ -393,7 +437,7 @@ String[][] matrix = {
 // Set corner cells to "#"
 setCornerCells(matrix, "#");
 
-/* Result 
+/* Result
 {
         {"#"},
         {"B"},
@@ -412,7 +456,7 @@ String[][] matrix = {
 // Set corner cells to "X"
 setCornerCells(matrix, "X");
 
-/* Result 
+/* Result
 {
     {"X"}
 }
@@ -421,7 +465,8 @@ setCornerCells(matrix, "X");
 
 Run the JUnit tests in the `SetCornerCellsTest` class to verify your solution.
 
-Once the tests pass, update the `main()` to add trees in the corners of the yard.
+Once the tests pass, update the `main()` to add trees in the corners of the
+yard.
 
 ```text
 Enter rows and columns: 7 9
@@ -436,7 +481,8 @@ Enter rows and columns: 7 9
 
 ## Task #4 - Implement the `replaceValue()` method
 
-The `replaceValue` method is used to replace all instances of a specified string in a 2D array with a new string.
+The `replaceValue` method is used to replace all instances of a specified string
+in a 2D array with a new string.
 
 ```java
 /**
@@ -449,9 +495,8 @@ The `replaceValue` method is used to replace all instances of a specified string
 public static void replaceValue(String[][] matrix, String targetValue, String newValue)
 ```
 
-The matrix may contain zero, one, or multiple occurrences of the
-target string, and all such occurrences should
-be replaced with the new value.
+The matrix may contain zero, one, or multiple occurrences of the target string,
+and all such occurrences should be replaced with the new value.
 
 **Example**
 
@@ -465,7 +510,7 @@ String[][] matrix = {
 // Replace "A" with "X"
 replaceValue(matrix, "A", "X");
 
-/* Cells that contained "A" now contain "X" 
+/* Cells that contained "A" now contain "X"
 {
         {"X", "B", "B"},
         {"B", "B", "X"},
@@ -474,9 +519,11 @@ replaceValue(matrix, "A", "X");
  */
 ```
 
-Run the JUnit tests in the `ReplaceTargetValueTest` class to verify your solution.
+Run the JUnit tests in the `ReplaceTargetValueTest` class to verify your
+solution.
 
-Once the tests pass, update the `main()` to replace the dirt (brown square) with grass (seedling).
+Once the tests pass, update the `main()` to replace the dirt (brown square) with
+grass (seedling).
 
 ```text
 Enter rows and columns: 7 9
@@ -491,8 +538,9 @@ Enter rows and columns: 7 9
 
 ## Task #5 - Implement the `isValidIndex()` method
 
-The purpose of the `isValidIndex` method is to check if a given index is valid within the bounds
-of a 2D array.  Replace the current return statement to test the index.
+The purpose of the `isValidIndex` method is to check if a given index is valid
+within the bounds of a 2D array. Replace the current return statement to test
+the index.
 
 ```java
 /**
@@ -506,7 +554,8 @@ of a 2D array.  Replace the current return statement to test the index.
 public static boolean isValidIndex(String[][] matrix, int row, int col)
 ```
 
-**Example**: Given a 3x5 matrix, valid rows are in the range 0..2 and valid columns in 0..4.
+**Example**: Given a 3x5 matrix, valid rows are in the range 0..2 and valid
+columns in 0..4.
 
 ```java
 String[][] matrix = new String[3][5];  // 3 rows 5 columns
@@ -531,10 +580,10 @@ Run the JUnit tests in the `IsValidIndexTest` class to verify your solution.
 ## Task #6 - Implement the `setAdjacentCells()` method
 
 The `setAdjacentCells` method assigns a new value to the cells that are adjacent
-to a specified cell, including those horizontally, vertically, and diagonally adjacent.
-To handle edge cases where the specified cell is located in the first or last
-row or column, the method should call the `isValidIndex()` method to check the validity of the indices
-prior to updating an adjacent cell.
+to a specified cell, including those horizontally, vertically, and diagonally
+adjacent. To handle edge cases where the specified cell is located in the first
+or last row or column, the method should call the `isValidIndex()` method to
+check the validity of the indices prior to updating an adjacent cell.
 
 ```java
 /**
@@ -564,7 +613,7 @@ String[][] matrix = {
 // Surround interior cell (2, 1) with X
 setAdjacentCells(matrix, 2, 1, "X");
 
-/* Result 
+/* Result
 {
     {"A", "A", "A", "A"},
     {"X", "X", "X", "B"},
@@ -575,7 +624,8 @@ setAdjacentCells(matrix, 2, 1, "X");
 */
 ```
 
-**Example 2**: Surround the cell in the first row and first column, which only has 3 adjacent cells. 
+**Example 2**: Surround the cell in the first row and first column, which only
+has 3 adjacent cells.
 
 ```java
 String[][] matrix = {
@@ -589,7 +639,7 @@ String[][] matrix = {
 // Surround first cell (0,0) with X
 setAdjacentCells(matrix, 0, 0, "X");
 
-/* Result 
+/* Result
 {
     {"A", "X", "A", "A"},
     {"X", "X", "B", "B"},
@@ -600,7 +650,8 @@ setAdjacentCells(matrix, 0, 0, "X");
 */
 ```
 
-**Example 3**: Surround the cell in the last row and last column, which only has 3 adjacent cells.
+**Example 3**: Surround the cell in the last row and last column, which only has
+3 adjacent cells.
 
 ```java
 String[][] matrix = {
@@ -614,7 +665,7 @@ String[][] matrix = {
 // Surround last cell (4,3) with X
 setAdjacentCells(matrix, 4, 3, "X");
 
-/* Result 
+/* Result
 {
     {"A", "A", "A", "A"},
     {"B", "B", "B", "B"},
@@ -629,19 +680,18 @@ Run the JUnit tests in the `SetAdjacentCellsTest` class to verify your solution.
 
 ## Task #7 - Implement the `findAndUpdateAdjacentCells()` method
 
-The `findAndUpdateAdjacentCells` method should find each cell
-that matches the specified target value and update its adjacent cells
-to the given new value by invoking the
-`setAdjacentCells(String[][], int, int, String)` method.
+The `findAndUpdateAdjacentCells` method should find each cell that matches the
+specified target value and update its adjacent cells to the given new value by
+invoking the `setAdjacentCells(String[][], int, int, String)` method.
 
 ```java
 /**
- * Finds each cell in the matrix that matches the specified target value 
+ * Finds each cell in the matrix that matches the specified target value
  * and updates its adjacent cells to the specified new value.
  *
- * The method iterates through the entire matrix and, when a cell containing 
- * the target value is found, updates the adjacent cells by calling the 
- * setAdjacentCells(String[][], int, int, String) method. 
+ * The method iterates through the entire matrix and, when a cell containing
+ * the target value is found, updates the adjacent cells by calling the
+ * setAdjacentCells(String[][], int, int, String) method.
  *
  * @param matrix The 2D array representing the matrix to search through.
  * @param targetValue The string value to search for in the matrix.
@@ -665,7 +715,7 @@ String[][] matrix = {
 // Surround every "A" with "Z"
 findAndUpdateAdjacentCells(matrix, "A", "Z");
 
-/* Result 
+/* Result
 {
     {"Z", "Z", "Z", "B", "B"},
     {"Z", "A", "Z", "B", "B"},
@@ -677,9 +727,11 @@ findAndUpdateAdjacentCells(matrix, "A", "Z");
 */
 ```
 
-Run the JUnit tests in the `FindAndUpdateAdjacentCellsTest` class to verify your solution.
+Run the JUnit tests in the `FindAndUpdateAdjacentCellsTest` class to verify your
+solution.
 
-Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` to surround trees with squirrels.
+Once the tests pass, update the `main()` to call `findAndUpdateAdjacentCells` to
+surround trees with squirrels.
 
 ```text
 Enter rows and columns: 7 9
@@ -692,7 +744,6 @@ Enter rows and columns: 7 9
 🌳🐿️🌱🌱🌱🌱🌱🐿️🌳
 ```
 
-
 ```text
 Enter rows and columns: 6 8
 🌳🐿️🌱🌱🌱🌱🐿️🌳
@@ -703,7 +754,8 @@ Enter rows and columns: 6 8
 🌳🐿️🌱🌱🌱🌱🐿️🌳
 ```
 
-Finally, run the Junit tests in `MainTest` to confirm the `main` method produces the correct output for the given input.
+Finally, run the Junit tests in `MainTest` to confirm the `main` method produces
+the correct output for the given input.
 
 ## Submission Instructions
 

@@ -19,17 +19,23 @@ import java.util.Scanner;
  * Enter the engine size in liters (e.g., 2.0 for 2.0L): 1.8
  * Eco-Friendly vehicle.
  */
-public class VehicleTask4 {
+public class VehicleTask4Solution {
 
     public static void main(String[] args) {
         // Create a scanner object for user input
         Scanner scanner = new Scanner(System.in);
 
-        // TODO: Prompt for fuel type and engine size
+        // Prompt for fuel type
+        System.out.print("Enter the fuel type (electric/hybrid/gas/diesel): ");
+        String fuelType = scanner.next().toLowerCase();
 
-        // TODO: Assign message using a ternary operator to determine eco-friendliness.
-        // The boolean expression should include logical operators && and ||.
-        String message = "";
+        // Prompt for engine size
+        System.out.print("Enter the engine size in liters (e.g., 2.0 for 2.0L): ");
+        double engineSize = scanner.nextDouble();
+
+        // Assign message using a ternary operator to determine eco-friendliness
+        String message = (fuelType.equals("electric") || fuelType.equals("hybrid"))
+                && engineSize <= 2.0 ? "Eco-Friendly vehicle." : "Not eco-friendly vehicle.";
 
         // Display message
         System.out.println(message);

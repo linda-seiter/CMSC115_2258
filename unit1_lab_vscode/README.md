@@ -1,6 +1,6 @@
 # CMSC 115 Unit 1 Lab
 
-## Learning Objectives
+## Learning Outcomes
 
 1. **Run A Java Program**:
 
@@ -46,7 +46,7 @@
 
    - Diagnose and correct syntax and logic errors.
 
-10. **Use Junit to validate Java code:**
+10. **Use JUnit to validate Java code:**
     - Run a JUnit test class to validate a program's output.
     - View and interpret the test result.
     - Use the side-by-side comparison to pinpoint differences between expected
@@ -154,26 +154,26 @@ Output** column.
 | ----------------------------------------- | ----------------------------- |
 | Welcome to CMCS 115.<br>Let's learn Java! | Welcome.<br>Let's learn Java! |
 
-We'll use a very popular testing framework named Junit to test our code. For
-each regular Java class, we use a separate Junit class to test the
+We'll use a very popular testing framework named JUnit to test our code. For
+each regular Java class, we use a separate JUnit class to test the
 functionality.
 
 - Java class `CourseWelcome`
-- Junit test class `CourseWelcomeTest`
+- JUnit test class `CourseWelcomeTest`
 
 Expand the test folder in the project view as shown in the screenshot below. The
-test folder contains a Junit test class for each regular Java class.
+test folder contains a JUnit test class for each regular Java class.
 
-<img alt="CourseWelcomeTest junit test class" src="images/junit.png" width="400" >
+<img alt="CourseWelcomeTest JUnit test class" src="images/junit.png" width="400" >
 
-The `CourseWelcomeTest` Junit class has a method that checks the output produced
+The `CourseWelcomeTest` JUnit class has a method that checks the output produced
 when the `CourseWelcome` class is executed. Don't worry about understanding the
-code in the Junit test class. We'll learn how to write Junit tests in a later
+code in the JUnit test class. We'll learn how to write JUnit tests in a later
 lesson. For now, you'll just run the test to check the result.
 
 1. Right-click on `CourseWelcomeTest` in the project view, then select **Run
    Tests**.<br>
-   <img alt="Run junit test class" src="images/run_test.png" width="300" >
+   <img alt="Run JUnit test class" src="images/run_test.png" width="300" >
 
 2. The Test Runner view will display a message indicating the test failed (red
    x). Click on the failed test to view a side-by-side comparison highlighting
@@ -185,7 +185,7 @@ lesson. For now, you'll just run the test to check the result.
    "Welcome to CMCS 115.".<br>
    <img alt="CourseWelcome fix print statement" src="images/fix_coursewelcome.png" width="400" >
 
-4. Re-run the Junit `CourseWelcomeTest` class and confirm the test passed. You
+4. Re-run the JUnit `CourseWelcomeTest` class and confirm the test passed. You
    should see a green checkmark indicating the test passed.<br>
    <img alt="Test passed message in run view" src="images/test_passed.png" width="300" >
 
@@ -242,7 +242,7 @@ public class Comments {
 
 Notice the expected output does not include "peach".
 
-1. Right-click on the Junit class `CommentsTest` in the project view, then
+1. Right-click on the JUnit class `CommentsTest` in the project view, then
    select **Run Tests**. You should see a message in the run view indicating the
    test failed (red x). Click to see the difference between the expected and
    actual output.<br>
@@ -255,7 +255,7 @@ Notice the expected output does not include "peach".
      //System.out.println("peach");
 ```
 
-3. Re-run the Junit class `CommentsTest` to confirm the test passed (green
+3. Re-run the JUnit class `CommentsTest` to confirm the test passed (green
    checkmark).
 
 ### JavaDoc
@@ -319,7 +319,7 @@ Let's fix the syntax error so the program can execute.
 
 1. Add a semicolon to the end of the print statement to fix the syntax error.
 2. Run `Fixit` to see the output.
-3. Run the Junit class `FixitTest` and confirm the test passes.
+3. Run the JUnit class `FixitTest` and confirm the test passes.
 
 ## Task 4 - PrintNewline
 
@@ -725,12 +725,12 @@ rectangle. However, it only prints the length and width.
 | ------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 area=13.5 | Enter length and width: <b>4.5 3.0</b><br>length=4.5 width=3.0 |
 
-If you run the Junit test class `RectangleTest`, you'll see several tests fail.
+If you run the JUnit test class `RectangleTest`, you'll see several tests fail.
 Each test provides the main method with different input values for `length` and
 `width`. Click on any failed test to compare the expected versus actual output.
 Notice the area is missing in the output.
 
-<img src = "images/task8_fail.png" alt="task8 junit tests fail" width=600>
+<img src = "images/task8_fail.png" alt="task8 JUnit tests fail" width=600>
 
 1. Update the `main` method to declare a double variable named `area`. Calculate
    the area using the width and length that the user provided as input. Update
@@ -738,7 +738,7 @@ Notice the area is missing in the output.
    expected output.<br>
 2. Run `Rectangle` several times, passing different input values for length and
    width.
-3. Run the Junit `RectangleTest` class to confirm the tests pass.
+3. Run the JUnit `RectangleTest` class to confirm the tests pass.
 
 | Sample Run#1                                                             | Sample Run#2                                                                   |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |

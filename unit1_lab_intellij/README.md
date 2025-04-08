@@ -1,35 +1,36 @@
 # CMSC 115 Unit 1 Lab
 
-## Learning Objectives
+## Learning Outcomes
 
 1. **Run A Java Program**:
 
-    - Execute the `main` method of a Java class using different methods in an
-      IDE.
+   - Execute the `main` method of a Java class using different methods in an
+     IDE.
 
 2. **Generate Program Output**:
 
-    - Utilize `System.out.println` to display program output.
-    - View the output in the terminal or output window of the IDE.
+   - Utilize `System.out.println` to display program output.
+   - View the output in the terminal or output window of the IDE.
 
 3. **Use Comments Effectively**:
 
    - Use single-line and multi-line comments to improve code readability,
-      provide clear documentation, and temporarily disable lines of code for
-      testing or debugging purposes.
+     provide clear documentation, and temporarily disable lines of code for
+     testing or debugging purposes.
 
 4. **Apply Numeric Operations**:
 
-    - Use numeric operators to perform calculations and modify data.
+   - Use numeric operators to perform calculations and modify data.
 
 5. **Declare and Manipulate Variables**:
 
-   - Declare, initialize, and reassign variables  to store and update data.
+   - Declare, initialize, and reassign variables to store and update data.
 
 6. **Utilize the Debugger**:
 
-    - Set a breakpoint to stop program execution at a particular line of code.
-    - Use the IDE debugger to step through code, examine program flow, and monitor changes in variable values.
+   - Set a breakpoint to stop program execution at a particular line of code.
+   - Use the IDE debugger to step through code, examine program flow, and
+     monitor changes in variable values.
 
 7. **Handle User Input with `Scanner`**:
 
@@ -38,14 +39,14 @@
 
 8. **Format Output Using String Concatenation**
 
-    - Concatenate strings with other data types (e.g., integers or doubles) using
-      the `+` operator to produce descriptive output.
+   - Concatenate strings with other data types (e.g., integers or doubles) using
+     the `+` operator to produce descriptive output.
 
 9. **Identify and Fix Errors**:
 
-    - Diagnose and correct syntax and logic errors.
+   - Diagnose and correct syntax and logic errors.
 
-10. **Use Junit to validate Java code:**
+10. **Use JUnit to validate Java code:**
     - Run a JUnit test class to validate a program's output.
     - View and interpret the test result.
     - Use the side-by-side comparison to pinpoint differences between expected
@@ -160,26 +161,26 @@ Output** column.
 | ----------------------------------------- | ----------------------------- |
 | Welcome to CMCS 115.<br>Let's learn Java! | Welcome.<br>Let's learn Java! |
 
-We'll use a very popular testing framework named Junit to test our code. For
-each regular Java class, we use a separate Junit class to test the
+We'll use a very popular testing framework named JUnit to test our code. For
+each regular Java class, we use a separate JUnit class to test the
 functionality.
 
 - Java class `CourseWelcome`
-- Junit test class `CourseWelcomeTest`
+- JUnit test class `CourseWelcomeTest`
 
 Expand the test folder in the project view as shown in the screenshot below. The
-test folder contains a Junit test class for each regular Java class.
+test folder contains a JUnit test class for each regular Java class.
 
 <img alt="CourseWelcomeTest junit test class" src="images/junit.png" width="400" >
 
-The `CourseWelcomeTest` Junit class has a method that checks the output produced
+The `CourseWelcomeTest` JUnit class has a method that checks the output produced
 when the `CourseWelcome` class is executed. Don't worry about understanding the
-code in the Junit test class. We'll learn how to write Junit tests in a later
+code in the JUnit test class. We'll learn how to write JUnit tests in a later
 lesson. For now, you'll just run the test to check the result.
 
 1. Right-click on `CourseWelcomeTest` in the project view, then select **Run
    CourseWelcomeTest**.<br>
-   <img alt="Run junit test class" src="images/run_test.png" width="300" >
+   <img alt="Run JUnit test class" src="images/run_test.png" width="300" >
 
 2. The Run View will display a message indicating the test failed. Click on
    <u>&lt;Click to see difference&gt;</u>. A side-by-side comparison is
@@ -195,7 +196,7 @@ lesson. For now, you'll just run the test to check the result.
    "Welcome to CMCS 115.".<br>
    <img alt="Task1 print statement corrected" src="images/task1_solution.png" width="400" >
 
-5. Re-run the Junit `CourseWelcomeTest` class and confirm the test passed.<br>
+5. Re-run the JUnit `CourseWelcomeTest` class and confirm the test passed.<br>
    <img alt="Test passed message in run view" src="images/test_passed.png" width="400" >
 
 Congratulations on successfully passing your first Java coding task!
@@ -251,7 +252,7 @@ public class Comments {
 
 Notice the expected output does not include "peach".
 
-1. Right-click on the Junit class `CommentsTest` in the project view, then
+1. Right-click on the JUnit class `CommentsTest` in the project view, then
    select **Run CommentsTest**. You should see a message in the run view
    indicating the test failed. Click to see the difference between the expected
    and actual output.<br>
@@ -265,7 +266,7 @@ Notice the expected output does not include "peach".
      //System.out.println("peach");
 ```
 
-3. Re-run the Junit class `CommentsTest` to confirm the test passed.
+3. Re-run the JUnit class `CommentsTest` to confirm the test passed.
 
 ### JavaDoc
 
@@ -329,7 +330,7 @@ Let's fix the syntax error so the program can execute.
 
 1. Add a semicolon to the end of the print statement to fix the syntax error.
 2. Run `Fixit` to see the output.
-3. Run the Junit class `FixitTest` and confirm the test passes.
+3. Run the JUnit class `FixitTest` and confirm the test passes.
 
 ## Task 4 - PrintNewline
 
@@ -738,7 +739,7 @@ rectangle. However, it only prints the length and width.
    expected output.<br>
 2. Run `Rectangle` several times, passing different input values for length and
    width.
-3. Run the Junit `RectangleTest` class to confirm the tests pass.
+3. Run the JUnit `RectangleTest` class to confirm the tests pass.
 
 | Sample Run#1                                                             | Sample Run#2                                                                   |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |

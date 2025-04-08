@@ -11,7 +11,6 @@ public class MainTest {
     @DisplayName("Test: Main method output for reorder summary")
     public void testMainMethodOutput() {
         // Arrange
-        String inventoryData = "Tactical Equipment:100:30;Medical Kit:5:20;Rations:40:50;Water:300:100;";
         String expectedOutput = "Tactical Equipment - Quantity On Hand: 100, Reorder Threshold: 30 - does not need to be reordered\n"
                 + "Medical Kit - Quantity On Hand: 5, Reorder Threshold: 20 - needs to be reordered\n"
                 + "Rations - Quantity On Hand: 40, Reorder Threshold: 50 - needs to be reordered\n"

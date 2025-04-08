@@ -1,57 +1,85 @@
 # Unit 7 Project - Physical Training Performance Analyzer
 
-In this lab, you will develop a **PT Performance Analyzer** that collects
-and evaluates trainees' physical training (PT) performance.
-You will apply modular design principles to break down the program
-into reusable methods for data collection, overall performance analysis,
-and individual fitness evaluation.
+In this lab, you will develop a **PT Performance Analyzer** that collects and
+evaluates trainees' physical training (PT) performance. You will apply modular
+design principles to break down the program into reusable methods for data
+collection, overall performance analysis, and individual fitness evaluation.
 
 ## **Learning Outcomes**
 
-### **1. Array Management and Operations**
+**1. Array Management and Operations**
 
-- **Declare and initialize arrays**: Create arrays of both primitive and reference types with proper syntax.
-- **Access and modify array elements**: Use index-based access to read and update values stored in an array.
-- **Iterate through arrays**: Use loops (e.g., `for`, enhanced `for`) to process each element for tasks like input, processing, and output generation.
-- **Handle array bounds**: Prevent `ArrayIndexOutOfBoundsException` by ensuring array accesses stay within valid index ranges.
-- **Perform common array operations**: Implement array operations such as searching, sorting, and copying elements.
-- **Use parallel arrays**: Organize related data in parallel arrays to store corresponding data sets (e.g., names and scores).
-- **Modify arrays dynamically**: Apply conditional logic to create or alter arrays based on data from other arrays.
-- **Pass arrays to methods**: Pass an array as a parameter to a method for further processing.
-- **Return arrays from methods**: Return an array from a method to provide data for other parts of the program.
-- **Manage Arrays as Reference Types**: Work with arrays as reference types in Java.
-- **Debugging and Visualizing Array Structures**: Debug to visualize how arrays are stored and manipulated in memory.
-- **String formatting and output**: Convert arrays into human-readable formats using `Arrays.toString()`.
+- **Declare and initialize arrays**: Create arrays of both primitive and
+  reference types with proper syntax.
+- **Access and modify array elements**: Use index-based access to read and
+  update values stored in an array.
+- **Iterate through arrays**: Use loops (e.g., `for`, enhanced `for`) to process
+  each element for tasks like input, processing, and output generation.
+- **Handle array bounds**: Prevent `ArrayIndexOutOfBoundsException` by ensuring
+  array accesses stay within valid index ranges.
+- **Perform common array operations**: Implement array operations such as
+  searching, sorting, and copying elements.
+- **Use parallel arrays**: Organize related data in parallel arrays to store
+  corresponding data sets (e.g., names and scores).
+- **Modify arrays dynamically**: Apply conditional logic to create or alter
+  arrays based on data from other arrays.
+- **Pass arrays to methods**: Pass an array as a parameter to a method for
+  further processing.
+- **Return arrays from methods**: Return an array from a method to provide data
+  for other parts of the program.
+- **Manage Arrays as Reference Types**: Work with arrays as reference types in
+  Java.
+- **Debugging and Visualizing Array Structures**: Debug to visualize how arrays
+  are stored and manipulated in memory.
+- **String formatting and output**: Convert arrays into human-readable formats
+  using `Arrays.toString()`.
 
-### **2. Handling I/O**
+**2. Handling I/O**
+
 - Use **Scanner** to capture structured user input.
-- Process both integer and string inputs in an organized manner (e.g., "Name PushUps SitUps"), ensuring clear parsing and validation.
-- Utilize **formatted strings (`String.format()`)** to create clear and user-friendly outputs.
+- Process both integer and string inputs in an organized manner (e.g., "Name
+  PushUps SitUps"), ensuring clear parsing and validation.
+- Utilize **formatted strings (`String.format()`)** to create clear and
+  user-friendly outputs.
 
-### **3. Problem Decomposition and Analysis**
-- Divide complex tasks (like performance analysis) into smaller, manageable components:
+**3. Problem Decomposition and Analysis**
+
+- Divide complex tasks (like performance analysis) into smaller, manageable
+  components:
   - Gathering user input
   - Calculating performance metrics
   - Summarizing individual results
   - Formatting and presenting the output
 
-### **4. Modular Programming Practices**
+**4. Modular Programming Practices**
+
 - Decompose a program into **independent, reusable methods**.
-- Use **method decomposition** to clearly separate different tasks (e.g., input handling, calculations, evaluations).
-- Follow the **Single Responsibility Principle (SRP)** to ensure that each method focuses on a single responsibility.
+- Use **method decomposition** to clearly separate different tasks (e.g., input
+  handling, calculations, evaluations).
+- Follow the **Single Responsibility Principle (SRP)** to ensure that each
+  method focuses on a single responsibility.
+
+**5. Debug and Test a Program** 7. **Execute Unit Tests with JUnit**:
+
+- Run JUnit tests to verify program output.
+- Run JUnit tests to verify the result of a method execution.
+- Use mocks to verify method composition, i.e. that one method triggers another
+  method call.
 
 ## Coding Guidelines
 
 - Loops and conditionals are allowed, but avoid using advanced Java Streams.
-- You may use `Arrays.toString()`, but do not use other methods from the `Array` or `Arrays` classes.
+- You may use `Arrays.toString()`, but do not use other methods from the `Array`
+  or `Arrays` classes.
 
 ## Getting Started: Run the `main()` method with sample user input
 
 You are provided with an initial version of the `PTPerformanceAnalyzer` class.
 
-The `main` method prompts the user for the number of exercise trainees, and creates
-3 parallel arrays to store the name, push-up count, and sit-up count for each trainee.
-The `Arrays.toString()` method is called to print the contents of each array, showing the default value `null` or `0` based on the data type.
+The `main` method prompts the user for the number of exercise trainees, and
+creates 3 parallel arrays to store the name, push-up count, and sit-up count for
+each trainee. The `Arrays.toString()` method is called to print the contents of
+each array, showing the default value `null` or `0` based on the data type.
 
 Execute the `main()` method with a sample size of 7 and confirm the output:
 
@@ -94,16 +122,18 @@ Implement the `collectExerciseData` method to collect trainees' physical
 training (PT) data from user input. This method will prompt for and read names,
 push-up counts, and sit-up counts and store them in parallel arrays.
 
-You can assume that the `Scanner` parameter is not null and reads from `System.in`, and the arrays are not null and have the same length.
+You can assume that the `Scanner` parameter is not null and reads from
+`System.in`, and the arrays are not null and have the same length.
 
-Use a loop to repeatedly prompt the user for input (name, push-ups, and sit-ups), then store the values in the `names`, `pushUps`, and `sitUps` arrays.
+Use a loop to repeatedly prompt the user for input (name, push-ups, and
+sit-ups), then store the values in the `names`, `pushUps`, and `sitUps` arrays.
 
 Sample I/O, assuming the `names` array has length 3:
 
 ```
-Enter Name PushUps SitUps: Morgan 50 60  
-Enter Name PushUps SitUps: Abel 28 48  
-Enter Name PushUps SitUps: Tay 43 45  
+Enter Name PushUps SitUps: Morgan 50 60
+Enter Name PushUps SitUps: Abel 28 48
+Enter Name PushUps SitUps: Tay 43 45
 ```
 
 Resulting array contents:
@@ -116,9 +146,10 @@ sitUps = {60, 48, 45};
 
 Run the JUnit tests in the `CollectDataTest` class to verify your solution.
 
-Once the tests pass, update the `main()` method to  call `collectExerciseData` after
-the arrays have been created for the specified input size, but before the print statements that display their content.
-Run the program to confirm the arrays are filled with the user input and their contents printed.
+Once the tests pass, update the `main()` method to call `collectExerciseData`
+after the arrays have been created for the specified input size, but before the
+print statements that display their content. Run the program to confirm the
+arrays are filled with the user input and their contents printed.
 
 Sample I/O:
 
@@ -148,7 +179,7 @@ Performance Summaries:
 * @param array The array to evaluate.
 * @return The maximum value found in the array.
 */
-public static int findMaxValue(int[] array) 
+public static int findMaxValue(int[] array)
 
 
 /**
@@ -165,12 +196,17 @@ public static int findMinValue(int[] array)
  * @param array The array to evaluate.
  * @return The mean of all values in the array.
  */
-public static double calculateMean(int[] array) 
+public static double calculateMean(int[] array)
 ```
 
-- Implement the methods `findMaxValue`, `findMinValue`, and `calculateMean` to determine the highest value, lowest value, and average of the elements in the given array.m
-- The mean is computed by summing all elements in the array and dividing by the total number of elements. **Ensure** that integer division is avoided so the result is accurately returned as a `double`.
-- Execute the JUnit tests in the `MetricsTest` class to validate your implementation.
+- Implement the methods `findMaxValue`, `findMinValue`, and `calculateMean` to
+  determine the highest value, lowest value, and average of the elements in the
+  given array.m
+- The mean is computed by summing all elements in the array and dividing by the
+  total number of elements. **Ensure** that integer division is avoided so the
+  result is accurately returned as a `double`.
+- Execute the JUnit tests in the `MetricsTest` class to validate your
+  implementation.
 
 ```java
 /**
@@ -186,17 +222,24 @@ public static double calculateMean(int[] array)
   }
 ```
 
-Implement the `getPerformanceMetrics` method to calculate three key metrics (minimum, maximum, and mean) for the provided array.
+Implement the `getPerformanceMetrics` method to calculate three key metrics
+(minimum, maximum, and mean) for the provided array.
 
-- This method should call `getMinValue`, `getMaxValue`, and `calculateMean` to determine the respective metrics.
-- It should return a formatted string displaying the exercise name along with the computed metrics, formatted as follows, with the mean rounded to two decimal places:
-  ```  
-  *** Sit-ups *** Max: 50, Min: 20, Mean: 35.25  
-  ```  
+- This method should call `getMinValue`, `getMaxValue`, and `calculateMean` to
+  determine the respective metrics.
+- It should return a formatted string displaying the exercise name along with
+  the computed metrics, formatted as follows, with the mean rounded to two
+  decimal places:
+  ```
+  *** Sit-ups *** Max: 50, Min: 20, Mean: 35.25
+  ```
 
-Next, run the JUnit tests in the `PerformanceMetricsTest` class to validate your implementation.
+Next, run the JUnit tests in the `PerformanceMetricsTest` class to validate your
+implementation.
 
-Once all tests pass, update the `main()` method. After gathering and displaying the trainee's data, modify `main` to call `getPerformanceMetrics` twice—once for push-up metrics and once for sit-up metrics—then print each result.
+Once all tests pass, update the `main()` method. After gathering and displaying
+the trainee's data, modify `main` to call `getPerformanceMetrics` twice—once for
+push-up metrics and once for sit-up metrics—then print each result.
 
 Sample I/O:
 
@@ -236,18 +279,23 @@ Performance Summaries:
 public static String getPerformanceSummary(String name, int pushUps, int sitUps, int minPushUps, int minSitUps)
 ```
 
-Implement the `getPerformanceSummary` method to evaluate an individual's fitness performance based on push-ups and sit-ups. The method should:
-  - Take the individual's name, number of push-ups, and sit-ups, and minimum push-ups and sit-ups as parameters.
-  - Compare their performance against the minimum required push-ups **and** sit-ups to determine Pass/Fail status. Both thresholds must be met to pass.
-  - Return a formatted string indicating their name, the number of push-ups and sit-ups performed, and their Pass/Fail status formatted as shown:
-    <br>"Name - Push-ups: X, Sit-ups: Y - Status"
+Implement the `getPerformanceSummary` method to evaluate an individual's fitness
+performance based on push-ups and sit-ups. The method should:
 
-| **Method Call**  | **Expected Output** |
-|------------------|----------------------|
-| `getPerformanceSummary("Alpha", 20, 30, 15, 25)`  | `Alpha - Push-ups: 20, Sit-ups: 30 - Pass` |
-| `getPerformanceSummary("Beta", 10, 30, 15, 25)`    | `Beta - Push-ups: 10, Sit-ups: 30 - Fail` |
-| `getPerformanceSummary("Gamma", 15, 20, 15, 25)`| `Gamma - Push-ups: 15, Sit-ups: 20 - Fail` |
-| `getPerformanceSummary("Delta", 15, 25, 15, 25)`   | `Delta - Push-ups: 15, Sit-ups: 25 - Pass` |
+- Take the individual's name, number of push-ups, and sit-ups, and minimum
+  push-ups and sit-ups as parameters.
+- Compare their performance against the minimum required push-ups **and**
+  sit-ups to determine Pass/Fail status. Both thresholds must be met to pass.
+- Return a formatted string indicating their name, the number of push-ups and
+  sit-ups performed, and their Pass/Fail status formatted as shown: <br>"Name -
+  Push-ups: X, Sit-ups: Y - Status"
+
+| **Method Call**                                  | **Expected Output**                        |
+| ------------------------------------------------ | ------------------------------------------ |
+| `getPerformanceSummary("Alpha", 20, 30, 15, 25)` | `Alpha - Push-ups: 20, Sit-ups: 30 - Pass` |
+| `getPerformanceSummary("Beta", 10, 30, 15, 25)`  | `Beta - Push-ups: 10, Sit-ups: 30 - Fail`  |
+| `getPerformanceSummary("Gamma", 15, 20, 15, 25)` | `Gamma - Push-ups: 15, Sit-ups: 20 - Fail` |
+| `getPerformanceSummary("Delta", 15, 25, 15, 25)` | `Delta - Push-ups: 15, Sit-ups: 25 - Pass` |
 
 Run the Junit tests in `PerformanceSummaryTest` to confirm your solution.
 
@@ -267,14 +315,19 @@ Run the Junit tests in `PerformanceSummaryTest` to confirm your solution.
 public static String[] getPerformanceSummaries(String[] names, int[] pushUps, int[] sitUps, int minPushUps, int minSitUps)
 ```
 
-Implement the `getPerformanceSummaries` method to generate and return a new string array, where each element holds a performance summary produced by the `getPerformanceSummary` method.
+Implement the `getPerformanceSummaries` method to generate and return a new
+string array, where each element holds a performance summary produced by the
+`getPerformanceSummary` method.
 
 The method should:
+
 1. Initialize a new `String` array to store the performance summaries.
-2. Iterate through the input data, calling `getPerformanceSummary` for each trainee and saving the result in the array.
+2. Iterate through the input data, calling `getPerformanceSummary` for each
+   trainee and saving the result in the array.
 3. Return the populated array.
 
 For example, given this call to `getPerformanceSummaries`:
+
 ```java
 String[] names = {"A", "B", "C", "D"};
 int[] pushUps = {20, 10, 15, 18};
@@ -285,6 +338,7 @@ String[] results = getPerformanceSummaries(names, pushUps, sitUps, minPushUps, m
 ```
 
 The `results` array should contain the four strings as shown:
+
 ```java
 {
     "A - Push-ups: 20, Sit-ups: 30 - Pass",
@@ -294,14 +348,17 @@ The `results` array should contain the four strings as shown:
 }
 ```
 
-Run the JUnit tests in the `PerformanceSummariesTest` class to verify your solution.
+Run the JUnit tests in the `PerformanceSummariesTest` class to verify your
+solution.
 
-Once the tests pass, update the `main()` method. After displaying the push-ups and sit-ups metrics,
-the `main` method should:
+Once the tests pass, update the `main()` method. After displaying the push-ups
+and sit-ups metrics, the `main` method should:
 
 1. Prompt for and read in minimum push-up and sit-up requirements.
-2. Call `getPerformanceSummaries`, passing the arrays and minimum thresholds specified by the user.
-3. Iterate through the array returned by `getPerformanceSummaries` and print each summary.
+2. Call `getPerformanceSummaries`, passing the arrays and minimum thresholds
+   specified by the user.
+3. Iterate through the array returned by `getPerformanceSummaries` and print
+   each summary.
 
 Sample execution:
 

@@ -31,7 +31,7 @@ class JavaFactsTest {
         JavaFacts.main(new String[] {});
 
         // Capture the entire output and compare to the expected result
-        String expectedOutput = "Java was initially named Oak.\nJava is an object-oriented language.\n";
-        assertEquals(expectedOutput, outputStream.toString());
+        String expectedOutput = "Java was initially named Oak.\nJava is an object-oriented language.";
+        assertEquals(expectedOutput, outputStream.toString().trim());
     }
 }

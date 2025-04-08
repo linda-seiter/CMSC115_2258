@@ -1,57 +1,15 @@
-# CMSC 115 Unit 3 Programming Projects
+# CMSC 115 Unit 4 Programming Projects
 
-### Learning Outcomes
+### Learning Objectives
 
-1. **Capture and Process User Input**:
+4. **Capture and Process User Input**:
 
-   - Use the `Scanner` class to read input from the user, including both
-     integers and floating-point numbers. This will help in performing
-     calculations based on the input provided.
+   - Implement the `Scanner` class to gather user input, including both integers
+     and floating-point numbers, for calculations.
 
-2. **Apply Conditional Logic**:
-
-   - Implement chained, ladder, and multi-way conditionals (using `if`,
-     `else-if`, `else`) to categorize input data based on specified ranges or
-     conditions.
-   - Use nested conditionals to categorize input based on multiple factors
-     (e.g., vehicle age and accident history).
-
-3. **Use Java Switch Expression**:
-
-   - Use a **switch expression** to assign a message to a variable based on a
-     user’s input (e.g., vehicle type). Understand how to handle multiple cases
-     in a switch and use a default case.
-
-4. **Implement Ternary Operator**:
-
-   - Use the **ternary operator** to simplify decision-making logic for
-     assigning values to variables based on conditions (e.g., eco-friendliness
-     based on fuel type and engine size).
-
-5. **Write Unit Tests Using JUnit**:
-
-   - Write JUnit tests to validate your code’s functionality. These tests will
-     check if your code produces the correct output based on different inputs.
-   - Ensure the code passes tests for the correct usage of specific Java
-     features like ternary operators, switch expressions, and conditional
-     structures.
-
-6. **Read and Interpret Source Code**:
-
-   - Write regular expressions to analyze Java source code and verify that it
-     follows the required syntax and structure (e.g., detecting ternary
-     operators or switch expressions).
-
-7. **Debug and Refactor Code**:
-   - Work with different types of conditionals (if-else, switch, ternary) to
-     create clean and efficient logic. Debug code to identify and fix issues
-     when the program doesn’t behave as expected.
-
----
-
-These outcomes reflect hands-on programming tasks that build key skills in using
-conditionals, switches, ternary operators, and JUnit testing while developing a
-practical understanding of Java programming concepts.
+5. **Test Java Code Using JUnit**:
+   - Execute JUnit tests to validate program correctness and ensure accurate
+     output.
 
 ### Introduction
 
@@ -95,7 +53,7 @@ Low mileage.
 </tr>
 </table>
 
-Run `VehicleTask1Test` to confirm your solution passes the JUnit tests.
+Run `VehicleTask1Test` to confirm your solution passes the Junit tests.
 
 - Several tests check the various mileage categories (Low, Moderate, etc.)
 - One test checks for the presence of `else if` to ensure you are using the
@@ -144,7 +102,7 @@ Older, with an accident. Avoid buying.
 </tr>
 </table>
 
-Run `VehicleTask2Test` to confirm your solution passes the JUnit tests.
+Run `VehicleTask2Test` to confirm your solution passes the Junit tests.
 
 - Several tests check the various purchasing recommendations based on the age
   and accident status.

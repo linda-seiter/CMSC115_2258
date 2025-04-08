@@ -27,8 +27,7 @@ public class VehicleTask4 {
 
         // TODO: Prompt for fuel type and engine size
 
-        // TODO: Assign message using a ternary operator to determine eco-friendliness.
-        // The boolean expression should include logical operators && and ||.
+        // TODO: Assign message using a ternary operator to determine eco-friendliness
         String message = "";
 
         // Display message

@@ -32,9 +32,9 @@ class DebugItTest {
         DebugIt.main(new String[] {});
 
         // Expected output after the program runs
-        String expectedOutput = "Planes on runway = 4\n";
+        String expectedOutput = "Planes on runway = 4";
 
         // Check if the captured output matches the expected output
-        assertEquals(expectedOutput, outputStream.toString());
+        assertEquals(expectedOutput, outputStream.toString().trim());
     }
 }

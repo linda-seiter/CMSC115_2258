@@ -30,64 +30,65 @@ public class SeafoodMarketTest {
         System.setIn(originalIn);
     }
 
+    private void simulateUserInput(String input) {
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+    }
+
     @Test
     @DisplayName("Test: Calculate total cost for 3.2 lbs at $4.99 per lb")
     public void testCalculateTotalCost_3_2_4_99() {
         // Simulate user input for pounds and price
-        String input = "3.2 4.99";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("3.2 4.99");
 
         // Call the main method of SeafoodMarket
         SeafoodMarket.main(new String[] {});
 
         // Verify the output
         String expectedOutput = "Enter pounds of fish and price per pound: " +
-                "3.2 lbs at $4.99 per lb = $15.97\n";
-        assertEquals(expectedOutput, outContent.toString());
+                "3.2 lbs at $4.99 per lb = $15.97";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 
     @Test
     @DisplayName("Test: Calculate total cost for 1.5 lbs at $3.5 per lb")
     public void testCalculateTotalCost_1_5_3_5() {
-        String input = "1.5 3.5";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("1.5 3.5");
 
         // Call the main method of SeafoodMarket
         SeafoodMarket.main(new String[] {});
 
         // Verify the output
         String expectedOutput = "Enter pounds of fish and price per pound: " +
-                "1.5 lbs at $3.5 per lb = $5.25\n";
-        assertEquals(expectedOutput, outContent.toString());
+                "1.5 lbs at $3.5 per lb = $5.25";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 
     @Test
     @DisplayName("Test: Calculate total cost for 0 lbs at $5 per lb")
     public void testCalculateTotalCost_0_5() {
-        String input = "0 5";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("0 5");
 
         // Call the main method of SeafoodMarket
         SeafoodMarket.main(new String[] {});
 
         // Verify the output
         String expectedOutput = "Enter pounds of fish and price per pound: " +
-                "0.0 lbs at $5.0 per lb = $0.0\n";
-        assertEquals(expectedOutput, outContent.toString());
+                "0.0 lbs at $5.0 per lb = $0.0";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 
     @Test
     @DisplayName("Test: Calculate total cost for 5 lbs at $8.99 per lb")
     public void testCalculateTotalCost_5_8_99() {
-        String input = "5 8.99";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("5 8.99");
 
         // Call the main method of SeafoodMarket
         SeafoodMarket.main(new String[] {});
 
         // Verify the output
         String expectedOutput = "Enter pounds of fish and price per pound: " +
-                "5.0 lbs at $8.99 per lb = $44.95\n";
-        assertEquals(expectedOutput, outContent.toString());
+                "5.0 lbs at $8.99 per lb = $44.95";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 }

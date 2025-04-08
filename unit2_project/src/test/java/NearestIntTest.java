@@ -29,12 +29,16 @@ public class NearestIntTest {
         System.setIn(originalSystemIn);
     }
 
+    private void simulateUserInput(String input) {
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+    }
+
     @Test
     @DisplayName("Test NearestInt with input 19 4")
     void testNearestInt_19_4() {
         // Set the input stream to simulate user input
-        String input = "19 4";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("19 4");
 
         // Run the main method of NearestInt
         NearestInt.main(new String[] {});
@@ -56,8 +60,7 @@ public class NearestIntTest {
     @DisplayName("Test NearestInt with input 11 8")
     void testNearestInt_11_8() {
         // Set the input stream to simulate user input
-        String input = "11 8";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("11 8");
 
         // Run the main method of NearestInt
         NearestInt.main(new String[] {});
@@ -79,8 +82,7 @@ public class NearestIntTest {
     @DisplayName("Test NearestInt with input 7 10")
     void testNearestInt_7_10() {
         // Set the input stream to simulate user input
-        String input = "7 10";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("7 10");
 
         // Run the main method of NearestInt
         NearestInt.main(new String[] {});

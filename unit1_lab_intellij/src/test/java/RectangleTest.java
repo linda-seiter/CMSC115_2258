@@ -41,7 +41,7 @@ public class RectangleTest {
         @DisplayName("Test: Calculate area for length 7 and width 3")
         public void testCalculateArea_7_3() {
                 // Simulate user input for length=7 and width=3
-                simulateInput("7\n3\n");
+                simulateInput("7 3");
 
                 // Call the main method of Rectangle
                 Rectangle.main(new String[] {});
@@ -56,7 +56,7 @@ public class RectangleTest {
         @DisplayName("Test: Calculate area for length 8 and width 4.5")
         public void testCalculateArea_8_4_5() {
                 // Simulate user input for length=8 and width=4.5
-                simulateInput("8\n4.5\n");
+                simulateInput("8 4.5");
 
                 // Call the main method of Rectangle
                 Rectangle.main(new String[] {});
@@ -71,7 +71,7 @@ public class RectangleTest {
         @DisplayName("Test: Calculate area for length 0 and width 0")
         public void testCalculateArea_0_0() {
                 // Simulate user input for length=0 and width=0
-                simulateInput("0\n0\n");
+                simulateInput("0 0");
 
                 // Call the main method of Rectangle
                 Rectangle.main(new String[] {});

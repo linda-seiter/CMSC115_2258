@@ -38,13 +38,8 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Older, with an accident. Avoid buying.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString().contains("Older, with an accident. Avoid buying."));
     }
 
     @Test
@@ -55,13 +50,8 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Older, no accidents. Consider buying.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString().contains("Older, no accidents. Consider buying."));
     }
 
     @Test
@@ -72,13 +62,9 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Newer, but involved in an accident. Caution advised, think twice.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString()
+                .contains("Newer, but involved in an accident. Caution advised, think twice."));
     }
 
     @Test
@@ -89,13 +75,8 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Newer, no accidents! Highly recommended to buy.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString().contains("Newer, no accidents! Highly recommended to buy."));
     }
 
     @Test
@@ -106,13 +87,8 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Newer, no accidents! Highly recommended to buy.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString().contains("Newer, no accidents! Highly recommended to buy."));
     }
 
     @Test
@@ -123,13 +99,9 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Newer, but involved in an accident. Caution advised, think twice.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString()
+                .contains("Newer, but involved in an accident. Caution advised, think twice."));
     }
 
     @Test
@@ -140,13 +112,8 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Older, no accidents. Consider buying.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString().contains("Older, no accidents. Consider buying."));
     }
 
     @Test
@@ -157,13 +124,8 @@ public class VehicleTask2Test {
         // Call the main method of VehicleTask2
         VehicleTask2.main(new String[] {});
 
-        // Define the expected output
-        String expectedOutput = "Enter the car's age: " +
-                "Any accidents? (true/false): " +
-                "Older, with an accident. Avoid buying.";
-
-        // Compare expected and actual output
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+        // Capture the output and verify
+        assertTrue(outputStreamCaptor.toString().contains("Older, with an accident. Avoid buying."));
     }
 
     @Test

@@ -5,10 +5,15 @@ import org.junit.jupiter.api.DisplayName;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BasketballGameTest {
 
@@ -30,12 +35,16 @@ class BasketballGameTest {
 		System.setIn(originalSystemIn);
 	}
 
+	private void simulateUserInput(String input) {
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+	}
+
 	@Test
-	@DisplayName("Test BasketballGame Output for Input (25, 20)")
+	@DisplayName("Test BasketballGame Output for Input :25 20")
 	void testBasketballGameForInput25and20() {
 		// Simulate user input: 25 (home team) and 20 (away team) for the 1st quarter
-		String input = "25 20";
-		System.setIn(new ByteArrayInputStream(input.getBytes()));
+		simulateUserInput("25 20");
 
 		// Run the main method of BasketballGame
 		BasketballGame.main(new String[] {});
@@ -53,11 +62,10 @@ class BasketballGameTest {
 	}
 
 	@Test
-	@DisplayName("Test BasketballGame Output for Input (30, 22)")
+	@DisplayName("Test BasketballGame Output for Input : 30 22")
 	void testBasketballGameForInput30and22() {
 		// Simulate user input: 30 (home team) and 22 (away team) for the 1st quarter
-		String input = "30 22";
-		System.setIn(new ByteArrayInputStream(input.getBytes()));
+		simulateUserInput("30 22");
 
 		// Run the main method of BasketballGame
 		BasketballGame.main(new String[] {});
@@ -74,49 +82,59 @@ class BasketballGameTest {
 		assertEquals(expectedOutput, outputStream.toString());
 	}
 
-	// @Test
-	// @DisplayName("BasketballGame.main ++ operator used once")
-	// public void incrementOperator() {
-	// String pattern = "\\+\\+";
-	// int actualCount = JunitHelper.countOccurrences("BasketballGame", "main",
-	// pattern);
-	// assertEquals(1, actualCount);
-	// }
+	@Test
+	@DisplayName("BasketballGame.main uses multiplication assignment operator")
+	public void multiplicationAssignmentOperatorTest() throws IOException {
+		// Load the source code of BasketballGame
+		Path path = Paths.get("src/main/java/BasketballGame.java"); // Adjust path if needed
+		String code = new String(Files.readAllBytes(path));
 
-	// @Test
-	// @DisplayName("BasketballGame.main -- operator used once")
-	// public void decrementOperator() {
-	// String pattern = "\\-\\-";
-	// int actualCount = JunitHelper.countOccurrences("BasketballGame", "main",
-	// pattern);
-	// assertEquals(1, actualCount);
-	// }
+		// Assert that the code contains *=
+		assertTrue(code.contains("*="), "BasketballGame must use *= operator.");
+	}
 
-	// @Test
-	// @DisplayName("BasketballGame.main += operator used twice")
-	// public void additionAssignmentOperator() {
-	// String pattern = "\\+\\=";
-	// int actualCount = JunitHelper.countOccurrences("BasketballGame", "main",
-	// pattern);
-	// assertEquals(2, actualCount);
-	// }
+	@Test
+	@DisplayName("BasketballGame.main uses increment operator")
+	public void incrementOperatorTest() throws IOException {
+		// Load the source code of BasketballGame
+		Path path = Paths.get("src/main/java/BasketballGame.java"); // Adjust path if needed
+		String code = new String(Files.readAllBytes(path));
 
-	// @Test
-	// @DisplayName("BasketballGame.main -= operator used once")
-	// public void subtractionAssignmentOperator() {
-	// String pattern = "\\-\\=";
-	// int actualCount = JunitHelper.countOccurrences("BasketballGame", "main",
-	// pattern);
-	// assertEquals(1, actualCount);
-	// }
+		// Assert that the code contains "++"
+		assertTrue(code.contains("++"), "BasketballGame must use ++ operator.");
+	}
 
-	// @Test
-	// @DisplayName("BasketballGame.main *= operator used once")
-	// public void multiplicationAssignmentOperator() {
-	// String pattern = "\\*\\=";
-	// int actualCount = JunitHelper.countOccurrences("BasketballGame", "main",
-	// pattern);
-	// assertEquals(1, actualCount);
-	// }
+	@Test
+	@DisplayName("BasketballGame.main uses decrement operator")
+	public void decrementOperatorTest() throws IOException {
+		// Load the source code of BasketballGame
+		Path path = Paths.get("src/main/java/BasketballGame.java"); // Adjust path if needed
+		String code = new String(Files.readAllBytes(path));
+
+		// Assert that the code contains "--"
+		assertTrue(code.contains("--"), "BasketballGame must use -- operator.");
+	}
+
+	@Test
+	@DisplayName("BasketballGame.main uses addition assignment operator")
+	public void additionAssignmentOperatorTest() throws IOException {
+		// Load the source code of BasketballGame
+		Path path = Paths.get("src/main/java/BasketballGame.java"); // Adjust path if needed
+		String code = new String(Files.readAllBytes(path));
+
+		// Assert that the code contains +=
+		assertTrue(code.contains("+="), "BasketballGame must use += operator.");
+	}
+
+	@Test
+	@DisplayName("BasketballGame.main uses subtraction assignment operator")
+	public void subtractionAssignmentOperatorTest() throws IOException {
+		// Load the source code of BasketballGame
+		Path path = Paths.get("src/main/java/BasketballGame.java"); // Adjust path if needed
+		String code = new String(Files.readAllBytes(path));
+
+		// Assert that the code contains -=
+		assertTrue(code.contains("-="), "BasketballGame must use -= operator.");
+	}
 
 }

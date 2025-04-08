@@ -39,7 +39,7 @@ public class GasPurchaseTest {
         @DisplayName("Test: GasPurchase 12.5 gallons at $3.50 per gallon")
         public void testCalculateTotalFor12pt5GallonsAt3pt50PerGallon() {
                 // Simulate user input for 12.5 gallons at $3.50 per gallon
-                simulateInput("12.5 3.5\n");
+                simulateInput("12.5 3.5");
 
                 // Call the main method
                 GasPurchase.main(new String[] {});
@@ -54,7 +54,7 @@ public class GasPurchaseTest {
         @DisplayName("Test: GasPurchase 8 gallons at $3.75 per gallon")
         public void testCalculateTotalFor8GallonsAt3pt75PerGallon() {
                 // Simulate user input for 8 gallons at $3.75 per gallon
-                simulateInput("8 3.75\n");
+                simulateInput("8 3.75");
 
                 // Call the main method
                 GasPurchase.main(new String[] {});

@@ -51,7 +51,7 @@ This task will introduce you to printing multiple lines of output using
 produces at least four lines of text.
 
 Expand the `unit1_project > src` folder and sub-folders to view the Java classes
-and associated Junit tests.
+and associated JUnit tests.
 
 Open the `SelfIntroduction` class to view the file in the editor.
 
@@ -87,7 +87,7 @@ header.
    I live in a pineapple at the bottom of the sea.
    I love to laugh!
    ```
-4. Run the Junit class `SelfIntroductionTest` to confirm the test passes. The
+4. Run the JUnit class `SelfIntroductionTest` to confirm the test passes. The
    test checks that the `main` method prints at least 4 lines of output.
 
 ## Task 2 - BillSplitter
@@ -134,7 +134,7 @@ errors that prevent the program from producing the expected output.
    the arithmetic expression so the correct value is produced. Do not hard-code
    the value 56.52 in the print statement.
 3. Run `BillSplitter` to confirm your program produces the correct output.
-4. Run the Junit `BillSplitterTest` class to confirm the test passes.
+4. Run the JUnit `BillSplitterTest` class to confirm the test passes.
 
 HINT: Recall operator precedence and the default order of operations:
 
@@ -180,7 +180,7 @@ public class GasPurchase {
    input, then calculate and print the cost as shown in the sample runs below.
 3. Run `GasPurchase` several times and confirm the expected output given the
    input values as shown in the sample runs.
-4. Run the Junit `GasPurchaseTest` class to confirm the tests pass.
+4. Run the JUnit `GasPurchaseTest` class to confirm the tests pass.
 
 | Sample Run#1                                                            | Sample Run#2                                                         |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |

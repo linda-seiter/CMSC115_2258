@@ -1,7 +1,6 @@
 # CMSC 115 Unit 2 Lab
 
-TODO: Adjust debugging screenshots once IDE decision has been made. TODO: Remove
-Math.pow task if using Zybooks (Math methods not in chapter 2)
+TODO: Adjust debugging screenshots once IDE decision has been made.
 
 ## Learning Objectives
 
@@ -41,8 +40,10 @@ Math.pow task if using Zybooks (Math methods not in chapter 2)
    - Handle floating-point precision and use methods like rounding to a specific
      number of decimal places.
 
-8. **Test and Debug Code**:
+8. **Test and Debug Code using JUnit**:
    - Run a JUnit test class to validate a program's output.
+   - Run JUnit tests to ensure specific operators are used correctly in the
+     code.
    - Develop debugging skills by leveraging JUnit test failures to pinpoint
      issues in the code and fix them.
    - Use the IDE debugger to set breakpoints, step through code, examine program
@@ -66,7 +67,7 @@ TODO
 **Objective**: Review how to use JUnit to check if the code produces the correct
 output.
 
-Let's review how to run a Junit test to check code functionality.
+Let's review how to run a JUnit test to check code functionality.
 
 Open the `JavaFacts` class in the editor.
 
@@ -88,11 +89,11 @@ actual output produced by the current code differs from the expected output.
 | --------------------------------------------------------------------- | ---------------------------------------------------- |
 | Java was initially named Oak.<br>Java is an object-oriented language. | Java was initially named Oak.<br>Java is a language. |
 
-1. Run the Junit `JavaFactsTest` class and confirm the test fails. Recall you
+1. Run the JUnit `JavaFactsTest` class and confirm the test fails. Recall you
    can view the differences between the expected and actual output.
 2. Edit the second print statement in the `main` method in `JavaFacts` to
    produce the expected output.
-3. Re-run the `JavaFactsTest` class and confirm your solution passes the Junit
+3. Re-run the `JavaFactsTest` class and confirm your solution passes the JUnit
    test.
 
 ## Task 2 - PizzaShares
@@ -181,7 +182,7 @@ There are 0 slices remaining.</td>
 </tr>
 </table>
 
-3. Run the `PizzaSharesTest` class to confirm your solution passes the Junit
+3. Run the `PizzaSharesTest` class to confirm your solution passes the JUnit
    tests. Note there are two test methods, each checking a different set of
    inputs. You'll should see multiple test results displayed.
 
@@ -270,7 +271,7 @@ the variable.
    gpa = 4.0;
    ```
 2. Run `StudentInfo` to view the output.
-3. Run `StudentInfoTest` to confirm your solution passes the Junit test.
+3. Run `StudentInfoTest` to confirm your solution passes the JUnit test.
 
 To summarize, you declare a variable only once in the `main` method by
 specifying its name and type. If you want to assign a new value to the variable
@@ -314,7 +315,7 @@ public class InchesToFeet {
 }
 ```
 
-Run the Junit `InchesToFeetTest` class, which tests the program with input value
+Run the JUnit `InchesToFeetTest` class, which tests the program with input value
 of 3, 12, 18, and 24. While the program produces the correct output when the
 input is 12 or 24 inches, it fails for input values of 3 and 18.
 
@@ -509,7 +510,7 @@ operators `+=` and `-=` to update `busStop` and `passengers`.
    - Half the passengers get off at the 3rd stop.
    - The number of passengers triples at the 4th stop.
 2. Run `BusRoute` to view the output.
-3. Run `BusRouteTest` to confirm your solution passes the Junit tests.
+3. Run `BusRouteTest` to confirm your solution passes the JUnit tests.
 
 ## Task 6 - DebugIt
 
@@ -700,7 +701,7 @@ equal sign, not after it!
 1. Fix `DebugIt` to use the correct augmented assignment operators to update
    `planesOnRunway`.
 2. Run `DebugIt` to confirm the expected output.
-3. Run `DebugItTest` to confirm the Junit tests pass.
+3. Run `DebugItTest` to confirm the JUnit tests pass.
 
 Try to remember this error, it is a very common mistake!
 
@@ -922,7 +923,7 @@ value to 3 digits after the decimal point.
    digits after the decimal point, producing the expected output displayed in
    the sample runs.
 2. Run `Rounding` to confirm the output.
-3. Run `RoundingTest` to confirm your solution passes the Junit tests.
+3. Run `RoundingTest` to confirm your solution passes the JUnit tests.
 
 <table>
 <tr>

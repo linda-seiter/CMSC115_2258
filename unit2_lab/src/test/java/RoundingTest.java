@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,12 +28,16 @@ class RoundingTest {
 		System.setOut(originalSystemOut);
 	}
 
+	private void simulateUserInput(String input) {
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+	}
+
 	@Test
 	@DisplayName("Test Rounding Output for Input 1.9247")
 	void testRoundingForInput1pt9247() {
 		// Simulate user input: 1.9247
-		ByteArrayInputStream inputStream = new ByteArrayInputStream("1.9247".getBytes());
-		System.setIn(inputStream);
+		simulateUserInput("1.9247");
 
 		// Run the main method of Rounding
 		Rounding.main(new String[] {});
@@ -56,18 +61,17 @@ class RoundingTest {
 				"Move . 3 digits right:\t1924.7\n" +
 				"Add 0.5:\t\t1925.2\n" +
 				"Cast as int:\t\t1925\n" +
-				"Move . 3 digits left:\t1.925\n";
+				"Move . 3 digits left:\t1.925";
 
 		// Check if the captured output matches the expected output
-		assertEquals(expectedOutput, outputStream.toString());
+		assertEquals(expectedOutput, outputStream.toString().trim());
 	}
 
 	@Test
 	@DisplayName("Test Rounding Output for Input 3.2984")
 	void testRoundingForInput3pt2984() {
 		// Simulate user input: 3.2984
-		ByteArrayInputStream inputStream = new ByteArrayInputStream("3.2984".getBytes());
-		System.setIn(inputStream);
+		simulateUserInput("3.2984");
 
 		// Run the main method of Rounding
 		Rounding.main(new String[] {});
@@ -92,9 +96,9 @@ class RoundingTest {
 				"Move . 3 digits right:\t3298.4\n" +
 				"Add 0.5:\t\t3298.9\n" +
 				"Cast as int:\t\t3298\n" +
-				"Move . 3 digits left:\t3.298\n";
+				"Move . 3 digits left:\t3.298";
 
 		// Check if the captured output matches the expected output
-		assertEquals(expectedOutput, outputStream.toString());
+		assertEquals(expectedOutput, outputStream.toString().trim());
 	}
 }

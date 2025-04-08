@@ -33,9 +33,9 @@ class StudentInfoTest {
         StudentInfo.main(new String[] {});
 
         // Expected output after the program runs
-        String expectedOutput = "Age: 28 gpa: 3.8\nAge: 29 gpa: 4.0\n";
+        String expectedOutput = "Age: 28 gpa: 3.8\nAge: 29 gpa: 4.0";
 
         // Check if the captured output matches the expected output
-        assertEquals(expectedOutput, outputStream.toString());
+        assertEquals(expectedOutput, outputStream.toString().trim());
     }
 }

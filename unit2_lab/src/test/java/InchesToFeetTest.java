@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -29,64 +31,66 @@ public class InchesToFeetTest {
         System.setIn(originalIn);
     }
 
+    private void simulateUserInput(String input) {
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+    }
+
     @Test
     @DisplayName("Test conversion for 3 inches to feet")
     void testInchesToFeet_3Inches() {
         // Simulate user input for 3 inches
-        String input = "3\n";
-        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("3");
 
         // Run the main method of InchesToFeet
         InchesToFeet.main(new String[] {});
 
         // Get the captured output
         String expectedOutput = "Enter inches: " +
-                "3 inches = 0.25 feet\n";
-        assertEquals(expectedOutput, outContent.toString());
+                "3 inches = 0.25 feet";
+        assertEquals(expectedOutput, outContent.toString().trim());
+
     }
 
     @Test
     @DisplayName("Test conversion for 12 inches to feet")
     void testInchesToFeet_12Inches() {
         // Simulate user input for 12 inches
-        String input = "12\n";
-        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("12");
 
         // Run the main method of InchesToFeet
         InchesToFeet.main(new String[] {});
 
         // Get the captured output
-        String expectedOutput = "Enter inches: 12 inches = 1.0 feet\n";
-        assertEquals(expectedOutput, outContent.toString());
+        String expectedOutput = "Enter inches: 12 inches = 1.0 feet";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 
     @Test
     @DisplayName("Test conversion for 18 inches to feet")
     void testInchesToFeet_18Inches() {
         // Simulate user input for 18 inches
-        String input = "18\n";
-        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("18");
 
         // Run the main method of InchesToFeet
         InchesToFeet.main(new String[] {});
 
         // Get the captured output
-        String expectedOutput = "Enter inches: 18 inches = 1.5 feet\n";
-        assertEquals(expectedOutput, outContent.toString());
+        String expectedOutput = "Enter inches: 18 inches = 1.5 feet";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 
     @Test
     @DisplayName("Test conversion for 24 inches to feet")
     void testInchesToFeet_24Inches() {
         // Simulate user input for 24 inches
-        String input = "24\n";
-        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+        simulateUserInput("24");
 
         // Run the main method of InchesToFeet
         InchesToFeet.main(new String[] {});
 
         // Get the captured output
-        String expectedOutput = "Enter inches: 24 inches = 2.0 feet\n";
-        assertEquals(expectedOutput, outContent.toString());
+        String expectedOutput = "Enter inches: 24 inches = 2.0 feet";
+        assertEquals(expectedOutput, outContent.toString().trim());
     }
 }

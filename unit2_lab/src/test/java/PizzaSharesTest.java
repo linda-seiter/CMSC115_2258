@@ -29,39 +29,42 @@ class PizzaSharesTest {
                 System.setIn(originalSystemIn);
         }
 
+        private void simulateUserInput(String input) {
+                InputStream in = new ByteArrayInputStream(input.getBytes());
+                System.setIn(in);
+        }
+
         @Test
         @DisplayName("Test PizzaShares with inputs 24 and 10")
         void testPizzaSharesWith24and10() {
                 // Set the input stream to simulate user input for the first test case
-                String input = "24 10";
-                System.setIn(new ByteArrayInputStream(input.getBytes()));
+                simulateUserInput("24 10");
 
                 // Run the main method of PizzaShares
                 PizzaShares.main(new String[] {});
 
                 // Expected output for the inputs 24 and 10
                 String expectedOutput1 = "Enter #slices and #people: " +
-                                "Each person gets 2 slices.\nThere are 4 slices remaining.\n";
+                                "Each person gets 2 slices.\nThere are 4 slices remaining.";
 
                 // Check if the captured output matches the expected output
-                assertEquals(expectedOutput1, outputStream.toString());
+                assertEquals(expectedOutput1, outputStream.toString().trim());
         }
 
         @Test
         @DisplayName("Test PizzaShares with inputs 12 and 4")
         void testPizzaSharesWith12and4() {
                 // Set the input stream to simulate user input for the second test case
-                String input = "12 4";
-                System.setIn(new ByteArrayInputStream(input.getBytes()));
+                simulateUserInput("12 4");
 
                 // Run the main method of PizzaShares
                 PizzaShares.main(new String[] {});
 
                 // Expected output for the inputs 12 and 4
                 String expectedOutput2 = "Enter #slices and #people: " +
-                                "Each person gets 3 slices.\nThere are 0 slices remaining.\n";
+                                "Each person gets 3 slices.\nThere are 0 slices remaining.";
 
                 // Check if the captured output matches the expected output
-                assertEquals(expectedOutput2, outputStream.toString());
+                assertEquals(expectedOutput2, outputStream.toString().trim());
         }
 }

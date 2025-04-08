@@ -1,6 +1,8 @@
 # CMSC 115 Unit 2 Programming Projects
 
-### Learning Objectives
+NOTE: Possibly remove transmission rate task if Math.pow not covered in unit 2.
+
+### Learning Outcomes
 
 1. **Perform Mathematical Calculations**:
 
@@ -28,8 +30,9 @@
      a specified number of decimal places.
 
 6. **Test Java Code Using JUnit**:
-   - Execute JUnit tests to validate program correctness and ensure accurate
-     output.
+   - Run JUnit tests to verify the program's output.
+   - Run JUnit tests to ensure specific operators are used correctly in the
+     code.
 
 ### Introduction
 
@@ -105,7 +108,7 @@ following functionality:
    `double` value returned from `Math.pow` to an `int`, and store the result in
    an int variable named `newCases`.
 5. Print the number of new cases as shown in the sample runs.
-6. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
+6. Run `TransmissionRateTest` to confirm your solution passes the JUnit tests.
 
 <table>
 <tr>
@@ -139,7 +142,7 @@ functionality:
    the decimal point. Make sure you avoid integer division!
 4. Print the pounds, price per pound, and total cost as shown in the sample runs
    below.
-5. Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
+5. Run `SeafoodMarketTest` to confirm your solution passes the JUnit tests.
 
 <table>
 <tr>
@@ -170,7 +173,7 @@ functionality:
 3. Print the numeric conversions displayed in the sample runs.<br>Hint: add 0.5
    when rounding to nearest positive int, and subtract 0.5 when rounding to the
    nearest negative int.
-4. Run `NearestIntTest` to confirm your solution passes the Junit tests.
+4. Run `NearestIntTest` to confirm your solution passes the JUnit tests.
 
 <table>
 <tr>
@@ -236,7 +239,7 @@ After challenge: home 68 away 72<br>
 </tr>
 </table>
 
-Run `BasketballGameTest` to confirm your solution passes the Junit tests.
+Run `BasketballGameTest` to confirm your solution passes the JUnit tests.
 
 ## Submitting your project
 
