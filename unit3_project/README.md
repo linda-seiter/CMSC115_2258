@@ -1,111 +1,39 @@
-# CMSC 115 Unit 2 Programming Projects
+# CMSC 115 Unit 3 Programming Projects
 
 ### Learning Objectives
-
-1. **Perform Mathematical Calculations**:
-
-   - Apply arithmetic operations like addition, subtraction, multiplication, and
-     division to solve real-world problems.
-
-2. **Use Java Math Methods**:
-
-   - Utilize built-in Java method `Math.pow()` to handle more advanced
-     mathematical operations.
-
-3. **Perform Type Casting and Rounding**:
-
-   - Use type casting to convert between data types (e.g., `double` to `int`)
-     and apply rounding techniques to format numeric outputs.
 
 4. **Capture and Process User Input**:
 
    - Implement the `Scanner` class to gather user input, including both integers
      and floating-point numbers, for calculations.
 
-5. **Format and Display Output**:
-
-   - Format numerical results for clear and precise output, such as rounding to
-     a specified number of decimal places.
-
-6. **Test Java Code Using JUnit**:
+5. **Test Java Code Using JUnit**:
    - Execute JUnit tests to validate program correctness and ensure accurate
      output.
 
 ### Introduction
 
-In this unit's programming assignment, you will complete several tasks that
-involve practical Java programming concepts such as mathematical operations,
-input/output handling, and working with variables. These tasks are designed to
-improve your understanding of Java fundamentals and enhance your problem-solving
-abilities.
+## Task 1 - Chained/Ladder/Multi-way Conditional
 
-The tasks will also help you apply mathematical functions and work with both
-integer and floating-point numbers in real-world scenarios. By the end of this
-assignment, you will have experience in implementing basic calculations,
-formatting output, and running unit tests to verify your solutions.
+The `VehicleTask1` class show allow users to input the mileage of a vehicle in
+kilometers. Based on the input mileage, the program will print the corresponding
+mileage category:
 
-## Task 1 - TransmissionRate
+- **Low mileage:** Less than 50,000 km
+- **Moderate mileage:** Between 50,000 (inclusive) km and 100,000 (exclusive) km
+- **High mileage:** Between 100,000 (inclusive) km and 150,000 (exclusive) km
+- **Very high mileage:** At least 150,000 km
 
-**Objective**: Simulate the spread of a virus using the concept of the
-transmission rate (R₀) and calculate the number of new cases after several
-iterations.
+Update the `main` method in the `VehicleTask1` class to implement the following
+functionality:
 
-R<sub>0</sub> (pronounced R-naught) is a number that refers to the transmission
-rate of a given virus. If R<sub>0</sub> is 5, then 1 person is capable of
-spreading on average to 5 other people within a susceptible population.
-
-The table below shows the number of new cases after various iterations of viral
-spread:
-
-<table>
-<tr>
-<th>R0</th>
-<th>Iteration 1</th>
-<th>Iteration 2</th>
-<th>Iteration 3</th>
-<th>Iteration 4</th>
-</tr>
-
-<tr>
-<td>Common Cold: 2</td>
-<td>2</td>
-<td>4</td>
-<td>8</td>
-<td>16</td>
-</tr>
-
-<tr>
-<td>1918 Flu: 3</td>
-<td>3</td>
-<td>9</td>
-<td>27</td>
-<td>81</td>
-</tr>
-
-<tr>
-<td>Chickenpox: 10</td>
-<td>10</td>
-<td>100</td>
-<td>1000</td>
-<td>10000</td>
-</tr>
-
-</table>
-
-Update the `main` method in the `TransmissionRate` class to implement the
-following functionality:
-
-1. Declare and initialize a `Scanner` to read input from the console.
-2. Prompt for and read the transmission rate R<sub>0</sub> as an integer,
-   storing the value in a variable named `r0`.
-3. Prompt for and read in the number of iterations as an integer, storing the
-   value in a variable named `iterations`.
-4. Call `Math.pow` to calculate the potential new cases after the specified
-   iterations based on the given R<sub>0</sub> value. Use casting to convert the
-   `double` value returned from `Math.pow` to an `int`, and store the result in
-   an int variable named `newCases`.
-5. Print the number of new cases as shown in the sample runs.
-6. Run `TransmissionRateTest` to confirm your solution passes the Junit tests.
+1. Prompt the user to enter the vehicle's mileage in kilometers. Use a Scanner
+   to read in the value and store in a variable.
+2. Use **ladder/chained/multi-way conditionals** (i.e. if, else-if, ..., else)
+   to categorize the mileage into one of the four predefined ranges. You should
+   be able to implement this without logical operators (&&, ||, !).
+3. Based on the input, output the corresponding category: Low Mileage, Moderate
+   Mileage, High Mileage, or Very High Mileage.
 
 <table>
 <tr>
@@ -114,32 +42,47 @@ following functionality:
 </tr>
 <tr>
 <td>Enter r0: <b>2</b><br>
-Enter iterations: <b>4</b><br>
-New cases after 4 iterations: 16
+Enter mileage in kilometers: <b>75000</b><br>
+Moderate mileage.
 </td>
 <td>Enter r0: <b>3</b><br>
-Enter iterations: <b>5<b><br>
-New cases after 5 iterations: 243
+Enter mileage in kilometers: <b>20000</b><br>
+Low mileage.
 </td>
 
 </tr>
 </table>
 
-## Task 2 - SeafoodMarket
+Run `VehicleTask1Test` to confirm your solution passes the Junit tests.
 
-**Objective**: Calculate the total cost of fish purchased based on the weight
-and price per pound, rounding the total to two decimal places.
+- Several tests check the various mileage categories (Low, Moderate, etc.)
+- One test checks for the presence of `else if` to ensure you are using the
+  ladder conditional structure.
+- One test checks to make ensure the code **does not** use logical operators.
 
-Update the `main` method in the `SeafoodMarket` class to implement the following
+## Task 2 - Nested Conditional
+
+The `VehicleTask2` class should ask the user for two inputs: the car's age and
+whether it has been in any accidents. Based on the car's age and accident
+history, it categorizes the car's condition and provides a recommendation on
+whether to buy it:
+
+- Older, with an accident. Avoid buying.
+- Older, no accidents. Consider buying.
+- Newer, but involved in an accident. Caution advised, think twice.
+- Newer, no accidents! Highly recommended to buy.
+
+The term "older" refers to vehicles that are more than 10 years old, while
+"newer" refers to vehicles that are 10 years old or younger.
+
+Update the `main` method in the `VehicleTask2` class to implement the following
 functionality:
 
-1. Declare and initialize a `Scanner` to read input from the console.
-2. Prompt for and read two doubles: (1) pounds of fish and (2) price per pound.
-3. Calculate the total cost as a double, rounding the value to 2 digits after
-   the decimal point. Make sure you avoid integer division!
-4. Print the pounds, price per pound, and total cost as shown in the sample runs
-   below.
-5. Run `SeafoodMarketTest` to confirm your solution passes the Junit tests.
+1. Prompt for and read in the vehicle's age (int) and accident status (boolean).
+2. Use **nested conditionals** to categorize the response based on the two
+   inputs. You should be able to implement this without logical operators (&&,
+   ||, !).
+3. Based on the input, output the corresponding purchasing recommendation.
 
 <table>
 <tr>
@@ -147,96 +90,99 @@ functionality:
 <th>Sample Run#2</th>
 </tr>
 <tr>
-<td>Enter pounds of fish and price per pound: <b>5 8.99</b><br>
-5.0 lbs at $8.99 per lb = $44.95
+<td>Enter the car's age: <b>8</b><br>
+Any accidents? (true/false): <b>false</b><br>
+Newer, no accidents! Highly recommended to buy.
 </td>
-<td>Enter pounds of fish and price per pound: <b>3.25 15.99</b><br>
-3.25 lbs at $15.99 per lb = $51.97
-</td>
-
-</tr>
-</table>
-
-# Task 3 - NearestInt
-
-**Objective**: Demonstrate how to convert a fraction into a double and round it
-to the nearest integer, including handling negative values.
-
-Update the `main` method in the `NearestInt` class to implement the following
-functionality:
-
-1. Declare and initialize a `Scanner` to read input from the console.
-2. Prompt for and read two ints: a numerator and a denominator.
-3. Print the numeric conversions displayed in the sample runs.<br>Hint: add 0.5
-   when rounding to nearest positive int, and subtract 0.5 when rounding to the
-   nearest negative int.
-4. Run `NearestIntTest` to confirm your solution passes the Junit tests.
-
-<table>
-<tr>
-<th>Sample Run#1</th>
-<th>Sample Run#2</th>
-</tr>
-<tr>
-<td>Enter numerator and denominator: <b>19 4</b><br>
-Fraction: 19/4<br>
-Double Value: 4.75<br>
-Cast as Int: 4<br>
-Rounded to nearest int: 5<br>
-Negative Value: -4.75<br>
-Negative Value rounded to nearest int: -5
-</td>
-<td>Enter numerator and denominator: <b>11 8</b><br>
-Fraction: 11/8<br>
-Double Value: 1.375<br>
-Cast as Int: 1<br>
-Rounded to nearest int: 1<br>
-Negative Value: -1.375<br>
-Negative Value rounded to nearest int: -1<br>
+<td>Enter the car's age: <b>12</b><br>
+Any accidents? (true/false): <b>true</b><br>
+Older, with an accident. Avoid buying.
 </td>
 
 </tr>
 </table>
 
-## Task 4 - BasketBallGame
+Run `VehicleTask2Test` to confirm your solution passes the Junit tests.
 
-**Objective**: Simulate the progression of a basketball game by updating scores
-after each quarter based on specific instructions.
+- Several tests check the various purchasing recommendations based on the age
+  and accident status.
+- One test checks to make ensure the code **does not** use logical operators.
+  You should use nested conditionals to achieve the functionality.
 
-The `main` method in the `BasketBallGame` class prompts for the home and away
-scores for the first quarter, initializes variables to store each team's score,
-and prints the scores for the 1st quarter.
+# Task 3 - Switch Expression
 
-Your task is to update the code for the 2nd, 3rd, and 4th quarters based on the
-instructions given in the comments.
+The `VehicleTask3` program should ask the user to input the type of vehicle
+(e.g., Sedan, SUV, or Truck) and display a corresponding message based on that
+type.
 
-<table>
-<tr>
-<th>Sample Run#1</th>
-<th>Sample Run#2</th>
-</tr>
-<tr>
-<td>Home and away points for 1st quarter: <b>25 20</b><br>
-1st quarter scores: home 25 away 20<br>
-2nd quarter scores: home 50 away 50<br>
-After challenge: home 47 away 50<br>
-3rd quarter scores: home 57 away 62<br>
-After challenge: home 58 away 62<br>
-4th quarter scores: home 82 away 81
-</td>
-<td>
-Home and away points for 1st quarter: <b>30 22</b><br>
-1st quarter scores: home 30 away 22<br>
-2nd quarter scores: home 60 away 60<br>
-After challenge: home 57 away 60<br>
-3rd quarter scores: home 67 away 72<br>
-After challenge: home 68 away 72<br>
-4th quarter scores: home 97 away 96<br>
-</td>
-</tr>
-</table>
+The possible vehicle types and their related messages are:
 
-Run `BasketballGameTest` to confirm your solution passes the Junit tests.
+- **Sedan**: Great for commuting.
+- **SUV**: Perfect for off-road trips.
+- **Truck**: Great for heavy loads.
+- **Any other vehicle type**: "Uncommon: [type]"
+
+Update the `main` method in the `VehicleTask3` class to follow these steps:
+
+1. Ask the user for and read in the vehicle type (Sedan, SUV, Truck).
+2. Use a **switch expression** to assign one of the four messages listed above
+   to the `message` variable, based on the vehicle type. The switch expression
+   should have a case for each type (Sedan, SUV, Truck) and a default case for
+   any unknown types.
+3. Print the message that was assigned by the switch expression.
+
+### Sample Output:
+
+| **Sample Run#1**                                                                          | **Sample Run#2**                                                            |
+| ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Enter the vehicle type (Sedan, SUV, Truck): **SUV** <br> SUV: Perfect for off-road trips. | Enter the vehicle type (Sedan, SUV, Truck): **Coupe** <br> Uncommon: Coupe. |
+
+Finally, run the `VehicleTask3Test` to check that your solution passes the JUnit
+tests.
+
+- Some tests check if the correct message is displayed based on the vehicle
+  type.
+- One test checks that the code uses a switch expression to assign the value to
+  the `message` variable.
+
+## Task 4 - Ternary Operator
+
+The `VehicleTask4` program should ask the user to enter the vehicle's fuel type
+(electric, hybrid, gas, or diesel) and its engine size in liters. Based on this
+information, the program will classify the vehicle as either eco-friendly or not
+eco-friendly.
+
+Here are the rules to determine eco-friendliness:
+
+- If the fuel type is either electric or hybrid and the engine size is **2.0
+  liters or less**, the vehicle is considered eco-friendly.
+- Otherwise, the vehicle is considered not eco-friendly.
+
+To update the `main` method in the `VehicleTask4` class, follow these steps:
+
+1. Ask the user to input the fuel type and engine size.
+2. Use a **ternary operator** to assign a variable named `message` based on the
+   fuel type and engine size to determine whether the vehicle is eco-friendly.
+   You'll need to use logical operators `&&` and `||` for the condition.
+3. Print the message that the ternary operator assigned.
+
+### Tips:
+
+If you're unsure how to write the boolean expression for the ternary operator,
+start by using an if/else statement to test with various fuel types and engine
+sizes. Once the output is correct, convert the if/else statement into a ternary
+operator.
+
+| **Sample Run#1**                                                                                                                                           | **Sample Run#2**                                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Enter the fuel type (electric/hybrid/gas/diesel): **hybrid** <br> Enter the engine size in liters (e.g., 2.0 for 2.0L): **1.6** <br> Eco-Friendly vehicle. | Enter the fuel type (electric/hybrid/gas/diesel): **diesel** <br> Enter the engine size in liters (e.g., 2.0 for 2.0L): **1.8** <br> Not eco-friendly vehicle. |
+
+Run `VehicleTask4Test` to confirm that your solution passes the JUnit tests.
+
+- Some tests check if the correct message is displayed based on the fuel type
+  and engine size.
+- One test checks if the ternary operator is used to assign the `message`
+  variable correctly.
 
 ## Submitting your project
 
