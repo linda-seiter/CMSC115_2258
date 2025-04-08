@@ -5,7 +5,8 @@
 - [Unit 1 Project](unit1_project/)
 - [Unit 2 Lab](unit2_lab/)
 - [Unit 2 Project](unit2_project/)
-- ....
+- [Unit 3 Project](unit3_project/)
+- [Unit 4 Project](unit4_project/)
 - [Unit 5 Project](unit5_project/)
 - [Unit 6 Project](unit6_project/)
 - [Unit 7 Project](unit7_project/)
