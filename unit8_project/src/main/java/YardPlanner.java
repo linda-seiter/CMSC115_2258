@@ -1,17 +1,20 @@
 import java.util.Scanner;
 
 /**
- * The YardPlanner class provides functionality to manipulate a 2D array that represents a rectangular yard.
- * The main method simulates adding a house, trees, squirrels, and grass to a yard.
+ * The YardPlanner class provides functionality to manipulate a 2D array that
+ * represents a rectangular yard.
+ * The main method simulates adding a house, trees, squirrels, and grass to a
+ * yard.
  * Array dimensions are given as rows x columns.
- * All methods assume a non-empty, rectangular 2D array is passed as a parameter.
+ * All methods assume a non-empty, rectangular 2D array is passed as a
+ * parameter.
  */
 public class YardPlanner {
-    static final String TREE = "🌳";         // \uD83C\uDF33
-    static final String HOUSE = "🏠";        // \uD83C\uDFE0
-    static final String SQUIRREL = "🐿️";     // \uD83E\uDDBF
-    static final String BROWN_SQUARE = "🟫"; //\uD83D\uDFAB
-    static final String SEEDLING = "🌱";     //\uD83C\uDF31
+    static final String TREE = "🌳"; // \uD83C\uDF33
+    static final String HOUSE = "🏠"; // \uD83C\uDFE0
+    static final String SQUIRREL = "🐿️"; // \uD83E\uDDBF
+    static final String BROWN_SQUARE = "🟫"; // \uD83D\uDFAB
+    static final String SEEDLING = "🌱"; // \uD83C\uDF31
 
     /**
      * Prints a 2D array.
@@ -30,77 +33,83 @@ public class YardPlanner {
     /**
      * Fills a 2D array with a given value.
      *
-     * @param matrix The 2D array to be filled with new values.
-     * @param fillValue A string that will replace the current value of each cell in the matrix.
+     * @param matrix    The 2D array to be filled with new values.
+     * @param fillValue A string that will replace the current value of each cell in
+     *                  the matrix.
      */
     public static void fillMatrix(String[][] matrix, String fillValue) {
         // TODO
     }
 
-
-
     /**
      * Sets the middle cell(s) of a given 2D matrix to a specified value.
      *
-     * This method calculates the center of the matrix. If the matrix has even dimensions, it sets
-     * the two middle cells (horizontally and vertically) in the center. For odd dimensions,
+     * This method calculates the center of the matrix. If the matrix has even
+     * dimensions, it sets
+     * the two middle cells (horizontally and vertically) in the center. For odd
+     * dimensions,
      * it sets the single middle cell in the center.
      *
      * @param matrix The 2D array (matrix) in which to set the middle cell(s).
-     *               It must be a non-empty matrix with at least one row and one column.
-     * @param value The value to set the middle cell(s) to. This value will be placed in the calculated
-     *              middle(s) of the matrix.
+     *               It must be a non-empty matrix with at least one row and one
+     *               column.
+     * @param value  The value to set the middle cell(s) to. This value will be
+     *               placed in the calculated
+     *               middle(s) of the matrix.
      *
      */
     public static void setMiddleCells(String[][] matrix, String value) {
         // TODO
     }
 
-
     /**
      * Sets the four corners of the array to a given string.
      *
      * @param matrix The 2D array (matrix) in which to set the middle cell(s).
-     *               It must be a non-empty matrix with at least one row and one column.
+     *               It must be a non-empty matrix with at least one row and one
+     *               column.
      * @paramvalue The string to set in the corners.
      */
     public static void setCornerCells(String[][] matrix, String value) {
         // TODO
     }
 
-
     /**
-     * Replaces all occurrences of a target string in the matrix with the specified new value.
+     * Replaces all occurrences of a target string in the matrix with the specified
+     * new value.
      *
-     * @param matrix The 2D array.
+     * @param matrix      The 2D array.
      * @param targetValue The string to be replaced.
-     * @param newValue The string to replace the target with.
+     * @param newValue    The string to replace the target with.
      */
     public static void replaceTargetValue(String[][] matrix, String targetValue, String newValue) {
-         // TODO
+        // TODO
     }
 
     /**
      * Checks if a given index is valid within the bounds of the array.
      *
      * @param matrix The 2D array.
-     * @param row The row index.
-     * @param col The column index.
+     * @param row    The row index.
+     * @param col    The column index.
      * @return True if the indices are valid, false otherwise.
      */
     public static boolean isValidIndex(String[][] matrix, int row, int col) {
-       // TODO
+        // TODO
         return false;
     }
 
     /**
-     * Assigns a new value to the cells adjacent to the given cell in all 8 directions
-     * (top-left, top, top-right, left, right, bottom-left, bottom, and bottom-right).
-     * The method checks the validity of the indices before updating an adjacent cell.
+     * Assigns a new value to the cells adjacent to the given cell in all 8
+     * directions
+     * (top-left, top, top-right, left, right, bottom-left, bottom, and
+     * bottom-right).
+     * The method checks the validity of the indices before updating an adjacent
+     * cell.
      *
-     * @param matrix The 2D array representing the matrix.
-     * @param row The row index of the given cell.
-     * @param col The column index of the given cell.
+     * @param matrix   The 2D array representing the matrix.
+     * @param row      The row index of the given cell.
+     * @param col      The column index of the given cell.
      * @param newValue The string value to assign to the adjacent cells.
      */
     public static void setAdjacentCells(String[][] matrix, int row, int col, String newValue) {
@@ -115,9 +124,10 @@ public class YardPlanner {
      * the target value is found, updates the adjacent cells by calling the
      * setAdjacentCells(String[][], int, int, String) method.
      *
-     * @param matrix The 2D array representing the matrix to search through.
+     * @param matrix      The 2D array representing the matrix to search through.
      * @param targetValue The string value to search for in the matrix.
-     * @param newValue The string value to assign to the adjacent cells of the matching target cells.
+     * @param newValue    The string value to assign to the adjacent cells of the
+     *                    matching target cells.
      */
     public static void findAndUpdateAdjacentCells(String[][] matrix, String targetValue, String newValue) {
         // TODO
@@ -152,7 +162,7 @@ public class YardPlanner {
         // Surround trees with squirrels
         // TODO
 
-        //Print final result
+        // Print final result
         printMatrix(myYard);
 
     }
