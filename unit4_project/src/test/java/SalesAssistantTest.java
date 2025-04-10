@@ -4,7 +4,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 
@@ -117,5 +123,24 @@ public class SalesAssistantTest {
                 "Target: $900.00 | Total: $900.00 | Congratulations! You met your target.\n";
 
         assertEquals(expectedOutput, outputStream.toString());
+    }
+
+    @Test
+    @DisplayName("Test: SalesAssistant has a for loop")
+    void testForLoopPresence() throws IOException {
+        Path path = Paths.get("src/main/java/SalesAssistant.java"); // Update the path if needed
+        String code = new String(Files.readAllBytes(path));
+
+        // Regular expression to match the ternary operator that assigns to the
+        // variable 'message', allowing extra spaces
+        String regex = "for\\s*\\(";
+
+        // Create a pattern and matcher to find the match in the code
+        Pattern pattern = Pattern.compile(regex, Pattern.DOTALL); // DOTALL allows matching across newlines
+        Matcher matcher = pattern.matcher(code);
+
+        // Assert that the regular expression finds at least one match
+        assertTrue(matcher.find(), "For loop not found in main method.");
+
     }
 }
