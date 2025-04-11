@@ -27,15 +27,14 @@ public class InventoryAnalyzer {
 
     /**
      * Checks if the given string contains only digit characters and is not null or
-     * empty.
-     * The method returns true if all characters in the string are digits,
+     * empty. The method returns true if all characters in the string are digits,
      * and false if the string is null, empty, or contains any non-digit characters.
      *
      * @param str The string to be checked.
      * @return {@code true} if the string contains only digits; {@code false}
      *         otherwise.
      */
-    public static boolean isNonEmptyDigits(String str) {
+    public static boolean isDigits(String str) {
         // TODO
         return false;
     }

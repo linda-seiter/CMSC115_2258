@@ -96,11 +96,9 @@ null
  * The method returns the substring following the item name, up to but not including
  * the semicolon that marks the end of the item's details.
  *
- * @param inventoryData The string containing the inventory data, where each item is formatted as
- *                      "ItemName:Details", separated by semicolons.
+ * @param inventoryData The string containing the inventory data, where each item is formatted as  "ItemName:Details", separated by semicolons.
  * @param itemName The name of the item to search for in the inventory data.
- * @return The substring following the item name, up to the semicolon, or {@code null} if the item is not found
- *         or if the format is incorrect (e.g., missing the semicolon after the item data).
+ * @return The substring following the item name, up to the semicolon, or {@code null} if the item is not found or if the format is incorrect (e.g., missing the semicolon after the item data).
  */
 public static String extractItemDetails(String inventoryData, String itemName)
 ```
@@ -156,11 +154,11 @@ System.out.println(itemDetails); // Output: null
 
 Run the Junit tests in `ExtractItemDetailsTest` to confirm your implementation.
 
-## Task #2: Implement the `isNonEmptyDigits` method
+## Task #2: Implement the `isDigits` method
 
-The purpose of the `isNonEmptyDigits` method is to check if a given string can
-be parsed as a non-negative integer, i.e. it contains only digit characters and
-is not null or empty.
+The purpose of the `isDigits` method is to check if a given string can be parsed
+as a non-negative integer, i.e. it contains only digit characters and is not
+null or empty.
 
 ```java
 /**
@@ -171,29 +169,32 @@ is not null or empty.
  * @param str The string to be checked.
  * @return {@code true} if the string contains only digits; {@code false} otherwise.
  */
-public static boolean isNonEmptyDigits(String str)
+public static boolean isDigits(String str)
 ```
 
 Sample method calls:
 
 ```java
-boolean result1 = isNonEmptyDigits("123456");
+boolean result1 = isDigits("123456");
 System.out.println(result1); // Output: true
 
-boolean result2 = isNonEmptyDigits("123a56");
+boolean result2 = isDigits("123a56");
 System.out.println(result2); // Output: false
 
-boolean result3 = isNonEmptyDigits("");
+boolean result3 = isDigits("");
 System.out.println(result3); // Output: false
+
+boolean result4 = isDigits(null);
+System.out.println(result4); // Output: false
 ```
 
 Do not use `String.matches()` or other methods that rely on regular expressions.
 
 HINT: Use a loop to get each character in the string and test if it is a digit
-by calling the `Character.isDigit()` method. Return false if a character is
+by calling the `Character.isDigit()` method, returning false if a character is
 **not** a digit.
 
-Run the Junit tests in `IsNonEmptyDigitsTest` to confirm your implementation.
+Run the Junit tests in `IsDigitsTest` to confirm your implementation.
 
 ## Task #3: Implement the `ExtractQuantityOnHand` method
 
@@ -221,8 +222,8 @@ numeric value before the colon (`:`), and it should be returned as an integer.
 3. Validate the quantity substring contains only digits
 4. Convert the quantity from a string to an integer and return the value
 
-The method should return -1 if a quantity can't be extracted as an integer from
-the parameter string.
+The method should return -1 if a quantity can't be extracted as an non-negative
+integer from the parameter string.
 
 Sample Calls:
 
@@ -272,7 +273,7 @@ public static int extractReorderThreshold(String itemDetails)
 Run the Junit tests in `ExtractReorderThresholdTest` to confirm your
 implementation.
 
-## Task #5: Implement the `ExtractReorderThreshold` method
+## Task #5: Implement the `getItemReorderSummary` method
 
 The `getItemReorderSummary` method generates a summary of an item's reorder
 status based on the provided inventory data. It compares the quantity on hand of
