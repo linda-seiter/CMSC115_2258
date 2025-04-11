@@ -4,43 +4,45 @@
 
 ## Introduction
 
-### Task 1: `while` Loop – Inventory Management
+### Task 1: `do-while` : Inventory Management
 
 **Objective**:  
-The `InventoryManager` program manages inventory by prompting the user to enter
-the initial inventory quantity and a low stock threshold. It uses a `while` loop
-to process order quantities, updating the inventory and providing feedback after
-each transaction. If an order exceeds the available inventory, it will not be
-fulfilled. The program also notifies the user when inventory falls to or below
-the low stock threshold and stops processing orders once inventory is fully
-depleted.
+The `InventoryManager` class simulates an inventory management system. It
+prompts the user to enter the initial inventory quantity and a low stock
+threshold. It uses a `do-while` to loop at least once and read in and process
+order quantities, updating the inventory if there is sufficient stock and
+providing feedback after each order. However, if an order quantity exceeds the
+available inventory, it will not be fulfilled. The program also notifies the
+user when inventory falls to or below the low stock threshold. The loop
+terminates and stops processing orders once inventory is fully depleted.
 
 | **Condition**                                 | **Output**                                   |
 | --------------------------------------------- | -------------------------------------------- |
-| Order quantity exceeds available stock        | "Insufficient inventory. Only X items left." |
 | Order successfully processed                  | "Order filled. Remaining inventory: X"       |
-| Inventory at or below the low stock threshold | "Low stock. Time to restock."                |
+| Order quantity exceeds available stock        | "Insufficient inventory. Only X items left." |
+| Inventory at or below the low stock threshold | "Low stock."                                 |
 | Inventory is fully depleted                   | "Inventory empty."                           |
 
-The implementation is divided into two phases:
+It's a good idea to build the code in steps, starting with Phase 1 and then
+moving to Phase 2. This helps make the development process easier and more
+organized. The Junit `InventoryManagerSolution` class tests the completed Phase
+2 functionality.
 
----
+- Phase 1: Basic Order Processing (no insufficient or low stock error checking)
+- Phase 2: Enforcing Inventory Limits and Monitoring Low Stock
 
-#### **Phase 1: Processing Orders and Adjusting Inventory**
+#### Phase 1: Processing Orders and Adjusting Inventory
 
-In this phase, the program will:
+Edit `InventoryManager` to implement the following functionality:
 
-1. Prompt the user to enter the initial inventory and low stock threshold (used
-   again in Phase 2).
-2. Use a `while` loop to continue processing orders until the inventory is
-   depleted.
-3. For each iteration, prompt the user for an order quantity and subtract it
-   from the current inventory.
-4. The loop ends when the inventory reaches zero or below.
+1. Prompt the user to enter the initial inventory and low stock threshold
+   (threshold used later in Phase 2).
+2. Use a `do-while` loop to continually prompt for and process orders.
+3. The loop should end when the inventory reaches zero or below.
 
-> **Note**: This phase does not check whether the order quantity exceeds the
-> current inventory or provide low stock warnings. It simply subtracts the order
-> quantity from the inventory.
+> **Note**: This phase does not check for sufficient inventory nor provide low
+> stock warnings. It simply subtracts the order quantity from the inventory,
+> thus it is possible to result in a negative inventory.
 
 **Sample I/O:**
 
@@ -67,14 +69,14 @@ Inventory empty.
 
 ---
 
-#### **Phase 2: Enforcing Inventory Limits and Monitoring Low Stock**
+#### Phase 2: Enforcing Inventory Limits and Monitoring Low Stock
 
-In this phase, the program will:
+Revise `InventoryManager` to implement the following functionality:
 
-1. Prevent inventory from going negative by rejecting orders that exceed
-   available stock, displaying an appropriate message.
-2. Display a warning message whenever inventory falls at or below the low stock
-   threshold.
+1. Avoid filling an order if the order quantity exceeds the inventory and
+   display a message indicating insufficient inventory to fill the order.
+2. Display a low stock warning message whenever inventory is at or below the
+   minimum threshold.
 
 **Sample I/O:**
 
@@ -89,40 +91,49 @@ Order filled. Remaining inventory: 45
 
 Enter order quantity: 30
 Order filled. Remaining inventory: 15
-Low stock. Time to restock.
+Low stock.
 
 Enter order quantity: 10
 Order filled. Remaining inventory: 5
-Low stock. Time to restock.
+Low stock.
 
 Enter order quantity: 20
 Insufficient inventory. Only 5 items left.
-Low stock. Time to restock.
+Low stock.
 
 Enter order quantity: 5
 Order filled. Remaining inventory: 0
-Low stock. Time to restock.
+Low stock.
 
 Inventory empty.
 ```
 
-To verify your implementation, you can run tests using the
-`InventoryManagerTest` JUnit class.
+To verify your implementation, run tests using the `SalesAssistantTest` JUnit
+class.
+
+- Several tests check various scenarios for low stock and insufficient
+  inventory.
+- One test checks for the presence of a `do-while` loop.
 
 ### Task 2: `for` Loop - Sales Assistant
 
-**Objective**: Implement the `SalesAssistant` class to simulate a sales
-assistant to track daily sales and assess progress towards a sales target. Use a
-`for` loop to collect daily sales input, calculate cumulative sales, average
-daily sales, and predict whether the target will be met by the end of the
-tracking period. After collecting the daily sales, provide final feedback based
-on whether the target sales were met.
+**Objective**: The `SalesAssistant` class simulates a sales assistant to track
+daily sales and assess progress towards a sales target. The target and number of
+days are input by the user. A `for` loop is used to collect daily sales from
+user input and calculate cumulative sales, average daily sales, days remaining,
+and a prediction of whether the target will be met by the end of the tracking
+period. After collecting the daily sales, final feedback is given based on
+whether the target sales were met.
 
-The implementation will be broken down into three phases:
+It is recommended to implement the code in three phases:
 
-#### **Phase 1: Reading Daily Sales and Calculating Cumulative Sales**
+- Phase 1: Loop to read daily sales and calculate cumulative sales
+- Phase 2: Compute average daily sales and remaining days
+- Phase 3: Predicted sales and provide feedback
 
-In this phase, the program will:
+#### Phase 1: Reading Daily Sales and Calculating Cumulative Sales
+
+Edit `SalesAssistant` to provide the following functionality:
 
 1. Prompt the user to input their sales target and the number of days they will
    be tracking their sales.
@@ -151,12 +162,12 @@ Enter sales for day 4: $200
 Current Total: $850.00
 ```
 
-#### **Phase 2: Compute Average Daily Sales and Remaining Days**
+#### Phase 2: Compute Average Daily Sales and Remaining Days
 
-In this phase, the program will:
+Revise the loop:
 
-1. For each day, calculate the **average daily sales** (cumulative sales divided
-   by the number of days so far).
+1. Calculate the **average daily sales** (cumulative sales divided by the number
+   of days so far).
 2. Display the number of **days remaining** (days left to track).
 
 Sample I/O:
@@ -178,9 +189,9 @@ Enter sales for day 4: $200
 Current Total: $850.00 | Daily Avg: $212.50 | Days Left: 0
 ```
 
-#### **Phase 3: Predicted Sales and Feedback**
+#### Phase 3: Predicted Sales and Feedback
 
-In this phase, the program will:
+Revise the loop:
 
 1. Calculate the **predicted total sales** by adding the current total sales to
    the product of the average daily sales and the remaining days.
@@ -191,7 +202,7 @@ In this phase, the program will:
    - If the predicted total sales fall short, the user is warned that the target
      is at risk.
 3. After all days are tracked, output the final result showing whether the
-   target was met and offers suggestions for improvement if the target is not
+   target was met and offer suggestions for improvement if the target is not
    achieved.
 
 **Sample I/O: Sales meet $800 target within 4 days:**
@@ -242,29 +253,28 @@ PREDICTION: TARGET AT RISK.
 Target: $1000.00 | Total: $650.00 | Target not met. Focus on high-value sales or expanding your outreach.
 ```
 
-You can test the solution using the JUnit `SalesAssistantTest` class to confirm
-the correctness of calculations and predictions.
+You can test the solution using the JUnit `SalesAssistantTest` class.
 
-- Separate tests are available for both cases where the target is met and where
-  it is not met.
-- A test checks for the presence of a `for` loop for iterating over daily sales
-  inputs.
+- Various tests check scenarios where the target is met and where it is not met.
+- One test checks for the presence of a `for` loop.
 
-### Task 3: `do-while` - Customer Service Chatbot
+### Task 3: `while` loop - Customer Service Chatbot
 
-**Objective**: The `CustomereServiceChatBot` class simulates interactions with
-users through a text-based interface. The chatbot uses a `do-while` loop to
+**Objective**: The `CustomerServiceChatBot` class simulates interactions with
+users through a text-based interface. The chatbot uses a `while` loop to
 continuously ask for user input, and based on specific keywords in the user's
 messages, it provides relevant responses such as addressing issues, shipping
 details, or return policies. The loop continues until the user types "bye" or
-"exit", allowing them to end the conversation at any time.
+"exit", allowing them to end the conversation at any time. The chatbot should
+recognize keywords regardless of whether they are typed in uppercase, lowercase,
+or a mix of both.
 
-| **Trigger Keywords**                     | **Response**                                                       |
-| ---------------------------------------- | ------------------------------------------------------------------ |
-| "problem", "issue"                       | "Customer Support: I'm sorry to hear that."                        |
-| "shipping"                               | "Customer Support: Our standard shipping takes 5-7 business days." |
-| "return"                                 | "Customer Support: Returns are accepted within 30 days."           |
-| Any input not containing "bye" or "exit" | "Customer Support: Can you tell me more?"                          |
+| **Trigger Keywords**            | **Response**                                                       |
+| ------------------------------- | ------------------------------------------------------------------ |
+| "problem", "issue"              | "Customer Support: I'm sorry to hear that."                        |
+| "shipping"                      | "Customer Support: Our standard shipping takes 5-7 business days." |
+| "return"                        | "Customer Support: Returns are accepted within 30 days."           |
+| Other input not "bye" or "exit" | "Customer Support: Can you tell me more?"                          |
 
 ```text
 Customer Support: Welcome! Type 'bye' or 'exit' to end the chat.
@@ -281,9 +291,94 @@ Customer Support: Returns are accepted within 30 days.
 You: I'd like  to place an order.
 Customer Support: Can you tell me more?
 
-You: exit
+You: Bye
 Customer Support: Thanks for reaching out. Goodbye!
 ```
+
+Once again, it is good to solve this using an incremental approach:
+
+- Phase 1: Chat loop that gives single generic response and stops on keyword
+  `"bye"`
+- Phase 2: Improve loop termination Check — `"bye"` or `"exit"`
+  (case-insensitive match)
+- Phase 3: Add keyword-based chatbot responses
+
+#### Phase 1: Basic Chat Loop — Stop on `"bye"`
+
+- Print a welcome message.
+- Prompt the user with `"You: "` and read input.
+- Use a while loop that terminates on the sentinel "bye":
+  - Output a generic response "Customer Support: Can you tell me more?"
+  - Prompt the user and read input again
+
+**Sample I/O:**
+
+```
+Customer Support: Welcome! Type 'bye' to end the chat.
+You: Hello
+Customer Support: Can you tell me more?
+You: I need help
+Customer Support: Can you tell me more?
+You: bye
+Customer Support: Thanks for reaching out. Goodbye!
+```
+
+Sample I/O where loop body is skipped:
+
+```text
+Customer Support: Welcome! Type 'bye' to end the chat.
+You: bye
+Customer Support: Thanks for reaching out. Goodbye
+```
+
+#### Phase 2: Improve Exit Check — `"bye"` or `"exit"` (case-insensitive)
+
+End the loop if the input is `"bye"` or `"exit"`, regardless of letter case.
+
+HINT: Lowercase the user input.
+
+**Sample I/O:**
+
+```
+Customer Support: Welcome! Type 'bye' or 'exit' to end the chat.
+You: I need some help
+Customer Support: Can you tell me more?
+You: EXIT
+Customer Support: Thanks for reaching out. Goodbye!
+```
+
+---
+
+#### Phase 3: Add Keyword-Based Responses
+
+Check for specific keywords, regardless of case:
+
+- `"problem"` or `"issue"` → **"I'm sorry to hear that."**
+- `"shipping"` → **"Our standard shipping takes 5–7 business days."**
+- `"return"` → **"Returns are accepted within 30 days."**
+- Anything else → **"Can you tell me more?"**
+
+**Sample I/O:**
+
+```
+Customer Support: Welcome! Type 'bye' or 'exit' to end the chat.
+You: I have a problem
+Customer Support: I'm sorry to hear that.
+You: How long does ShIPPing take?
+Customer Support: Our standard shipping takes 5–7 business days.
+You: Can I ReturN it?
+Customer Support: Returns are accepted within 30 days.
+You: I just wanted to check something
+Customer Support: Can you tell me more?
+You: BYE
+Customer Support: Thanks for reaching out. Goodbye!
+```
+
+You can test the final solution using the JUnit `CustomerServiceChatbotTest`
+class.
+
+- Various tests check for the trigger keywords.
+- One test checks for the presence of a `while` loop.
 
 ## Submitting your project
 
@@ -297,7 +392,3 @@ TBD
 
   }
 </style>
-
-```
-
-```

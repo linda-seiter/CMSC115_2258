@@ -3,8 +3,8 @@ import java.util.Scanner;
 /**
  * The InventoryManager class tracks inventory levels, processes orders,
  * and provides restock alerts. It prompts the user for the initial inventory
- * and low stock threshold, then uses a while loop to process orders, updating
- * and displaying inventory status after each transaction.
+ * and low stock threshold, then uses a do-while loop to process orders,
+ * updating and displaying inventory status after each transaction.
  *
  * Features:
  * - Prompts for initial inventory and low stock threshold
