@@ -200,14 +200,18 @@ Run the JUnit tests in `PaintCostSummaryTest` to confirm your solution.
 
 Finally, update the `main` method to prompt for (1) room dimensions, (2) whether
 to include the ceiling, and (3) whether the units are Metric. The program should
-calculate the total paintable area and paint units, and then generate a
-formatted report displaying the results.
+calculate the total area and units of paint, and then generate a formatted
+report displaying the results.
 
+```text
 Enter the room length, width, and height.
-
-> 5.0 3.0 4.0 Include ceiling (true/false). true Metric (true) or Imperial
-> (false). false Total area: 79.00 square feet, paint: 1 gallons, total cost:
-> $50.00
+> 5.0 3.0 4.0
+Include ceiling (true/false).
+> true
+Metric (true) or Imperial (false).
+> false
+Total area: 79.00 square feet, paint: 1 gallons, total cost: $50.00
+```
 
 Run the JUnit tests in `MainTest` to confirm your solution.
 
